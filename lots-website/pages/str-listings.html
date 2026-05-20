@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STR-Eligible Homes for Sale | Living Old Town Scottsdale</title>
+  <meta name="description" content="Browse short-term rental eligible homes for sale in Old Town Scottsdale. Live MLS feed filtered for STR-friendly properties with investment data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .str-listing-card { border: 1px solid var(--border); background: #fff; overflow: hidden; transition: all 0.3s; cursor: pointer; }
+    .str-listing-card:hover { box-shadow: 0 12px 40px rgba(79,55,43,0.1); transform: translateY(-2px); }
+    .str-listing-image { aspect-ratio: 16/10; background: var(--bg-alt); position: relative; overflow: hidden; }
+    .str-listing-badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+    .str-badge { padding: 5px 12px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+    .str-badge-eligible { background: var(--terracotta); color: #fff; }
+    .str-badge-status { background: var(--ink); color: var(--cream); }
+    .str-listing-body { padding: 20px 24px; }
+    .str-listing-price { font-family: var(--font-display); font-size: 28px; color: var(--ink); margin-bottom: 2px; }
+    .str-listing-address { font-size: 14px; color: var(--text-soft); margin-bottom: 16px; }
+    .str-listing-specs { display: flex; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 16px; flex-wrap: wrap; }
+    .str-listing-spec { font-size: 13px; color: var(--text-faint); }
+    .str-listing-spec strong { color: var(--text-primary); font-weight: 600; }
+    .str-listing-roi { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; background: rgba(174,109,71,0.05); padding: 16px; margin: 0 -24px -20px; }
+    .str-roi-item { text-align: center; }
+    .str-roi-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 2px; }
+    .str-roi-value { font-size: 15px; font-weight: 700; color: var(--terracotta); }
+    .filter-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .filter-select { padding: 10px 16px; border: 1px solid var(--border); font-family: var(--font-body); font-size: 13px; color: var(--text-primary); background: #fff; outline: none; min-width: 160px; }
+    .filter-select:focus { border-color: var(--terracotta); }
+    .mls-notice { background: rgba(174,109,71,0.08); border: 1px solid rgba(174,109,71,0.2); padding: 16px 20px; font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 32px; }
+    .mls-notice strong { color: var(--terracotta); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-living">Living</span>
+        <span class="nav-logo-main">Old Town Scottsdale</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="old-town-life.html">Old Town Life</a></li>
+        <li><a href="str-hub.html" class="active">STR Investing</a></li>
+        <li><a href="condos.html">Luxury Condos</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Work With Us</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="section-label text-center">Investment Properties</div>
+      <h1 class="section-title text-center">STR-Eligible Homes for Sale</h1>
+      <p class="page-header-desc">
+        Browse properties in Old Town Scottsdale that are eligible for short-term rental use. Live MLS feed with estimated STR revenue data.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section style="background: #fff; padding: 24px 0; border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="filter-bar">
+        <select class="filter-select">
+          <option>All Property Types</option>
+          <option>Condos</option>
+          <option>Townhomes</option>
+          <option>Single Family</option>
+        </select>
+        <select class="filter-select">
+          <option>Any Price</option>
+          <option>Under $400K</option>
+          <option>$400K - $600K</option>
+          <option>$600K - $800K</option>
+          <option>$800K - $1M</option>
+          <option>$1M+</option>
+        </select>
+        <select class="filter-select">
+          <option>Any Bedrooms</option>
+          <option>1 Bedroom</option>
+          <option>2 Bedrooms</option>
+          <option>3+ Bedrooms</option>
+        </select>
+        <select class="filter-select">
+          <option>All Buildings</option>
+          <option>Optima Camelview</option>
+          <option>The Mark</option>
+          <option>Scottsdale Waterfront</option>
+          <option>Envy</option>
+          <option>Sage</option>
+          <option>Inspire</option>
+          <option>Other</option>
+        </select>
+        <select class="filter-select">
+          <option>Sort: Newest</option>
+          <option>Sort: Price Low-High</option>
+          <option>Sort: Price High-Low</option>
+          <option>Sort: Highest ROI</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listings Feed -->
+  <section class="section" style="background: var(--bg-primary);">
+    <div class="container">
+
+      <div class="mls-notice">
+        <strong>MLS Integration:</strong> This page is designed to display a live feed from the Arizona Regional MLS (ARMLS) filtered for STR-eligible properties in the Old Town Scottsdale area. Connect your ARMLS API key to populate real-time listings. Estimated STR revenue figures are based on market averages and should be verified.
+      </div>
+
+      <!-- Listings Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px;">
+
+        <!-- Sample Listing 1 -->
+        <div class="str-listing-card">
+          <div class="str-listing-image" style="background: linear-gradient(135deg, #ae6d47, #7a5a40);">
+            <div class="str-listing-badges">
+              <span class="str-badge str-badge-eligible">STR Eligible</span>
+              <span class="str-badge str-badge-status">Active</span>
+            </div>
+          </div>
+          <div class="str-listing-body">
+            <div class="str-listing-price">$549,000</div>
+            <div class="str-listing-address">7117 E Rancho Vista Dr #4012, Scottsdale 85251</div>
+            <div class="str-listing-specs">
+              <div class="str-listing-spec"><strong>2</strong> Bed</div>
+              <div class="str-listing-spec"><strong>2</strong> Bath</div>
+              <div class="str-listing-spec"><strong>1,245</strong> SF</div>
+              <div class="str-listing-spec"><strong>Optima Camelview</strong></div>
+            </div>
+            <div class="str-listing-roi">
+              <div class="str-roi-item"><div class="str-roi-label">Est. Nightly</div><div class="str-roi-value">$275</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. Annual Rev</div><div class="str-roi-value">$72K</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. ROI</div><div class="str-roi-value">8.5%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Listing 2 -->
+        <div class="str-listing-card">
+          <div class="str-listing-image" style="background: linear-gradient(135deg, #c6a180, #ae6d47);">
+            <div class="str-listing-badges">
+              <span class="str-badge str-badge-eligible">STR Eligible</span>
+              <span class="str-badge str-badge-status">Active</span>
+            </div>
+          </div>
+          <div class="str-listing-body">
+            <div class="str-listing-price">$425,000</div>
+            <div class="str-listing-address">6803 E Main St #3305, Scottsdale 85251</div>
+            <div class="str-listing-specs">
+              <div class="str-listing-spec"><strong>1</strong> Bed</div>
+              <div class="str-listing-spec"><strong>1</strong> Bath</div>
+              <div class="str-listing-spec"><strong>892</strong> SF</div>
+              <div class="str-listing-spec"><strong>The Mark</strong></div>
+            </div>
+            <div class="str-listing-roi">
+              <div class="str-roi-item"><div class="str-roi-label">Est. Nightly</div><div class="str-roi-value">$225</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. Annual Rev</div><div class="str-roi-value">$58K</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. ROI</div><div class="str-roi-value">8.9%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Listing 3 -->
+        <div class="str-listing-card">
+          <div class="str-listing-image" style="background: linear-gradient(135deg, #d6c9a8, #c6a180);">
+            <div class="str-listing-badges">
+              <span class="str-badge str-badge-eligible">STR Eligible</span>
+              <span class="str-badge str-badge-status">Just Listed</span>
+            </div>
+          </div>
+          <div class="str-listing-body">
+            <div class="str-listing-price">$389,000</div>
+            <div class="str-listing-address">4422 N 75th St #2108, Scottsdale 85251</div>
+            <div class="str-listing-specs">
+              <div class="str-listing-spec"><strong>1</strong> Bed</div>
+              <div class="str-listing-spec"><strong>1</strong> Bath</div>
+              <div class="str-listing-spec"><strong>776</strong> SF</div>
+              <div class="str-listing-spec"><strong>Envy</strong></div>
+            </div>
+            <div class="str-listing-roi">
+              <div class="str-roi-item"><div class="str-roi-label">Est. Nightly</div><div class="str-roi-value">$210</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. Annual Rev</div><div class="str-roi-value">$54K</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. ROI</div><div class="str-roi-value">9.0%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Listing 4 -->
+        <div class="str-listing-card">
+          <div class="str-listing-image" style="background: linear-gradient(135deg, #c2cdca, #9aafab);">
+            <div class="str-listing-badges">
+              <span class="str-badge str-badge-eligible">STR Eligible</span>
+              <span class="str-badge str-badge-status">Active</span>
+            </div>
+          </div>
+          <div class="str-listing-body">
+            <div class="str-listing-price">$785,000</div>
+            <div class="str-listing-address">7175 E Camelback Rd #506, Scottsdale 85251</div>
+            <div class="str-listing-specs">
+              <div class="str-listing-spec"><strong>2</strong> Bed</div>
+              <div class="str-listing-spec"><strong>2</strong> Bath</div>
+              <div class="str-listing-spec"><strong>1,680</strong> SF</div>
+              <div class="str-listing-spec"><strong>Waterfront</strong></div>
+            </div>
+            <div class="str-listing-roi">
+              <div class="str-roi-item"><div class="str-roi-label">Est. Nightly</div><div class="str-roi-value">$350</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. Annual Rev</div><div class="str-roi-value">$92K</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. ROI</div><div class="str-roi-value">7.6%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Listing 5 -->
+        <div class="str-listing-card">
+          <div class="str-listing-image" style="background: linear-gradient(135deg, #5a3f2c, #3a2a1f);">
+            <div class="str-listing-badges">
+              <span class="str-badge str-badge-eligible">STR Eligible</span>
+              <span class="str-badge str-badge-status">Price Reduced</span>
+            </div>
+          </div>
+          <div class="str-listing-body">
+            <div class="str-listing-price">$475,000</div>
+            <div class="str-listing-address">7300 E Earll Dr #1204, Scottsdale 85251</div>
+            <div class="str-listing-specs">
+              <div class="str-listing-spec"><strong>2</strong> Bed</div>
+              <div class="str-listing-spec"><strong>2</strong> Bath</div>
+              <div class="str-listing-spec"><strong>1,120</strong> SF</div>
+              <div class="str-listing-spec"><strong>Inspire</strong></div>
+            </div>
+            <div class="str-listing-roi">
+              <div class="str-roi-item"><div class="str-roi-label">Est. Nightly</div><div class="str-roi-value">$240</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. Annual Rev</div><div class="str-roi-value">$63K</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. ROI</div><div class="str-roi-value">8.6%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Listing 6 -->
+        <div class="str-listing-card">
+          <div class="str-listing-image" style="background: linear-gradient(135deg, #f5e4c3, #d6c9a8);">
+            <div class="str-listing-badges">
+              <span class="str-badge str-badge-eligible">STR Eligible</span>
+              <span class="str-badge str-badge-status">Active</span>
+            </div>
+          </div>
+          <div class="str-listing-body">
+            <div class="str-listing-price">$625,000</div>
+            <div class="str-listing-address">Canal-front location, Scottsdale 85251</div>
+            <div class="str-listing-specs">
+              <div class="str-listing-spec"><strong>2</strong> Bed</div>
+              <div class="str-listing-spec"><strong>2</strong> Bath</div>
+              <div class="str-listing-spec"><strong>1,450</strong> SF</div>
+              <div class="str-listing-spec"><strong>Sage</strong></div>
+            </div>
+            <div class="str-listing-roi">
+              <div class="str-roi-item"><div class="str-roi-label">Est. Nightly</div><div class="str-roi-value">$295</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. Annual Rev</div><div class="str-roi-value">$77K</div></div>
+              <div class="str-roi-item"><div class="str-roi-label">Est. ROI</div><div class="str-roi-value">8.0%</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load More -->
+      <div class="text-center" style="margin-top: 48px;">
+        <button class="btn btn-outline-dark">Load More Listings</button>
+        <p style="font-size: 12px; color: var(--text-faint); margin-top: 12px;">Showing 6 of 24 STR-eligible listings &bull; Updated in real time via MLS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STR Resources -->
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <a href="str-hub.html" style="padding: 32px; border: 1px solid var(--border); text-decoration: none; transition: all 0.3s;">
+          <div style="font-size: 12px; color: var(--terracotta); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Investment Tools</div>
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">STR Investment Hub</div>
+          <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">ROI calculator, zoning maps, market data, and top building rankings.</div>
+        </a>
+        <a href="condos.html" style="padding: 32px; border: 1px solid var(--border); text-decoration: none; transition: all 0.3s;">
+          <div style="font-size: 12px; color: var(--terracotta); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Building Profiles</div>
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">Condo Communities</div>
+          <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Amenities, HOA details, STR eligibility, and pricing by building.</div>
+        </a>
+        <a href="contact.html" style="padding: 32px; border: 1px solid var(--border); text-decoration: none; transition: all 0.3s;">
+          <div style="font-size: 12px; color: var(--terracotta); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Personalized</div>
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">Investor Consultation</div>
+          <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Work with Naudia to find the right STR property for your goals.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture -->
+  <section class="lead-capture">
+    <div class="container text-center">
+      <div class="section-label">Get Notified First</div>
+      <h2 class="section-title text-center" style="max-width: 600px; margin: 0 auto;">New STR Listings Alert</h2>
+      <p class="lead-capture-subtitle">Be the first to know when STR-eligible properties hit the market in Old Town. Delivered to your inbox before they're widely available.</p>
+      <form class="lead-form" onsubmit="event.preventDefault(); handleLeadSubmit(this);">
+        <input type="text" placeholder="First Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit">Get Alerts</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="neighborhoods.html">Neighborhoods</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="str-hub.html">STR Hub</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy</a></li><li><a href="sell.html">Sell</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">TikTok</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

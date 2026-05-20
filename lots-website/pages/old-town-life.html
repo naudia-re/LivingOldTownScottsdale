@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Old Town Life | A Field Guide to Living Old Town Scottsdale</title>
+  <meta name="description" content="A field guide to Old Town Scottsdale — the history that shaped it, the builders behind its homes, the neighborhoods, and the spots worth your Saturday. From Living Old Town Scottsdale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body { background: #fff; }
+
+    /* --- Nav (matches home page) --- */
+    .ap-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 48px; background: #fff; border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .ap-nav-logo img { height: 56px; width: auto; }
+    .ap-nav-center { display: flex; gap: 36px; align-items: center; }
+    .ap-nav-center a, .ap-nav-dd-trigger {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink);
+      text-decoration: none; opacity: 0.8; background: none; border: none;
+      cursor: pointer; padding: 0; transition: opacity 0.3s;
+    }
+    .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
+    .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+    .ap-nav-dd { position: relative; }
+    .ap-nav-dd-menu {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      background: #fff; border: 1px solid #eee; padding: 12px 0;
+      min-width: 200px; opacity: 0; visibility: hidden;
+      transition: opacity 0.2s; margin-top: 8px;
+    }
+    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd-menu a {
+      display: block; padding: 10px 20px;
+      font-family: var(--font-body); font-size: 11px; font-weight: 400;
+      letter-spacing: 0.15em;
+    }
+    .ap-nav-dd-menu a:hover { background: #fafafa; opacity: 1; color: var(--ink); }
+    .ap-nav-yt {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #c4302b; color: #fff; padding: 12px 18px;
+      font-family: var(--font-body); font-size: 9px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .ap-nav-yt:hover { background: #a30000; }
+    .ap-nav-yt svg { width: 14px; height: 14px; fill: #fff; }
+
+    /* --- Page Hero --- */
+    .otl-hero {
+      position: relative; min-height: 78vh; max-height: 820px;
+      display: flex; align-items: flex-end;
+      overflow: hidden; background: #f5e4c3;
+    }
+    .otl-hero-img {
+      position: absolute; inset: 0;
+    }
+    .otl-hero-img img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 60%;
+    }
+    .otl-hero-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.65) 100%);
+    }
+    .otl-hero-content {
+      position: relative; z-index: 2; color: #fff;
+      padding: 0 48px 80px; max-width: 1100px;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .otl-hero-eyebrow {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: rgba(255,255,255,0.92); margin-bottom: 24px;
+    }
+    .otl-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 96px); font-weight: 300;
+      text-transform: uppercase; letter-spacing: 0.02em;
+      line-height: 1.02; margin: 0 0 28px; color: #fff;
+    }
+    .otl-hero-title em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .otl-hero-sub {
+      font-family: var(--font-body); font-size: 15px; font-weight: 300;
+      line-height: 1.7; color: rgba(255,255,255,0.95); max-width: 560px;
+    }
+    .otl-scroll-cue {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      z-index: 3; color: rgba(255,255,255,0.7);
+      font-family: var(--font-body); font-size: 9px; letter-spacing: 0.4em;
+      text-transform: uppercase; display: flex; align-items: center; gap: 10px;
+    }
+    .otl-scroll-cue::after {
+      content: ''; width: 1px; height: 36px; background: rgba(255,255,255,0.5);
+      animation: scrollPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(0.6); transform-origin: top; }
+      50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* --- Anchor Bar --- */
+    .otl-anchors {
+      display: flex; gap: 32px; justify-content: center;
+      padding: 24px 48px; border-bottom: 1px solid #eee;
+      overflow-x: auto;
+    }
+    .otl-anchors a {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: #888; text-decoration: none; white-space: nowrap;
+      transition: color 0.3s;
+    }
+    .otl-anchors a:hover { color: var(--ink); }
+
+    /* --- Section base --- */
+    .otl-section { padding: 96px 48px; max-width: 1400px; margin: 0 auto; }
+    .otl-section--alt { background: #faf7f1; max-width: none; }
+    .otl-section--alt .otl-section-inner { max-width: 1400px; margin: 0 auto; }
+    .otl-section-head {
+      max-width: 700px; margin-bottom: 56px;
+    }
+    .otl-section-head--center { margin-left: auto; margin-right: auto; text-align: center; }
+    .otl-eyebrow {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 16px;
+    }
+    .otl-h2 {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300; color: var(--ink); line-height: 1.1;
+      text-transform: uppercase; letter-spacing: 0.02em;
+      margin: 0 0 18px;
+    }
+    .otl-h2 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .otl-lede {
+      font-family: var(--font-body); font-size: 15px; font-weight: 300;
+      color: #555; line-height: 1.8;
+    }
+
+    /* --- Timeline --- */
+    .otl-timeline {
+      display: flex; gap: 0; overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 16px;
+      scrollbar-width: thin; scrollbar-color: #d6c9a8 transparent;
+    }
+    .otl-timeline::-webkit-scrollbar { height: 6px; }
+    .otl-timeline::-webkit-scrollbar-thumb { background: #d6c9a8; border-radius: 3px; }
+    .otl-era {
+      flex: 0 0 380px; scroll-snap-align: start;
+      padding: 0 32px 0 0; border-right: 1px solid #eee;
+      margin-right: 32px;
+    }
+    .otl-era:last-child { border-right: none; }
+    .otl-era-img {
+      aspect-ratio: 4/3; overflow: hidden; margin-bottom: 24px;
+      background: linear-gradient(135deg, #d6c9a8, #c6a180);
+    }
+    .otl-era-img img { width: 100%; height: 100%; object-fit: cover; }
+    .otl-era-years {
+      font-family: var(--font-display); font-size: 14px; font-style: italic;
+      color: var(--terracotta, #ae6d47); margin-bottom: 8px;
+    }
+    .otl-era-title {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      color: var(--ink); line-height: 1.2; margin-bottom: 14px;
+    }
+    .otl-era-text {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.7;
+      color: #555; margin-bottom: 16px;
+    }
+    .otl-era-callout {
+      font-family: var(--font-display); font-size: 14px; font-style: italic;
+      color: var(--ink); padding: 14px 16px;
+      border-left: 2px solid var(--terracotta, #ae6d47);
+      background: #faf7f1; margin-top: 12px;
+    }
+
+    /* --- Builders --- */
+    .otl-builders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .otl-builder {
+      background: #fff; text-decoration: none; color: var(--ink);
+      transition: transform 0.4s ease;
+    }
+    .otl-builder:hover { transform: translateY(-4px); }
+    .otl-builder-img {
+      aspect-ratio: 4/5; overflow: hidden; margin-bottom: 20px;
+      background: linear-gradient(135deg, #c6a180, #ae6d47);
+    }
+    .otl-builder-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .otl-builder:hover .otl-builder-img img { transform: scale(1.04); }
+    .otl-builder-tag {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47);
+      margin-bottom: 8px;
+    }
+    .otl-builder-name {
+      font-family: var(--font-display); font-size: 24px; font-weight: 400;
+      line-height: 1.2; margin-bottom: 10px;
+    }
+    .otl-builder-desc {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.7;
+      color: #666; margin-bottom: 14px;
+    }
+    .otl-builder-link {
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink);
+    }
+
+    /* --- Neighborhoods Teaser --- */
+    .otl-hoods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .otl-hood {
+      position: relative; aspect-ratio: 3/4; overflow: hidden;
+      text-decoration: none; color: #fff;
+      display: flex; align-items: flex-end;
+    }
+    .otl-hood img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .otl-hood:hover img { transform: scale(1.05); }
+    .otl-hood::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+    }
+    .otl-hood-content { position: relative; z-index: 2; padding: 24px; }
+    .otl-hood-name {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      margin-bottom: 4px; line-height: 1.2;
+    }
+    .otl-hood-vibe {
+      font-family: var(--font-body); font-size: 11px; font-weight: 300;
+      letter-spacing: 0.05em; opacity: 0.92;
+    }
+
+    /* --- Directory --- */
+    .otl-dir-filters {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px;
+      justify-content: center;
+    }
+    .otl-dir-filter {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 10px 18px; border: 1px solid #ddd; background: transparent;
+      color: #666; cursor: pointer; transition: all 0.3s;
+    }
+    .otl-dir-filter:hover { border-color: var(--ink); color: var(--ink); }
+    .otl-dir-filter.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .otl-dir-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .otl-dir-card {
+      background: #fff; border: 1px solid #eee;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .otl-dir-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); }
+    .otl-dir-img {
+      aspect-ratio: 16/10; overflow: hidden;
+      background: linear-gradient(135deg, #f5e4c3, #d6c9a8);
+    }
+    .otl-dir-img img { width: 100%; height: 100%; object-fit: cover; }
+    .otl-dir-body { padding: 24px; }
+    .otl-dir-meta {
+      display: flex; gap: 8px; margin-bottom: 12px; align-items: center;
+    }
+    .otl-dir-cat {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--terracotta, #ae6d47);
+    }
+    .otl-dir-hood {
+      font-family: var(--font-body); font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #aaa;
+    }
+    .otl-dir-name {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      line-height: 1.2; margin-bottom: 10px;
+    }
+    .otl-dir-desc {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.65;
+      color: #555;
+    }
+    .otl-dir-tag {
+      display: inline-block; margin-top: 14px;
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 5px 11px; background: #faf7f1; color: var(--ink);
+      border: 1px solid #eee;
+    }
+    .otl-dir-cta {
+      text-align: center; margin-top: 48px;
+    }
+
+    /* --- This Month --- */
+    .otl-month {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+    }
+    .otl-month-item {
+      padding: 36px 28px; border-right: 1px solid #eee;
+    }
+    .otl-month-item:last-child { border-right: none; }
+    .otl-month-label {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--terracotta, #ae6d47); margin-bottom: 14px;
+    }
+    .otl-month-text {
+      font-family: var(--font-display); font-size: 18px; font-weight: 400;
+      line-height: 1.4; color: var(--ink);
+    }
+    .otl-month-text em { font-style: italic; }
+    .otl-month-meta {
+      font-family: var(--font-body); font-size: 11px; color: #888; margin-top: 10px;
+    }
+
+    /* --- Seasons --- */
+    .otl-seasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .otl-season {
+      position: relative; aspect-ratio: 3/4; overflow: hidden;
+      text-decoration: none; color: #fff;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .otl-season::before {
+      content: ''; position: absolute; inset: 0;
+      transition: transform 0.6s;
+    }
+    .otl-season:hover::before { transform: scale(1.05); }
+    .otl-season::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+    }
+    .otl-season-spring::before { background: linear-gradient(135deg, #d6c9a8 0%, #c6a180 100%); }
+    .otl-season-summer::before { background: linear-gradient(135deg, #c6a180 0%, #ae6d47 100%); }
+    .otl-season-fall::before { background: linear-gradient(135deg, #ae6d47 0%, #4f372b 100%); }
+    .otl-season-winter::before { background: linear-gradient(135deg, #c2cdca 0%, #4f372b 100%); }
+    .otl-season-content { position: relative; z-index: 2; padding: 28px; }
+    .otl-season-name {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      margin-bottom: 8px; line-height: 1.1;
+    }
+    .otl-season-name em { font-style: italic; }
+    .otl-season-text {
+      font-family: var(--font-body); font-size: 12px; font-weight: 300;
+      line-height: 1.55; opacity: 0.95;
+    }
+
+    /* --- Insider Lists --- */
+    .otl-lists { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #eee; border: 1px solid #eee; }
+    .otl-list {
+      background: #fff; padding: 36px 28px; text-decoration: none; color: var(--ink);
+      transition: background 0.3s;
+    }
+    .otl-list:hover { background: #faf7f1; }
+    .otl-list-num {
+      font-family: var(--font-display); font-size: 14px; font-style: italic;
+      color: var(--terracotta, #ae6d47); margin-bottom: 14px;
+    }
+    .otl-list-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      line-height: 1.2; margin-bottom: 10px;
+    }
+    .otl-list-meta {
+      font-family: var(--font-body); font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #888;
+    }
+
+    /* --- Journal --- */
+    .otl-journal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .otl-journal-card {
+      text-decoration: none; color: var(--ink);
+    }
+    .otl-journal-img {
+      aspect-ratio: 4/3; overflow: hidden; margin-bottom: 20px;
+      background: linear-gradient(135deg, #d6c9a8, #c6a180);
+    }
+    .otl-journal-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .otl-journal-card:hover .otl-journal-img img { transform: scale(1.04); }
+    .otl-journal-tag {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47);
+      margin-bottom: 8px;
+    }
+    .otl-journal-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      line-height: 1.25; margin-bottom: 10px;
+    }
+    .otl-journal-excerpt {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.65;
+      color: #666;
+    }
+
+    /* --- Contribute --- */
+    .otl-contribute {
+      max-width: 720px; margin: 0 auto; text-align: center;
+      padding: 96px 48px;
+    }
+    .otl-contribute-form {
+      display: grid; gap: 14px; max-width: 540px; margin: 36px auto 0;
+    }
+    .otl-contribute-form input,
+    .otl-contribute-form textarea {
+      font-family: var(--font-body); font-size: 14px; padding: 14px 16px;
+      border: 1px solid #ddd; background: #fff; resize: vertical;
+    }
+    .otl-contribute-form textarea { min-height: 120px; }
+    .otl-contribute-form button {
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 16px 28px; background: var(--ink); color: #fff;
+      border: none; cursor: pointer; transition: opacity 0.3s;
+    }
+    .otl-contribute-form button:hover { opacity: 0.85; }
+
+    /* --- Newsletter (matches home) --- */
+    .otl-news {
+      background: var(--ink); padding: 80px 48px; text-align: center; color: #fff;
+    }
+    .otl-news-title {
+      font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px);
+      font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em;
+      margin: 0 0 12px; color: #fff;
+    }
+    .otl-news-sub {
+      font-family: var(--font-body); font-size: 14px; font-weight: 300;
+      color: #888; margin-bottom: 32px;
+    }
+    .otl-news-form {
+      display: flex; gap: 0; max-width: 460px; margin: 0 auto;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .otl-news-form input {
+      flex: 1; padding: 14px 0; background: transparent;
+      border: none; color: #fff; font-family: var(--font-body); font-size: 14px;
+    }
+    .otl-news-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .otl-news-form input:focus { outline: none; }
+    .otl-news-form button {
+      background: transparent; border: none; color: #fff;
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer;
+      padding: 14px 0 14px 24px;
+    }
+    .otl-news-note {
+      font-family: var(--font-body); font-size: 11px;
+      color: rgba(255,255,255,0.4); margin-top: 14px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .otl-builders, .otl-dir-grid, .otl-journal { grid-template-columns: repeat(2, 1fr); }
+      .otl-hoods, .otl-seasons { grid-template-columns: repeat(2, 1fr); }
+      .otl-month { grid-template-columns: repeat(2, 1fr); }
+      .otl-month-item:nth-child(2) { border-right: none; }
+      .otl-month-item:nth-child(1), .otl-month-item:nth-child(2) { border-bottom: 1px solid #eee; }
+      .otl-lists { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .ap-nav-center { display: none; }
+      .otl-section { padding: 64px 24px; }
+      .otl-hero-content { padding: 0 24px 60px; }
+      .otl-builders, .otl-dir-grid, .otl-journal { grid-template-columns: 1fr; }
+      .otl-hoods, .otl-seasons { grid-template-columns: 1fr; }
+      .otl-month { grid-template-columns: 1fr; }
+      .otl-month-item { border-right: none; border-bottom: 1px solid #eee; }
+      .otl-lists { grid-template-columns: 1fr; }
+      .otl-anchors { gap: 18px; padding: 16px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="ap-nav">
+    <a href="../index.html" class="ap-nav-logo">
+      <img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale">
+    </a>
+    <div class="ap-nav-center">
+      <a href="../index.html">Home</a>
+      <a href="old-town-life.html" class="is-active">Old Town Life</a>
+      <div class="ap-nav-dd">
+        <button class="ap-nav-dd-trigger">Neighborhoods</button>
+        <div class="ap-nav-dd-menu">
+          <a href="neighborhood-directory.html">Full Directory</a>
+          <a href="neighborhoods.html">Single Family</a>
+          <a href="condos.html">Luxury Condos</a>
+          <a href="history.html">Old Town History</a>
+        </div>
+      </div>
+      <a href="str-hub.html">STR Investing</a>
+      <a href="buy.html">Buy</a>
+      <a href="sell.html">Sell</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-nav-yt">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube
+    </a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="otl-hero">
+    <div class="otl-hero-img">
+      <img src="../assets/old-town-sign.jpg" alt="The Old Town Scottsdale sign">
+    </div>
+    <div class="otl-hero-content">
+      <p class="otl-hero-eyebrow">Old Town Life</p>
+      <h1 class="otl-hero-title">A FIELD GUIDE TO<br><em>living</em> OLD TOWN</h1>
+      <p class="otl-hero-sub">Everything you'd want a local to tell you. The history that shaped these streets, the people building its future, and the spots worth your Saturday.</p>
+    </div>
+    <div class="otl-scroll-cue">Scroll</div>
+  </section>
+
+  <!-- ===== ANCHOR BAR ===== -->
+  <nav class="otl-anchors" aria-label="Page sections">
+    <a href="#story">The Story</a>
+    <a href="#builders">Builders</a>
+    <a href="#neighborhoods">Neighborhoods</a>
+    <a href="#directory">Directory</a>
+    <a href="#this-month">This Month</a>
+    <a href="#seasons">By Season</a>
+    <a href="#lists">Insider Lists</a>
+    <a href="#journal">Journal</a>
+    <a href="#contribute">Contribute</a>
+  </nav>
+
+  <!-- ===== 1. THE STORY OF OLD TOWN ===== -->
+  <section class="otl-section" id="story">
+    <div class="otl-section-head">
+      <p class="otl-eyebrow">The Story</p>
+      <h2 class="otl-h2">The history <em>that shaped</em> these streets</h2>
+      <p class="otl-lede">Before it was the rooftop pools and gallery walks, Old Town was a $3.50-per-acre homestead, a Western-themed cattle town, and a postwar architectural laboratory. The neighborhood you walk today is layered with all of it.</p>
+    </div>
+    <div class="otl-timeline">
+      <div class="otl-era">
+        <div class="otl-era-img"><img src="../assets/little-red-schoolhouse.jpg" alt="Early Scottsdale family at a homestead, c. 1890s"></div>
+        <p class="otl-era-years">1888 — 1909</p>
+        <h3 class="otl-era-title">The Founding</h3>
+        <p class="otl-era-text">Winfield Scott homesteads 640 acres at $3.50 an acre. A newspaper typo turns "Orangedale" into "Scottsdale." The Little Red Schoolhouse goes up in 1909 and still stands today.</p>
+      </div>
+      <div class="otl-era">
+        <div class="otl-era-img"><img src="../assets/citrus-groves.jpg" alt="Aerial view of Scottsdale citrus groves and farmland, mid-20th century"></div>
+        <p class="otl-era-years">1910s — 1940s</p>
+        <h3 class="otl-era-title">The Western Era</h3>
+        <p class="otl-era-text">Cattle, citrus groves, dude ranches, and the cowboy iconography that still threads through Old Town's brand today. The original Main Street takes shape.</p>
+      </div>
+      <div class="otl-era">
+        <div class="otl-era-img"><img src="../assets/hallcraft-homes.jpg" alt="Hallcraft Homes Grand Opening advertisement, Scottsdale"></div>
+        <p class="otl-era-years">1950s — 1960s</p>
+        <h3 class="otl-era-title">The Hallcraft Years</h3>
+        <p class="otl-era-text">Hallcraft Homes, Ralph Haver, and Fred Woodworth define the postwar Old Town single-family experience. These are the homes today's buyers fight over and renovate with reverence.</p>
+        <div class="otl-era-callout">Live in a Hallcraft? <a href="contact.html" style="color: inherit; text-decoration: underline;">We'd love to feature your home.</a></div>
+      </div>
+      <div class="otl-era">
+        <div class="otl-era-img"><img src="../assets/arts-district.gif" alt="Scottsdale Arts District bronco sculpture at sunset on Main Street"></div>
+        <p class="otl-era-years">1970s — 1990s</p>
+        <h3 class="otl-era-title">The Arts District Era</h3>
+        <p class="otl-era-text">Fifth Avenue shops, the gallery scene takes off, and the rodeo culture cements as part of the local identity. The bones of today's walkable downtown form here.</p>
+      </div>
+      <div class="otl-era">
+        <div class="otl-era-img"><img src="../assets/the-w.jpg" alt="W Scottsdale hotel exterior at golden hour"></div>
+        <p class="otl-era-years">2000s — 2010s</p>
+        <h3 class="otl-era-title">The Reinvention</h3>
+        <p class="otl-era-text">Optima rises. The W Hotel arrives. Old Town becomes a nightlife destination and the entertainment district that out-of-towners come for and locals navigate around.</p>
+      </div>
+      <div class="otl-era">
+        <div class="otl-era-img"><img src="../assets/civic-center.jpg" alt="The newly renovated Scottsdale Civic Center pavilion"></div>
+        <p class="otl-era-years">2020s — Now</p>
+        <h3 class="otl-era-title">The Now</h3>
+        <p class="otl-era-text">The condo boom matures. The STR economy reshapes ownership. The new Civic Center reopens. Old Town is being rewritten in real time &mdash; we cover it weekly on the blog.</p>
+      </div>
+    </div>
+    <div style="margin-top: 48px;">
+      <a href="history.html" style="font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 4px; text-decoration: none;">Read the full timeline &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ===== 2. THE BUILDERS ===== -->
+  <section class="otl-section otl-section--alt" id="builders">
+    <div class="otl-section-inner">
+      <div class="otl-section-head">
+        <p class="otl-eyebrow">The Builders</p>
+        <h2 class="otl-h2">The names <em>behind</em> the homes</h2>
+        <p class="otl-lede">Most of Old Town's character traces back to a handful of builders and architects. Knowing who built what is half the work of buying smart in this neighborhood.</p>
+      </div>
+      <div class="otl-builders">
+        <a href="blog.html" class="otl-builder">
+          <div class="otl-builder-img"><img src="../assets/hallcraft-builder.jpg" alt="Hallcraft Homes"></div>
+          <p class="otl-builder-tag">Postwar &middot; 1950s—60s</p>
+          <h3 class="otl-builder-name">Hallcraft Homes</h3>
+          <p class="otl-builder-desc">The volume builder that shaped most of Old Town's original single-family stock. Compact, well-sited, full of period details worth preserving.</p>
+          <span class="otl-builder-link">Read the full story &rarr;</span>
+        </a>
+        <a href="blog.html" class="otl-builder">
+          <div class="otl-builder-img"><img src="../assets/ralph-haver.jpg" alt="Ralph Haver"></div>
+          <p class="otl-builder-tag">Architect &middot; Mid-century</p>
+          <h3 class="otl-builder-name">Ralph Haver</h3>
+          <p class="otl-builder-desc">Phoenix's defining mid-century architect. Haver homes in Old Town are cult objects today — clean lines, low pitches, courtyard-forward floor plans.</p>
+          <span class="otl-builder-link">Read the full story &rarr;</span>
+        </a>
+        <a href="blog.html" class="otl-builder">
+          <div class="otl-builder-img"><img src="../assets/fred-woodworth.jpg" alt="Fred Woodworth"></div>
+          <p class="otl-builder-tag">Builder &middot; Mid-century</p>
+          <h3 class="otl-builder-name">Fred Woodworth</h3>
+          <p class="otl-builder-desc">Quiet but consequential. Woodworth's neighborhoods are some of the most intact pockets of original Old Town today — patient buyers wait years for one to come up.</p>
+          <span class="otl-builder-link">Read the full story &rarr;</span>
+        </a>
+        <a href="blog.html" class="otl-builder">
+          <div class="otl-builder-img"><img src="../assets/tw-lewis.png" alt="T.W. Lewis"></div>
+          <p class="otl-builder-tag">Builder &middot; Late 20th c.</p>
+          <h3 class="otl-builder-name">T.W. Lewis</h3>
+          <p class="otl-builder-desc">The late-era builder behind some of Old Town's larger custom homes. Solid construction, generous lots, and floor plans that have aged well.</p>
+          <span class="otl-builder-link">Read the full story &rarr;</span>
+        </a>
+        <a href="blog.html" class="otl-builder">
+          <div class="otl-builder-img"><img src="../assets/optima-camelview.jpg" alt="Optima Camelview"></div>
+          <p class="otl-builder-tag">Modern &middot; 2010s—now</p>
+          <h3 class="otl-builder-name">Optima</h3>
+          <p class="otl-builder-desc">The high-rise that redefined what a Scottsdale condo could be. Vertical gardens, full amenity stacks, and the most-traded address in Old Town's luxury market.</p>
+          <span class="otl-builder-link">Read the full story &rarr;</span>
+        </a>
+        <a href="blog.html" class="otl-builder">
+          <div class="otl-builder-img"><img src="../assets/coming-soon.jpg" alt="More builder profiles coming soon"></div>
+          <p class="otl-builder-tag">In Progress</p>
+          <h3 class="otl-builder-name">More Coming Soon</h3>
+          <p class="otl-builder-desc">We're slowly profiling every builder and architect that shaped Old Town. Bookmark this page or subscribe below — we publish a new feature each month.</p>
+          <span class="otl-builder-link">Subscribe for updates &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. NEIGHBORHOODS AT A GLANCE ===== -->
+  <section class="otl-section" id="neighborhoods">
+    <div class="otl-section-head">
+      <p class="otl-eyebrow">The Neighborhoods</p>
+      <h2 class="otl-h2">Old Town is <em>not</em> one place</h2>
+      <p class="otl-lede">Each pocket has its own pace, its own price band, and its own kind of buyer. Here's the quick read &mdash; the deep dives live on the Neighborhoods page.</p>
+    </div>
+    <div class="otl-hoods">
+      <a href="neighborhoods.html" class="otl-hood">
+        <img src="../assets/home-luxury.jpg" alt="Arcadia">
+        <div class="otl-hood-content">
+          <h3 class="otl-hood-name">Arcadia</h3>
+          <p class="otl-hood-vibe">Citrus groves, ranch homes, the cult restaurant row</p>
+        </div>
+      </a>
+      <a href="neighborhoods.html" class="otl-hood">
+        <img src="../assets/home-interior.jpg" alt="Old Town Core">
+        <div class="otl-hood-content">
+          <h3 class="otl-hood-name">Old Town Core</h3>
+          <p class="otl-hood-vibe">Walkable, gallery-dense, the historic spine</p>
+        </div>
+      </a>
+      <a href="neighborhoods.html" class="otl-hood">
+        <img src="../assets/home-pool.jpg" alt="Downtown">
+        <div class="otl-hood-content">
+          <h3 class="otl-hood-name">Downtown</h3>
+          <p class="otl-hood-vibe">High-rises, nightlife, full-service condo living</p>
+        </div>
+      </a>
+      <a href="condos.html" class="otl-hood">
+        <img src="../assets/home-condo.jpg" alt="Optima">
+        <div class="otl-hood-content">
+          <h3 class="otl-hood-name">Optima</h3>
+          <p class="otl-hood-vibe">Vertical gardens, full amenities, the new flagship</p>
+        </div>
+      </a>
+    </div>
+    <div style="margin-top: 36px;">
+      <a href="neighborhoods.html" style="font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 4px; text-decoration: none;">All neighborhoods &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ===== 4. THE DIRECTORY ===== -->
+  <section class="otl-section otl-section--alt" id="directory">
+    <div class="otl-section-inner">
+      <div class="otl-section-head otl-section-head--center">
+        <p class="otl-eyebrow">The Directory</p>
+        <h2 class="otl-h2">The spots <em>worth</em> your Saturday</h2>
+        <p class="otl-lede">No copy-paste from anyone's website. Every entry written like a friend texting recommendations. Honest, specific, and updated quarterly.</p>
+      </div>
+      <div class="otl-dir-filters" id="dirFilters">
+        <button class="otl-dir-filter is-active" data-cat="all">All</button>
+        <button class="otl-dir-filter" data-cat="eat">Eat &amp; Drink</button>
+        <button class="otl-dir-filter" data-cat="coffee">Coffee &amp; Cafes</button>
+        <button class="otl-dir-filter" data-cat="shop">Shops</button>
+        <button class="otl-dir-filter" data-cat="art">Galleries &amp; Art</button>
+        <button class="otl-dir-filter" data-cat="wellness">Wellness</button>
+        <button class="otl-dir-filter" data-cat="stay">Hotels &amp; Stays</button>
+        <button class="otl-dir-filter" data-cat="night">Nightlife</button>
+        <button class="otl-dir-filter" data-cat="outdoor">Outdoor</button>
+      </div>
+      <div class="otl-dir-grid" id="dirGrid">
+        <!-- Eat & Drink -->
+        <div class="otl-dir-card" data-cat="eat">
+          <div class="otl-dir-img"><img src="../assets/blog-rooftop.jpg" alt="Citizen Public House"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Eat &amp; Drink</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
+            <h3 class="otl-dir-name">Citizen Public House</h3>
+            <p class="otl-dir-desc">The original chopped salad pilgrimage spot. Loud on weekends, perfect for a date night on a Tuesday.</p>
+            <span class="otl-dir-tag">Locally Owned</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="eat">
+          <div class="otl-dir-img"><img src="../assets/home-interior.jpg" alt="The Mission"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Eat &amp; Drink</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
+            <h3 class="otl-dir-name">The Mission</h3>
+            <p class="otl-dir-desc">Modern Latin, table-side guacamole, the patio when the weather is doing its thing. Go before 7 or after 9.</p>
+            <span class="otl-dir-tag">Date Night</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="night">
+          <div class="otl-dir-img"><img src="../assets/home-luxury.jpg" alt="Hidden Track Bottle Shop"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Nightlife</span><span class="otl-dir-hood">&middot; SouthBridge</span></div>
+            <h3 class="otl-dir-name">Hidden Track Bottle Shop</h3>
+            <p class="otl-dir-desc">Wine forward, knowledgeable staff, the kind of place where you ask for "something interesting under fifty" and leave thrilled.</p>
+            <span class="otl-dir-tag">Hidden Gem</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="coffee">
+          <div class="otl-dir-img"><img src="../assets/home-pool.jpg" alt="Coffee placeholder"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Coffee</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
+            <h3 class="otl-dir-name">Cartel Coffee Lab</h3>
+            <p class="otl-dir-desc">Local roaster, serious about beans, communal tables that fill up by 9 a.m. on Saturdays. Bring laptop, expect to share.</p>
+            <span class="otl-dir-tag">Work-Friendly</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="shop">
+          <div class="otl-dir-img"><img src="../assets/home-condo.jpg" alt="Boutique"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Shops</span><span class="otl-dir-hood">&middot; Fifth Ave</span></div>
+            <h3 class="otl-dir-name">5th &amp; Wine District</h3>
+            <p class="otl-dir-desc">The walk you take when you're not actually shopping but absolutely will buy something. Boutiques you won't find online.</p>
+            <span class="otl-dir-tag">Browse-Worthy</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="art">
+          <div class="otl-dir-img"><img src="../assets/home-mountain.jpg" alt="Gallery"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Galleries</span><span class="otl-dir-hood">&middot; Marshall Way</span></div>
+            <h3 class="otl-dir-name">Marshall Way Arts District</h3>
+            <p class="otl-dir-desc">Thursday Art Walk is the actual move. Twenty-plus galleries, free wine, and a chance to actually meet the artists. Old Town at its best.</p>
+            <span class="otl-dir-tag">Thursday Pick</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="wellness">
+          <div class="otl-dir-img"><img src="../assets/home-insider.jpg" alt="Wellness"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Wellness</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
+            <h3 class="otl-dir-name">The Joint Chiropractic</h3>
+            <p class="otl-dir-desc">Drop-in, no appointment, pay-as-you-go. Old Town's most efficient hour of self-care for a busy week.</p>
+            <span class="otl-dir-tag">Drop-In</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="stay">
+          <div class="otl-dir-img"><img src="../assets/home-str.jpg" alt="W Scottsdale"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Stays</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
+            <h3 class="otl-dir-name">W Scottsdale</h3>
+            <p class="otl-dir-desc">The pool scene that put Old Town on the bachelorette map. Worth a daycation pass if you have out-of-town guests in summer.</p>
+            <span class="otl-dir-tag">Best for Groups</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="outdoor">
+          <div class="otl-dir-img"><img src="../assets/hero-desert.jpg" alt="Camelback"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Outdoor</span><span class="otl-dir-hood">&middot; Camelback</span></div>
+            <h3 class="otl-dir-name">Camelback Mountain (Echo Canyon)</h3>
+            <p class="otl-dir-desc">Hard, popular, and worth the parking war. Go at sunrise on a weekday and it's the best cardio in the valley.</p>
+            <span class="otl-dir-tag">Sunrise Pick</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="eat">
+          <div class="otl-dir-img"><img src="../assets/blog-house.jpg" alt="FnB"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Eat &amp; Drink</span><span class="otl-dir-hood">&middot; Craftsman Court</span></div>
+            <h3 class="otl-dir-name">FnB</h3>
+            <p class="otl-dir-desc">Farm-to-table before farm-to-table was a phrase. Tiny, intentional, and consistently the best meal in Old Town when the menu shifts.</p>
+            <span class="otl-dir-tag">Special Occasion</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="coffee">
+          <div class="otl-dir-img"><img src="../assets/home-pool.jpg" alt="Press Coffee"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Coffee</span><span class="otl-dir-hood">&middot; Waterfront</span></div>
+            <h3 class="otl-dir-name">Press Coffee &mdash; Waterfront</h3>
+            <p class="otl-dir-desc">Bigger, brighter, more "post a story while you sip" than Cartel. The canal-side patio is the move when the weather lets you.</p>
+            <span class="otl-dir-tag">Patio Season</span>
+          </div>
+        </div>
+        <div class="otl-dir-card" data-cat="shop">
+          <div class="otl-dir-img"><img src="../assets/home-luxury.jpg" alt="Bashas"></div>
+          <div class="otl-dir-body">
+            <div class="otl-dir-meta"><span class="otl-dir-cat">Shops</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
+            <h3 class="otl-dir-name">Maya Boutique</h3>
+            <p class="otl-dir-desc">The wedding-guest-dress emergency solver. Stylist on the floor, owner usually there, and pieces you won't see on three other people at the wedding.</p>
+            <span class="otl-dir-tag">Locally Owned</span>
+          </div>
+        </div>
+      </div>
+      <div class="otl-dir-cta">
+        <p style="font-family: var(--font-body); font-size: 13px; color: #888; margin-bottom: 16px;">More entries every quarter. Submit your favorites below &darr;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. THIS MONTH ===== -->
+  <section class="otl-section" id="this-month">
+    <div class="otl-section-head">
+      <p class="otl-eyebrow">This Month in Old Town</p>
+      <h2 class="otl-h2">What's <em>actually</em> happening</h2>
+    </div>
+    <div class="otl-month">
+      <div class="otl-month-item">
+        <p class="otl-month-label">Opening</p>
+        <p class="otl-month-text">A new natural-wine concept lands on Marshall Way.</p>
+        <p class="otl-month-meta">Soft open mid-month</p>
+      </div>
+      <div class="otl-month-item">
+        <p class="otl-month-label">Closing</p>
+        <p class="otl-month-text">A long-running coffee shop wraps after eleven years.</p>
+        <p class="otl-month-meta">Last day end of month</p>
+      </div>
+      <div class="otl-month-item">
+        <p class="otl-month-label">Worth Knowing</p>
+        <p class="otl-month-text">Civic Center renovation reopens its public plaza.</p>
+        <p class="otl-month-meta">Ribbon cutting next Friday</p>
+      </div>
+      <div class="otl-month-item">
+        <p class="otl-month-label">On the Calendar</p>
+        <p class="otl-month-text">Spring training brings the visiting-friend rush back.</p>
+        <p class="otl-month-meta">Through end of March</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. BY SEASON ===== -->
+  <section class="otl-section otl-section--alt" id="seasons">
+    <div class="otl-section-inner">
+      <div class="otl-section-head">
+        <p class="otl-eyebrow">By Season</p>
+        <h2 class="otl-h2">Old Town, <em>year-round</em></h2>
+        <p class="otl-lede">Yes, even summer. Each season runs by a different rhythm here &mdash; and locals plan around all four.</p>
+      </div>
+      <div class="otl-seasons">
+        <a href="blog.html" class="otl-season otl-season-spring">
+          <div class="otl-season-content">
+            <h3 class="otl-season-name"><em>Spring</em> in Old Town</h3>
+            <p class="otl-season-text">Spring training, patio season, art walk. The six weeks everyone visits.</p>
+          </div>
+        </a>
+        <a href="blog.html" class="otl-season otl-season-summer">
+          <div class="otl-season-content">
+            <h3 class="otl-season-name"><em>Summer</em> in Old Town</h3>
+            <p class="otl-season-text">Yes, really. Daycations, dawn hikes, and how locals actually live in 110-degree heat.</p>
+          </div>
+        </a>
+        <a href="blog.html" class="otl-season otl-season-fall">
+          <div class="otl-season-content">
+            <h3 class="otl-season-name"><em>Fall</em> in Old Town</h3>
+            <p class="otl-season-text">The best six weeks of the year. Patio weather, restaurant openings, the city wakes up.</p>
+          </div>
+        </a>
+        <a href="blog.html" class="otl-season otl-season-winter">
+          <div class="otl-season-content">
+            <h3 class="otl-season-name"><em>Winter</em> in Old Town</h3>
+            <p class="otl-season-text">Snowbird season, holiday markets, and why everyone wants to be here in January.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. INSIDER LISTS ===== -->
+  <section class="otl-section" id="lists">
+    <div class="otl-section-head">
+      <p class="otl-eyebrow">Insider Lists</p>
+      <h2 class="otl-h2">The lists <em>locals</em> save</h2>
+      <p class="otl-lede">The shareable, bookmarkable, "wait let me text this to you" content. Updated as Old Town changes.</p>
+    </div>
+    <div class="otl-lists">
+      <a href="blog.html" class="otl-list">
+        <p class="otl-list-num">List 01</p>
+        <h3 class="otl-list-title">10 Spots Locals Take Out-of-Town Guests</h3>
+        <p class="otl-list-meta">Updated quarterly</p>
+      </a>
+      <a href="blog.html" class="otl-list">
+        <p class="otl-list-num">List 02</p>
+        <h3 class="otl-list-title">Where to Take a First Date in Old Town</h3>
+        <p class="otl-list-meta">7 picks &middot; by vibe</p>
+      </a>
+      <a href="blog.html" class="otl-list">
+        <p class="otl-list-num">List 03</p>
+        <h3 class="otl-list-title">Best Patios for the Weather Window</h3>
+        <p class="otl-list-meta">12 patios, ranked</p>
+      </a>
+      <a href="blog.html" class="otl-list">
+        <p class="otl-list-num">List 04</p>
+        <h3 class="otl-list-title">Coffee Shops to Actually Get Work Done</h3>
+        <p class="otl-list-meta">Wifi, outlets, vibe</p>
+      </a>
+      <a href="blog.html" class="otl-list">
+        <p class="otl-list-num">List 05</p>
+        <h3 class="otl-list-title">The Old Town Bucket List (50 Things)</h3>
+        <p class="otl-list-meta">The reference list</p>
+      </a>
+      <a href="blog.html" class="otl-list">
+        <p class="otl-list-num">List 06</p>
+        <h3 class="otl-list-title">Restaurants to Book Before Visitors Arrive</h3>
+        <p class="otl-list-meta">By how far in advance</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 8. FROM THE JOURNAL ===== -->
+  <section class="otl-section otl-section--alt" id="journal">
+    <div class="otl-section-inner">
+      <div class="otl-section-head">
+        <p class="otl-eyebrow">From the Journal</p>
+        <h2 class="otl-h2">Latest <em>Old Town Life</em> stories</h2>
+      </div>
+      <div class="otl-journal">
+        <a href="blog.html" class="otl-journal-card">
+          <div class="otl-journal-img"><img src="../assets/blog-house.jpg" alt="Hallcraft homes"></div>
+          <p class="otl-journal-tag">Architecture &middot; 8 min read</p>
+          <h3 class="otl-journal-title">Why Hallcraft Homes Are Old Town's Quiet Cult Object</h3>
+          <p class="otl-journal-excerpt">A field guide to spotting one, what they cost, and what to look for when you renovate.</p>
+        </a>
+        <a href="blog.html" class="otl-journal-card">
+          <div class="otl-journal-img"><img src="../assets/blog-rooftop.jpg" alt="Restaurant openings"></div>
+          <p class="otl-journal-tag">Eat &amp; Drink &middot; 5 min read</p>
+          <h3 class="otl-journal-title">Every Restaurant Opening in Old Town This Spring</h3>
+          <p class="otl-journal-excerpt">Tracked, ranked by anticipation, and the ones we're already booking on opening night.</p>
+        </a>
+        <a href="blog.html" class="otl-journal-card">
+          <div class="otl-journal-img"><img src="../assets/home-mountain.jpg" alt="Civic Center"></div>
+          <p class="otl-journal-tag">Old Town Now &middot; 6 min read</p>
+          <h3 class="otl-journal-title">What the New Civic Center Means for Old Town</h3>
+          <p class="otl-journal-excerpt">A walking tour, the history, and the businesses already adjusting their footprint.</p>
+        </a>
+      </div>
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="blog.html" style="font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 4px; text-decoration: none;">All journal stories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. CONTRIBUTE ===== -->
+  <section class="otl-contribute" id="contribute">
+    <p class="otl-eyebrow">Contribute</p>
+    <h2 class="otl-h2">Know a spot <em>we missed?</em></h2>
+    <p class="otl-lede" style="margin-bottom: 0;">A new opening. A piece of Old Town history we should cover. A local making something worth sharing. We're always listening.</p>
+    <form class="otl-contribute-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks &mdash; we got it.';">
+      <input type="text" placeholder="Your name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="What should we cover?" required>
+      <textarea placeholder="Tell us a bit more (the why, the who, the where)..."></textarea>
+      <button type="submit">Send the Tip</button>
+    </form>
+  </section>
+
+  <!-- ===== 10. NEWSLETTER ===== -->
+  <section class="otl-news">
+    <h2 class="otl-news-title">THE LOTS LETTER</h2>
+    <p class="otl-news-sub">One Tuesday email. Openings, listings, and what locals are actually doing this week.</p>
+    <form class="otl-news-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
+      <input type="email" placeholder="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="otl-news-note">Join 2,000+ Old Town insiders.</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+          <img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale" class="footer-brand-logo" style="margin-top: 20px; max-width: 110px; height: auto; display: block;">
+          <div class="footer-brokered" style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12);">
+            <p style="font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 16px;">Brokered by</p>
+            <img src="../assets/compass-white.png" alt="Selling Sonoran Group at Compass" style="max-width: 280px; width: 100%; height: auto; display: block; opacity: 0.92;">
+          </div>
+        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social" style="display: flex; gap: 14px; align-items: center;">
+          <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.49a8.16 8.16 0 0 0 4.77 1.52V6.56a4.85 4.85 0 0 1-1.84-.13z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Directory filter
+    (function(){
+      const filters = document.querySelectorAll('.otl-dir-filter');
+      const cards = document.querySelectorAll('#dirGrid .otl-dir-card');
+      filters.forEach(b => b.addEventListener('click', () => {
+        filters.forEach(x => x.classList.remove('is-active'));
+        b.classList.add('is-active');
+        const cat = b.dataset.cat;
+        cards.forEach(c => {
+          c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+        });
+      }));
+    })();
+    // Smooth anchor scrolling
+    document.querySelectorAll('.otl-anchors a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
+    });
+  </script>
+</body>
+</html>

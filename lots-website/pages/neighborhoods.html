@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Old Town Scottsdale Neighborhoods | Living Old Town Scottsdale</title>
+  <meta name="description" content="Every single-family neighborhood in and around Old Town Scottsdale. Home styles, price ranges, walk scores, and what it's actually like to live there.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .hood-card { border: 1px solid var(--border); background: #fff; overflow: hidden; transition: all 0.3s; margin-bottom: 32px; }
+    .hood-card:hover { box-shadow: 0 12px 40px rgba(79,55,43,0.08); }
+    .hood-card-inner { display: grid; grid-template-columns: 320px 1fr; }
+    .hood-card-image { background: var(--bg-alt); min-height: 320px; }
+    .hood-card-body { padding: 36px 40px; }
+    .hood-card-name { font-family: var(--font-display); font-size: 28px; color: var(--ink); margin-bottom: 4px; }
+    .hood-card-vibe { font-size: 12px; color: var(--terracotta); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+    .hood-card-desc { font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 20px; }
+    .hood-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .hood-stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 3px; }
+    .hood-stat-value { font-size: 14px; color: var(--text-primary); font-weight: 600; }
+    @media (max-width: 768px) {
+      .hood-card-inner { grid-template-columns: 1fr; }
+      .hood-card-image { min-height: 200px; }
+      .hood-card-body { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-living">Living</span>
+        <span class="nav-logo-main">Old Town Scottsdale</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="old-town-life.html">Old Town Life</a></li>
+        <li><a href="str-hub.html">STR Investing</a></li>
+        <li><a href="condos.html">Luxury Condos</a></li>
+        <li><a href="buy.html" class="active">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Work With Us</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="section-label text-center">Neighborhood Guide</div>
+      <h1 class="section-title text-center">Single-Family Neighborhoods</h1>
+      <p class="page-header-desc">
+        Every residential neighborhood in and around Old Town Scottsdale &mdash; with honest insight on home styles, pricing, walkability, and what it's actually like to live there.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Jump -->
+  <section style="background: #fff; padding: 32px 0; border-bottom: 1px solid var(--border);">
+    <div class="container text-center">
+      <div style="font-size: 12px; color: var(--text-faint); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;">Jump to Neighborhood</div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+        <a href="#scottsdale-estates" class="btn btn-sm btn-outline-dark">Scottsdale Estates</a>
+        <a href="#papago" class="btn btn-sm btn-outline-dark">Papago Parkway</a>
+        <a href="#vista-del-camino" class="btn btn-sm btn-outline-dark">Vista Del Camino</a>
+        <a href="#park-scottsdale" class="btn btn-sm btn-outline-dark">Park Scottsdale</a>
+        <a href="#south-scottsdale" class="btn btn-sm btn-outline-dark">South Scottsdale</a>
+        <a href="#indian-bend" class="btn btn-sm btn-outline-dark">Indian Bend</a>
+        <a href="#mccormick" class="btn btn-sm btn-outline-dark">McCormick Ranch</a>
+        <a href="#villa-monterey" class="btn btn-sm btn-outline-dark">Villa Monterey</a>
+        <a href="#continental" class="btn btn-sm btn-outline-dark">Continental Golf</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods -->
+  <section class="section" style="background: var(--bg-primary);">
+    <div class="container" style="max-width: 1100px;">
+
+      <!-- 1. Scottsdale Estates -->
+      <div class="hood-card" id="scottsdale-estates">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #c6a180, #ae6d47);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Scottsdale Estates</div>
+            <div class="hood-card-vibe">Mid-Century &bull; No HOA &bull; Walkable to Old Town</div>
+            <p class="hood-card-desc">The most sought-after single-family neighborhood near Old Town. Multiple subdivisions (Estates 1-11) of mid-century ranch homes built in the 1950s-60s, many extensively remodeled with modern updates. No HOA means freedom to renovate. A short walk or bike ride to El Dorado Park, the Greenbelt, and Old Town's core.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$450K &mdash; $900K+</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">7,000 &mdash; 10,000+ SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">65-75</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">Mid-Century Ranch</div></div>
+              <div><div class="hood-stat-label">HOA</div><div class="hood-stat-value">None</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Papago Parkway -->
+      <div class="hood-card" id="papago">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #d6c9a8, #c6a180);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Papago Parkway</div>
+            <div class="hood-card-vibe">Close to Papago Park &bull; No HOA &bull; Scottsdale + Tempe Access</div>
+            <p class="hood-card-desc">Southwest of Old Town near the Papago Park boundary, offering mid-century ranch homes with generous lots and no HOA. Many homes have been fully remodeled. Unique positioning gives easy access to both Old Town Scottsdale and Tempe, with Papago Golf Course and the park's hiking trails minutes away.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$500K &mdash; $800K</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">6,500 &mdash; 10,000+ SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">40-50</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">1950s-60s Ranch</div></div>
+              <div><div class="hood-stat-label">HOA</div><div class="hood-stat-value">None</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Vista Del Camino -->
+      <div class="hood-card" id="vista-del-camino">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #c2cdca, #9aafab);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Vista Del Camino</div>
+            <div class="hood-card-vibe">Family-Friendly &bull; Park Access &bull; Value Buy</div>
+            <p class="hood-card-desc">A peaceful, family-oriented neighborhood centered around Vista del Camino Park with its fishing lake, disc golf, and playgrounds. Adjacent to the Indian Bend Wash Greenbelt, these mid-century block homes from the 1960s-70s offer strong value for the Scottsdale market and a quieter pace of life.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$400K &mdash; $750K</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">6,000 &mdash; 9,000 SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">45-55</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">Ranch / Block</div></div>
+              <div><div class="hood-stat-label">Vibe</div><div class="hood-stat-value">Families &amp; Retirees</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Park Scottsdale -->
+      <div class="hood-card" id="park-scottsdale">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #f5e4c3, #d6c9a8);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Park Scottsdale</div>
+            <div class="hood-card-vibe">Starter Homes &bull; Townhomes &bull; Most Affordable</div>
+            <p class="hood-card-desc">One of the most budget-friendly entry points into Scottsdale. A mix of single-family homes and townhomes from the 1970s-80s between Thomas and McDowell Roads. Popular with first-time buyers and investors looking for a Scottsdale address at a more accessible price point.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$350K &mdash; $600K</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">Smaller / Patio</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">50-60</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">70s-80s / Townhome</div></div>
+              <div><div class="hood-stat-label">Best For</div><div class="hood-stat-value">First-Time Buyers</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. South Scottsdale / Hy-View -->
+      <div class="hood-card" id="south-scottsdale">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #ae6d47, #7a5a40);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">South Scottsdale &amp; Hy-View</div>
+            <div class="hood-card-vibe">Young Professionals &bull; Mountain Views &bull; Strong Reno Market</div>
+            <p class="hood-card-desc">South of Old Town toward the Tempe border, this area attracts young professionals and families with a vibrant renovation scene. The Hy-View pocket is known for larger lots and scenic mountain views. About a mile from Old Town's core with access to the 11-mile Indian Bend Wash Greenbelt.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$500K &mdash; $1M+</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">6,000 &mdash; 12,000 SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">50-65</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">Ranch + Modern Renos</div></div>
+              <div><div class="hood-stat-label">Vibe</div><div class="hood-stat-value">Young Professionals</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Indian Bend -->
+      <div class="hood-card" id="indian-bend">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #5a3f2c, #4f372b);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Indian Bend</div>
+            <div class="hood-card-vibe">Diverse Mix &bull; Greenbelt Access &bull; Central Location</div>
+            <p class="hood-card-desc">A diverse blend of residential subdivisions between Camelback and Indian Bend Roads. Ranges from modest townhomes to luxury estates, with multiple sub-communities and direct access to the Indian Bend Wash Greenbelt. Close to Continental Golf Course and centrally located for all of Scottsdale.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$500K &mdash; $1.2M+</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">5,000 &mdash; 15,000+ SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">40-55</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">Mixed / 60s-80s</div></div>
+              <div><div class="hood-stat-label">Nearby</div><div class="hood-stat-value">Continental Golf</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. McCormick Ranch -->
+      <div class="hood-card" id="mccormick">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #7a5a40, #5a3f2c);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">McCormick Ranch</div>
+            <div class="hood-card-vibe">Master-Planned &bull; Lakes &bull; Golf &bull; Bike Paths</div>
+            <p class="hood-card-desc">One of Scottsdale's most established master-planned communities with over 67 subdivisions. Known for 10 lakes, 25+ miles of bike paths, two golf courses, and mature landscaping. The southern edge is about 3-4 miles north of Old Town. Includes waterfront homes, golf course properties, and patio homes.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$550K &mdash; $1.5M+</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">6,000 &mdash; 15,000+ SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">30-45</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">Ranch / Custom</div></div>
+              <div><div class="hood-stat-label">67+ Subdivisions</div><div class="hood-stat-value">Bikes &bull; Lakes &bull; Golf</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Villa Monterey -->
+      <div class="hood-card" id="villa-monterey">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #d6c9a8, #c2cdca);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Villa Monterey</div>
+            <div class="hood-card-vibe">55+ Active Adult &bull; Walkable to Fashion Square &bull; Low Maintenance</div>
+            <p class="hood-card-desc">An 800-home active adult (55+) community along the Chaparral Road corridor. Built 1961-1969 with attached townhomes and condos. Walking distance to Fashion Square Mall. Community pool, spa, clubhouse, tennis courts, and walking trails. Resale-only market with affordable entry points for Scottsdale.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$400K &mdash; $750K</div></div>
+              <div><div class="hood-stat-label">Unit Sizes</div><div class="hood-stat-value">770 &mdash; 2,400 SF</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">45-55</div></div>
+              <div><div class="hood-stat-label">Type</div><div class="hood-stat-value">55+ Community</div></div>
+              <div><div class="hood-stat-label">800 Homes</div><div class="hood-stat-value">Resale Only</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Continental Golf Area -->
+      <div class="hood-card" id="continental">
+        <div class="hood-card-inner">
+          <div class="hood-card-image" style="background: linear-gradient(135deg, #9aafab, #c2cdca);"></div>
+          <div class="hood-card-body">
+            <div class="hood-card-name">Continental Golf Course Area</div>
+            <div class="hood-card-vibe">Golf Course Living &bull; Mix of Styles &bull; Central</div>
+            <p class="hood-card-desc">Surrounding the Continental Golf Club (a par-60 executive course open to the public), this area offers a mix of single-family homes, patio homes, and resort-style condos along the fairways. Central location with good walkability and access to multiple commercial areas.</p>
+            <div class="hood-stats">
+              <div><div class="hood-stat-label">Price Range</div><div class="hood-stat-value">$400K &mdash; $900K+</div></div>
+              <div><div class="hood-stat-label">Lot Sizes</div><div class="hood-stat-value">Varies by Sub</div></div>
+              <div><div class="hood-stat-label">Walk Score</div><div class="hood-stat-value">50-60</div></div>
+              <div><div class="hood-stat-label">Home Style</div><div class="hood-stat-value">Ranch / Patio</div></div>
+              <div><div class="hood-stat-label">Golf</div><div class="hood-stat-value">Public Par-60</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lead-capture">
+    <div class="container text-center">
+      <div class="section-label">Find Your Neighborhood</div>
+      <h2 class="section-title text-center" style="max-width: 600px; margin: 0 auto;">Not Sure Where to Start?</h2>
+      <p class="lead-capture-subtitle">Tell us about your lifestyle and we'll recommend the neighborhoods that fit. No obligation.</p>
+      <form class="lead-form" onsubmit="event.preventDefault(); handleLeadSubmit(this);">
+        <input type="text" placeholder="First Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit">Get Recommendations</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="neighborhoods.html">Neighborhoods</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy</a></li><li><a href="sell.html">Sell</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">TikTok</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Living Old Town Scottsdale</title>
+  <meta name="description" content="Get in touch with Naudia Andrescavage and the Selling Sonoran Group. Buy, sell, invest, or connect about Old Town Scottsdale real estate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-living">Living</span>
+        <span class="nav-logo-main">Old Town Scottsdale</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="old-town-life.html">Old Town Life</a></li>
+        <li><a href="str-hub.html">STR Investing</a></li>
+        <li><a href="condos.html">Luxury Condos</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta active">Work With Us</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="section-label text-center">Let's Connect</div>
+      <h1 class="section-title text-center">Work With Us</h1>
+      <p class="page-header-desc">
+        Whether you're buying, selling, investing, or just have questions about Old Town &mdash; we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Multi-Path Selection -->
+  <section style="background: #fff; padding: 48px 0; border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto;">
+        <div style="padding: 32px 20px; border: 2px solid var(--terracotta); text-align: center; cursor: pointer; background: rgba(174, 109, 71, 0.04);">
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 4px;">Buy</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Find a home</div>
+        </div>
+        <div style="padding: 32px 20px; border: 1px solid var(--border); text-align: center; cursor: pointer; transition: all 0.3s;">
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 4px;">Sell</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Get a valuation</div>
+        </div>
+        <div style="padding: 32px 20px; border: 1px solid var(--border); text-align: center; cursor: pointer; transition: all 0.3s;">
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 4px;">Invest</div>
+          <div style="font-size: 12px; color: var(--text-soft);">STR opportunities</div>
+        </div>
+        <div style="padding: 32px 20px; border: 1px solid var(--border); text-align: center; cursor: pointer; transition: all 0.3s;">
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 4px;">General</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Just say hello</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info -->
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Form -->
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 28px; color: var(--ink); margin-bottom: 8px;">Send Us a Message</h2>
+          <p style="font-size: 14px; color: var(--text-soft); margin-bottom: 32px;">We respond to every inquiry within 24 hours. No automated follow-ups &mdash; just a real conversation.</p>
+
+          <form class="contact-form" onsubmit="event.preventDefault(); handleContactSubmit(this);">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="First name" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last name" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Email address" required>
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="(480) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>I'm Interested In</label>
+              <select required>
+                <option value="">Select one</option>
+                <option>Buying in Old Town</option>
+                <option>Selling my home</option>
+                <option>STR / Investment property</option>
+                <option>Relocating to Scottsdale</option>
+                <option>Market report / information</option>
+                <option>Partnership / collaboration</option>
+                <option>General question</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us a bit about what you're looking for..." rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Timeline</label>
+              <select>
+                <option value="">Select timeline (optional)</option>
+                <option>Ready now</option>
+                <option>1-3 months</option>
+                <option>3-6 months</option>
+                <option>6-12 months</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            <p style="font-size: 12px; color: var(--text-faint); margin-top: 8px; text-align: center;">No spam. No pressure. Just a real conversation.</p>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">
+              <a href="mailto:naudia@sellingsonoran.com" style="color: var(--ink);">naudia@sellingsonoran.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-value">
+              <a href="tel:+17026864252" style="color: var(--ink);">(702) 686-4252</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-label">Office</div>
+            <div class="contact-info-value" style="font-size: 16px;">
+              Compass Real Estate<br>
+              Scottsdale, AZ
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-label">Social</div>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+              <a href="https://instagram.com/naudia_renee" target="_blank" rel="noopener" style="font-size: 14px; color: var(--text-soft);">Instagram &mdash; @naudia_renee</a>
+              <a href="#" target="_blank" rel="noopener" style="font-size: 14px; color: var(--text-soft);">YouTube &mdash; Living Scottsdale</a>
+              <a href="#" target="_blank" rel="noopener" style="font-size: 14px; color: var(--text-soft);">TikTok &mdash; @naudia_renee</a>
+            </div>
+          </div>
+
+          <!-- Schedule CTA -->
+          <div style="background: var(--bg-alt); padding: 32px; margin-top: 32px; border: 1px solid var(--border);">
+            <h3 style="font-family: var(--font-display); font-size: 22px; color: var(--ink); margin-bottom: 8px;">Prefer to Talk?</h3>
+            <p style="font-size: 14px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px;">
+              Book a 15-minute discovery call directly on Naudia's calendar. No pressure, no pitch &mdash; just a conversation about your goals.
+            </p>
+            <a href="#" class="btn btn-primary btn-sm" style="width: 100%; text-align: center;">Schedule a Call</a>
+            <p style="font-size: 11px; color: var(--text-faint); margin-top: 8px; text-align: center;">Calendly integration placeholder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <ul class="footer-links">
+            <li><a href="old-town-life.html">Old Town Life</a></li>
+            <li><a href="str-hub.html">STR Investment</a></li>
+            <li><a href="condos.html">Luxury Condos</a></li>
+            <li><a href="blog.html">The LOTS Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Resources</div>
+          <ul class="footer-links">
+            <li><a href="buy.html">Buy in Old Town</a></li>
+            <li><a href="sell.html">Sell in Old Town</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li>
+            <li><a href="tel:+17026864252">(702) 686-4252</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

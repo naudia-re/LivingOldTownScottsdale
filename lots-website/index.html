@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Old Town Scottsdale | Your Neighborhood. Your Lifestyle. Your Home.</title>
+  <meta name="description" content="Living Old Town Scottsdale is your trusted local resource for Old Town Scottsdale real estate, lifestyle, condos, STR investment, and neighborhood guides.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { background: #fff; }
+
+    /* --- Nav (Updated with dropdown + YouTube CTA) --- */
+    .ap-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; background: #fff; position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .ap-nav-logo img {
+      height: 80px; width: auto;
+      margin: -12px 0;
+    }
+    .ap-nav-logo-text {
+      font-family: var(--font-display); font-size: 14px; font-weight: 400;
+      color: var(--ink); display: flex; flex-direction: column; gap: 1px;
+    }
+    .ap-nav-logo-text span:first-child { font-style: italic; font-size: 15px; }
+    .ap-nav-logo-text span:last-child { font-family: var(--font-body); font-size: 8px; font-weight: 500; letter-spacing: 0.45em; text-transform: uppercase; color: #888; }
+    .ap-nav-center {
+      display: flex; gap: 32px; align-items: center;
+    }
+    .ap-nav-center > a, .ap-nav-dd-trigger {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #444;
+      background: none; border: none; cursor: pointer; padding: 0;
+    }
+    .ap-nav-center > a:hover, .ap-nav-dd-trigger:hover { opacity: 0.5; }
+    /* Dropdown */
+    .ap-nav-dd {
+      position: relative;
+    }
+    .ap-nav-dd-trigger::after {
+      content: ' ▾'; font-size: 8px; opacity: 0.5;
+    }
+    .ap-nav-dd-menu {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #fff; border: 1px solid #eee; padding: 12px 0;
+      min-width: 200px; margin-top: 12px; z-index: 200;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .ap-nav-dd:hover .ap-nav-dd-menu { display: block; }
+    .ap-nav-dd-menu a {
+      display: block; padding: 10px 24px;
+      font-family: var(--font-body); font-size: 11px; font-weight: 400;
+      letter-spacing: 0.1em; color: #555; transition: background 0.2s;
+    }
+    .ap-nav-dd-menu a:hover { background: #fafafa; opacity: 1; color: var(--ink); }
+    /* YouTube CTA button */
+    .ap-nav-yt {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; background: #c4392d; color: #fff;
+      font-family: var(--font-body); font-size: 9px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .ap-nav-yt:hover { background: #a82e24; opacity: 1; }
+    .ap-nav-yt svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* --- Video Hero --- */
+    .ap-hero-video {
+      position: relative; width: 100%; aspect-ratio: 21/9;
+      overflow: hidden; background: #111;
+      margin: 0;
+    }
+    .ap-hero-video video {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .ap-hero-video-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.15) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 48px;
+    }
+    .ap-hero-video-logo {
+      width: 160px; height: auto; margin-bottom: 24px;
+      filter: brightness(0) invert(1);
+    }
+    .ap-hero-video-tagline {
+      font-family: var(--font-display); font-size: 14px; font-weight: 400;
+      letter-spacing: 0.5em; text-transform: uppercase; color: rgba(255,255,255,0.8);
+    }
+    /* Fallback for no video — use hero image with subtle motion */
+    .ap-hero-img-motion {
+      position: relative; width: 100%; overflow: hidden; background: #111;
+    }
+    .ap-hero-img-motion img {
+      width: 100%; aspect-ratio: 21/9; object-fit: cover;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.06); }
+    }
+    .ap-hero-img-motion .ap-hero-video-overlay {
+      position: absolute; inset: 0;
+    }
+
+    /* --- Giant Headline (below hero) --- */
+    .ap-hero-text {
+      padding: 48px 48px 32px;
+    }
+    .ap-hero-headline {
+      font-family: var(--font-display); font-size: clamp(48px, 7vw, 110px);
+      font-weight: 300; color: var(--ink); line-height: 0.95;
+      letter-spacing: 0.02em; text-transform: uppercase;
+    }
+
+    /* --- Statement Block --- */
+    .ap-statement {
+      padding: 100px 48px; text-align: center; max-width: 900px; margin: 0 auto;
+    }
+    .ap-statement-headline {
+      font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300; line-height: 1.15; color: var(--ink);
+      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 32px;
+    }
+    .ap-statement-headline em {
+      font-style: italic; text-transform: none; letter-spacing: 0;
+    }
+    .ap-statement-body {
+      font-size: 15px; font-weight: 300; color: #666; line-height: 1.9; max-width: 640px; margin: 0 auto;
+    }
+    .ap-statement-label {
+      font-family: var(--font-display); font-size: 16px; font-style: italic;
+      color: var(--ink); margin-top: 48px;
+    }
+    .ap-statement-logo {
+      margin: 32px auto 0; display: block;
+      width: 180px; height: auto; opacity: 0.95;
+    }
+
+    /* --- Feature Strip (3 col, editorial) --- */
+    .ap-features {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
+      border-top: 1px solid #eee;
+    }
+    .ap-feature {
+      padding: 0; border-right: 1px solid #eee; cursor: pointer;
+    }
+    .ap-feature:last-child { border-right: none; }
+    .ap-feature:hover img { transform: scale(1.03); }
+    .ap-feature-img { overflow: hidden; }
+    .ap-feature-img img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      transition: transform 0.7s var(--ease);
+    }
+    .ap-feature-body { padding: 28px 36px 40px; }
+    .ap-feature-tag {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 14px;
+    }
+    .ap-feature-title {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      color: var(--ink); line-height: 1.25; margin-bottom: 12px;
+    }
+    .ap-feature-desc {
+      font-size: 13px; font-weight: 300; color: #777; line-height: 1.7;
+    }
+    .ap-feature-link {
+      display: inline-block; margin-top: 20px; font-family: var(--font-body);
+      font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px;
+    }
+
+    /* --- Full-width Image Break --- */
+    .ap-image-break {
+      padding: 0 48px; margin: 80px 0;
+    }
+    .ap-image-break img {
+      width: 100%; aspect-ratio: 21/9; object-fit: cover;
+    }
+
+    /* --- YouTube Scroll Strip --- */
+    .ap-yt-strip { padding: 96px 0 80px; background: #fff; }
+    .ap-yt-strip-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 0 48px; margin-bottom: 36px; gap: 32px; flex-wrap: wrap;
+    }
+    .ap-yt-strip-head-left { max-width: 640px; }
+    .ap-yt-strip-label {
+      font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+      color: #ae6d47; margin-bottom: 14px; font-weight: 500;
+    }
+    .ap-yt-strip-title {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(34px, 4vw, 48px); font-weight: 400; color: #1a1a1a;
+      line-height: 1.1; letter-spacing: -0.01em;
+    }
+    .ap-yt-strip-title em { font-style: italic; }
+    .ap-yt-strip-sub {
+      font-size: 14px; color: #6b6358; margin-top: 12px;
+      font-weight: 300; line-height: 1.7;
+    }
+    .ap-yt-strip-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #cc0000; color: #fff; padding: 14px 24px;
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      font-weight: 500; transition: background 0.3s;
+      white-space: nowrap;
+    }
+    .ap-yt-strip-cta:hover { background: #a30000; opacity: 1; }
+    .ap-yt-strip-cta::before {
+      content: ''; width: 0; height: 0;
+      border-style: solid; border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent #fff;
+      display: inline-block;
+    }
+    .ap-yt-scroll-wrap { position: relative; }
+    .ap-yt-scroll {
+      display: flex; gap: 20px; overflow-x: auto;
+      padding: 4px 48px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin; scrollbar-color: #d6c9a8 transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ap-yt-scroll::-webkit-scrollbar { height: 6px; }
+    .ap-yt-scroll::-webkit-scrollbar-track { background: transparent; }
+    .ap-yt-scroll::-webkit-scrollbar-thumb { background: #d6c9a8; border-radius: 3px; }
+    .ap-yt-card {
+      flex: 0 0 360px; scroll-snap-align: start;
+      text-decoration: none; color: inherit; cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.25,0.1,0.25,1);
+    }
+    .ap-yt-card:hover { opacity: 1; transform: translateY(-4px); }
+    .ap-yt-card-thumb {
+      position: relative; aspect-ratio: 16/9;
+      overflow: hidden; background: #f3ede4; margin-bottom: 14px;
+    }
+    .ap-yt-card-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25,0.1,0.25,1);
+    }
+    .ap-yt-card:hover .ap-yt-card-thumb img { transform: scale(1.05); }
+    .ap-yt-card-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(204, 0, 0, 0.92);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    .ap-yt-card:hover .ap-yt-card-play {
+      background: #cc0000; transform: translate(-50%,-50%) scale(1.1);
+    }
+    .ap-yt-card-play::after {
+      content: ''; width: 0; height: 0;
+      border-style: solid; border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 3px;
+    }
+    .ap-yt-card-date {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #a49b8f; margin-bottom: 6px; font-weight: 500;
+    }
+    .ap-yt-card-title {
+      font-family: 'Cormorant', serif;
+      font-size: 20px; font-weight: 400; color: #1a1a1a;
+      line-height: 1.3;
+    }
+    .ap-yt-scroll-arrows {
+      display: flex; gap: 8px; align-self: flex-end;
+    }
+    .ap-yt-arrow {
+      width: 44px; height: 44px; border: 1px solid #e8e0d4;
+      background: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s; color: #1a1a1a;
+    }
+    .ap-yt-arrow:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+    .ap-yt-arrow:disabled { opacity: 0.3; cursor: default; }
+    @media (max-width: 768px) {
+      .ap-yt-strip { padding: 64px 0 56px; }
+      .ap-yt-strip-head { padding: 0 24px; }
+      .ap-yt-scroll { padding: 4px 24px 24px; }
+      .ap-yt-card { flex: 0 0 280px; }
+      .ap-yt-scroll-arrows { display: none; }
+    }
+
+    /* --- Overlap Editorial --- */
+    .ap-editorial {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      min-height: 580px;
+    }
+    .ap-editorial-img { overflow: hidden; }
+    .ap-editorial-img img { width: 100%; height: 100%; object-fit: cover; }
+    .ap-editorial--square { min-height: 0; align-items: center; }
+    .ap-editorial--square .ap-editorial-img { aspect-ratio: 1/1; max-height: 560px; margin: 40px; }
+    .ap-editorial-content {
+      padding: 72px 80px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .ap-editorial-tag {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 20px;
+    }
+    .ap-editorial-title {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300; color: var(--ink); line-height: 1.15;
+      text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 20px;
+    }
+    .ap-editorial-body {
+      font-size: 14px; font-weight: 300; color: #666; line-height: 1.85; margin-bottom: 32px;
+    }
+    .ap-editorial .btn { align-self: flex-start; }
+
+    /* --- Reviews Carousel --- */
+    .ap-reviews { padding: 80px 48px; text-align: center; max-width: 900px; margin: 0 auto; }
+    .ap-reviews-eyebrow {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 16px;
+    }
+    .ap-reviews-stars {
+      display: flex; justify-content: center; gap: 4px; margin-bottom: 24px;
+      color: #d4a017; font-size: 16px; letter-spacing: 2px;
+    }
+    .ap-reviews-track { position: relative; min-height: 220px; }
+    .ap-review-slide {
+      position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    .ap-review-slide.is-active { opacity: 1; pointer-events: auto; position: relative; }
+    .ap-review-quote {
+      font-family: var(--font-display); font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 300; font-style: italic; color: var(--ink);
+      line-height: 1.6; margin-bottom: 28px;
+    }
+    .ap-review-meta {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      font-family: var(--font-body); font-size: 11px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #999; font-weight: 500;
+    }
+    .ap-review-google {
+      width: 14px; height: 14px; display: inline-flex; align-items: center;
+    }
+    .ap-reviews-dots {
+      display: flex; justify-content: center; gap: 10px; margin-top: 36px;
+    }
+    .ap-reviews-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #d6c9a8;
+      border: none; cursor: pointer; padding: 0; opacity: 0.5;
+      transition: opacity 0.3s, background 0.3s;
+    }
+    .ap-reviews-dot.is-active { opacity: 1; background: var(--ink); }
+    .ap-reviews-dot:hover { opacity: 1; }
+
+    /* --- Stats Strip --- */
+    .ap-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+    }
+    .ap-stat {
+      text-align: center; padding: 52px 24px;
+      border-right: 1px solid #eee;
+    }
+    .ap-stat:last-child { border-right: none; }
+    .ap-stat-num {
+      font-family: var(--font-display); font-size: 44px; font-weight: 300;
+      color: var(--ink); line-height: 1; margin-bottom: 8px;
+    }
+    .ap-stat-label {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #aaa;
+    }
+
+    /* --- YouTube Magazine --- */
+    .ap-yt { padding: 100px 48px; background: #fafafa; }
+    .ap-yt-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 48px; flex-wrap: wrap; gap: 16px;
+    }
+    .ap-yt-title {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 50px);
+      font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink);
+    }
+    .ap-yt-sub {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 24px; background: #c4392d; color: #fff;
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+    }
+    .ap-yt-sub:hover { background: #a82e24; opacity: 1; }
+    .ap-yt-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 32px; }
+    .ap-yt-main { cursor: pointer; }
+    .ap-yt-main:hover img { transform: scale(1.02); }
+    .ap-yt-thumb { aspect-ratio: 16/9; overflow: hidden; position: relative; margin-bottom: 16px; }
+    .ap-yt-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .ap-yt-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 64px; height: 64px; background: rgba(0,0,0,0.5); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ap-yt-play::after { content:''; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+    .ap-yt-channel { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #999; margin-bottom: 6px; }
+    .ap-yt-vid-title { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--ink); line-height: 1.3; }
+    .ap-yt-meta { font-size: 11px; font-weight: 300; color: #aaa; margin-top: 6px; }
+    .ap-yt-sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .ap-yt-sm { display: grid; grid-template-columns: 140px 1fr; gap: 16px; cursor: pointer; }
+    .ap-yt-sm:hover img { transform: scale(1.03); }
+    .ap-yt-sm-thumb { aspect-ratio: 16/9; overflow: hidden; }
+    .ap-yt-sm-thumb img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s var(--ease); }
+    .ap-yt-sm-title { font-family: var(--font-display); font-size: 15px; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
+    .ap-yt-sm-meta { font-size: 10px; font-weight: 300; color: #aaa; }
+
+    /* --- Blog Editorial Row --- */
+    .ap-blog-header { padding: 80px 48px 40px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+    .ap-blog-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 50px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink); }
+    .ap-blog-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .ap-blog-card {
+      display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #eee; cursor: pointer;
+    }
+    .ap-blog-card:nth-child(odd) { border-right: 1px solid #eee; }
+    .ap-blog-card:hover img { transform: scale(1.03); }
+    .ap-blog-img { overflow: hidden; }
+    .ap-blog-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .ap-blog-body { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .ap-blog-tag { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+    .ap-blog-card-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 10px; }
+    .ap-blog-excerpt { font-size: 13px; font-weight: 300; color: #777; line-height: 1.7; }
+
+    /* --- Newsletter --- */
+    .ap-newsletter { background: var(--ink); padding: 80px 48px; text-align: center; }
+    .ap-newsletter-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; margin-bottom: 12px; }
+    .ap-newsletter p { font-size: 14px; font-weight: 300; color: #888; margin-bottom: 32px; }
+
+    /* --- Paths --- */
+    .ap-paths {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #eee;
+    }
+    .ap-path {
+      padding: 56px 32px; text-align: center; border-right: 1px solid #eee;
+      text-decoration: none; transition: background 0.3s;
+    }
+    .ap-path:last-child { border-right: none; }
+
+    /* --- Instagram Strip --- */
+    .ap-ig { padding: 80px 0 88px; background: #fff; border-bottom: 1px solid #eee; }
+    .ap-ig-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 32px; padding: 0 48px; margin-bottom: 32px; max-width: 1400px; margin-left: auto; margin-right: auto;
+    }
+    .ap-ig-head-left { max-width: 640px; }
+    .ap-ig-eyebrow {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 12px;
+    }
+    .ap-ig-title {
+      font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 300; color: var(--ink); line-height: 1.15;
+      text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .ap-ig-title em { font-style: italic; }
+    .ap-ig-handle {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: 12px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--ink); text-decoration: none;
+      padding: 14px 22px; border: 1px solid var(--ink);
+      transition: background 0.3s, color 0.3s;
+    }
+    .ap-ig-handle:hover { background: var(--ink); color: #fff; }
+    .ap-ig-scroll {
+      display: flex; gap: 12px; overflow-x: auto;
+      padding: 0 48px 16px; scroll-snap-type: x mandatory;
+      scrollbar-width: thin; scrollbar-color: #d6c9a8 transparent;
+    }
+    .ap-ig-scroll::-webkit-scrollbar { height: 6px; }
+    .ap-ig-scroll::-webkit-scrollbar-track { background: transparent; }
+    .ap-ig-scroll::-webkit-scrollbar-thumb { background: #d6c9a8; border-radius: 3px; }
+    .ap-ig-tile {
+      flex: 0 0 280px; aspect-ratio: 1/1; scroll-snap-align: start;
+      position: relative; overflow: hidden; background: #f5e4c3;
+      text-decoration: none; display: block;
+    }
+    .ap-ig-tile img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease, filter 0.3s;
+    }
+    .ap-ig-tile:hover img { transform: scale(1.05); filter: brightness(0.7); }
+    .ap-ig-tile-overlay {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s; color: #fff;
+    }
+    .ap-ig-tile:hover .ap-ig-tile-overlay { opacity: 1; }
+    .ap-ig-tile-overlay svg { width: 28px; height: 28px; }
+    .ap-path:hover { background: #fafafa; opacity: 1; }
+    .ap-path-title { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .ap-path-desc { font-size: 12px; font-weight: 300; color: #999; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .ap-nav { padding: 20px 24px; }
+      .ap-hero-text { padding: 16px 24px 24px; }
+      .ap-photos { padding: 0 24px; }
+      .ap-statement { padding: 72px 24px; }
+      .ap-features { grid-template-columns: 1fr; }
+      .ap-feature { border-right: none; border-bottom: 1px solid #eee; }
+      .ap-editorial { grid-template-columns: 1fr; }
+      .ap-editorial-img { aspect-ratio: 16/10; }
+      .ap-editorial-content { padding: 48px 24px; }
+      .ap-stats { grid-template-columns: repeat(2, 1fr); }
+      .ap-yt { padding: 72px 24px; }
+      .ap-yt-grid { grid-template-columns: 1fr; }
+      .ap-blog-grid { grid-template-columns: 1fr; }
+      .ap-blog-card:nth-child(odd) { border-right: none; }
+      .ap-paths { grid-template-columns: 1fr 1fr; }
+      .ap-path { border-bottom: 1px solid #eee; }
+      .ap-image-break { padding: 0 24px; margin: 48px 0; }
+    }
+    @media (max-width: 768px) {
+      .ap-nav-links { display: none; }
+      .ap-photos { grid-template-columns: 1fr; }
+      .ap-blog-card { grid-template-columns: 1fr; }
+      .ap-yt-sm { grid-template-columns: 1fr; }
+      .ap-paths { grid-template-columns: 1fr; }
+      .ap-path { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV (Logo + Dropdown + YouTube CTA) ===== -->
+  <nav class="ap-nav">
+    <a href="index.html" class="ap-nav-logo">
+      <img src="assets/lots-logo.png" alt="Living Old Town Scottsdale">
+    </a>
+    <div class="ap-nav-center">
+      <a href="index.html">Home</a>
+      <a href="pages/old-town-life.html">Old Town Life</a>
+      <div class="ap-nav-dd">
+        <button class="ap-nav-dd-trigger">Neighborhoods</button>
+        <div class="ap-nav-dd-menu">
+          <a href="pages/neighborhood-directory.html">Full Directory</a>
+          <a href="pages/neighborhoods.html">Single Family</a>
+          <a href="pages/condos.html">Luxury Condos</a>
+          <a href="pages/history.html">Old Town History</a>
+        </div>
+      </div>
+      <a href="pages/str-hub.html">STR Investing</a>
+      <a href="pages/buy.html">Buy</a>
+      <a href="pages/sell.html">Sell</a>
+      <a href="pages/blog.html">Blog</a>
+    </div>
+    <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-nav-yt">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube
+    </a>
+  </nav>
+
+  <!-- ===== GIANT HEADLINE (Aperol-style, above video) ===== -->
+  <div class="ap-hero-text">
+    <h1 class="ap-hero-headline"><em>LIVING</em> OLD TOWN<br>SCOTTSDALE</h1>
+  </div>
+
+  <!-- ===== HERO VIDEO (Clean, no overlay) ===== -->
+  <div class="ap-hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="assets/hero-video.mp4" type="video/mp4">
+      <source src="assets/hero-video.mov" type="video/quicktime">
+    </video>
+  </div>
+
+  <!-- ===== STATEMENT ===== -->
+  <div class="ap-statement">
+    <h2 class="ap-statement-headline">WHERE OLD TOWN<br><em>ACTUALLY</em> LIVES</h2>
+    <p class="ap-statement-body">Honest insight, real perspective, and local expertise from the locals who walks these streets every day. Welcome to the neighborhood, before you even move in.</p>
+    <p class="ap-statement-label">Old Town Scottsdale Real Estate &amp; Lifestyle</p>
+    <img src="assets/lots-logo.png" alt="Living Old Town Scottsdale" class="ap-statement-logo">
+  </div>
+
+  <!-- ===== 3-UP FEATURES ===== -->
+  <div class="ap-features">
+    <div class="ap-feature">
+      <div class="ap-feature-img"><img src="assets/home-condo.jpg?v=2" alt="Old Town Scottsdale condo building with bougainvillea-lined balconies"></div>
+      <div class="ap-feature-body">
+        <div class="ap-feature-tag">Luxury Living</div>
+        <h3 class="ap-feature-title">Luxury Condo Communities</h3>
+        <p class="ap-feature-desc">Optima, Vue, 7180, and more. Amenities, pricing, and walkability by building.</p>
+        <a href="pages/condos.html" class="ap-feature-link">Explore &rarr;</a>
+      </div>
+    </div>
+    <div class="ap-feature">
+      <div class="ap-feature-img"><img src="assets/home-str.jpg?v=3" alt="Airbnb listings in the desert — Old Town Scottsdale short-term rental market"></div>
+      <div class="ap-feature-body">
+        <div class="ap-feature-tag">Investment</div>
+        <h3 class="ap-feature-title">Short-Term Rental Hub</h3>
+        <p class="ap-feature-desc">ROI calculators, zoning maps, and everything you need to invest in Old Town STRs.</p>
+        <a href="pages/str-hub.html" class="ap-feature-link">Explore &rarr;</a>
+      </div>
+    </div>
+    <div class="ap-feature">
+      <div class="ap-feature-img"><img src="assets/home-insider.jpg?v=4" alt="Aerial view of an Old Town Scottsdale neighborhood at golden hour"></div>
+      <div class="ap-feature-body">
+        <div class="ap-feature-tag">Lifestyle</div>
+        <h3 class="ap-feature-title">Old Town Life</h3>
+        <p class="ap-feature-desc">Restaurants, events, hidden gems, and the real rhythm of Old Town living.</p>
+        <a href="pages/old-town-life.html" class="ap-feature-link">Explore &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== YOUTUBE VIDEO STRIP ===== -->
+  <section class="ap-yt-strip">
+    <div class="ap-yt-strip-head">
+      <div class="ap-yt-strip-head-left">
+        <div class="ap-yt-strip-label">From the Channel</div>
+        <h2 class="ap-yt-strip-title">Old Town, <em>on camera.</em></h2>
+        <p class="ap-yt-strip-sub">Walk the neighborhoods, tour the buildings, and get the honest local take &mdash; new video every week on YouTube.</p>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <div class="ap-yt-scroll-arrows">
+          <button class="ap-yt-arrow" id="ytPrev" aria-label="Scroll left">&#8592;</button>
+          <button class="ap-yt-arrow" id="ytNext" aria-label="Scroll right">&#8594;</button>
+        </div>
+        <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-yt-strip-cta">Subscribe</a>
+      </div>
+    </div>
+    <div class="ap-yt-scroll-wrap">
+      <div class="ap-yt-scroll" id="ytScroll">
+        <a href="https://www.youtube.com/watch?v=Nd-cTeVV1Mk" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/Nd-cTeVV1Mk/hqdefault.jpg" alt="Everything NEW & Coming Soon to Scottsdale in 2026" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Jan 2026</div>
+          <h3 class="ap-yt-card-title">Everything New &amp; Coming Soon to Scottsdale in 2026</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=_M9_I0jryaA" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/_M9_I0jryaA/hqdefault.jpg" alt="New Construction in Scottsdale" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Nov 2025</div>
+          <h3 class="ap-yt-card-title">New Construction in Scottsdale? You Don't See This Every Day</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=m-0I-DBVwc4" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/m-0I-DBVwc4/hqdefault.jpg" alt="I LEFT Las Vegas for AMAZING Scottsdale Arizona" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Oct 2025</div>
+          <h3 class="ap-yt-card-title">I Left Las Vegas for Amazing Scottsdale Arizona</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=MpUukJ5a7xw" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/MpUukJ5a7xw/hqdefault.jpg" alt="Top 5 Best Neighborhoods in Scottsdale" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Sep 2025</div>
+          <h3 class="ap-yt-card-title">The Top 5 Best Neighborhoods in Scottsdale (For Different Lifestyles)</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=z5Vtmh7xdNQ" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/z5Vtmh7xdNQ/hqdefault.jpg" alt="Where Do Scottsdale's Ultra Wealthy Live?" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Sep 2025</div>
+          <h3 class="ap-yt-card-title">Where Do Scottsdale's Ultra Wealthy Live?</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=EVUzywZywc8" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/EVUzywZywc8/hqdefault.jpg" alt="Inside The Most Extravagant Lakefront Homes in Scottsdale AZ" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Sep 2025</div>
+          <h3 class="ap-yt-card-title">Inside the Most Extravagant Lakefront Homes in Scottsdale</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=4Vb3aHkgCcc" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/4Vb3aHkgCcc/hqdefault.jpg" alt="Scottsdale Neighborhood Tour: Paradise Ridge" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Aug 2025</div>
+          <h3 class="ap-yt-card-title">Scottsdale Neighborhood Tour: Paradise Ridge by D.R. Horton</h3>
+        </a>
+        <a href="https://www.youtube.com/watch?v=Rx9giNzLeoQ" target="_blank" rel="noopener" class="ap-yt-card">
+          <div class="ap-yt-card-thumb">
+            <img src="https://i.ytimg.com/vi/Rx9giNzLeoQ/hqdefault.jpg" alt="Moving to Scottsdale? 5 things you need to know" loading="lazy">
+            <div class="ap-yt-card-play"></div>
+          </div>
+          <div class="ap-yt-card-date">Aug 2025</div>
+          <h3 class="ap-yt-card-title">Moving to Scottsdale? Here's 5 Things You Need to Know</h3>
+        </a>
+      </div>
+    </div>
+    <script>
+      // ============================================================
+      //  YOUTUBE AUTO-UPDATE
+      //  Paste your YouTube Data API v3 key below to make this strip
+      //  refresh automatically with your latest videos.
+      //  How to get a key: see /js/youtube-setup.md
+      // ============================================================
+      window.LOTS_YT_CONFIG = {
+        apiKey: '',  // <-- PASTE YOUR KEY HERE (leave empty to use hardcoded fallback)
+        channelId: 'UCdlfRlfFRFJZq5dSb72hkUA',
+        maxResults: 8,
+        cacheMinutes: 60   // cache in localStorage to save API quota
+      };
+
+      (function(){
+        // --- Arrow scroll behavior ---
+        var s = document.getElementById('ytScroll');
+        var prev = document.getElementById('ytPrev');
+        var next = document.getElementById('ytNext');
+        if (s && prev && next) {
+          var step = 380;
+          prev.addEventListener('click', function(){ s.scrollBy({left: -step, behavior: 'smooth'}); });
+          next.addEventListener('click', function(){ s.scrollBy({left: step, behavior: 'smooth'}); });
+        }
+
+        // --- YouTube API fetch (only runs if API key is set) ---
+        var cfg = window.LOTS_YT_CONFIG;
+        if (!cfg.apiKey || !s) return;
+
+        function formatDate(iso) {
+          var d = new Date(iso);
+          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          return months[d.getMonth()] + ' ' + d.getFullYear();
+        }
+
+        function render(videos) {
+          s.innerHTML = videos.map(function(v){
+            return '' +
+              '<a href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener" class="ap-yt-card">' +
+                '<div class="ap-yt-card-thumb">' +
+                  '<img src="' + v.thumb + '" alt="' + v.title.replace(/"/g,'&quot;') + '" loading="lazy">' +
+                  '<div class="ap-yt-card-play"></div>' +
+                '</div>' +
+                '<div class="ap-yt-card-date">' + v.date + '</div>' +
+                '<h3 class="ap-yt-card-title">' + v.title + '</h3>' +
+              '</a>';
+          }).join('');
+        }
+
+        // Try cache first
+        try {
+          var cache = JSON.parse(localStorage.getItem('lots_yt_cache') || 'null');
+          if (cache && Date.now() - cache.ts < cfg.cacheMinutes * 60 * 1000) {
+            render(cache.videos);
+            return;
+          }
+        } catch(e) {}
+
+        var url = 'https://www.googleapis.com/youtube/v3/search' +
+                  '?key=' + encodeURIComponent(cfg.apiKey) +
+                  '&channelId=' + cfg.channelId +
+                  '&part=snippet&order=date&type=video&maxResults=' + cfg.maxResults;
+
+        fetch(url)
+          .then(function(r){ return r.json(); })
+          .then(function(data){
+            if (!data.items) return;
+            var videos = data.items
+              .filter(function(it){ return it.id && it.id.videoId; })
+              .map(function(it){
+                var sn = it.snippet;
+                return {
+                  id: it.id.videoId,
+                  title: sn.title,
+                  date: formatDate(sn.publishedAt),
+                  thumb: (sn.thumbnails.maxres || sn.thumbnails.high || sn.thumbnails.medium).url
+                };
+              });
+            if (videos.length === 0) return;
+            render(videos);
+            try {
+              localStorage.setItem('lots_yt_cache', JSON.stringify({ ts: Date.now(), videos: videos }));
+            } catch(e) {}
+          })
+          .catch(function(err){ console.warn('YouTube API fetch failed, using fallback:', err); });
+      })();
+    </script>
+  </section>
+
+  <!-- ===== STR EDITORIAL SPLIT ===== -->
+  <section class="ap-editorial ap-editorial--square">
+    <div class="ap-editorial-img"><img src="assets/str-investor.jpg" alt="Aerial view of Old Town Scottsdale at golden hour with mountain backdrop"></div>
+    <div class="ap-editorial-content">
+      <div class="ap-editorial-tag">For Investors</div>
+      <h2 class="ap-editorial-title">OLD TOWN STR<br>INVESTMENT</h2>
+      <p class="ap-editorial-body">Old Town Scottsdale is one of the nation's highest-performing short-term rental markets. ROI calculators, top-performing buildings ranked, and Scottsdale STR rules &mdash; all in one place.</p>
+      <a href="pages/str-hub.html" class="btn btn-primary">Explore STR Hub</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT NAUDIA (reversed editorial) ===== -->
+  <section class="ap-editorial ap-editorial--square" style="direction: rtl;">
+    <div class="ap-editorial-img" style="direction: ltr;"><img src="assets/naudia-headshot.jpg" alt="Naudia Andrescavage, founder of Living Old Town Scottsdale"></div>
+    <div class="ap-editorial-content" style="direction: ltr;">
+      <div class="ap-editorial-tag">Your Local Expert</div>
+      <h2 class="ap-editorial-title">MEET NAUDIA&hellip;<br>AND THE <em>SELLING SONORAN GROUP</em></h2>
+      <p class="ap-editorial-body">Naudia Andrescavage is a Scottsdale-based real estate professional and the founder of Living Old Town Scottsdale. A three-time Scottsdale Association of Realtors 40 Under 40 winner, Phoenix Business Journal Top Producer, and Compass &ldquo;On The Rise&rdquo; recipient, she&rsquo;s leading the charge and changing the real estate landscape in Old Town Scottsdale. Whether you&rsquo;re buying into the luxury lifestyle, investing in a short-term rental, or just curious about the neighborhood &mdash; she&rsquo;s here to help.</p>
+      <a href="pages/about.html" class="btn btn-outline-dark">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS CAROUSEL ===== -->
+  <section class="ap-reviews" aria-roledescription="carousel" aria-label="Client reviews">
+    <p class="ap-reviews-eyebrow">Client Experience</p>
+    <div class="ap-reviews-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="ap-reviews-track" id="reviewsTrack">
+      <div class="ap-review-slide is-active">
+        <p class="ap-review-quote">&ldquo;Naudia and her team are the best! As an out-of-state first-time homebuyer, I truly felt like I was in the best hands from start to finish.&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Brielle McDougall &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Gab is the best agent in town. Top shelf! She will steer you in the right direction with the home of your dreams!&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Jeffrey McAlister &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia and her team were amazing to work with! We would absolutely work with her again and would recommend her to family and friends. She was knowledgeable, responsive, honest and hard working. We felt like we were being taken care of the entire time!&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Dan Swanson &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;We had an absolutely exceptional experience working with Naudia and Francesca. As out-of-state buyers looking for the perfect short-term rental property, we needed someone we could trust&mdash;and they went above and beyond in every possible way. Their knowledge of the market and attention to detail not only made us feel confident but also ended up saving us money in the end. We couldn&rsquo;t be happier with the experience.&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Leah Swanson &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia was a joy to work with! She is very kind, extremely professional, organized, detail oriented and well supported by her excellent transaction coordinator Kitt. My condo search was on a very accelerated closing timeline and Naudia flawlessly performed all the negotiations on my behalf. I highly recommend hiring Naudia and her Selling Sonoran Group for their professional excellence.&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Michael Convery &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia and team made this home buying experience much easier than we had anticipated. Naudia goes far beyond the role of realtor. Her knowledge of the entire industry is so detailed and makes you as the buyer feel confident in every decision you make as a team. Highly recommend anyone looking or even thinking about looking to buy a home, meet with Naudia!&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Mark Miller &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia was SUCH an amazing help during our homebuying process. She helped my grandparents purchase and close on a home in such a tight timeline, I didn&rsquo;t even know it was possible! It was an unconventional situation but she made us feel as though it was completely normal and easy peasy! I will always go to Naudia and her team for any future home questions!&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Miranda D. &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia was absolutely AMAZING to work with during our first home buying experience. She went above and beyond for us every step of the way. Her knowledge, communication, and expertise is truly unmatched, not to mention her dedication to making the process as thrilling and as smooth as possible. I cannot recommend her and her team enough!&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Kelley Bear &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia was great to work with throughout our entire process of selling our former home and purchasing our new home. She was easy to communicate with, easily accessible and organized. She spent a lot of time with us touring homes, and was patient with us when we kept changing our mind on what we wanted. Thank you Naudia!&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Kailyn R. &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;I had the pleasure of working with Naudia recently, and I couldn&rsquo;t be happier with the experience. From the start, her friendliness and personable nature made the process enjoyable and stress-free. Thanks to her dedication and expertise, I was able to secure the house I wanted. Her commitment to her clients is truly exceptional, and I highly recommend Naudia to anyone looking for a reliable and compassionate realtor.&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Zie Weathers &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia was a delight to work with, she went way up and beyond to find us our home out of state. We really appreciate the time &amp; effort she spent driving us around looking at so many homes on different occasions. Any potential home buyer in the Phoenix area should definitely choose Naudia to be their realtor &mdash; they will not be disappointed in her effort &amp; knowledge in finding them the perfect home to suit their needs.&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Joseph B. &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;It was such a pleasure having Naudia as our realtor. Everything went so smoothly. She kept us informed and always had our backs. She went above and beyond to get our house sold. I would highly recommend her to anyone needing to list their home or in buying one.&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Liz Rietsema &bull; Google Review</span>
+        </div>
+      </div>
+      <div class="ap-review-slide">
+        <p class="ap-review-quote">&ldquo;Naudia was amazing. Very easy to work with and knowledgeable about all aspects of the process&hellip;she was on top of everything! Good negotiator and probably one the most organized people I&rsquo;ve met! Huge recommendation&hellip;&rdquo;</p>
+        <div class="ap-review-meta">
+          <span class="ap-review-google" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+          <span>Rana Prasad &bull; Google Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="ap-reviews-dots" id="reviewsDots" role="tablist"></div>
+  </section>
+  <script>
+    (function(){
+      const track = document.getElementById('reviewsTrack');
+      if (!track) return;
+      const slides = track.querySelectorAll('.ap-review-slide');
+      const dotsWrap = document.getElementById('reviewsDots');
+      let idx = 0, timer;
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.className = 'ap-reviews-dot' + (i === 0 ? ' is-active' : '');
+        b.setAttribute('aria-label', 'Show review ' + (i + 1));
+        b.addEventListener('click', () => { go(i); reset(); });
+        dotsWrap.appendChild(b);
+      });
+      const dots = dotsWrap.querySelectorAll('.ap-reviews-dot');
+      function go(n) {
+        slides[idx].classList.remove('is-active');
+        dots[idx].classList.remove('is-active');
+        idx = (n + slides.length) % slides.length;
+        slides[idx].classList.add('is-active');
+        dots[idx].classList.add('is-active');
+      }
+      function reset() { clearInterval(timer); timer = setInterval(() => go(idx + 1), 6000); }
+      reset();
+    })();
+  </script>
+
+  <!-- ===== BLOG ===== -->
+  <div class="ap-blog-header">
+    <h2 class="ap-blog-title">OLD TOWN LIFE</h2>
+    <a href="pages/blog.html" class="btn btn-outline-dark btn-sm">View All Posts</a>
+  </div>
+  <div class="ap-blog-grid">
+    <div class="ap-blog-card">
+      <div class="ap-blog-img"><img src="assets/blog-house.jpg" alt="Desert home"></div>
+      <div class="ap-blog-body">
+        <div class="ap-blog-tag">STR Investing</div>
+        <h3 class="ap-blog-card-title">Can You Airbnb in Old Town Scottsdale?</h3>
+        <p class="ap-blog-excerpt">Zoning rules, permit requirements, and the buildings where STRs thrive.</p>
+      </div>
+    </div>
+    <div class="ap-blog-card">
+      <div class="ap-blog-img"><img src="assets/blog-rooftop.jpg" alt="Rooftop"></div>
+      <div class="ap-blog-body">
+        <div class="ap-blog-tag">Neighborhood Guide</div>
+        <h3 class="ap-blog-card-title">Best Rooftop Condos in Old Town</h3>
+        <p class="ap-blog-excerpt">From private terraces to shared sky decks &mdash; elevated living.</p>
+      </div>
+    </div>
+    <div class="ap-blog-card">
+      <div class="ap-blog-img"><img src="assets/home-pool.jpg" alt="Market"></div>
+      <div class="ap-blog-body">
+        <div class="ap-blog-tag">Market Update</div>
+        <h3 class="ap-blog-card-title">Spring 2026 Market Report</h3>
+        <p class="ap-blog-excerpt">Pricing trends, inventory shifts, and what to expect.</p>
+      </div>
+    </div>
+    <div class="ap-blog-card">
+      <div class="ap-blog-img"><img src="assets/home-luxury.jpg" alt="Dining"></div>
+      <div class="ap-blog-body">
+        <div class="ap-blog-tag">Local Favorites</div>
+        <h3 class="ap-blog-card-title">10 Restaurants Locals Actually Go To</h3>
+        <p class="ap-blog-excerpt">Skip the tourist traps. Here's where the regulars eat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="ap-newsletter" id="newsletter">
+    <div class="container-narrow">
+      <h2 class="ap-newsletter-title">STAY CONNECTED</h2>
+      <p>Weekly insights on Old Town life, new listings, and local recommendations.</p>
+      <form class="lead-form" onsubmit="event.preventDefault(); handleLeadSubmit(this);" style="max-width: 460px; margin: 0 auto;">
+        <input type="text" placeholder="First Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="lead-form-note" style="color: rgba(255,255,255,0.3);">Join 2,000+ Old Town insiders.</p>
+    </div>
+  </section>
+
+  <!-- ===== PATHS ===== -->
+  <div class="ap-paths">
+    <a href="pages/buy.html" class="ap-path"><div class="ap-path-title">BUY</div><div class="ap-path-desc">Find your home in Old Town</div></a>
+    <a href="pages/sell.html" class="ap-path"><div class="ap-path-title">SELL</div><div class="ap-path-desc">Get your home's value</div></a>
+    <a href="pages/str-hub.html" class="ap-path"><div class="ap-path-title">INVEST</div><div class="ap-path-desc">Explore STR opportunities</div></a>
+    <a href="pages/contact.html" class="ap-path"><div class="ap-path-title">CONNECT</div><div class="ap-path-desc">Schedule a conversation</div></a>
+  </div>
+
+  <!-- ===== INSTAGRAM SCROLL ===== -->
+  <section class="ap-ig">
+    <div class="ap-ig-head">
+      <div class="ap-ig-head-left">
+        <p class="ap-ig-eyebrow">Follow Along</p>
+        <h2 class="ap-ig-title">Old Town, <em>daily.</em></h2>
+      </div>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-handle">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+        @livingoldtownscottsdale
+      </a>
+    </div>
+    <div class="ap-ig-scroll">
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-insider.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-pool.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/str-investor.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-condo.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-luxury.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/blog-rooftop.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-mountain.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+      <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-str.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+          <img src="assets/lots-logo.png" alt="Living Old Town Scottsdale" class="footer-brand-logo" style="margin-top: 20px; max-width: 110px; height: auto; display: block;">
+          <div class="footer-brokered" style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12);">
+            <p style="font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 16px;">Brokered by</p>
+            <img src="assets/compass-white.png" alt="Selling Sonoran Group at Compass" style="max-width: 280px; width: 100%; height: auto; display: block; opacity: 0.92;">
+          </div>
+        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="pages/old-town-life.html">Old Town Life</a></li><li><a href="pages/str-hub.html">STR Investment</a></li><li><a href="pages/condos.html">Luxury Condos</a></li><li><a href="pages/blog.html">The LOTS Blog</a></li><li><a href="pages/about.html">About Us</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="pages/buy.html">Buy in Old Town</a></li><li><a href="pages/sell.html">Sell in Old Town</a></li><li><a href="#newsletter">Market Reports</a></li><li><a href="pages/contact.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social" style="display: flex; gap: 14px; align-items: center;">
+          <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.49a8.16 8.16 0 0 0 4.77 1.52V6.56a4.85 4.85 0 0 1-1.84-.13z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

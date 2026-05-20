@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighborhood Directory | Every Community in 85250, 85251 & 85257 | Living Old Town Scottsdale</title>
+  <meta name="description" content="The complete directory of every condo, townhome, and single-family neighborhood in Scottsdale zip codes 85250, 85251, and 85257. Your local experts since day one.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .dir-filters {
+      background: #fff;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+    }
+    .dir-filter-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .dir-filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .dir-filter-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .dir-filter-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border);
+      margin: 0 12px;
+    }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--taupe);
+      background: transparent;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .filter-btn:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--cream);
+    }
+    .filter-btn.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--cream);
+    }
+    .dir-search {
+      max-width: 400px;
+      margin: 20px auto 0;
+      position: relative;
+    }
+    .dir-search input {
+      width: 100%;
+      padding: 12px 20px 12px 44px;
+      border: 1px solid var(--border);
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      outline: none;
+      transition: border-color var(--transition-base);
+    }
+    .dir-search input:focus {
+      border-color: var(--terracotta);
+    }
+    .dir-search input::placeholder {
+      color: var(--text-faint);
+    }
+    .dir-search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-faint);
+      font-size: 14px;
+      pointer-events: none;
+    }
+    .dir-results-count {
+      text-align: center;
+      padding: 24px 0 0;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+    .dir-results-count strong {
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+    .dir-zip-section {
+      margin-bottom: 56px;
+    }
+    .dir-zip-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dir-zip-code {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .dir-zip-area {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+    .dir-category-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 16px;
+      margin-top: 28px;
+    }
+    .dir-category-label:first-of-type {
+      margin-top: 0;
+    }
+    .dir-tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .dir-tag {
+      display: inline-block;
+      padding: 10px 20px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-primary);
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: all var(--transition-base);
+      cursor: default;
+      line-height: 1.3;
+    }
+    .dir-tag:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      box-shadow: 0 4px 16px rgba(174, 109, 71, 0.08);
+    }
+    .dir-tag.luxury {
+      border-color: var(--desert-rose);
+      background: linear-gradient(135deg, #fdfaf5, #faf3e8);
+      position: relative;
+      padding-right: 28px;
+    }
+    .dir-tag.luxury::after {
+      content: '\2726';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--desert-rose);
+      font-size: 11px;
+    }
+    .dir-tag.luxury:hover {
+      border-color: var(--terracotta);
+      background: linear-gradient(135deg, #fdf8f0, #f8ede0);
+    }
+    .dir-tag.hidden {
+      display: none;
+    }
+    .dir-no-results {
+      text-align: center;
+      padding: 60px 24px;
+      display: none;
+    }
+    .dir-no-results.visible {
+      display: block;
+    }
+    .dir-no-results-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .dir-no-results-text {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+    .dir-stat-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--ink);
+    }
+    .dir-stat-item {
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .dir-stat-item:not(:last-child) {
+      border-right: 1px solid rgba(198, 161, 128, 0.15);
+    }
+    .dir-stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--desert-rose);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .dir-stat-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+    .dir-legend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 16px 0 0;
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+    .dir-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dir-legend-swatch {
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .dir-legend-swatch.luxury {
+      border-color: var(--desert-rose);
+      background: linear-gradient(135deg, #fdfaf5, #faf3e8);
+    }
+    @media (max-width: 768px) {
+      .dir-filters {
+        padding: 24px 0;
+        position: static;
+      }
+      .dir-filter-row {
+        gap: 8px;
+      }
+      .dir-filter-divider {
+        display: none;
+      }
+      .dir-stat-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .dir-stat-item:nth-child(2) {
+        border-right: none;
+      }
+      .dir-zip-header {
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        padding: 8px 16px;
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-living">Living</span>
+        <span class="nav-logo-main">Old Town Scottsdale</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="old-town-life.html">Old Town Life</a></li>
+        <li><a href="str-hub.html">STR Investing</a></li>
+        <li><a href="condos.html">Luxury Condos</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Work With Us</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="section-label text-center">Complete Directory</div>
+      <h1 class="section-title text-center">Every Neighborhood.<br>Three Zip Codes.</h1>
+      <p class="page-header-desc">
+        We know these communities inside and out. Search 337 neighborhoods across 85250, 85251, and 85257 to find the one that fits your life.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="dir-stat-bar">
+    <div class="dir-stat-item">
+      <div class="dir-stat-number">337</div>
+      <div class="dir-stat-label">Total Communities</div>
+    </div>
+    <div class="dir-stat-item">
+      <div class="dir-stat-number">196</div>
+      <div class="dir-stat-label">Condos &amp; Townhomes</div>
+    </div>
+    <div class="dir-stat-item">
+      <div class="dir-stat-number">141</div>
+      <div class="dir-stat-label">Single Family</div>
+    </div>
+    <div class="dir-stat-item">
+      <div class="dir-stat-number">144</div>
+      <div class="dir-stat-label">Luxury ($1M+)</div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <section class="dir-filters" id="dirFilters">
+    <div class="container">
+      <div class="dir-filter-row">
+        <div class="dir-filter-group">
+          <span class="dir-filter-label">Type</span>
+          <button class="filter-btn active" data-filter="type" data-value="all">All</button>
+          <button class="filter-btn" data-filter="type" data-value="condo">Condos &amp; Townhomes</button>
+          <button class="filter-btn" data-filter="type" data-value="sfr">Single Family</button>
+        </div>
+        <div class="dir-filter-divider"></div>
+        <div class="dir-filter-group">
+          <span class="dir-filter-label">Zip</span>
+          <button class="filter-btn active" data-filter="zip" data-value="all">All</button>
+          <button class="filter-btn" data-filter="zip" data-value="85250">85250</button>
+          <button class="filter-btn" data-filter="zip" data-value="85251">85251</button>
+          <button class="filter-btn" data-filter="zip" data-value="85257">85257</button>
+        </div>
+        <div class="dir-filter-divider"></div>
+        <div class="dir-filter-group">
+          <button class="filter-btn" data-filter="luxury" data-value="luxury">Luxury Only</button>
+        </div>
+      </div>
+      <div class="dir-search">
+        <span class="dir-search-icon">&#x1F50D;</span>
+        <input type="text" id="dirSearch" placeholder="Search neighborhoods...">
+      </div>
+      <div class="dir-results-count" id="dirResultsCount">
+        Showing <strong id="visibleCount">337</strong> neighborhoods
+      </div>
+      <div class="dir-legend">
+        <div class="dir-legend-item"><div class="dir-legend-swatch"></div> All Communities</div>
+        <div class="dir-legend-item"><div class="dir-legend-swatch luxury"></div> Luxury ($1M+) &#10022;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directory Listings -->
+  <section class="section" style="background: var(--bg-primary);">
+    <div class="container" style="max-width: 1100px;">
+
+      <!-- 85250 -->
+      <div class="dir-zip-section" id="zip-85250" data-zip="85250">
+        <div class="dir-zip-header">
+          <div>
+            <div class="dir-zip-code">85250</div>
+            <div class="dir-zip-area">Central Scottsdale &bull; Chaparral Corridor</div>
+          </div>
+        </div>
+
+        <div class="dir-category-label" data-type="condo">Condos &amp; Townhomes</div>
+        <div class="dir-tag-grid" data-type="condo" data-zip="85250">
+          <span class="dir-tag" data-name="Arroyo Verde">Arroyo Verde</span>
+          <span class="dir-tag" data-name="Bella Vita">Bella Vita</span>
+          <span class="dir-tag" data-name="Bella Vita at Las Colinas">Bella Vita at Las Colinas</span>
+          <span class="dir-tag luxury" data-name="Briarwood" data-luxury="true">Briarwood</span>
+          <span class="dir-tag" data-name="Cabrillo Square">Cabrillo Square</span>
+          <span class="dir-tag" data-name="Camelback Mountain View Estates">Camelback Mountain View Estates</span>
+          <span class="dir-tag" data-name="Camelview Greens">Camelview Greens</span>
+          <span class="dir-tag luxury" data-name="Casabella" data-luxury="true">Casabella</span>
+          <span class="dir-tag" data-name="Casita El Puente">Casita El Puente</span>
+          <span class="dir-tag" data-name="Casitas Chaparral">Casitas Chaparral</span>
+          <span class="dir-tag" data-name="Chateau de Vie">Chateau de Vie</span>
+          <span class="dir-tag" data-name="Club Scottsdale">Club Scottsdale</span>
+          <span class="dir-tag" data-name="Colony at Scottsdale">Colony at Scottsdale</span>
+          <span class="dir-tag" data-name="Continental Villas">Continental Villas</span>
+          <span class="dir-tag" data-name="Corriente">Corriente</span>
+          <span class="dir-tag luxury" data-name="Cuernavaca" data-luxury="true">Cuernavaca</span>
+          <span class="dir-tag" data-name="Hallcraft Villas">Hallcraft Villas</span>
+          <span class="dir-tag luxury" data-name="Hilton Casitas" data-luxury="true">Hilton Casitas</span>
+          <span class="dir-tag" data-name="Hudson East">Hudson East</span>
+          <span class="dir-tag" data-name="Indian Bend Village">Indian Bend Village</span>
+          <span class="dir-tag" data-name="La Buena Vida">La Buena Vida</span>
+          <span class="dir-tag" data-name="La Buena Vida 2 Townhouses">La Buena Vida 2 Townhouses</span>
+          <span class="dir-tag luxury" data-name="La Jolla Blanca" data-luxury="true">La Jolla Blanca</span>
+          <span class="dir-tag luxury" data-name="La Villita" data-luxury="true">La Villita</span>
+          <span class="dir-tag luxury" data-name="Laguna San Juan" data-luxury="true">Laguna San Juan</span>
+          <span class="dir-tag" data-name="Las Colinas">Las Colinas</span>
+          <span class="dir-tag luxury" data-name="Las Villas" data-luxury="true">Las Villas</span>
+          <span class="dir-tag luxury" data-name="Lincoln Drive" data-luxury="true">Lincoln Drive</span>
+          <span class="dir-tag" data-name="Lincoln Gardens">Lincoln Gardens</span>
+          <span class="dir-tag" data-name="Monterra Scottsdale Residences">Monterra Scottsdale Residences</span>
+          <span class="dir-tag" data-name="Paradise View Villas">Paradise View Villas</span>
+          <span class="dir-tag luxury" data-name="Park Scottsdale" data-luxury="true">Park Scottsdale</span>
+          <span class="dir-tag luxury" data-name="Sands North" data-luxury="true">Sands North</span>
+          <span class="dir-tag" data-name="Santa Maria Villa">Santa Maria Villa</span>
+          <span class="dir-tag" data-name="Scottsdale in Towne Villas">Scottsdale in Towne Villas</span>
+          <span class="dir-tag" data-name="Scottsdale Monterey">Scottsdale Monterey</span>
+          <span class="dir-tag" data-name="Sienna">Sienna</span>
+          <span class="dir-tag" data-name="Sunrise Villas">Sunrise Villas</span>
+          <span class="dir-tag" data-name="Suntree - Indian Bend Village">Suntree - Indian Bend Village</span>
+          <span class="dir-tag luxury" data-name="Villa Antano" data-luxury="true">Villa Antano</span>
+          <span class="dir-tag" data-name="Villa Antigua">Villa Antigua</span>
+          <span class="dir-tag" data-name="Villa de Bendita">Villa de Bendita</span>
+          <span class="dir-tag" data-name="Villa Estados">Villa Estados</span>
+          <span class="dir-tag" data-name="Villa Monterey">Villa Monterey</span>
+          <span class="dir-tag" data-name="Villa Palo Verde">Villa Palo Verde</span>
+          <span class="dir-tag" data-name="Walden Place">Walden Place</span>
+          <span class="dir-tag" data-name="Winfield Place">Winfield Place</span>
+        </div>
+
+        <div class="dir-category-label" data-type="sfr">Single Family</div>
+        <div class="dir-tag-grid" data-type="sfr" data-zip="85250">
+          <span class="dir-tag luxury" data-name="7600 Lincoln" data-luxury="true">7600 Lincoln</span>
+          <span class="dir-tag" data-name="Allens Place">Allens Place</span>
+          <span class="dir-tag luxury" data-name="Briarwood" data-luxury="true">Briarwood</span>
+          <span class="dir-tag luxury" data-name="Casa del Mar" data-luxury="true">Casa del Mar</span>
+          <span class="dir-tag luxury" data-name="Cattle Track Art District" data-luxury="true">Cattle Track Art District</span>
+          <span class="dir-tag" data-name="Colony at Scottsdale">Colony at Scottsdale</span>
+          <span class="dir-tag luxury" data-name="El Cuadro Estates" data-luxury="true">El Cuadro Estates</span>
+          <span class="dir-tag" data-name="Gibler Estates">Gibler Estates</span>
+          <span class="dir-tag luxury" data-name="Hayden Estates" data-luxury="true">Hayden Estates</span>
+          <span class="dir-tag luxury" data-name="Hilton Casitas" data-luxury="true">Hilton Casitas</span>
+          <span class="dir-tag luxury" data-name="Indian Bend Ranchos" data-luxury="true">Indian Bend Ranchos</span>
+          <span class="dir-tag" data-name="Indian Bend Village">Indian Bend Village</span>
+          <span class="dir-tag luxury" data-name="Indian Shadows" data-luxury="true">Indian Shadows</span>
+          <span class="dir-tag" data-name="La Casa Rica">La Casa Rica</span>
+          <span class="dir-tag luxury" data-name="La Jolla Blanca" data-luxury="true">La Jolla Blanca</span>
+          <span class="dir-tag luxury" data-name="La Villita" data-luxury="true">La Villita</span>
+          <span class="dir-tag luxury" data-name="Laguna San Juan" data-luxury="true">Laguna San Juan</span>
+          <span class="dir-tag luxury" data-name="Lincoln Drive" data-luxury="true">Lincoln Drive</span>
+          <span class="dir-tag luxury" data-name="Lincoln Place" data-luxury="true">Lincoln Place</span>
+          <span class="dir-tag luxury" data-name="Los Abrigados" data-luxury="true">Los Abrigados</span>
+          <span class="dir-tag luxury" data-name="North Field Estates" data-luxury="true">North Field Estates</span>
+          <span class="dir-tag luxury" data-name="North Woodmere Fairway" data-luxury="true">North Woodmere Fairway</span>
+          <span class="dir-tag luxury" data-name="Palo Verde Lane" data-luxury="true">Palo Verde Lane</span>
+          <span class="dir-tag luxury" data-name="Park Lane" data-luxury="true">Park Lane</span>
+          <span class="dir-tag luxury" data-name="Park Scottsdale" data-luxury="true">Park Scottsdale</span>
+          <span class="dir-tag luxury" data-name="Parkcrest" data-luxury="true">Parkcrest</span>
+          <span class="dir-tag luxury" data-name="Privado Village" data-luxury="true">Privado Village</span>
+          <span class="dir-tag" data-name="Scottsdale Country Acres">Scottsdale Country Acres</span>
+          <span class="dir-tag" data-name="Scottsdale in Towne Villas">Scottsdale in Towne Villas</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Links Estates" data-luxury="true">Scottsdale Links Estates</span>
+          <span class="dir-tag luxury" data-name="Siena Estates" data-luxury="true">Siena Estates</span>
+          <span class="dir-tag luxury" data-name="Su Casa" data-luxury="true">Su Casa</span>
+          <span class="dir-tag luxury" data-name="The Collection" data-luxury="true">The Collection</span>
+          <span class="dir-tag luxury" data-name="Tierra" data-luxury="true">Tierra</span>
+          <span class="dir-tag luxury" data-name="Topaz By Starpointe" data-luxury="true">Topaz By Starpointe</span>
+          <span class="dir-tag luxury" data-name="Vista Bonita" data-luxury="true">Vista Bonita</span>
+        </div>
+      </div>
+
+      <!-- 85251 -->
+      <div class="dir-zip-section" id="zip-85251" data-zip="85251">
+        <div class="dir-zip-header">
+          <div>
+            <div class="dir-zip-code">85251</div>
+            <div class="dir-zip-area">Old Town Scottsdale &bull; Camelback Corridor</div>
+          </div>
+        </div>
+
+        <div class="dir-category-label" data-type="condo">Condos &amp; Townhomes</div>
+        <div class="dir-tag-grid" data-type="condo" data-zip="85251">
+          <span class="dir-tag luxury" data-name="3Rd Avenue Lofts" data-luxury="true">3Rd Avenue Lofts</span>
+          <span class="dir-tag" data-name="4020 Scottsdale Old Town Lofts">4020 Scottsdale Old Town Lofts</span>
+          <span class="dir-tag" data-name="Aerium Encore Townhomes">Aerium Encore Townhomes</span>
+          <span class="dir-tag" data-name="Aerium Townhomes">Aerium Townhomes</span>
+          <span class="dir-tag" data-name="Alhambra Terrace">Alhambra Terrace</span>
+          <span class="dir-tag" data-name="Americana">Americana</span>
+          <span class="dir-tag" data-name="Arcadia Green of Scottsdale">Arcadia Green of Scottsdale</span>
+          <span class="dir-tag luxury" data-name="Ascent at the Phoenician" data-luxury="true">Ascent at the Phoenician</span>
+          <span class="dir-tag luxury" data-name="Bennetts Manor" data-luxury="true">Bennetts Manor</span>
+          <span class="dir-tag" data-name="Bon Vie">Bon Vie</span>
+          <span class="dir-tag" data-name="Camelback House">Camelback House</span>
+          <span class="dir-tag luxury" data-name="Cameldale" data-luxury="true">Cameldale</span>
+          <span class="dir-tag" data-name="Casa Bonita Villas">Casa Bonita Villas</span>
+          <span class="dir-tag" data-name="Casa del Monte">Casa del Monte</span>
+          <span class="dir-tag" data-name="Casa Feliz">Casa Feliz</span>
+          <span class="dir-tag" data-name="Casa Granada">Casa Granada</span>
+          <span class="dir-tag" data-name="Casa Requena">Casa Requena</span>
+          <span class="dir-tag" data-name="Casita Real">Casita Real</span>
+          <span class="dir-tag" data-name="Cavalier Vista">Cavalier Vista</span>
+          <span class="dir-tag" data-name="Center Court Scottsdale">Center Court Scottsdale</span>
+          <span class="dir-tag" data-name="Chaparral Villas">Chaparral Villas</span>
+          <span class="dir-tag" data-name="Ciento">Ciento</span>
+          <span class="dir-tag" data-name="Colony Camelback">Colony Camelback</span>
+          <span class="dir-tag" data-name="Crystal Springs">Crystal Springs</span>
+          <span class="dir-tag" data-name="Desert Cove">Desert Cove</span>
+          <span class="dir-tag" data-name="Diamante">Diamante</span>
+          <span class="dir-tag" data-name="Earll Street Residences">Earll Street Residences</span>
+          <span class="dir-tag luxury" data-name="Envy" data-luxury="true">Envy</span>
+          <span class="dir-tag luxury" data-name="First Avenue Townhomes" data-luxury="true">First Avenue Townhomes</span>
+          <span class="dir-tag luxury" data-name="Fleetwood 6 Townhomes" data-luxury="true">Fleetwood 6 Townhomes</span>
+          <span class="dir-tag" data-name="Fountainebleau">Fountainebleau</span>
+          <span class="dir-tag" data-name="Four Seasons">Four Seasons</span>
+          <span class="dir-tag luxury" data-name="Gateway at Main Street Plaza" data-luxury="true">Gateway at Main Street Plaza</span>
+          <span class="dir-tag" data-name="Golden Keys">Golden Keys</span>
+          <span class="dir-tag" data-name="Golfview">Golfview</span>
+          <span class="dir-tag" data-name="Granada Resort">Granada Resort</span>
+          <span class="dir-tag" data-name="Hallcraft Villas">Hallcraft Villas</span>
+          <span class="dir-tag" data-name="Heatherbrae House">Heatherbrae House</span>
+          <span class="dir-tag" data-name="Heritage Scottsdale">Heritage Scottsdale</span>
+          <span class="dir-tag" data-name="Inspire">Inspire</span>
+          <span class="dir-tag" data-name="La Buena Vida">La Buena Vida</span>
+          <span class="dir-tag" data-name="La Buena Vida 2 Townhouses">La Buena Vida 2 Townhouses</span>
+          <span class="dir-tag" data-name="La Casa de Fuente">La Casa de Fuente</span>
+          <span class="dir-tag" data-name="Loloma Cove">Loloma Cove</span>
+          <span class="dir-tag" data-name="Los Coronados">Los Coronados</span>
+          <span class="dir-tag" data-name="Los Cuatros">Los Cuatros</span>
+          <span class="dir-tag luxury" data-name="Luxian Villas on Camelback" data-luxury="true">Luxian Villas on Camelback</span>
+          <span class="dir-tag" data-name="Marble">Marble</span>
+          <span class="dir-tag" data-name="Maya">Maya</span>
+          <span class="dir-tag" data-name="Monte Vivienda">Monte Vivienda</span>
+          <span class="dir-tag" data-name="Muze Townhomes">Muze Townhomes</span>
+          <span class="dir-tag" data-name="Olive View Manor">Olive View Manor</span>
+          <span class="dir-tag" data-name="Olivewood Townehomes">Olivewood Townehomes</span>
+          <span class="dir-tag luxury" data-name="Optima Camelview Village" data-luxury="true">Optima Camelview Village</span>
+          <span class="dir-tag luxury" data-name="Optima Camelview Village Condominium 2Nd" data-luxury="true">Optima Camelview Village Condominium 2Nd</span>
+          <span class="dir-tag luxury" data-name="Orterra" data-luxury="true">Orterra</span>
+          <span class="dir-tag" data-name="Paradise Villa">Paradise Villa</span>
+          <span class="dir-tag" data-name="Parc Scottsdale">Parc Scottsdale</span>
+          <span class="dir-tag" data-name="Park Orleans">Park Orleans</span>
+          <span class="dir-tag" data-name="Park Paradise">Park Paradise</span>
+          <span class="dir-tag luxury" data-name="Pavoreal" data-luxury="true">Pavoreal</span>
+          <span class="dir-tag luxury" data-name="Phoenician 2 2Nd" data-luxury="true">Phoenician 2 2Nd</span>
+          <span class="dir-tag" data-name="Pueblo Verde">Pueblo Verde</span>
+          <span class="dir-tag" data-name="Quail Point">Quail Point</span>
+          <span class="dir-tag luxury" data-name="Rancho Vista" data-luxury="true">Rancho Vista</span>
+          <span class="dir-tag" data-name="Riverwalk">Riverwalk</span>
+          <span class="dir-tag luxury" data-name="Royale Gardens" data-luxury="true">Royale Gardens</span>
+          <span class="dir-tag luxury" data-name="Safari Drive" data-luxury="true">Safari Drive</span>
+          <span class="dir-tag" data-name="Safari Drive 1 1St">Safari Drive 1 1St</span>
+          <span class="dir-tag" data-name="Safari Drive 1 Condominium 2Nd">Safari Drive 1 Condominium 2Nd</span>
+          <span class="dir-tag" data-name="Sage">Sage</span>
+          <span class="dir-tag luxury" data-name="Sands East" data-luxury="true">Sands East</span>
+          <span class="dir-tag" data-name="Sarkis Manor">Sarkis Manor</span>
+          <span class="dir-tag" data-name="Scottsdale Abrivado">Scottsdale Abrivado</span>
+          <span class="dir-tag" data-name="Scottsdale Embassy">Scottsdale Embassy</span>
+          <span class="dir-tag" data-name="Scottsdale Greens">Scottsdale Greens</span>
+          <span class="dir-tag" data-name="Scottsdale House">Scottsdale House</span>
+          <span class="dir-tag" data-name="Scottsdale Palms">Scottsdale Palms</span>
+          <span class="dir-tag" data-name="Scottsdale Park Place">Scottsdale Park Place</span>
+          <span class="dir-tag" data-name="Scottsdale Parkway Townhomes">Scottsdale Parkway Townhomes</span>
+          <span class="dir-tag" data-name="Scottsdale Regency">Scottsdale Regency</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Residence" data-luxury="true">Scottsdale Residence</span>
+          <span class="dir-tag" data-name="Scottsdale Shadows">Scottsdale Shadows</span>
+          <span class="dir-tag" data-name="Scottsdale Springs">Scottsdale Springs</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Terrace" data-luxury="true">Scottsdale Terrace</span>
+          <span class="dir-tag" data-name="Scottsdale Villas">Scottsdale Villas</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Waterfront" data-luxury="true">Scottsdale Waterfront</span>
+          <span class="dir-tag luxury" data-name="Seneca Luxury" data-luxury="true">Seneca Luxury</span>
+          <span class="dir-tag" data-name="Seville">Seville</span>
+          <span class="dir-tag" data-name="Shadow Bend">Shadow Bend</span>
+          <span class="dir-tag" data-name="Sl 12 Lofts">Sl 12 Lofts</span>
+          <span class="dir-tag" data-name="Sonora Shadows">Sonora Shadows</span>
+          <span class="dir-tag" data-name="Starmark Place">Starmark Place</span>
+          <span class="dir-tag" data-name="Sunrise">Sunrise</span>
+          <span class="dir-tag" data-name="Sunscape">Sunscape</span>
+          <span class="dir-tag" data-name="Tela Vista">Tela Vista</span>
+          <span class="dir-tag" data-name="The Gallery">The Gallery</span>
+          <span class="dir-tag luxury" data-name="The Mark Scottsdale" data-luxury="true">The Mark Scottsdale</span>
+          <span class="dir-tag luxury" data-name="The Phoenician" data-luxury="true">The Phoenician</span>
+          <span class="dir-tag luxury" data-name="Tower Residences at Hotel Valley Ho" data-luxury="true">Tower Residences at Hotel Valley Ho</span>
+          <span class="dir-tag" data-name="Treo">Treo</span>
+          <span class="dir-tag" data-name="Tres Olivos">Tres Olivos</span>
+          <span class="dir-tag" data-name="Valle Vista">Valle Vista</span>
+          <span class="dir-tag" data-name="Valle Vista Estates">Valle Vista Estates</span>
+          <span class="dir-tag luxury" data-name="Villa Adrian" data-luxury="true">Villa Adrian</span>
+          <span class="dir-tag luxury" data-name="Villa Bianca D'Oro" data-luxury="true">Villa Bianca D'Oro</span>
+          <span class="dir-tag luxury" data-name="Villa D'Este" data-luxury="true">Villa D'Este</span>
+          <span class="dir-tag" data-name="Villa Monterey">Villa Monterey</span>
+          <span class="dir-tag" data-name="Villa San Marcos">Villa San Marcos</span>
+          <span class="dir-tag" data-name="Villa Solana">Villa Solana</span>
+          <span class="dir-tag" data-name="Villa Solano">Villa Solano</span>
+          <span class="dir-tag" data-name="Villa West">Villa West</span>
+          <span class="dir-tag" data-name="Villas at Bellagio">Villas at Bellagio</span>
+          <span class="dir-tag" data-name="Villas at Bellagio Condominium">Villas at Bellagio Condominium</span>
+          <span class="dir-tag" data-name="Villas at Vista Verde">Villas at Vista Verde</span>
+          <span class="dir-tag" data-name="Vista Larga">Vista Larga</span>
+          <span class="dir-tag" data-name="Woodland Springs">Woodland Springs</span>
+        </div>
+
+        <div class="dir-category-label" data-type="sfr">Single Family</div>
+        <div class="dir-tag-grid" data-type="sfr" data-zip="85251">
+          <span class="dir-tag luxury" data-name="Apache Estates" data-luxury="true">Apache Estates</span>
+          <span class="dir-tag luxury" data-name="Arcadia" data-luxury="true">Arcadia</span>
+          <span class="dir-tag luxury" data-name="Arcadia Acres" data-luxury="true">Arcadia Acres</span>
+          <span class="dir-tag luxury" data-name="Arcadia Manor" data-luxury="true">Arcadia Manor</span>
+          <span class="dir-tag luxury" data-name="Arcadia Ridge" data-luxury="true">Arcadia Ridge</span>
+          <span class="dir-tag luxury" data-name="Ascent at the Phoenician" data-luxury="true">Ascent at the Phoenician</span>
+          <span class="dir-tag luxury" data-name="Caballo Ranchos" data-luxury="true">Caballo Ranchos</span>
+          <span class="dir-tag luxury" data-name="Camelback Club Estates" data-luxury="true">Camelback Club Estates</span>
+          <span class="dir-tag luxury" data-name="Camelback East" data-luxury="true">Camelback East</span>
+          <span class="dir-tag luxury" data-name="Cameldale" data-luxury="true">Cameldale</span>
+          <span class="dir-tag luxury" data-name="Camelvista" data-luxury="true">Camelvista</span>
+          <span class="dir-tag" data-name="Casa del Monte">Casa del Monte</span>
+          <span class="dir-tag" data-name="Cavalier Vista">Cavalier Vista</span>
+          <span class="dir-tag luxury" data-name="Char Mel Terrace" data-luxury="true">Char Mel Terrace</span>
+          <span class="dir-tag luxury" data-name="Coronado Villa" data-luxury="true">Coronado Villa</span>
+          <span class="dir-tag luxury" data-name="Country Club Plaza" data-luxury="true">Country Club Plaza</span>
+          <span class="dir-tag luxury" data-name="Country Club Vista" data-luxury="true">Country Club Vista</span>
+          <span class="dir-tag luxury" data-name="Country Estates" data-luxury="true">Country Estates</span>
+          <span class="dir-tag luxury" data-name="Craftsmans Court" data-luxury="true">Craftsmans Court</span>
+          <span class="dir-tag luxury" data-name="Dana Estates" data-luxury="true">Dana Estates</span>
+          <span class="dir-tag luxury" data-name="El Camello" data-luxury="true">El Camello</span>
+          <span class="dir-tag luxury" data-name="Gibralter Manor" data-luxury="true">Gibralter Manor</span>
+          <span class="dir-tag" data-name="Golden Keys">Golden Keys</span>
+          <span class="dir-tag luxury" data-name="Granite Reef Place" data-luxury="true">Granite Reef Place</span>
+          <span class="dir-tag luxury" data-name="Haciendas Monte Vista" data-luxury="true">Haciendas Monte Vista</span>
+          <span class="dir-tag luxury" data-name="Hidden Village" data-luxury="true">Hidden Village</span>
+          <span class="dir-tag" data-name="Indian Meadows">Indian Meadows</span>
+          <span class="dir-tag luxury" data-name="Ingleside Inn" data-luxury="true">Ingleside Inn</span>
+          <span class="dir-tag luxury" data-name="Jokake Estates" data-luxury="true">Jokake Estates</span>
+          <span class="dir-tag luxury" data-name="Jokake Villa" data-luxury="true">Jokake Villa</span>
+          <span class="dir-tag luxury" data-name="La Maza Villa" data-luxury="true">La Maza Villa</span>
+          <span class="dir-tag luxury" data-name="Lafayette Estates" data-luxury="true">Lafayette Estates</span>
+          <span class="dir-tag luxury" data-name="Lombardi Estates" data-luxury="true">Lombardi Estates</span>
+          <span class="dir-tag luxury" data-name="Melrose Meadows" data-luxury="true">Melrose Meadows</span>
+          <span class="dir-tag luxury" data-name="Melrose Meadows 3 88-93" data-luxury="true">Melrose Meadows 3 88-93</span>
+          <span class="dir-tag luxury" data-name="Old Town" data-luxury="true">Old Town</span>
+          <span class="dir-tag luxury" data-name="Paradise Meadows" data-luxury="true">Paradise Meadows</span>
+          <span class="dir-tag luxury" data-name="Park Scottsdale" data-luxury="true">Park Scottsdale</span>
+          <span class="dir-tag luxury" data-name="Peaceful Valley" data-luxury="true">Peaceful Valley</span>
+          <span class="dir-tag luxury" data-name="Phoenician 2 2Nd" data-luxury="true">Phoenician 2 2Nd</span>
+          <span class="dir-tag luxury" data-name="Pickwick Acres" data-luxury="true">Pickwick Acres</span>
+          <span class="dir-tag luxury" data-name="Pointe Scottsdale" data-luxury="true">Pointe Scottsdale</span>
+          <span class="dir-tag luxury" data-name="Rancho Vista" data-luxury="true">Rancho Vista</span>
+          <span class="dir-tag luxury" data-name="Reddell Manor" data-luxury="true">Reddell Manor</span>
+          <span class="dir-tag" data-name="Rose Circle Gardens">Rose Circle Gardens</span>
+          <span class="dir-tag luxury" data-name="Sands East" data-luxury="true">Sands East</span>
+          <span class="dir-tag luxury" data-name="Savoy Estates" data-luxury="true">Savoy Estates</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Country Acres" data-luxury="true">Scottsdale Country Acres</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Estates" data-luxury="true">Scottsdale Estates</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Highlands" data-luxury="true">Scottsdale Highlands</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Highlands Estates" data-luxury="true">Scottsdale Highlands Estates</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Manor" data-luxury="true">Scottsdale Manor</span>
+          <span class="dir-tag" data-name="Scottsdale Square">Scottsdale Square</span>
+          <span class="dir-tag" data-name="Scottsdale Summit">Scottsdale Summit</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Terrace" data-luxury="true">Scottsdale Terrace</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Village" data-luxury="true">Scottsdale Village</span>
+          <span class="dir-tag" data-name="Security Acres">Security Acres</span>
+          <span class="dir-tag luxury" data-name="Southwest Village" data-luxury="true">Southwest Village</span>
+          <span class="dir-tag luxury" data-name="The Phoenician" data-luxury="true">The Phoenician</span>
+          <span class="dir-tag luxury" data-name="Trail East" data-luxury="true">Trail East</span>
+          <span class="dir-tag luxury" data-name="Trail West" data-luxury="true">Trail West</span>
+          <span class="dir-tag luxury" data-name="Villa Arcadia" data-luxury="true">Villa Arcadia</span>
+          <span class="dir-tag" data-name="Villa Monterey">Villa Monterey</span>
+          <span class="dir-tag luxury" data-name="Village Grove" data-luxury="true">Village Grove</span>
+          <span class="dir-tag luxury" data-name="Wentworth East" data-luxury="true">Wentworth East</span>
+          <span class="dir-tag" data-name="Western Villa">Western Villa</span>
+          <span class="dir-tag luxury" data-name="Whitwood" data-luxury="true">Whitwood</span>
+          <span class="dir-tag luxury" data-name="Woodshire" data-luxury="true">Woodshire</span>
+          <span class="dir-tag luxury" data-name="Zel Estates" data-luxury="true">Zel Estates</span>
+        </div>
+      </div>
+
+      <!-- 85257 -->
+      <div class="dir-zip-section" id="zip-85257" data-zip="85257">
+        <div class="dir-zip-header">
+          <div>
+            <div class="dir-zip-code">85257</div>
+            <div class="dir-zip-area">South Scottsdale &bull; Papago &bull; Greenbelt</div>
+          </div>
+        </div>
+
+        <div class="dir-category-label" data-type="condo">Condos &amp; Townhomes</div>
+        <div class="dir-tag-grid" data-type="condo" data-zip="85257">
+          <span class="dir-tag" data-name="Aire on McDowell">Aire on McDowell</span>
+          <span class="dir-tag" data-name="Center Court Scottsdale">Center Court Scottsdale</span>
+          <span class="dir-tag" data-name="Circle Lofts">Circle Lofts</span>
+          <span class="dir-tag" data-name="Colonia Verde">Colonia Verde</span>
+          <span class="dir-tag" data-name="Continental Villas">Continental Villas</span>
+          <span class="dir-tag" data-name="Continental Villas East">Continental Villas East</span>
+          <span class="dir-tag" data-name="Coronado Park Estates">Coronado Park Estates</span>
+          <span class="dir-tag" data-name="El Cuadro">El Cuadro</span>
+          <span class="dir-tag" data-name="Hacienda del Rey">Hacienda del Rey</span>
+          <span class="dir-tag" data-name="Hayden Villa">Hayden Villa</span>
+          <span class="dir-tag luxury" data-name="Heritage East" data-luxury="true">Heritage East</span>
+          <span class="dir-tag" data-name="Las Casas">Las Casas</span>
+          <span class="dir-tag" data-name="Miller">Miller</span>
+          <span class="dir-tag" data-name="Miller and McDowell">Miller and McDowell</span>
+          <span class="dir-tag" data-name="Miller Crossing">Miller Crossing</span>
+          <span class="dir-tag" data-name="Palo Verde Villas">Palo Verde Villas</span>
+          <span class="dir-tag" data-name="Parkview Villas of Scottsdale">Parkview Villas of Scottsdale</span>
+          <span class="dir-tag" data-name="Pima Plaza Estates">Pima Plaza Estates</span>
+          <span class="dir-tag" data-name="Pima Villas">Pima Villas</span>
+          <span class="dir-tag" data-name="Polynesian Paradise">Polynesian Paradise</span>
+          <span class="dir-tag" data-name="Scottsdale Casitas">Scottsdale Casitas</span>
+          <span class="dir-tag" data-name="Scottsdale Gardens">Scottsdale Gardens</span>
+          <span class="dir-tag" data-name="Scottsdale Haciendas">Scottsdale Haciendas</span>
+          <span class="dir-tag" data-name="Scottsdale Trails">Scottsdale Trails</span>
+          <span class="dir-tag" data-name="Summerfield">Summerfield</span>
+          <span class="dir-tag" data-name="Tela Vista">Tela Vista</span>
+          <span class="dir-tag" data-name="Trails at Scottsdale">Trails at Scottsdale</span>
+          <span class="dir-tag" data-name="Villa El Dorado">Villa El Dorado</span>
+          <span class="dir-tag" data-name="Villa Solano">Villa Solano</span>
+          <span class="dir-tag" data-name="Vista El Dorado">Vista El Dorado</span>
+          <span class="dir-tag" data-name="Vistas of Scottsdale">Vistas of Scottsdale</span>
+          <span class="dir-tag" data-name="Wilshire Place">Wilshire Place</span>
+        </div>
+
+        <div class="dir-category-label" data-type="sfr">Single Family</div>
+        <div class="dir-tag-grid" data-type="sfr" data-zip="85257">
+          <span class="dir-tag" data-name="Cavalier Vista">Cavalier Vista</span>
+          <span class="dir-tag" data-name="Continental Villas East">Continental Villas East</span>
+          <span class="dir-tag" data-name="Coronado Park Estates">Coronado Park Estates</span>
+          <span class="dir-tag luxury" data-name="Cox Heights" data-luxury="true">Cox Heights</span>
+          <span class="dir-tag" data-name="Cran Brooke">Cran Brooke</span>
+          <span class="dir-tag" data-name="El Dorado Hermoso">El Dorado Hermoso</span>
+          <span class="dir-tag luxury" data-name="Fairway Park" data-luxury="true">Fairway Park</span>
+          <span class="dir-tag" data-name="Hacienda del Rey">Hacienda del Rey</span>
+          <span class="dir-tag luxury" data-name="Heritage East" data-luxury="true">Heritage East</span>
+          <span class="dir-tag luxury" data-name="Hy-View" data-luxury="true">Hy-View</span>
+          <span class="dir-tag" data-name="Inmar Terrace">Inmar Terrace</span>
+          <span class="dir-tag luxury" data-name="Juanita y Olmo Frontier Place" data-luxury="true">Juanita y Olmo Frontier Place</span>
+          <span class="dir-tag luxury" data-name="McDowell Parkway" data-luxury="true">McDowell Parkway</span>
+          <span class="dir-tag luxury" data-name="Melrose Village" data-luxury="true">Melrose Village</span>
+          <span class="dir-tag" data-name="Mereway Manor">Mereway Manor</span>
+          <span class="dir-tag" data-name="New Papago Parkway">New Papago Parkway</span>
+          <span class="dir-tag" data-name="Oak Park">Oak Park</span>
+          <span class="dir-tag" data-name="Oak Ridge">Oak Ridge</span>
+          <span class="dir-tag luxury" data-name="Papago Buttes" data-luxury="true">Papago Buttes</span>
+          <span class="dir-tag" data-name="Papago Paradise">Papago Paradise</span>
+          <span class="dir-tag luxury" data-name="Papago Parkway" data-luxury="true">Papago Parkway</span>
+          <span class="dir-tag luxury" data-name="Park McDowell" data-luxury="true">Park McDowell</span>
+          <span class="dir-tag luxury" data-name="Pima Meadow Estates" data-luxury="true">Pima Meadow Estates</span>
+          <span class="dir-tag" data-name="Pima Meadows">Pima Meadows</span>
+          <span class="dir-tag" data-name="Redlands">Redlands</span>
+          <span class="dir-tag luxury" data-name="Scottsdale Estates" data-luxury="true">Scottsdale Estates</span>
+          <span class="dir-tag" data-name="Scottsdale Meadows">Scottsdale Meadows</span>
+          <span class="dir-tag luxury" data-name="Sherwood Estates" data-luxury="true">Sherwood Estates</span>
+          <span class="dir-tag luxury" data-name="Sherwood Heights" data-luxury="true">Sherwood Heights</span>
+          <span class="dir-tag" data-name="Skye on McDowell">Skye on McDowell</span>
+          <span class="dir-tag" data-name="Town & Country Scottsdale">Town & Country Scottsdale</span>
+          <span class="dir-tag" data-name="Trails at Scottsdale">Trails at Scottsdale</span>
+          <span class="dir-tag" data-name="Trails at Scottsdale 4 Amd Lot453-598">Trails at Scottsdale 4 Amd Lot453-598</span>
+          <span class="dir-tag" data-name="Verde Villa">Verde Villa</span>
+          <span class="dir-tag" data-name="Villa Coronado">Villa Coronado</span>
+          <span class="dir-tag luxury" data-name="Village Grove" data-luxury="true">Village Grove</span>
+        </div>
+      </div>
+
+      <!-- No Results State -->
+      <div class="dir-no-results" id="dirNoResults">
+        <div class="dir-no-results-title">No neighborhoods found</div>
+        <div class="dir-no-results-text">Try adjusting your filters or search term.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lead-capture">
+    <div class="container text-center">
+      <div class="section-label">Local Expertise</div>
+      <h2 class="section-title text-center" style="max-width: 650px; margin: 0 auto;">Know the Name but Not the Neighborhood?</h2>
+      <p class="lead-capture-subtitle">Tell us what matters most to you and we will match you with the right community. Walk score, price point, pool, no HOA... we know them all.</p>
+      <form class="lead-form" onsubmit="event.preventDefault(); handleLeadSubmit(this);">
+        <input type="text" placeholder="First Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit">Get Matched</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="neighborhoods.html">Neighborhoods</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="neighborhood-directory.html">Full Directory</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy</a></li><li><a href="sell.html">Sell</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">TikTok</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    (function() {
+      let activeType = 'all';
+      let activeZip = 'all';
+      let luxuryOnly = false;
+      let searchTerm = '';
+
+      const allTags = document.querySelectorAll('.dir-tag');
+      const allCategoryLabels = document.querySelectorAll('.dir-category-label');
+      const allZipSections = document.querySelectorAll('.dir-zip-section');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const searchInput = document.getElementById('dirSearch');
+      const visibleCountEl = document.getElementById('visibleCount');
+      const noResultsEl = document.getElementById('dirNoResults');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filterGroup = this.dataset.filter;
+          const value = this.dataset.value;
+
+          if (filterGroup === 'luxury') {
+            luxuryOnly = !luxuryOnly;
+            this.classList.toggle('active', luxuryOnly);
+          } else {
+            document.querySelectorAll('[data-filter="' + filterGroup + '"]').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            if (filterGroup === 'type') activeType = value;
+            if (filterGroup === 'zip') activeZip = value;
+          }
+
+          applyFilters();
+        });
+      });
+
+      searchInput.addEventListener('input', function() {
+        searchTerm = this.value.toLowerCase().trim();
+        applyFilters();
+      });
+
+      function applyFilters() {
+        let visibleCount = 0;
+
+        allTags.forEach(tag => {
+          const name = (tag.dataset.name || tag.textContent).toLowerCase();
+          const grid = tag.closest('.dir-tag-grid');
+          const type = grid ? grid.dataset.type : '';
+          const zip = grid ? grid.dataset.zip : '';
+          const isLuxury = tag.dataset.luxury === 'true';
+
+          let show = true;
+
+          if (activeType !== 'all' && type !== activeType) show = false;
+          if (activeZip !== 'all' && zip !== activeZip) show = false;
+          if (searchTerm && !name.includes(searchTerm)) show = false;
+          if (luxuryOnly && !isLuxury) show = false;
+
+          if (show) {
+            tag.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            tag.classList.add('hidden');
+          }
+        });
+
+        allCategoryLabels.forEach(label => {
+          const grid = label.nextElementSibling;
+          if (!grid) return;
+          const hasVisible = grid.querySelector('.dir-tag:not(.hidden)');
+          label.style.display = hasVisible ? '' : 'none';
+          grid.style.display = hasVisible ? '' : 'none';
+        });
+
+        allZipSections.forEach(section => {
+          const hasTags = section.querySelector('.dir-tag:not(.hidden)');
+          section.style.display = hasTags ? '' : 'none';
+        });
+
+        visibleCountEl.textContent = visibleCount;
+        noResultsEl.classList.toggle('visible', visibleCount === 0);
+      }
+
+      visibleCountEl.textContent = allTags.length;
+    })();
+  </script>
+</body>
+</html>

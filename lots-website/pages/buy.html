@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy in Old Town Scottsdale | A Field Guide for Buyers | Living Old Town Scottsdale</title>
+  <meta name="description" content="Buy in Old Town Scottsdale with a local expert. The full buyer process, costs, contingencies, negotiation strategy, and downloadable Arizona Home Buyer Guide — from Naudia Andrescavage and the Selling Sonoran Group at Compass.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body { background: #fff; }
+
+    /* --- Nav (matches home page) --- */
+    .ap-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 48px; background: #fff; border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .ap-nav-logo img { height: 56px; width: auto; }
+    .ap-nav-center { display: flex; gap: 36px; align-items: center; }
+    .ap-nav-center a, .ap-nav-dd-trigger {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink);
+      text-decoration: none; opacity: 0.8; background: none; border: none;
+      cursor: pointer; padding: 0; transition: opacity 0.3s;
+    }
+    .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
+    .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+    .ap-nav-dd { position: relative; }
+    .ap-nav-dd-menu {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      background: #fff; border: 1px solid #eee; padding: 12px 0;
+      min-width: 200px; opacity: 0; visibility: hidden;
+      transition: opacity 0.2s; margin-top: 8px;
+    }
+    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd-menu a {
+      display: block; padding: 10px 20px;
+      font-family: var(--font-body); font-size: 11px; font-weight: 400;
+      letter-spacing: 0.15em;
+    }
+    .ap-nav-dd-menu a:hover { background: #fafafa; opacity: 1; color: var(--ink); }
+    .ap-nav-yt {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #c4302b; color: #fff; padding: 12px 18px;
+      font-family: var(--font-body); font-size: 9px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .ap-nav-yt:hover { background: #a30000; }
+    .ap-nav-yt svg { width: 14px; height: 14px; fill: #fff; }
+
+    /* --- Page Hero --- */
+    .by-hero {
+      position: relative; min-height: 78vh; max-height: 820px;
+      display: flex; align-items: flex-end;
+      overflow: hidden; background: #f5e4c3;
+    }
+    .by-hero-img { position: absolute; inset: 0; }
+    .by-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+    .by-hero-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.65) 100%);
+    }
+    .by-hero-content {
+      position: relative; z-index: 2; color: #fff;
+      padding: 0 48px 80px; max-width: 1100px;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .by-hero-eyebrow {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: rgba(255,255,255,0.92); margin-bottom: 24px;
+    }
+    .by-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 96px); font-weight: 300;
+      text-transform: uppercase; letter-spacing: 0.02em;
+      line-height: 1.02; margin: 0 0 28px; color: #fff;
+    }
+    .by-hero-title em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .by-hero-sub {
+      font-family: var(--font-body); font-size: 15px; font-weight: 300;
+      line-height: 1.7; color: rgba(255,255,255,0.95); max-width: 560px;
+    }
+
+    /* --- Anchor bar --- */
+    .by-anchors {
+      display: flex; gap: 32px; justify-content: center;
+      padding: 24px 48px; border-bottom: 1px solid #eee;
+      overflow-x: auto;
+    }
+    .by-anchors a {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: #888; text-decoration: none; white-space: nowrap;
+      transition: color 0.3s;
+    }
+    .by-anchors a:hover { color: var(--ink); }
+
+    /* --- Section base --- */
+    .by-section { padding: 96px 48px; max-width: 1300px; margin: 0 auto; }
+    .by-section--alt { background: #faf7f1; max-width: none; padding: 96px 48px; }
+    .by-section--alt .by-section-inner { max-width: 1300px; margin: 0 auto; }
+    .by-section--ink { background: var(--ink); color: #fff; max-width: none; padding: 96px 48px; }
+    .by-section--ink .by-section-inner { max-width: 1300px; margin: 0 auto; }
+    .by-section-head { max-width: 720px; margin-bottom: 56px; }
+    .by-section-head--center { margin-left: auto; margin-right: auto; text-align: center; }
+    .by-eyebrow {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 16px;
+    }
+    .by-section--ink .by-eyebrow { color: rgba(255,255,255,0.5); }
+    .by-h2 {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300; color: var(--ink); line-height: 1.1;
+      text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 18px;
+    }
+    .by-section--ink .by-h2 { color: #fff; }
+    .by-h2 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .by-h2 em.cap { text-transform: none; }
+    .by-lede {
+      font-family: var(--font-body); font-size: 15px; font-weight: 300;
+      color: #555; line-height: 1.8;
+    }
+    .by-section--ink .by-lede { color: rgba(255,255,255,0.7); }
+
+    /* --- Search CTA --- */
+    .by-search {
+      padding: 72px 48px; text-align: center; background: #fff; border-bottom: 1px solid #eee;
+    }
+    .by-search-title {
+      font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 300; text-transform: uppercase; letter-spacing: 0.02em;
+      margin: 0 0 14px;
+    }
+    .by-search-title em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .by-search-sub {
+      font-family: var(--font-body); font-size: 14px; color: #777;
+      max-width: 540px; margin: 0 auto 28px; line-height: 1.7;
+    }
+    .by-search-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .by-btn {
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 16px 28px; cursor: pointer; text-decoration: none;
+      transition: opacity 0.3s, background 0.3s, color 0.3s;
+      display: inline-block; border: 1px solid var(--ink);
+    }
+    .by-btn-primary { background: var(--ink); color: #fff; }
+    .by-btn-primary:hover { opacity: 0.85; }
+    .by-btn-outline { background: transparent; color: var(--ink); }
+    .by-btn-outline:hover { background: var(--ink); color: #fff; }
+    .by-btn-light { background: transparent; color: #fff; border-color: #fff; }
+    .by-btn-light:hover { background: #fff; color: var(--ink); }
+    .by-search-note {
+      font-family: var(--font-body); font-size: 11px; color: #aaa; margin-top: 20px;
+    }
+
+    /* --- The Job: 3-col split --- */
+    .by-job { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+    .by-job-item { padding: 48px 36px; border-right: 1px solid #eee; }
+    .by-job-item:last-child { border-right: none; }
+    .by-job-day {
+      font-family: var(--font-display); font-size: 22px; font-style: italic;
+      color: var(--terracotta, #ae6d47); margin-bottom: 6px;
+    }
+    .by-job-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      color: var(--ink); margin-bottom: 14px; line-height: 1.2;
+    }
+    .by-job-text {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.75; color: #555;
+    }
+
+    /* --- Process timeline --- */
+    .by-process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .by-process-step {
+      padding: 36px 28px;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .by-process-step:nth-child(4n) { border-right: none; }
+    .by-process-step:nth-last-child(-n+4) { border-bottom: none; }
+    .by-process-num {
+      font-family: var(--font-display); font-size: 36px; font-weight: 300;
+      color: var(--terracotta, #ae6d47); line-height: 1; margin-bottom: 14px;
+      font-style: italic;
+    }
+    .by-process-title {
+      font-family: var(--font-display); font-size: 18px; font-weight: 400;
+      color: var(--ink); line-height: 1.25; margin-bottom: 10px;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .by-process-list {
+      list-style: none; padding: 0; margin: 0;
+      font-family: var(--font-body); font-size: 12px; line-height: 1.65; color: #666;
+    }
+    .by-process-list li { padding: 3px 0 3px 14px; position: relative; }
+    .by-process-list li::before {
+      content: ''; position: absolute; left: 0; top: 11px;
+      width: 6px; height: 1px; background: var(--terracotta, #ae6d47);
+    }
+
+    /* --- Coach pull-quote --- */
+    .by-coach {
+      max-width: 900px; margin: 64px auto 0; padding: 36px 48px;
+      border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+      text-align: center;
+    }
+    .by-coach p {
+      font-family: var(--font-display); font-size: clamp(20px, 2.4vw, 28px);
+      font-style: italic; font-weight: 400; color: var(--ink); line-height: 1.5;
+    }
+
+    /* --- Types of Homes --- */
+    .by-types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .by-type {
+      background: #fff; padding: 32px 28px; border: 1px solid #eee;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .by-type:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); }
+    .by-type-tag {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47);
+      margin-bottom: 14px;
+    }
+    .by-type-name {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      color: var(--ink); line-height: 1.2; margin-bottom: 12px;
+    }
+    .by-type-text {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.65; color: #666;
+    }
+
+    /* --- Costs --- */
+    .by-costs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid #eee; }
+    .by-cost {
+      padding: 32px; border-right: 1px solid #eee; border-bottom: 1px solid #eee;
+    }
+    .by-cost:nth-child(2n) { border-right: none; }
+    .by-cost:nth-last-child(-n+2) { border-bottom: none; }
+    .by-cost-name {
+      font-family: var(--font-display); font-size: 20px; font-weight: 400;
+      color: var(--ink); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .by-cost-text {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: #555;
+    }
+    .by-cost-text strong { color: var(--ink); font-weight: 500; }
+    .by-formula {
+      margin-top: 32px; padding: 28px 32px;
+      background: #faf7f1; text-align: center;
+      font-family: var(--font-body); font-size: 13px; line-height: 1.8; color: #555;
+    }
+    .by-formula-label {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47);
+      margin-bottom: 12px; display: block;
+    }
+    .by-formula-eq {
+      font-family: var(--font-display); font-size: clamp(15px, 1.6vw, 20px);
+      color: var(--ink); line-height: 1.6; font-style: italic;
+    }
+
+    /* --- Negotiation strategy list --- */
+    .by-strategies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .by-strategy {
+      padding: 28px;
+    }
+    .by-strategy-num {
+      font-family: var(--font-display); font-size: 28px; font-style: italic;
+      color: var(--terracotta, #ae6d47); margin-bottom: 6px;
+    }
+    .by-strategy-title {
+      font-family: var(--font-display); font-size: 18px; font-weight: 400;
+      color: var(--ink); margin-bottom: 8px; line-height: 1.25;
+    }
+    .by-strategy-text {
+      font-family: var(--font-body); font-size: 12px; line-height: 1.7; color: #666;
+    }
+
+    /* --- Contingencies --- */
+    .by-conts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .by-cont {
+      padding: 32px 24px; border-right: 1px solid #eee;
+      background: #fff;
+    }
+    .by-cont:last-child { border-right: none; }
+    .by-cont-num {
+      font-family: var(--font-display); font-size: 40px; font-weight: 300;
+      color: var(--terracotta, #ae6d47); line-height: 1; margin-bottom: 14px; font-style: italic;
+    }
+    .by-cont-name {
+      font-family: var(--font-body); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .by-cont-text {
+      font-family: var(--font-body); font-size: 12px; line-height: 1.7; color: #555;
+    }
+
+    /* --- Action plan --- */
+    .by-plan { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .by-plan-card {
+      padding: 32px 28px; background: #fff; border: 1px solid #eee;
+      display: flex; flex-direction: column;
+    }
+    .by-plan-num {
+      font-family: var(--font-display); font-size: 14px; font-style: italic;
+      color: var(--terracotta, #ae6d47); margin-bottom: 6px;
+    }
+    .by-plan-title {
+      font-family: var(--font-display); font-size: 20px; font-weight: 400;
+      color: var(--ink); margin-bottom: 16px; line-height: 1.2;
+    }
+    .by-plan-list {
+      list-style: none; padding: 0; margin: 0;
+      font-family: var(--font-body); font-size: 12px; line-height: 1.7; color: #555;
+    }
+    .by-plan-list li { padding: 4px 0 4px 16px; position: relative; }
+    .by-plan-list li::before {
+      content: ''; position: absolute; left: 0; top: 12px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta, #ae6d47);
+    }
+
+    /* --- Brokerage stats (Compass) --- */
+    .by-brokerage { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+    .by-stat {
+      padding: 36px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .by-stat:last-child { border-right: none; }
+    .by-stat-num {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300; color: #fff; line-height: 1; margin-bottom: 12px;
+    }
+    .by-stat-label {
+      font-family: var(--font-body); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); line-height: 1.6;
+    }
+
+    /* --- Downloads --- */
+    .by-downloads { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .by-download {
+      display: flex; gap: 32px; padding: 36px;
+      background: #fff; border: 1px solid #eee;
+      text-decoration: none; color: var(--ink);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .by-download:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); }
+    .by-download-cover {
+      flex: 0 0 90px; aspect-ratio: 3/4; background: linear-gradient(135deg, #d6c9a8, #c6a180);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .by-download-cover svg { width: 32px; height: 32px; fill: #fff; opacity: 0.85; }
+    .by-download-body { flex: 1; }
+    .by-download-tag {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47);
+      margin-bottom: 8px;
+    }
+    .by-download-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      color: var(--ink); line-height: 1.2; margin-bottom: 10px;
+    }
+    .by-download-desc {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.65; color: #666;
+      margin-bottom: 14px;
+    }
+    .by-download-cta {
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink);
+      border-bottom: 1px solid var(--ink); padding-bottom: 4px;
+    }
+
+    /* --- Gated Download Modal --- */
+    .gated-overlay {
+      position: fixed; inset: 0; background: rgba(26,26,26,0.72);
+      display: none; align-items: center; justify-content: center;
+      z-index: 1000; padding: 24px;
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .gated-overlay.is-open { display: flex; opacity: 1; }
+    .gated-modal {
+      background: #fff; max-width: 460px; width: 100%;
+      padding: 48px 40px; position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+      transform: translateY(8px); transition: transform 0.25s;
+    }
+    .gated-overlay.is-open .gated-modal { transform: translateY(0); }
+    .gated-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 32px; height: 32px; border: none; background: transparent;
+      cursor: pointer; font-size: 22px; line-height: 1; color: #999;
+    }
+    .gated-close:hover { color: var(--ink); }
+    .gated-eyebrow {
+      font-family: var(--font-body); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--terracotta, #ae6d47); margin-bottom: 12px;
+    }
+    .gated-title {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      color: var(--ink); line-height: 1.2; margin: 0 0 12px;
+    }
+    .gated-sub {
+      font-family: var(--font-body); font-size: 13px; line-height: 1.65;
+      color: #666; margin: 0 0 24px;
+    }
+    .gated-form { display: grid; gap: 12px; }
+    .gated-form input {
+      font-family: var(--font-body); font-size: 14px; padding: 14px 16px;
+      border: 1px solid #ddd; background: #fff;
+    }
+    .gated-form input:focus { outline: none; border-color: var(--ink); }
+    .gated-form button {
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 16px 24px; background: var(--ink); color: #fff;
+      border: none; cursor: pointer; transition: opacity 0.3s;
+      margin-top: 4px;
+    }
+    .gated-form button:hover { opacity: 0.85; }
+    .gated-note {
+      font-family: var(--font-body); font-size: 11px; color: #999;
+      text-align: center; margin: 14px 0 0;
+    }
+    .gated-success {
+      text-align: center; padding: 8px 0;
+    }
+    .gated-success-icon {
+      width: 56px; height: 56px; margin: 0 auto 16px;
+      border-radius: 50%; background: #faf7f1;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--terracotta, #ae6d47); font-size: 26px;
+    }
+
+    /* --- Newsletter / CTA --- */
+    .by-cta {
+      background: var(--ink); padding: 96px 48px; text-align: center; color: #fff;
+    }
+    .by-cta-title {
+      font-family: var(--font-display); font-size: clamp(30px, 4vw, 52px);
+      font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em;
+      margin: 0 0 14px; color: #fff;
+    }
+    .by-cta-title em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .by-cta-sub {
+      font-family: var(--font-body); font-size: 14px; font-weight: 300;
+      color: rgba(255,255,255,0.7); margin-bottom: 32px; max-width: 560px;
+      margin-left: auto; margin-right: auto; line-height: 1.7;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .by-job, .by-process, .by-types, .by-strategies, .by-conts, .by-plan { grid-template-columns: repeat(2, 1fr); }
+      .by-process-step:nth-child(4n) { border-right: 1px solid #eee; }
+      .by-process-step:nth-child(2n) { border-right: none; }
+      .by-process-step:nth-last-child(-n+4) { border-bottom: 1px solid #eee; }
+      .by-process-step:nth-last-child(-n+2) { border-bottom: none; }
+      .by-cont:last-child { border-right: 1px solid #eee; }
+      .by-cont:nth-child(2n) { border-right: none; }
+      .by-job-item:last-child { border-right: 1px solid #eee; }
+      .by-job-item:nth-child(2n) { border-right: none; }
+      .by-brokerage { grid-template-columns: repeat(2, 1fr); }
+      .by-stat { border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .by-stat:nth-child(2n) { border-right: none; }
+      .by-downloads { grid-template-columns: 1fr; }
+      .by-costs { grid-template-columns: 1fr; }
+      .by-cost { border-right: none; }
+      .by-cost:nth-last-child(-n+1) { border-bottom: none; }
+    }
+    @media (max-width: 768px) {
+      .ap-nav-center { display: none; }
+      .by-section, .by-section--alt, .by-section--ink, .by-search { padding: 64px 24px; }
+      .by-hero-content { padding: 0 24px 60px; }
+      .by-anchors { gap: 18px; padding: 16px 24px; }
+      .by-job, .by-process, .by-types, .by-strategies, .by-conts, .by-plan { grid-template-columns: 1fr; }
+      .by-job-item, .by-process-step, .by-cont { border-right: none !important; }
+      .by-brokerage { grid-template-columns: 1fr; }
+      .by-stat { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="ap-nav">
+    <a href="../index.html" class="ap-nav-logo">
+      <img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale">
+    </a>
+    <div class="ap-nav-center">
+      <a href="../index.html">Home</a>
+      <a href="old-town-life.html">Old Town Life</a>
+      <div class="ap-nav-dd">
+        <button class="ap-nav-dd-trigger">Neighborhoods</button>
+        <div class="ap-nav-dd-menu">
+          <a href="neighborhood-directory.html">Full Directory</a>
+          <a href="neighborhoods.html">Single Family</a>
+          <a href="condos.html">Luxury Condos</a>
+          <a href="history.html">Old Town History</a>
+        </div>
+      </div>
+      <a href="str-hub.html">STR Investing</a>
+      <a href="buy.html" class="is-active">Buy</a>
+      <a href="sell.html">Sell</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-nav-yt">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube
+    </a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="by-hero">
+    <div class="by-hero-img">
+      <img src="../assets/the-w.jpg" alt="Old Town Scottsdale luxury home exterior">
+    </div>
+    <div class="by-hero-content">
+      <p class="by-hero-eyebrow">For Buyers</p>
+      <h1 class="by-hero-title">BUYING IN<br><em>old town</em> SCOTTSDALE</h1>
+      <p class="by-hero-sub">A field guide for first-time buyers, luxury upgraders, out-of-state relocators, and STR investors. The full process, the real costs, and a local who's done this 150+ times.</p>
+    </div>
+  </section>
+
+  <!-- ===== ANCHOR BAR ===== -->
+  <nav class="by-anchors" aria-label="Page sections">
+    <a href="#search">Search Listings</a>
+    <a href="#approach">The Approach</a>
+    <a href="#search-experience">The Search</a>
+    <a href="#types">Types of Homes</a>
+    <a href="#guides">Guides</a>
+  </nav>
+
+  <!-- ===== SEARCH CTA ===== -->
+  <section class="by-search" id="search">
+    <p class="by-eyebrow">Search</p>
+    <h2 class="by-search-title">Browse <em>Old Town</em> listings</h2>
+    <p class="by-search-sub">Live MLS feed, updated in real time. Filter by neighborhood, building, price, beds, and STR-eligibility.</p>
+    <div class="by-search-actions">
+      <a href="#" class="by-btn by-btn-primary">Search All Listings</a>
+      <a href="#" class="by-btn by-btn-outline">Map View</a>
+    </div>
+    <p class="by-search-note">IDX feed integration coming soon &mdash; in the meantime, <a href="contact.html" style="color: inherit; text-decoration: underline;">tell us what you're looking for</a> and we'll send a curated list.</p>
+  </section>
+
+  <!-- ===== THE APPROACH ===== -->
+  <section class="by-section" id="approach">
+    <div class="by-section-head by-section-head--center">
+      <p class="by-eyebrow">The Approach</p>
+      <h2 class="by-h2">It's not a transaction. It's <em>a strategy.</em></h2>
+      <p class="by-lede">Buying in Old Town isn't just searching the MLS. It's knowing which buildings allow STRs, which streets flood, which builders age well, and which sellers are quietly open to off-market offers. We work the week so you don't have to.</p>
+    </div>
+  </section>
+
+  <!-- ===== THE SEARCH (experience) ===== -->
+  <section class="by-section--alt" id="search-experience">
+    <div class="by-section-inner">
+      <div class="by-section-head by-section-head--center">
+        <p class="by-eyebrow">The Search</p>
+        <h2 class="by-h2">How searching <em>with us</em> actually works</h2>
+        <p class="by-lede">Searching the public MLS will only get you so far. Here's what changes when we run the search alongside you.</p>
+      </div>
+      <div class="by-types">
+        <div class="by-type">
+          <p class="by-type-tag">01 &middot; Saved Search</p>
+          <h3 class="by-type-name">Built Around Your Criteria</h3>
+          <p class="by-type-text">We build a custom MLS search around your priorities &mdash; neighborhoods, beds/baths, lot size, year built, STR-eligibility &mdash; and you get pinged the moment something matches.</p>
+        </div>
+        <div class="by-type">
+          <p class="by-type-tag">02 &middot; Off-Market Access</p>
+          <h3 class="by-type-name">Inventory You Won't See Online</h3>
+          <p class="by-type-text">Compass Coming Soons, pocket listings, and the Selling Sonoran network of agents and homeowners. Most buyers never see this layer.</p>
+        </div>
+        <div class="by-type">
+          <p class="by-type-tag">03 &middot; Curated Showings</p>
+          <h3 class="by-type-name">Private Tours, On Your Schedule</h3>
+          <p class="by-type-text">We pre-walk homes when it makes sense so you only spend Saturdays on the ones worth seeing. Group runs and one-off private tours both work.</p>
+        </div>
+        <div class="by-type">
+          <p class="by-type-tag">04 &middot; Out-of-State</p>
+          <h3 class="by-type-name">Live FaceTime &amp; Video Tours</h3>
+          <p class="by-type-text">Relocators, snowbirds, and STR investors get full FaceTime walkthroughs, drone footage when it matters, and detailed condition videos before you fly in.</p>
+        </div>
+        <div class="by-type">
+          <p class="by-type-tag">05 &middot; Weekly Check-In</p>
+          <h3 class="by-type-name">Recalibrate as the Market Moves</h3>
+          <p class="by-type-text">A recurring 15-minute call to refine criteria, review new listings, and adjust the plan as inventory shifts. Markets move &mdash; the search should too.</p>
+        </div>
+        <div class="by-type">
+          <p class="by-type-tag">06 &middot; Vendor Network</p>
+          <h3 class="by-type-name">Lenders, Inspectors, Designers</h3>
+          <p class="by-type-text">Vetted relationships across lending, inspection, contracting, and design so you never start from scratch. Every recommendation is one we'd use ourselves.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 56px;">
+        <a href="contact.html" class="by-btn by-btn-primary">Start a Custom Search</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TYPES OF HOMES ===== -->
+  <section class="by-section" id="types">
+    <div class="by-section-head">
+      <p class="by-eyebrow">Types of Homes</p>
+      <h2 class="by-h2">Four <em>different</em> ways to find your home</h2>
+      <p class="by-lede">Most buyers only consider what's actively listed. The best opportunities often live somewhere else.</p>
+    </div>
+    <div class="by-types">
+      <div class="by-type">
+        <p class="by-type-tag">On-Market</p>
+        <h3 class="by-type-name">Actively Listed &amp; Open Houses</h3>
+        <p class="by-type-text">Active homes available on the MLS. Listing agents schedule open houses; we add your favorites to a saved viewing schedule.</p>
+      </div>
+      <div class="by-type">
+        <p class="by-type-tag">Off-Market</p>
+        <h3 class="by-type-name">Off-Market &amp; Pocket Listings</h3>
+        <p class="by-type-text">Compass has a database of MOLO sell-able homes that are not yet on the market &mdash; available to our loyalty buyers through proprietary access.</p>
+      </div>
+      <div class="by-type">
+        <p class="by-type-tag">New Build</p>
+        <h3 class="by-type-name">New Construction</h3>
+        <p class="by-type-text">Custom and modern Old Town builds. Have a buyer's agent represent you from day one to negotiate price, upgrades, and timelines.</p>
+      </div>
+      <div class="by-type">
+        <p class="by-type-tag">Value Play</p>
+        <h3 class="by-type-name">Rehab Homes</h3>
+        <p class="by-type-text">Off-market wholesalers and foreclosures that need work but trade at a steep discount. Lender, contractor, and value-add team in place.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== BROKERAGE STATS ===== -->
+  <section class="by-section--ink">
+    <div class="by-section-inner">
+      <div class="by-section-head by-section-head--center">
+        <p class="by-eyebrow">The Brokerage</p>
+        <h2 class="by-h2">Backed by <em class="cap">Compass</em></h2>
+        <p class="by-lede">A network of seasoned professionals and proprietary tools you can't get anywhere else &mdash; from off-market inventory to private buyer concierge services.</p>
+      </div>
+      <div class="by-brokerage">
+        <div class="by-stat">
+          <p class="by-stat-num">$15B</p>
+          <p class="by-stat-label">Compass Arizona Closed Sales Since 2016</p>
+        </div>
+        <div class="by-stat">
+          <p class="by-stat-num">#1</p>
+          <p class="by-stat-label">Highest-Producing Brokerage in Arizona</p>
+        </div>
+        <div class="by-stat">
+          <p class="by-stat-num">450+</p>
+          <p class="by-stat-label">Seasoned Compass Agents Statewide</p>
+        </div>
+        <div class="by-stat">
+          <p class="by-stat-num">9</p>
+          <p class="by-stat-label">Years of Compass Presence in Arizona</p>
+        </div>
+        <div class="by-stat">
+          <p class="by-stat-num">10,000+</p>
+          <p class="by-stat-label">Families &amp; Individuals Served</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOWNLOADS ===== -->
+  <section class="by-section" id="guides">
+    <div class="by-section-head">
+      <p class="by-eyebrow">The Guides</p>
+      <h2 class="by-h2">Two <em>downloadable</em> playbooks</h2>
+      <p class="by-lede">Everything on this page in one PDF, plus a deeper Scottsdale relocation guide for out-of-state buyers. Quick name and email and the guide is yours.</p>
+    </div>
+    <div class="by-downloads">
+      <a href="#" data-gated-pdf="../assets/NAUDIA - SELLING SONORAN BUYER GUIDE.pdf" data-gated-title="The Arizona Home Buyer Guide" class="by-download js-gated-download">
+        <div class="by-download-cover">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        </div>
+        <div class="by-download-body">
+          <p class="by-download-tag">PDF &middot; 16 pages</p>
+          <h3 class="by-download-title">The Arizona Home Buyer Guide</h3>
+          <p class="by-download-desc">The full process, contingencies, costs, negotiation strategies, and action plan for buying anywhere in Maricopa County.</p>
+          <span class="by-download-cta">Get the Guide &rarr;</span>
+        </div>
+      </a>
+      <a href="#" data-gated-pdf="../assets/Moving to Scottsdale Guide .pdf" data-gated-title="The Ultimate Scottsdale Relocation Guide" class="by-download js-gated-download">
+        <div class="by-download-cover">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        </div>
+        <div class="by-download-body">
+          <p class="by-download-tag">PDF &middot; 22 pages</p>
+          <h3 class="by-download-title">The Ultimate Scottsdale Relocation Guide</h3>
+          <p class="by-download-desc">Neighborhoods, top public &amp; private schools, restaurants, shopping centers, signature events, entertainment, and the real cost of living.</p>
+          <span class="by-download-cta">Get the Guide &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="by-cta">
+    <h2 class="by-cta-title">Ready when <em>you are</em></h2>
+    <p class="by-cta-sub">Whether you're a year out or already pre-approved, the conversation is the same: tell me what you're looking for, and I'll tell you exactly how we get there.</p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="contact.html" class="by-btn by-btn-light">Schedule a Call</a>
+      <a href="tel:+17026864252" class="by-btn by-btn-light">(702) 686-4252</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-living">Living</div>
+          <div class="footer-logo-main">Old Town Scottsdale</div>
+          <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+          <img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale" class="footer-brand-logo" style="margin-top: 20px; max-width: 110px; height: auto; display: block;">
+          <div class="footer-brokered" style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12);">
+            <p style="font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 16px;">Brokered by</p>
+            <img src="../assets/compass-white.png" alt="Selling Sonoran Group at Compass" style="max-width: 280px; width: 100%; height: auto; display: block; opacity: 0.92;">
+          </div>
+        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
+        <div class="footer-social" style="display: flex; gap: 14px; align-items: center;">
+          <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.49a8.16 8.16 0 0 0 4.77 1.52V6.56a4.85 4.85 0 0 1-1.84-.13z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Gated Download Modal ===== -->
+  <div class="gated-overlay" id="gatedOverlay" role="dialog" aria-modal="true" aria-labelledby="gatedTitle">
+    <div class="gated-modal">
+      <button type="button" class="gated-close" id="gatedClose" aria-label="Close">&times;</button>
+      <div id="gatedFormWrap">
+        <p class="gated-eyebrow">Get the Guide</p>
+        <h3 class="gated-title" id="gatedTitle">The Guide</h3>
+        <p class="gated-sub">Quick name and email and the PDF is yours. We&rsquo;ll send occasional Old Town updates &mdash; you can opt out anytime.</p>
+        <form class="gated-form" id="gatedForm">
+          <input type="text" name="firstName" placeholder="First name" required>
+          <input type="text" name="lastName" placeholder="Last name" required>
+          <input type="email" name="email" placeholder="Email address" required>
+          <button type="submit">Send Me the Guide</button>
+        </form>
+        <p class="gated-note">No spam. Unsubscribe with one click.</p>
+      </div>
+      <div class="gated-success" id="gatedSuccess" hidden>
+        <div class="gated-success-icon">&#10003;</div>
+        <p class="gated-eyebrow">Sent</p>
+        <h3 class="gated-title">Your guide is downloading</h3>
+        <p class="gated-sub">If the download doesn&rsquo;t start automatically, <a id="gatedManual" href="#" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: underline;">click here</a>. Check your email for occasional Old Town updates.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Smooth anchor scrolling
+    document.querySelectorAll('.by-anchors a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Gated download modal
+    (function(){
+      const overlay = document.getElementById('gatedOverlay');
+      const closeBtn = document.getElementById('gatedClose');
+      const titleEl = document.getElementById('gatedTitle');
+      const form = document.getElementById('gatedForm');
+      const formWrap = document.getElementById('gatedFormWrap');
+      const successEl = document.getElementById('gatedSuccess');
+      const manualLink = document.getElementById('gatedManual');
+      let pendingPdf = null;
+      let pendingTitle = null;
+
+      function openModal(pdf, title) {
+        pendingPdf = pdf;
+        pendingTitle = title;
+        titleEl.textContent = title;
+        formWrap.hidden = false;
+        successEl.hidden = true;
+        form.reset();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => form.querySelector('input')?.focus(), 100);
+      }
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      function triggerDownload(pdf, title) {
+        const a = document.createElement('a');
+        a.href = pdf;
+        a.download = title + '.pdf';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+
+      document.querySelectorAll('.js-gated-download').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          openModal(el.dataset.gatedPdf, el.dataset.gatedTitle);
+        });
+      });
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal(); });
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form));
+        // Persist locally so the user can extract leads later (and wire to CRM/webhook here)
+        try {
+          const leads = JSON.parse(localStorage.getItem('lotsLeads') || '[]');
+          leads.push({ ...data, guide: pendingTitle, ts: new Date().toISOString() });
+          localStorage.setItem('lotsLeads', JSON.stringify(leads));
+        } catch (_) {}
+
+        // Show success state and trigger the download
+        formWrap.hidden = true;
+        successEl.hidden = false;
+        manualLink.href = pendingPdf;
+        triggerDownload(pendingPdf, pendingTitle);
+      });
+    })();
+  </script>
+</body>
+</html>
