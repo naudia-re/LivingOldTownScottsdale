@@ -103,6 +103,14 @@
 
     /* --- Gated listings --- */
     .str-listings-wrap { position: relative; }
+    .str-listings-subhead { margin-bottom: 32px; max-width: 720px; }
+    .str-listings-subhead--listings { margin-top: 64px; padding-top: 48px; border-top: 1px solid #eee; }
+    .str-subhead-eyebrow { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47); margin: 0 0 10px; }
+    .str-subhead-title { font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 32px); font-weight: 400; color: var(--ink); line-height: 1.2; margin: 0 0 10px; }
+    .str-subhead-text { font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: #666; margin: 0; }
+    .str-listings.is-locked .str-builds,
+    .str-listings.is-locked .str-listings-subhead,
+    .str-listings.is-locked .str-listings-tabs { filter: blur(8px); pointer-events: none; user-select: none; }
     .str-listings-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
     .str-listings-tab { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 22px; border: 1px solid #ddd; background: transparent; color: #666; cursor: pointer; transition: all 0.3s; }
     .str-listings-tab:hover { border-color: var(--ink); color: var(--ink); }
@@ -121,7 +129,7 @@
     .str-listing-spec strong { color: var(--ink); font-weight: 600; display: block; font-size: 14px; }
 
     /* --- Lock state --- */
-    .str-listings.is-locked .str-listings-grid { filter: blur(8px); pointer-events: none; user-select: none; }
+    .str-listings.is-locked .str-listings-grid { filter: blur(8px); pointer-events: none; user-select: none; min-height: 360px; }
     .str-unlock-cta { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px; background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.92) 35%); }
     .str-unlock-cta h3 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); font-weight: 300; color: var(--ink); text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 14px; max-width: 600px; }
     .str-unlock-cta h3 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
@@ -234,8 +242,7 @@
     <a href="#why">Why Old Town</a>
     <a href="#rules">The Rules</a>
     <a href="#calculator">Calculator</a>
-    <a href="#buildings">Top Buildings</a>
-    <a href="#listings">STR-Approved Listings</a>
+    <a href="#listings">STR Properties</a>
     <a href="#guide">The Guide</a>
   </nav>
 
@@ -342,13 +349,25 @@
     </div>
   </section>
 
-  <!-- ===== TOP BUILDINGS ===== -->
-  <section class="str-section--alt" id="buildings">
-    <div class="str-section-inner">
-      <div class="str-section-head">
-        <p class="str-eyebrow">Ranked Quarterly</p>
-        <h2 class="str-h2">Top <em>performing</em> STR buildings</h2>
-        <p class="str-lede">The Old Town condo communities consistently delivering the strongest STR returns. Performance shifts as new inventory comes online &mdash; we update this list every quarter.</p>
+  <!-- ===== GATED STR PROPERTIES (buildings + listings) ===== -->
+  <section class="str-section" id="listings">
+    <div class="str-section-head str-section-head--center">
+      <p class="str-eyebrow">STR Properties</p>
+      <h2 class="str-h2">The <em>actual</em> STR-eligible market</h2>
+      <p class="str-lede">The top-performing buildings ranked by revenue, plus every STR-eligible Old Town condo and qualifying Scottsdale single-family home &mdash; live from the MLS. Create a free account to see the full picture.</p>
+    </div>
+
+    <div id="strSignedInBar" class="str-signedin" hidden>
+      <span>Signed in as <strong id="strSignedInEmail">you</strong> &mdash; everything unlocked.</span>
+      <button type="button" id="strSignOut">Sign out</button>
+    </div>
+
+    <div id="strListings" class="str-listings str-listings-wrap is-locked">
+      <!-- Top performing buildings -->
+      <div class="str-listings-subhead">
+        <p class="str-subhead-eyebrow">Ranked Quarterly</p>
+        <h3 class="str-subhead-title">Top performing buildings</h3>
+        <p class="str-subhead-text">The Old Town condo communities consistently delivering the strongest STR returns. Performance shifts as new inventory comes online &mdash; refreshed each quarter.</p>
       </div>
       <div class="str-builds">
         <div class="str-build">
@@ -392,23 +411,13 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== GATED LISTINGS ===== -->
-  <section class="str-section" id="listings">
-    <div class="str-section-head str-section-head--center">
-      <p class="str-eyebrow">STR-Approved Listings</p>
-      <h2 class="str-h2">Every <em>STR-eligible</em> property, in one place</h2>
-      <p class="str-lede">Two filtered feeds, updated live: Old Town condo communities with STR-friendly CC&amp;Rs, and Scottsdale single-family homes outside an HOA with a pool and at least 3 bedrooms. Create a free account to view the full list.</p>
-    </div>
-
-    <div id="strSignedInBar" class="str-signedin" hidden>
-      <span>Signed in as <strong id="strSignedInEmail">you</strong> &mdash; all listings unlocked.</span>
-      <button type="button" id="strSignOut">Sign out</button>
-    </div>
-
-    <div id="strListings" class="str-listings str-listings-wrap is-locked">
+      <!-- Listings tabs -->
+      <div class="str-listings-subhead str-listings-subhead--listings">
+        <p class="str-subhead-eyebrow">Live from the MLS</p>
+        <h3 class="str-subhead-title">STR-approved listings</h3>
+        <p class="str-subhead-text">Two filtered feeds: Old Town condo communities with STR-friendly CC&amp;Rs, and Scottsdale single-family homes outside an HOA with a pool and at least 3 bedrooms.</p>
+      </div>
       <div class="str-listings-tabs">
         <button class="str-listings-tab is-active" data-tab="condo">Condo Communities</button>
         <button class="str-listings-tab" data-tab="sfh">Single Family &middot; Pool &middot; 3BR+</button>
