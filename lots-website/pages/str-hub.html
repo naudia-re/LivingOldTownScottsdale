@@ -3,288 +3,548 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STR Investment Hub | Living Old Town Scottsdale</title>
-  <meta name="description" content="Everything you need to invest in Old Town Scottsdale short-term rentals. ROI calculators, zoning maps, top-performing buildings, and STR market data.">
+  <title>STR Investing in Old Town Scottsdale | Living Old Town Scottsdale</title>
+  <meta name="description" content="A field guide to short-term rental investing in Old Town Scottsdale. Market overview, the local rules in plain English, an ROI calculator, and the actual STR-approved buildings &mdash; from Naudia Andrescavage and the Selling Sonoran Group.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body { background: #fff; }
+
+    /* --- Nav (matches home / buy) --- */
+    .ap-nav { display: flex; align-items: center; justify-content: space-between; padding: 24px 48px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+    .ap-nav-logo img { height: 56px; width: auto; }
+    .ap-nav-center { display: flex; gap: 36px; align-items: center; }
+    .ap-nav-center a, .ap-nav-dd-trigger { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); text-decoration: none; opacity: 0.8; background: none; border: none; cursor: pointer; padding: 0; transition: opacity 0.3s; }
+    .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
+    .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+    .ap-nav-dd { position: relative; }
+    .ap-nav-dd-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #eee; padding: 12px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: opacity 0.2s; margin-top: 8px; }
+    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd-menu a { display: block; padding: 10px 20px; font-family: var(--font-body); font-size: 11px; font-weight: 400; letter-spacing: 0.15em; }
+    .ap-nav-dd-menu a:hover { background: #fafafa; opacity: 1; color: var(--ink); }
+    .ap-nav-yt { display: inline-flex; align-items: center; gap: 8px; background: #c4302b; color: #fff; padding: 12px 18px; font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; }
+    .ap-nav-yt:hover { background: #a30000; }
+    .ap-nav-yt svg { width: 14px; height: 14px; fill: #fff; }
+
+    /* --- Hero --- */
+    .str-hero { position: relative; min-height: 72vh; max-height: 760px; display: flex; align-items: flex-end; overflow: hidden; background: #f5e4c3; }
+    .str-hero-img { position: absolute; inset: 0; }
+    .str-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+    .str-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(0,0,0,0.7) 100%); }
+    .str-hero-content { position: relative; z-index: 2; color: #fff; padding: 0 48px 80px; max-width: 1100px; text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4); }
+    .str-hero-eyebrow { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 24px; }
+    .str-hero-title { font-family: var(--font-display); font-size: clamp(44px, 7vw, 96px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.02; margin: 0 0 28px; color: #fff; }
+    .str-hero-title em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .str-hero-sub { font-family: var(--font-body); font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.95); max-width: 600px; }
+
+    /* --- Anchor bar --- */
+    .str-anchors { display: flex; gap: 32px; justify-content: center; padding: 24px 48px; border-bottom: 1px solid #eee; overflow-x: auto; }
+    .str-anchors a { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #888; text-decoration: none; white-space: nowrap; transition: color 0.3s; }
+    .str-anchors a:hover { color: var(--ink); }
+
+    /* --- Sections --- */
+    .str-section { padding: 96px 48px; max-width: 1400px; margin: 0 auto; }
+    .str-section--alt { background: #faf7f1; max-width: none; }
+    .str-section--alt .str-section-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+    .str-section--ink { background: var(--ink); color: #fff; max-width: none; padding: 96px 48px; }
+    .str-section--ink .str-section-inner { max-width: 1400px; margin: 0 auto; }
+    .str-section-head { max-width: 720px; margin-bottom: 56px; }
+    .str-section-head--center { margin-left: auto; margin-right: auto; text-align: center; }
+    .str-eyebrow { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 16px; }
+    .str-section--ink .str-eyebrow { color: rgba(255,255,255,0.55); }
+    .str-h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--ink); line-height: 1.1; text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 18px; }
+    .str-h2 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .str-h2 em.cap { text-transform: none; }
+    .str-section--ink .str-h2 { color: #fff; }
+    .str-lede { font-family: var(--font-body); font-size: 15px; font-weight: 300; color: #555; line-height: 1.8; }
+    .str-section--ink .str-lede { color: rgba(255,255,255,0.75); }
+
+    /* --- Why grid (3-col stats / value cards) --- */
+    .str-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .str-why-card { padding: 36px 32px; background: #fff; border: 1px solid #eee; }
+    .str-why-num { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 14px; }
+    .str-why-num em { font-style: italic; color: var(--terracotta, #ae6d47); }
+    .str-why-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--ink); margin: 0 0 10px; line-height: 1.25; }
+    .str-why-text { font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: #666; margin: 0; }
+
+    /* --- Rules grid --- */
+    .str-rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #eee; border: 1px solid #eee; }
+    .str-rule { background: #faf7f1; padding: 32px 28px; }
+    .str-rule-num { font-family: var(--font-display); font-size: 14px; font-style: italic; color: var(--terracotta, #ae6d47); margin-bottom: 10px; }
+    .str-rule-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--ink); margin: 0 0 10px; line-height: 1.25; }
+    .str-rule-text { font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: #555; margin: 0; }
+    .str-rules-note { margin-top: 28px; padding: 20px 24px; background: #fff; border-left: 2px solid var(--terracotta, #ae6d47); font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: #555; }
+
+    /* --- Calculator --- */
+    .str-calc-wrap { background: #fff; padding: 56px 56px; border: 1px solid #eee; max-width: 880px; margin: 0 auto; }
+    .str-calc-field { margin-bottom: 28px; }
+    .str-calc-field label { display: flex; justify-content: space-between; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+    .str-calc-field label span { color: var(--ink); font-weight: 600; letter-spacing: 0.05em; }
+    .str-calc-field input[type="range"] { width: 100%; accent-color: var(--ink); }
+    .str-calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 32px 0 12px; border-top: 1px solid #eee; }
+    .str-calc-result-label { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #999; margin-bottom: 8px; }
+    .str-calc-result-value { font-family: var(--font-display); font-weight: 300; color: var(--ink); line-height: 1; }
+    .str-calc-result-value--big { font-size: 44px; color: var(--terracotta, #ae6d47); }
+    .str-calc-result-value--med { font-size: 26px; }
+    .str-calc-fine { font-family: var(--font-body); font-size: 11px; color: #999; text-align: center; margin-top: 18px; }
+
+    /* --- Building cards --- */
+    .str-builds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .str-build { background: #fff; border: 1px solid #eee; overflow: hidden; }
+    .str-build-img { aspect-ratio: 4/3; overflow: hidden; background: linear-gradient(135deg, #c6a180, #ae6d47); }
+    .str-build-img img { width: 100%; height: 100%; object-fit: cover; }
+    .str-build-body { padding: 22px; }
+    .str-build-name { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--ink); margin: 0 0 6px; }
+    .str-build-meta { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 12px; }
+    .str-build-stat { display: flex; justify-content: space-between; font-family: var(--font-body); font-size: 12px; color: #555; padding: 6px 0; }
+    .str-build-stat strong { color: var(--ink); font-weight: 600; }
+
+    /* --- Gated listings --- */
+    .str-listings-wrap { position: relative; }
+    .str-listings-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+    .str-listings-tab { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 22px; border: 1px solid #ddd; background: transparent; color: #666; cursor: pointer; transition: all 0.3s; }
+    .str-listings-tab:hover { border-color: var(--ink); color: var(--ink); }
+    .str-listings-tab.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .str-listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .str-listing { background: #fff; border: 1px solid #eee; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .str-listing:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+    .str-listing-img { aspect-ratio: 4/3; overflow: hidden; position: relative; background: linear-gradient(135deg, #d6c9a8, #c6a180); }
+    .str-listing-img img { width: 100%; height: 100%; object-fit: cover; }
+    .str-listing-badge { position: absolute; top: 14px; left: 14px; font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; background: rgba(26,26,26,0.85); color: #fff; padding: 6px 10px; }
+    .str-listing-body { padding: 22px 22px 24px; }
+    .str-listing-price { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin: 0 0 6px; }
+    .str-listing-addr { font-family: var(--font-body); font-size: 12px; color: #888; margin-bottom: 14px; }
+    .str-listing-specs { display: flex; gap: 14px; padding-top: 12px; border-top: 1px solid #eee; }
+    .str-listing-spec { font-family: var(--font-body); font-size: 11px; color: #555; }
+    .str-listing-spec strong { color: var(--ink); font-weight: 600; display: block; font-size: 14px; }
+
+    /* --- Lock state --- */
+    .str-listings.is-locked .str-listings-grid { filter: blur(8px); pointer-events: none; user-select: none; }
+    .str-unlock-cta { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px; background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.92) 35%); }
+    .str-unlock-cta h3 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); font-weight: 300; color: var(--ink); text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 14px; max-width: 600px; }
+    .str-unlock-cta h3 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .str-unlock-cta p { font-family: var(--font-body); font-size: 14px; line-height: 1.6; color: #555; max-width: 480px; margin: 0 0 28px; }
+    .str-btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; padding: 16px 28px; cursor: pointer; transition: opacity 0.3s, background 0.3s, color 0.3s; text-decoration: none; border: 1px solid var(--ink); }
+    .str-btn-primary { background: var(--ink); color: #fff; }
+    .str-btn-primary:hover { opacity: 0.85; }
+    .str-btn-outline { background: transparent; color: var(--ink); }
+    .str-btn-outline:hover { background: var(--ink); color: #fff; }
+
+    .str-signedin { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: #faf7f1; border: 1px solid #eee; margin-bottom: 28px; font-family: var(--font-body); font-size: 12px; color: #555; }
+    .str-signedin strong { color: var(--ink); }
+    .str-signedin button { background: transparent; border: none; font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta, #ae6d47); cursor: pointer; }
+    .str-idx-note { margin-top: 24px; padding: 16px 20px; background: #fff; border: 1px dashed #ddd; font-family: var(--font-body); font-size: 11px; line-height: 1.6; color: #888; text-align: center; }
+
+    /* --- Auth modal --- */
+    .auth-overlay { position: fixed; inset: 0; background: rgba(26,26,26,0.72); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 24px; opacity: 0; transition: opacity 0.25s; }
+    .auth-overlay.is-open { display: flex; opacity: 1; }
+    .auth-modal { background: #fff; max-width: 480px; width: 100%; padding: 44px 40px 36px; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.2); transform: translateY(8px); transition: transform 0.25s; }
+    .auth-overlay.is-open .auth-modal { transform: translateY(0); }
+    .auth-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: none; background: transparent; cursor: pointer; font-size: 22px; line-height: 1; color: #999; }
+    .auth-close:hover { color: var(--ink); }
+    .auth-eyebrow { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47); margin-bottom: 8px; }
+    .auth-title { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.2; margin: 0 0 22px; }
+    .auth-tabs { display: flex; gap: 0; border-bottom: 1px solid #eee; margin-bottom: 24px; }
+    .auth-tab { flex: 1; font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 12px 8px; background: transparent; border: none; cursor: pointer; color: #999; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.3s; }
+    .auth-tab:hover { color: var(--ink); }
+    .auth-tab.is-active { color: var(--ink); border-bottom-color: var(--ink); }
+    .auth-panel { display: none; }
+    .auth-panel.is-active { display: block; }
+    .auth-form { display: grid; gap: 12px; }
+    .auth-form input { font-family: var(--font-body); font-size: 14px; padding: 14px 16px; border: 1px solid #ddd; background: #fff; }
+    .auth-form input:focus { outline: none; border-color: var(--ink); }
+    .auth-form .auth-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .auth-form button { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; padding: 16px 24px; background: var(--ink); color: #fff; border: none; cursor: pointer; transition: opacity 0.3s; margin-top: 4px; }
+    .auth-form button:hover { opacity: 0.85; }
+    .auth-status { font-family: var(--font-body); font-size: 12px; color: #666; min-height: 18px; margin-top: 6px; text-align: center; }
+    .auth-mode-hint { font-family: var(--font-body); font-size: 10px; color: #aaa; text-align: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid #f0f0f0; }
+    .auth-panel-note { font-family: var(--font-body); font-size: 12px; color: #888; line-height: 1.55; margin: 0 0 16px; }
+
+    /* --- Newsletter / Footer --- */
+    .str-newsletter { background: var(--ink); padding: 96px 48px; text-align: center; color: #fff; }
+    .str-newsletter-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; margin: 0 0 12px; }
+    .str-newsletter-sub { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); margin: 0 0 32px; }
+    .str-news-form { display: flex; gap: 0; max-width: 460px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .str-news-form input { flex: 1; padding: 14px 0; background: transparent; border: none; color: #fff; font-family: var(--font-body); font-size: 14px; }
+    .str-news-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .str-news-form input:focus { outline: none; }
+    .str-news-form button { background: transparent; border: none; color: #fff; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer; padding: 14px 0 14px 24px; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .str-why { grid-template-columns: 1fr; }
+      .str-rules { grid-template-columns: 1fr; }
+      .str-builds { grid-template-columns: repeat(2, 1fr); }
+      .str-listings-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .ap-nav-center { display: none; }
+      .str-section, .str-section--ink, .str-section--alt .str-section-inner { padding-left: 24px; padding-right: 24px; }
+      .str-section { padding: 64px 24px; }
+      .str-hero-content { padding: 0 24px 56px; }
+      .str-builds { grid-template-columns: 1fr; }
+      .str-listings-grid { grid-template-columns: 1fr; }
+      .str-calc-wrap { padding: 36px 24px; }
+      .str-calc-results { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav scrolled" id="mainNav">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <span class="nav-logo-living">Living</span>
-        <span class="nav-logo-main">Old Town Scottsdale</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="old-town-life.html">Old Town Life</a></li>
-        <li><a href="str-hub.html" class="active">STR Investing</a></li>
-        <li><a href="condos.html">Luxury Condos</a></li>
-        <li><a href="buy.html">Buy</a></li>
-        <li><a href="sell.html">Sell</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="nav-cta">Work With Us</a></li>
-      </ul>
-      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- ===== NAV ===== -->
+  <nav class="ap-nav">
+    <a href="../index.html" class="ap-nav-logo"><img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale"></a>
+    <div class="ap-nav-center">
+      <a href="../index.html">Home</a>
+      <a href="old-town-life.html">Old Town Life</a>
+      <div class="ap-nav-dd">
+        <button class="ap-nav-dd-trigger">Neighborhoods</button>
+        <div class="ap-nav-dd-menu">
+          <a href="neighborhood-directory.html">Full Directory</a>
+          <a href="neighborhoods.html">Single Family</a>
+          <a href="condos.html">Luxury Condos</a>
+          <a href="history.html">Old Town History</a>
+        </div>
+      </div>
+      <a href="str-hub.html" class="is-active">STR Investing</a>
+      <a href="buy.html">Buy</a>
+      <a href="sell.html">Sell</a>
+      <a href="blog.html">Blog</a>
     </div>
+    <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-nav-yt">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube
+    </a>
   </nav>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <div class="section-label text-center">For Investors</div>
-      <h1 class="section-title text-center">Old Town STR Investment Hub</h1>
-      <p class="page-header-desc">
-        Old Town Scottsdale is one of Arizona's top-performing short-term rental markets. Get the data, zoning clarity, and building analysis you need to invest with confidence.
-      </p>
+  <!-- ===== HERO ===== -->
+  <section class="str-hero">
+    <div class="str-hero-img"><img src="../assets/home-str.jpg" alt="Old Town Scottsdale rooftop pool view"></div>
+    <div class="str-hero-content">
+      <p class="str-hero-eyebrow">STR Investing</p>
+      <h1 class="str-hero-title">SHORT-TERM<br><em>rentals</em> IN OLD TOWN</h1>
+      <p class="str-hero-sub">Old Town Scottsdale is one of the highest-performing short-term rental markets in the country. A market overview, the local rules in plain English, an ROI calculator, and the actual STR-approved buildings — all in one place.</p>
     </div>
   </section>
 
-  <!-- Market Snapshot Stats -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">$285</div>
-          <div class="stat-label">Avg. Nightly Rate</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">72%</div>
-          <div class="stat-label">Avg. Occupancy</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">$75K+</div>
-          <div class="stat-label">Avg. Annual Revenue</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">6-8%</div>
-          <div class="stat-label">Typical Cap Rate</div>
-        </div>
-      </div>
+  <!-- ===== ANCHOR BAR ===== -->
+  <nav class="str-anchors" aria-label="Page sections">
+    <a href="#why">Why Old Town</a>
+    <a href="#rules">The Rules</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#buildings">Top Buildings</a>
+    <a href="#listings">STR-Approved Listings</a>
+    <a href="#guide">The Guide</a>
+  </nav>
+
+  <!-- ===== WHY OLD TOWN ===== -->
+  <section class="str-section" id="why">
+    <div class="str-section-head">
+      <p class="str-eyebrow">Why Old Town</p>
+      <h2 class="str-h2">A top <em>five</em> STR market in the country</h2>
+      <p class="str-lede">Year-round demand, true walkability, and a brand the rest of the world already knows. Old Town Scottsdale isn't an emerging STR market — it's a mature one with a deep guest pipeline and a real regulatory framework around it.</p>
     </div>
-  </section>
-
-  <!-- STR Features -->
-  <section class="section" style="background: #fff;">
-    <div class="container">
-      <div class="text-center">
-        <div class="section-label">Your STR Toolkit</div>
-        <h2 class="section-title">Everything You Need to Invest</h2>
+    <div class="str-why">
+      <div class="str-why-card">
+        <div class="str-why-num">365<em>.</em></div>
+        <h3 class="str-why-title">Year-Round Demand</h3>
+        <p class="str-why-text">Spring training, summer pool culture, fall patios, snowbird winters. Old Town runs four distinct booking peaks instead of one season &mdash; smoothing occupancy across the calendar.</p>
       </div>
-
-      <div class="text-center" style="margin-bottom: 48px;">
-        <a href="str-listings.html" class="btn btn-primary btn-lg">Browse STR-Eligible Listings</a>
+      <div class="str-why-card">
+        <div class="str-why-num"><em>$</em>340</div>
+        <h3 class="str-why-title">Strong ADR Floor</h3>
+        <p class="str-why-text">Average daily rates in well-positioned STR-approved units sit comfortably above the Phoenix metro average. Boutique properties consistently clear $400+ in peak season.</p>
       </div>
-
-      <div class="str-features">
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F5FA;</div>
-          <h3 class="str-feature-title">Zoning Map</h3>
-          <p class="str-feature-text">Interactive map showing STR-eligible zones in Old Town Scottsdale. Know before you buy which properties can legally operate as short-term rentals.</p>
-        </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F4CA;</div>
-          <h3 class="str-feature-title">Market Data</h3>
-          <p class="str-feature-text">Average nightly rates, occupancy percentages, seasonal trends, and revenue projections by neighborhood and building type.</p>
-        </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F3E2;</div>
-          <h3 class="str-feature-title">Building Rankings</h3>
-          <p class="str-feature-text">Top-performing STR buildings in Old Town ranked by revenue, guest ratings, and ROI. Updated quarterly with real data.</p>
-        </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F4DD;</div>
-          <h3 class="str-feature-title">Rules &amp; Permits</h3>
-          <p class="str-feature-text">Scottsdale STR regulations, HOA restrictions, permit requirements, tax obligations, and compliance guidelines in plain English.</p>
-        </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F4B5;</div>
-          <h3 class="str-feature-title">ROI Calculator</h3>
-          <p class="str-feature-text">Input your purchase price, expected nightly rate, and occupancy to see projected annual revenue, net income, and return on investment.</p>
-        </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F91D;</div>
-          <h3 class="str-feature-title">Investor Consultation</h3>
-          <p class="str-feature-text">Work directly with Naudia to identify the best STR opportunities based on your budget, goals, and risk tolerance.</p>
-        </div>
+      <div class="str-why-card">
+        <div class="str-why-num">72<em>%</em></div>
+        <h3 class="str-why-title">Mature Occupancy</h3>
+        <p class="str-why-text">Top-performing units track 70&ndash;80% annual occupancy. That blended consistency, more than a single hot month, is what makes the underwriting work.</p>
       </div>
     </div>
   </section>
 
-  <!-- ROI Calculator -->
-  <section class="section" style="background: var(--bg-alt);">
-    <div class="container">
-      <div class="calculator">
-        <div class="section-label text-center">Interactive Tool</div>
-        <h2 class="calculator-title">STR ROI Calculator</h2>
-        <p class="calculator-desc">Estimate your potential returns on an Old Town Scottsdale short-term rental investment.</p>
-
-        <div class="calculator-field">
-          <label>
-            Purchase Price
-            <span id="purchaseDisplay">$500,000</span>
-          </label>
-          <input type="range" id="purchasePrice" min="200000" max="2000000" step="25000" value="500000">
+  <!-- ===== THE RULES ===== -->
+  <section class="str-section--alt" id="rules">
+    <div class="str-section-inner">
+      <div class="str-section-head">
+        <p class="str-eyebrow">The Rules</p>
+        <h2 class="str-h2">Scottsdale STR rules, <em>in plain english</em></h2>
+        <p class="str-lede">The headlines you should know before you start touring. Not legal advice &mdash; and the regulations evolve. Always confirm with your agent and the City of Scottsdale before you offer.</p>
+      </div>
+      <div class="str-rules">
+        <div class="str-rule">
+          <p class="str-rule-num">01</p>
+          <h3 class="str-rule-title">You Need a Permit</h3>
+          <p class="str-rule-text">Every STR operating in Scottsdale must register with the City and carry an active permit. There's an annual fee, an inspection requirement, and a permit number that must appear on every listing.</p>
         </div>
-
-        <div class="calculator-field">
-          <label>
-            Average Nightly Rate
-            <span id="nightlyDisplay">$250</span>
-          </label>
-          <input type="range" id="nightlyRate" min="100" max="600" step="10" value="250">
+        <div class="str-rule">
+          <p class="str-rule-num">02</p>
+          <h3 class="str-rule-title">Liability Insurance Is Required</h3>
+          <p class="str-rule-text">Scottsdale mandates a minimum liability policy specifically covering short-term rental use. Generic homeowner policies don't qualify &mdash; you need an STR endorsement or a dedicated STR policy.</p>
         </div>
-
-        <div class="calculator-field">
-          <label>
-            Occupancy Rate
-            <span id="occupancyDisplay">70%</span>
-          </label>
-          <input type="range" id="occupancyRate" min="30" max="95" step="5" value="70">
+        <div class="str-rule">
+          <p class="str-rule-num">03</p>
+          <h3 class="str-rule-title">HOAs Can Still Say No</h3>
+          <p class="str-rule-text">A City permit doesn't override your HOA. Most Old Town condos are NOT STR-eligible &mdash; only a specific subset of buildings have CC&amp;Rs that allow rentals under 30 days. We track the approved list for you.</p>
         </div>
-
-        <div class="calculator-result" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
-          <div>
-            <div class="calculator-result-label">Annual Revenue</div>
-            <div id="annualRevenue" style="font-family: var(--font-display); font-size: 24px; color: var(--ink);">$63,875</div>
-          </div>
-          <div>
-            <div class="calculator-result-label">Est. Net Income</div>
-            <div id="netIncome" style="font-family: var(--font-display); font-size: 24px; color: var(--ink);">$41,519</div>
-          </div>
-          <div>
-            <div class="calculator-result-label">Projected ROI</div>
-            <div id="roiResult" class="calculator-result-value" style="font-size: 32px;">8.3%</div>
-          </div>
+        <div class="str-rule">
+          <p class="str-rule-num">04</p>
+          <h3 class="str-rule-title">Noise &amp; Occupancy Caps Are Enforced</h3>
+          <p class="str-rule-text">Scottsdale has real teeth here: documented complaints, occupancy limits tied to bedroom count, and quiet hours that are actively monitored. One bad guest can cost you a permit suspension.</p>
         </div>
-
-        <div style="text-align: center; margin-top: 24px;">
-          <p style="font-size: 12px; color: var(--text-faint); margin-bottom: 16px;">*Estimates based on 35% operating expense ratio. Actual results vary.</p>
-          <a href="contact.html" class="btn btn-primary btn-sm">Get a Personalized Analysis</a>
-        </div>
+      </div>
+      <div class="str-rules-note">
+        <strong>The full picture &mdash;</strong> permit timelines, tax registrations, lender quirks for STR-zoned properties, what makes a building &ldquo;STR-friendly&rdquo; in practice, and the off-market deals nobody sees &mdash; lives in our STR Investor Guide. <a href="contact.html" style="color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none;">Request a copy &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- Top STR Buildings -->
-  <section class="section" style="background: #fff;">
-    <div class="container">
-      <div class="section-label">Ranked Quarterly</div>
-      <h2 class="section-title">Top STR Buildings in Old Town</h2>
-      <p class="section-subtitle">The buildings with the strongest short-term rental performance based on revenue, guest ratings, and occupancy.</p>
+  <!-- ===== CALCULATOR ===== -->
+  <section class="str-section" id="calculator">
+    <div class="str-section-head str-section-head--center">
+      <p class="str-eyebrow">Interactive Tool</p>
+      <h2 class="str-h2">Run <em>your</em> numbers</h2>
+      <p class="str-lede">Move the sliders to see how purchase price, nightly rate, and occupancy interact. Useful for sanity-checking a listing before you ask for a private tour.</p>
+    </div>
+    <div class="str-calc-wrap">
+      <div class="str-calc-field">
+        <label>Purchase Price <span id="purchaseDisplay">$500,000</span></label>
+        <input type="range" id="purchasePrice" min="200000" max="2000000" step="25000" value="500000">
+      </div>
+      <div class="str-calc-field">
+        <label>Average Nightly Rate <span id="nightlyDisplay">$250</span></label>
+        <input type="range" id="nightlyRate" min="100" max="600" step="10" value="250">
+      </div>
+      <div class="str-calc-field">
+        <label>Occupancy Rate <span id="occupancyDisplay">70%</span></label>
+        <input type="range" id="occupancyRate" min="30" max="95" step="5" value="70">
+      </div>
+      <div class="str-calc-results">
+        <div>
+          <p class="str-calc-result-label">Annual Revenue</p>
+          <div id="annualRevenue" class="str-calc-result-value str-calc-result-value--med">$63,875</div>
+        </div>
+        <div>
+          <p class="str-calc-result-label">Est. Net Income</p>
+          <div id="netIncome" class="str-calc-result-value str-calc-result-value--med">$41,519</div>
+        </div>
+        <div>
+          <p class="str-calc-result-label">Projected ROI</p>
+          <div id="roiResult" class="str-calc-result-value str-calc-result-value--big">8.3%</div>
+        </div>
+      </div>
+      <p class="str-calc-fine">*Estimates use a ~35% operating-expense ratio (cleaning, taxes, fees, management, maintenance). Actual results vary.</p>
+      <div style="text-align: center; margin-top: 12px;">
+        <a href="contact.html" class="str-btn str-btn-outline">Get a personalized analysis</a>
+      </div>
+    </div>
+  </section>
 
-      <div class="listing-grid" style="margin-top: 40px;">
-        <div class="listing-card">
-          <div class="listing-card-image" style="background: linear-gradient(135deg, #ae6d47, #7a5a40);">
-            <div class="listing-card-badge">Top Performer</div>
-          </div>
-          <div class="listing-card-body">
-            <div class="listing-card-price">Optima Kierland</div>
-            <div class="listing-card-address">Entertainment District &bull; STR Eligible</div>
-            <div class="listing-card-specs">
-              <div class="listing-card-spec"><strong>$310</strong> avg/night</div>
-              <div class="listing-card-spec"><strong>78%</strong> occupancy</div>
-              <div class="listing-card-spec"><strong>$88K</strong> avg revenue</div>
-            </div>
+  <!-- ===== TOP BUILDINGS ===== -->
+  <section class="str-section--alt" id="buildings">
+    <div class="str-section-inner">
+      <div class="str-section-head">
+        <p class="str-eyebrow">Ranked Quarterly</p>
+        <h2 class="str-h2">Top <em>performing</em> STR buildings</h2>
+        <p class="str-lede">The Old Town condo communities consistently delivering the strongest STR returns. Performance shifts as new inventory comes online &mdash; we update this list every quarter.</p>
+      </div>
+      <div class="str-builds">
+        <div class="str-build">
+          <div class="str-build-img"><img src="../assets/optima-camelview.jpg" alt="Optima Kierland"></div>
+          <div class="str-build-body">
+            <h3 class="str-build-name">Optima Kierland</h3>
+            <p class="str-build-meta">Entertainment District</p>
+            <div class="str-build-stat"><span>Avg/night</span><strong>$310</strong></div>
+            <div class="str-build-stat"><span>Occupancy</span><strong>78%</strong></div>
+            <div class="str-build-stat"><span>Revenue</span><strong>$88K</strong></div>
           </div>
         </div>
-
-        <div class="listing-card">
-          <div class="listing-card-image" style="background: linear-gradient(135deg, #c6a180, #ae6d47);">
-            <div class="listing-card-badge">High Demand</div>
-          </div>
-          <div class="listing-card-body">
-            <div class="listing-card-price">The Mark Scottsdale</div>
-            <div class="listing-card-address">Waterfront &bull; STR Eligible</div>
-            <div class="listing-card-specs">
-              <div class="listing-card-spec"><strong>$275</strong> avg/night</div>
-              <div class="listing-card-spec"><strong>74%</strong> occupancy</div>
-              <div class="listing-card-spec"><strong>$74K</strong> avg revenue</div>
-            </div>
+        <div class="str-build">
+          <div class="str-build-img"><img src="../assets/home-condo.jpg" alt="The Mark"></div>
+          <div class="str-build-body">
+            <h3 class="str-build-name">The Mark</h3>
+            <p class="str-build-meta">Old Town Core</p>
+            <div class="str-build-stat"><span>Avg/night</span><strong>$285</strong></div>
+            <div class="str-build-stat"><span>Occupancy</span><strong>74%</strong></div>
+            <div class="str-build-stat"><span>Revenue</span><strong>$77K</strong></div>
           </div>
         </div>
-
-        <div class="listing-card">
-          <div class="listing-card-image" style="background: linear-gradient(135deg, #d6c9a8, #c6a180);">
-            <div class="listing-card-badge">Strong ROI</div>
+        <div class="str-build">
+          <div class="str-build-img"><img src="../assets/home-luxury.jpg" alt="Vue Scottsdale"></div>
+          <div class="str-build-body">
+            <h3 class="str-build-name">Vue Scottsdale</h3>
+            <p class="str-build-meta">Downtown / Waterfront</p>
+            <div class="str-build-stat"><span>Avg/night</span><strong>$265</strong></div>
+            <div class="str-build-stat"><span>Occupancy</span><strong>71%</strong></div>
+            <div class="str-build-stat"><span>Revenue</span><strong>$68K</strong></div>
           </div>
-          <div class="listing-card-body">
-            <div class="listing-card-price">Toscana of Desert Ridge</div>
-            <div class="listing-card-address">North Scottsdale &bull; STR Eligible</div>
-            <div class="listing-card-specs">
-              <div class="listing-card-spec"><strong>$225</strong> avg/night</div>
-              <div class="listing-card-spec"><strong>71%</strong> occupancy</div>
-              <div class="listing-card-spec"><strong>$58K</strong> avg revenue</div>
-            </div>
+        </div>
+        <div class="str-build">
+          <div class="str-build-img"><img src="../assets/home-interior.jpg" alt="7180 Optima"></div>
+          <div class="str-build-body">
+            <h3 class="str-build-name">7180 Optima</h3>
+            <p class="str-build-meta">Old Town Core</p>
+            <div class="str-build-stat"><span>Avg/night</span><strong>$340</strong></div>
+            <div class="str-build-stat"><span>Occupancy</span><strong>76%</strong></div>
+            <div class="str-build-stat"><span>Revenue</span><strong>$94K</strong></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Lead Capture for Investors -->
-  <section class="lead-capture">
-    <div class="container">
-      <div class="section-label text-center">Free Download</div>
-      <h2 class="section-title text-center" style="max-width: 600px; margin: 0 auto;">
-        Old Town STR Investor Guide
-      </h2>
-      <p class="lead-capture-subtitle">
-        Zoning maps, top buildings, revenue data, and a step-by-step guide to buying your first Old Town short-term rental. Delivered to your inbox.
-      </p>
-      <form class="lead-form" onsubmit="event.preventDefault(); handleLeadSubmit(this);">
-        <input type="text" placeholder="First Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <button type="submit">Get the Guide</button>
-      </form>
-      <p class="lead-form-note">Instant download. No obligation.</p>
+  <!-- ===== GATED LISTINGS ===== -->
+  <section class="str-section" id="listings">
+    <div class="str-section-head str-section-head--center">
+      <p class="str-eyebrow">STR-Approved Listings</p>
+      <h2 class="str-h2">Every <em>STR-eligible</em> property, in one place</h2>
+      <p class="str-lede">Two filtered feeds, updated live: Old Town condo communities with STR-friendly CC&amp;Rs, and Scottsdale single-family homes outside an HOA with a pool and at least 3 bedrooms. Create a free account to view the full list.</p>
+    </div>
+
+    <div id="strSignedInBar" class="str-signedin" hidden>
+      <span>Signed in as <strong id="strSignedInEmail">you</strong> &mdash; all listings unlocked.</span>
+      <button type="button" id="strSignOut">Sign out</button>
+    </div>
+
+    <div id="strListings" class="str-listings str-listings-wrap is-locked">
+      <div class="str-listings-tabs">
+        <button class="str-listings-tab is-active" data-tab="condo">Condo Communities</button>
+        <button class="str-listings-tab" data-tab="sfh">Single Family &middot; Pool &middot; 3BR+</button>
+      </div>
+
+      <!-- Condo tab -->
+      <div class="str-listings-grid" data-tab-content="condo">
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/optima-camelview.jpg" alt="Optima Kierland residence"><span class="str-listing-badge">STR Approved</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,150,000</h4>
+            <p class="str-listing-addr">Optima Kierland &middot; 7180 E Kierland</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2.5</strong> Baths</div><div class="str-listing-spec"><strong>1,485</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-condo.jpg" alt="The Mark residence"><span class="str-listing-badge">STR Approved</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$875,000</h4>
+            <p class="str-listing-addr">The Mark &middot; 7180 E Earll Dr</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>1</strong> Bed</div><div class="str-listing-spec"><strong>1.5</strong> Baths</div><div class="str-listing-spec"><strong>1,120</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-luxury.jpg" alt="Vue Scottsdale residence"><span class="str-listing-badge">STR Approved</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,395,000</h4>
+            <p class="str-listing-addr">Vue Scottsdale &middot; 7180 E Camelback Rd</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>3</strong> Beds</div><div class="str-listing-spec"><strong>3</strong> Baths</div><div class="str-listing-spec"><strong>1,820</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-interior.jpg" alt="Envy residence"><span class="str-listing-badge">STR Approved</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$725,000</h4>
+            <p class="str-listing-addr">Envy &middot; 4422 N 75th St</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2</strong> Baths</div><div class="str-listing-spec"><strong>1,310</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/blog-rooftop.jpg" alt="7180 Optima residence"><span class="str-listing-badge">STR Approved</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,650,000</h4>
+            <p class="str-listing-addr">7180 Optima &middot; Penthouse Floor</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>3</strong> Beds</div><div class="str-listing-spec"><strong>3.5</strong> Baths</div><div class="str-listing-spec"><strong>2,040</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-insider.jpg" alt="Inspiration Pointe residence"><span class="str-listing-badge">STR Approved</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$595,000</h4>
+            <p class="str-listing-addr">Inspiration Pointe &middot; 4501 N 75th St</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2</strong> Baths</div><div class="str-listing-spec"><strong>1,055</strong> Sqft</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single family tab (hidden by default) -->
+      <div class="str-listings-grid" data-tab-content="sfh" hidden>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-pool.jpg" alt="Single family pool home"><span class="str-listing-badge">No HOA &middot; Pool</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,150,000</h4>
+            <p class="str-listing-addr">85257 &middot; Hy-View / South Scottsdale</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>3</strong> Beds</div><div class="str-listing-spec"><strong>2</strong> Baths</div><div class="str-listing-spec"><strong>1,890</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-luxury.jpg" alt="Single family pool home"><span class="str-listing-badge">No HOA &middot; Pool</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,395,000</h4>
+            <p class="str-listing-addr">85251 &middot; Indian School Park-adjacent</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>4</strong> Beds</div><div class="str-listing-spec"><strong>3</strong> Baths</div><div class="str-listing-spec"><strong>2,440</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/blog-house.jpg" alt="Single family pool home"><span class="str-listing-badge">No HOA &middot; Pool</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,675,000</h4>
+            <p class="str-listing-addr">85251 &middot; Old Town walking distance</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>4</strong> Beds</div><div class="str-listing-spec"><strong>3</strong> Baths</div><div class="str-listing-spec"><strong>2,720</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-mountain.jpg" alt="Single family pool home"><span class="str-listing-badge">No HOA &middot; Pool</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$2,250,000</h4>
+            <p class="str-listing-addr">85250 &middot; Arcadia border</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>5</strong> Beds</div><div class="str-listing-spec"><strong>4</strong> Baths</div><div class="str-listing-spec"><strong>3,180</strong> Sqft</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unlock CTA overlay -->
+      <div class="str-unlock-cta" id="strUnlockCta">
+        <p class="str-eyebrow">Members Only</p>
+        <h3>The <em>full</em> STR-approved list</h3>
+        <p>Create a free account to unlock every STR-eligible Old Town condo and qualifying Scottsdale single-family home. We refresh the feed live from the MLS and only show properties that actually qualify.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <button type="button" class="str-btn str-btn-primary js-str-unlock">Create Free Account</button>
+          <button type="button" class="str-btn str-btn-outline js-str-unlock">Sign In</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="str-idx-note">Placeholder cards shown for the prototype. When the MLS IDX feed is wired up (Arizona ARMLS via Showcase IDX, iHomefinder, or similar), this section auto-populates with live STR-approved condos and qualifying single-family homes.</p>
+  </section>
+
+  <!-- ===== GUIDE CTA ===== -->
+  <section class="str-section--ink" id="guide">
+    <div class="str-section-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <div>
+        <p class="str-eyebrow">The Guide</p>
+        <h2 class="str-h2">The <em>full</em> STR Investor Guide</h2>
+        <p class="str-lede">Permit timelines, tax registrations, lender quirks for STR-zoned properties, what makes a building &ldquo;STR-friendly&rdquo; in practice, the actual numbers we underwrite to, and the off-market deals nobody sees. 30+ pages of how we actually do this.</p>
+        <div style="margin-top: 28px;">
+          <a href="contact.html" class="str-btn str-btn-primary" style="border-color: #fff; background: #fff; color: var(--ink);">Request the Guide</a>
+        </div>
+      </div>
+      <div style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85);">
+        &ldquo;The page tells you why Old Town. The guide tells you how to actually buy in it.&rdquo;
+      </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section" style="background: #fff;">
-    <div class="container" style="max-width: 800px;">
-      <div class="text-center">
-        <div class="section-label">Common Questions</div>
-        <h2 class="section-title">STR Investment FAQ</h2>
-      </div>
-
-      <div style="margin-top: 40px;">
-        <div style="border-bottom: 1px solid var(--border); padding: 24px 0;">
-          <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 12px; cursor: pointer;">Can I legally Airbnb my condo in Old Town Scottsdale?</h3>
-          <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Yes, but it depends on the specific property and HOA. Scottsdale allows short-term rentals in most residential zones, but individual HOAs may have restrictions. We can help you identify STR-eligible properties before you buy.</p>
-        </div>
-
-        <div style="border-bottom: 1px solid var(--border); padding: 24px 0;">
-          <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 12px;">What's the average ROI on an Old Town STR?</h3>
-          <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Top-performing Old Town STRs typically see 6-10% cap rates, with annual gross revenues ranging from $50K-$100K+ depending on the property type, location, and management approach.</p>
-        </div>
-
-        <div style="border-bottom: 1px solid var(--border); padding: 24px 0;">
-          <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 12px;">Do I need a permit for a short-term rental in Scottsdale?</h3>
-          <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Yes. Arizona requires STR operators to register with the Arizona Department of Revenue and obtain a Transaction Privilege Tax license. Scottsdale also has local registration requirements.</p>
-        </div>
-
-        <div style="padding: 24px 0;">
-          <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 12px;">Which buildings are best for STR investment?</h3>
-          <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">This depends on your budget and goals. We maintain a quarterly ranking of top-performing STR buildings based on revenue, occupancy, and guest satisfaction. Contact us for the latest list.</p>
-        </div>
-      </div>
-    </div>
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="str-newsletter">
+    <h2 class="str-newsletter-title">THE LOTS LETTER</h2>
+    <p class="str-newsletter-sub">One Tuesday email. New STR-approved listings, market shifts, and what locals are actually doing this week.</p>
+    <form class="str-news-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
+      <input type="email" placeholder="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -292,43 +552,106 @@
           <div class="footer-logo-living">Living</div>
           <div class="footer-logo-main">Old Town Scottsdale</div>
           <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+          <img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale" class="footer-brand-logo" style="margin-top: 20px; max-width: 110px; height: auto; display: block;">
+          <div class="footer-brokered" style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12);">
+            <p style="font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 16px;">Brokered by</p>
+            <img src="../assets/compass-white.png" alt="Selling Sonoran Group at Compass" style="max-width: 280px; width: 100%; height: auto; display: block; opacity: 0.92;">
+          </div>
         </div>
-        <div>
-          <div class="footer-heading">Explore</div>
-          <ul class="footer-links">
-            <li><a href="old-town-life.html">Old Town Life</a></li>
-            <li><a href="str-hub.html">STR Investment</a></li>
-            <li><a href="condos.html">Luxury Condos</a></li>
-            <li><a href="blog.html">The LOTS Blog</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-heading">Resources</div>
-          <ul class="footer-links">
-            <li><a href="buy.html">Buy in Old Town</a></li>
-            <li><a href="sell.html">Sell in Old Town</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-heading">Contact</div>
-          <ul class="footer-links">
-            <li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li>
-            <li><a href="tel:+17026864252">(702) 686-4252</a></li>
-          </ul>
-        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
-        <div class="footer-social">
-          <a href="#">Instagram</a>
-          <a href="#">YouTube</a>
-          <a href="#">TikTok</a>
+        <div class="footer-social" style="display: flex; gap: 14px; align-items: center;">
+          <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.49a8.16 8.16 0 0 0 4.77 1.52V6.56a4.85 4.85 0 0 1-1.84-.13z"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- ===== AUTH MODAL ===== -->
+  <div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="auth-modal" id="authModal">
+      <button type="button" class="auth-close" id="authClose" aria-label="Close">&times;</button>
+      <p class="auth-eyebrow">STR Investor Access</p>
+      <h3 class="auth-title" id="authTitle">Unlock every STR-approved listing</h3>
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab is-active" data-tab="panel-signin">Sign In</button>
+        <button type="button" class="auth-tab" data-tab="panel-signup">Sign Up</button>
+        <button type="button" class="auth-tab" data-tab="panel-magic">Magic Link</button>
+      </div>
+
+      <div class="auth-panel is-active" id="panel-signin">
+        <form class="auth-form" id="authSignInForm">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+          <button type="submit">Sign In</button>
+          <p class="auth-status"></p>
+        </form>
+      </div>
+
+      <div class="auth-panel" id="panel-signup">
+        <form class="auth-form" id="authSignUpForm">
+          <div class="auth-row">
+            <input type="text" name="firstName" placeholder="First name" required autocomplete="given-name">
+            <input type="text" name="lastName" placeholder="Last name" required autocomplete="family-name">
+          </div>
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <input type="password" name="password" placeholder="Choose a password (8+ chars)" minlength="8" required autocomplete="new-password">
+          <button type="submit">Create Account</button>
+          <p class="auth-status"></p>
+        </form>
+      </div>
+
+      <div class="auth-panel" id="panel-magic">
+        <p class="auth-panel-note">No password needed. We'll email you a one-click sign-in link.</p>
+        <form class="auth-form" id="authMagicForm">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <button type="submit">Send Magic Link</button>
+          <p class="auth-status"></p>
+        </form>
+      </div>
+
+      <p class="auth-mode-hint">Real Supabase auth active.</p>
+    </div>
+  </div>
+
+  <!-- Calculator -->
   <script src="../js/main.js"></script>
+
+  <!-- Supabase (config + SDK + auth logic). Order matters. -->
+  <script src="../js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/str-auth.js"></script>
+
+  <!-- Tabs (condo / SFH) + smooth anchor scroll -->
+  <script>
+    document.querySelectorAll('.str-listings-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.str-listings-tab').forEach(t => t.classList.toggle('is-active', t === tab));
+        document.querySelectorAll('[data-tab-content]').forEach(panel => {
+          panel.hidden = (panel.dataset.tabContent !== target);
+        });
+      });
+    });
+    document.querySelectorAll('.str-anchors a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>
