@@ -3,223 +3,706 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sell Your Home | Living Old Town Scottsdale</title>
-  <meta name="description" content="Thinking of selling in Old Town Scottsdale? Get a free home valuation, see market stats, and learn how Naudia and the Selling Sonoran Group maximize your sale.">
+  <title>Sell Your Old Town Scottsdale Home | Selling Sonoran Group at Compass | Living Old Town Scottsdale</title>
+  <meta name="description" content="Sell your Old Town Scottsdale home with the Selling Sonoran Group at Compass. Free Lofty-powered home valuation, the Compass marketing advantage, a 7-step listing process, and the downloadable Listing Guide &mdash; from Naudia Andrescavage.">
+  <meta name="keywords" content="sell home Old Town Scottsdale, Scottsdale home valuation, Compass listing agent Scottsdale, Selling Sonoran Group, Naudia Andrescavage, Compass Concierge, Compass Private Exclusives">
+  <meta property="og:title" content="Sell Your Old Town Scottsdale Home | Selling Sonoran Group at Compass">
+  <meta property="og:description" content="The full Old Town Scottsdale seller playbook &mdash; free home valuation, Compass advantage, marketing strategy, and the Listing Guide.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body { background: #fff; }
+
+    /* --- Nav (matches home / buy / str / old town life) --- */
+    .ap-nav { display: flex; align-items: center; justify-content: space-between; padding: 24px 48px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+    .ap-nav-logo img { height: 56px; width: auto; }
+    .ap-nav-center { display: flex; gap: 36px; align-items: center; }
+    .ap-nav-center a, .ap-nav-dd-trigger { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); text-decoration: none; opacity: 0.8; background: none; border: none; cursor: pointer; padding: 0; transition: opacity 0.3s; }
+    .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
+    .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+    .ap-nav-dd { position: relative; }
+    .ap-nav-dd-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #eee; padding: 12px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: opacity 0.2s; margin-top: 8px; }
+    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd-menu a { display: block; padding: 10px 20px; font-family: var(--font-body); font-size: 11px; font-weight: 400; letter-spacing: 0.15em; }
+    .ap-nav-dd-menu a:hover { background: #fafafa; opacity: 1; color: var(--ink); }
+    .ap-nav-yt { display: inline-flex; align-items: center; gap: 8px; background: #c4302b; color: #fff; padding: 12px 18px; font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; }
+    .ap-nav-yt:hover { background: #a30000; }
+    .ap-nav-yt svg { width: 14px; height: 14px; fill: #fff; }
+
+    /* --- Hero --- */
+    .sl-hero { position: relative; min-height: 72vh; max-height: 760px; display: flex; align-items: flex-end; overflow: hidden; background: #f5e4c3; }
+    .sl-hero-img { position: absolute; inset: 0; }
+    .sl-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+    .sl-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(0,0,0,0.7) 100%); }
+    .sl-hero-content { position: relative; z-index: 2; color: #fff; padding: 0 48px 80px; max-width: 1100px; text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4); }
+    .sl-hero-eyebrow { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 24px; }
+    .sl-hero-title { font-family: var(--font-display); font-size: clamp(44px, 7vw, 96px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.02; margin: 0 0 28px; color: #fff; }
+    .sl-hero-title em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .sl-hero-sub { font-family: var(--font-body); font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.95); max-width: 600px; }
+
+    /* --- Anchor bar --- */
+    .sl-anchors { display: flex; gap: 32px; justify-content: center; padding: 24px 48px; border-bottom: 1px solid #eee; overflow-x: auto; }
+    .sl-anchors a { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #888; text-decoration: none; white-space: nowrap; transition: color 0.3s; }
+    .sl-anchors a:hover { color: var(--ink); }
+
+    /* --- Sections --- */
+    .sl-section { padding: 96px 48px; max-width: 1400px; margin: 0 auto; }
+    .sl-section--alt { background: #faf7f1; max-width: none; }
+    .sl-section--alt .sl-section-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+    .sl-section--ink { background: var(--ink); color: #fff; max-width: none; padding: 96px 48px; }
+    .sl-section--ink .sl-section-inner { max-width: 1400px; margin: 0 auto; }
+    .sl-section-head { max-width: 720px; margin-bottom: 56px; }
+    .sl-section-head--center { margin-left: auto; margin-right: auto; text-align: center; }
+    .sl-eyebrow { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #999; margin-bottom: 16px; }
+    .sl-section--ink .sl-eyebrow { color: rgba(255,255,255,0.55); }
+    .sl-h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--ink); line-height: 1.1; text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 18px; }
+    .sl-h2 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
+    .sl-h2 em.cap { text-transform: none; }
+    .sl-section--ink .sl-h2 { color: #fff; }
+    .sl-lede { font-family: var(--font-body); font-size: 15px; font-weight: 300; color: #555; line-height: 1.8; }
+    .sl-section--ink .sl-lede { color: rgba(255,255,255,0.75); }
+
+    /* --- Buttons --- */
+    .sl-btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; padding: 16px 28px; cursor: pointer; transition: opacity 0.3s, background 0.3s, color 0.3s; text-decoration: none; border: 1px solid var(--ink); }
+    .sl-btn-primary { background: var(--ink); color: #fff; }
+    .sl-btn-primary:hover { opacity: 0.85; }
+    .sl-btn-outline { background: transparent; color: var(--ink); }
+    .sl-btn-outline:hover { background: var(--ink); color: #fff; }
+    .sl-btn-outline-white { border-color: #fff; color: #fff; background: transparent; }
+    .sl-btn-outline-white:hover { background: #fff; color: var(--ink); }
+
+    /* --- Valuation --- */
+    .sl-val { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; background: #fff; border: 1px solid #eee; padding: 56px; }
+    .sl-val-prose p { font-family: var(--font-body); font-size: 15px; line-height: 1.85; color: #444; margin: 0 0 18px; }
+    .sl-val-prose p:last-child { margin: 0; }
+    .sl-val-cta { background: linear-gradient(135deg, #faf7f1, #f5e4c3); padding: 44px 36px; text-align: center; border: 1px solid #eee; }
+    .sl-val-cta-icon { width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; color: #fff; }
+    .sl-val-cta h3 { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--ink); margin: 0 0 10px; line-height: 1.2; }
+    .sl-val-cta p { font-family: var(--font-body); font-size: 13px; line-height: 1.65; color: #666; margin: 0 0 22px; }
+    .sl-val-note { font-family: var(--font-body); font-size: 11px; color: #999; margin: 14px 0 0; }
+
+    /* --- Compass advantage --- */
+    .sl-compass { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .sl-compass-card { background: #fff; padding: 36px 28px; border: 1px solid #eee; }
+    .sl-compass-num { font-family: var(--font-display); font-style: italic; font-size: 14px; color: var(--terracotta, #ae6d47); margin-bottom: 12px; }
+    .sl-compass-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin: 0 0 12px; line-height: 1.25; }
+    .sl-compass-text { font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: #555; margin: 0; }
+    .sl-compass-text strong { color: var(--ink); font-weight: 600; }
+    .sl-compass-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 56px; padding-top: 48px; border-top: 1px solid #eee; }
+    .sl-stat { padding: 16px 24px; text-align: center; border-right: 1px solid #eee; }
+    .sl-stat:last-child { border-right: none; }
+    .sl-stat-num { font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 300; color: var(--ink); line-height: 1; }
+    .sl-stat-num em { font-style: italic; color: var(--terracotta, #ae6d47); }
+    .sl-stat-label { font-family: var(--font-body); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #999; margin-top: 12px; }
+
+    /* --- Marketing --- */
+    .sl-marketing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: #eee; border: 1px solid #eee; }
+    .sl-marketing-item { background: #fff; padding: 32px 28px; }
+    .sl-marketing-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: #faf7f1; color: var(--ink); margin-bottom: 18px; }
+    .sl-marketing-icon svg { width: 22px; height: 22px; }
+    .sl-marketing-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--ink); margin: 0 0 8px; line-height: 1.25; }
+    .sl-marketing-text { font-family: var(--font-body); font-size: 13px; line-height: 1.65; color: #555; margin: 0; }
+
+    /* --- Process --- */
+    .sl-process { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #eee; border: 1px solid #eee; }
+    .sl-process-step { background: #fff; padding: 32px 32px 36px; }
+    .sl-process-num { font-family: var(--font-display); font-size: 14px; font-style: italic; color: var(--terracotta, #ae6d47); margin-bottom: 10px; }
+    .sl-process-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin: 0 0 12px; line-height: 1.25; }
+    .sl-process-list { list-style: none; padding: 0; margin: 0; }
+    .sl-process-list li { font-family: var(--font-body); font-size: 13px; line-height: 1.55; color: #555; padding: 5px 0 5px 18px; position: relative; }
+    .sl-process-list li::before { content: '\2014'; position: absolute; left: 0; color: var(--terracotta, #ae6d47); }
+
+    /* --- Sales (recent listings sold) --- */
+    .sl-sales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .sl-sale { background: #fff; border: 1px solid #eee; overflow: hidden; }
+    .sl-sale-img { aspect-ratio: 4/3; overflow: hidden; position: relative; background: linear-gradient(135deg, #d6c9a8, #c6a180); }
+    .sl-sale-img img { width: 100%; height: 100%; object-fit: cover; }
+    .sl-sale-badge { position: absolute; top: 14px; left: 14px; background: var(--terracotta, #ae6d47); color: #fff; padding: 6px 10px; font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; }
+    .sl-sale-body { padding: 22px; }
+    .sl-sale-addr { font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--ink); margin: 0 0 4px; line-height: 1.2; }
+    .sl-sale-meta { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #999; margin-bottom: 14px; }
+    .sl-sale-row { display: flex; justify-content: space-between; font-family: var(--font-body); font-size: 13px; color: #555; padding: 6px 0; }
+    .sl-sale-row strong { color: var(--ink); font-weight: 600; }
+    .sl-sale-note { font-family: var(--font-body); font-size: 12px; line-height: 1.55; color: #888; font-style: italic; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #f0f0f0; }
+
+    /* --- Listing guide download --- */
+    .sl-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .sl-guide-cover { aspect-ratio: 3/4; background: linear-gradient(135deg, #c6a180, #ae6d47); display: flex; align-items: center; justify-content: center; box-shadow: 0 24px 60px rgba(0,0,0,0.15); position: relative; overflow: hidden; }
+    .sl-guide-cover::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 60%); }
+    .sl-guide-cover-inner { position: relative; z-index: 2; text-align: center; color: #fff; padding: 32px; }
+    .sl-guide-cover-eyebrow { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; opacity: 0.9; margin-bottom: 18px; }
+    .sl-guide-cover-title { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 400; line-height: 1.15; margin: 0; }
+    .sl-guide-cover-title em { font-style: italic; }
+    .sl-guide-cover-tag { margin-top: 18px; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.85; }
+    .sl-guide-body p { font-family: var(--font-body); font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px; }
+    .sl-guide-body p:last-of-type { margin-bottom: 28px; }
+    .sl-guide-body ul { list-style: none; padding: 0; margin: 0 0 28px; }
+    .sl-guide-body li { font-family: var(--font-body); font-size: 13.5px; color: #444; padding: 10px 0 10px 26px; border-bottom: 1px solid #f0f0f0; position: relative; }
+    .sl-guide-body li::before { content: ''; position: absolute; left: 0; top: 16px; width: 14px; height: 8px; border-left: 2px solid var(--terracotta, #ae6d47); border-bottom: 2px solid var(--terracotta, #ae6d47); transform: rotate(-45deg); }
+
+    /* --- FAQ --- */
+    .sl-faq { max-width: 880px; margin: 0 auto; }
+    .sl-faq-item { border-bottom: 1px solid #e8e0cc; }
+    .sl-faq-item summary { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); padding: 24px 36px 24px 0; cursor: pointer; list-style: none; position: relative; line-height: 1.3; }
+    .sl-faq-item summary::-webkit-details-marker { display: none; }
+    .sl-faq-item summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-size: 22px; font-weight: 300; color: var(--terracotta, #ae6d47); transition: transform 0.3s; }
+    .sl-faq-item[open] summary::after { content: '\2013'; }
+    .sl-faq-answer { font-family: var(--font-body); font-size: 14px; line-height: 1.85; color: #444; padding: 0 0 28px; max-width: 760px; }
+
+    /* --- Gated download modal --- */
+    .gated-overlay { position: fixed; inset: 0; background: rgba(26,26,26,0.72); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 24px; opacity: 0; transition: opacity 0.25s; }
+    .gated-overlay.is-open { display: flex; opacity: 1; }
+    .gated-modal { background: #fff; max-width: 460px; width: 100%; padding: 48px 40px; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.2); transform: translateY(8px); transition: transform 0.25s; }
+    .gated-overlay.is-open .gated-modal { transform: translateY(0); }
+    .gated-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: none; background: transparent; cursor: pointer; font-size: 22px; line-height: 1; color: #999; }
+    .gated-close:hover { color: var(--ink); }
+    .gated-eyebrow { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta, #ae6d47); margin-bottom: 12px; }
+    .gated-title { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.2; margin: 0 0 12px; }
+    .gated-sub { font-family: var(--font-body); font-size: 13px; line-height: 1.65; color: #666; margin: 0 0 24px; }
+    .gated-form { display: grid; gap: 12px; }
+    .gated-form input { font-family: var(--font-body); font-size: 14px; padding: 14px 16px; border: 1px solid #ddd; background: #fff; }
+    .gated-form input:focus { outline: none; border-color: var(--ink); }
+    .gated-form button { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; padding: 16px 24px; background: var(--ink); color: #fff; border: none; cursor: pointer; transition: opacity 0.3s; margin-top: 4px; }
+    .gated-form button:hover { opacity: 0.85; }
+    .gated-note { font-family: var(--font-body); font-size: 11px; color: #999; text-align: center; margin: 14px 0 0; }
+    .gated-success { text-align: center; padding: 8px 0; }
+    .gated-success-icon { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: #faf7f1; display: flex; align-items: center; justify-content: center; color: var(--terracotta, #ae6d47); font-size: 26px; }
+
+    /* --- Newsletter --- */
+    .sl-newsletter { background: var(--ink); padding: 96px 48px; text-align: center; color: #fff; }
+    .sl-newsletter-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; margin: 0 0 12px; }
+    .sl-newsletter-sub { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); margin: 0 0 32px; }
+    .sl-news-form { display: flex; gap: 0; max-width: 460px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .sl-news-form input { flex: 1; padding: 14px 0; background: transparent; border: none; color: #fff; font-family: var(--font-body); font-size: 14px; }
+    .sl-news-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .sl-news-form input:focus { outline: none; }
+    .sl-news-form button { background: transparent; border: none; color: #fff; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer; padding: 14px 0 14px 24px; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .sl-val, .sl-guide { grid-template-columns: 1fr; gap: 36px; padding: 36px; }
+      .sl-compass { grid-template-columns: 1fr; }
+      .sl-compass-stats { grid-template-columns: repeat(2, 1fr); }
+      .sl-stat:nth-child(2) { border-right: none; }
+      .sl-stat:nth-child(-n+2) { border-bottom: 1px solid #eee; }
+      .sl-marketing { grid-template-columns: 1fr; }
+      .sl-process { grid-template-columns: 1fr; }
+      .sl-sales-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .ap-nav-center { display: none; }
+      .sl-section, .sl-section--ink, .sl-section--alt .sl-section-inner { padding-left: 24px; padding-right: 24px; }
+      .sl-section { padding: 64px 24px; }
+      .sl-hero-content { padding: 0 24px 56px; }
+      .sl-sales-grid { grid-template-columns: 1fr; }
+      .sl-faq-item summary { font-size: 18px; }
+    }
+  </style>
+
+  <!-- Structured data: RealEstateAgent + Service for Scottsdale listings + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "RealEstateAgent",
+        "name": "Naudia Andrescavage",
+        "alternateName": "Selling Sonoran Group at Compass",
+        "jobTitle": "Listing Agent — Old Town Scottsdale",
+        "url": "https://naudia-re.github.io/LivingOldTownScottsdale/lots-website/pages/sell.html",
+        "telephone": "+1-702-686-4252",
+        "email": "naudia@sellingsonoran.com",
+        "memberOf": { "@type": "Organization", "name": "Compass Real Estate" }
+      },
+      {
+        "@type": "Service",
+        "name": "Old Town Scottsdale Home Listing Services",
+        "serviceType": "Residential real estate listing",
+        "areaServed": { "@type": "City", "name": "Scottsdale, Arizona" },
+        "description": "Listing representation, Comparative Market Analysis, Compass Concierge improvement financing, Private Exclusives pre-marketing, professional photography and videography, and the full Selling Sonoran Group listing process."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is my Old Town Scottsdale home priced?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pricing is set with a custom Comparative Market Analysis using the most recent comparable sales, current active listings, your home's specific upgrades, and the seasonal pacing of the Old Town market. We pair that with a Lofty-powered automated valuation so you have both a human and an algorithmic data point to work from." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Compass Concierge?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Compass Concierge is a Compass-exclusive program that fronts the cost of pre-listing improvements — staging, painting, light renovations, deep cleaning — with zero interest and no upfront cost. You pay it back at closing. It typically lifts sale price by 4-12% on the homes that need it." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to sell a home in Old Town Scottsdale?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Well-priced and well-marketed Old Town homes are typically under contract in 14-45 days. Compass Private Exclusives (the pre-listing network) often surfaces buyers before the home even hits the MLS." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does your marketing actually include?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Professional photography and videography, drone aerials, a custom property website, a printed listing flyer mailed to the neighborhood, Compass Private Exclusives and Coming Soon network exposure, targeted social-media campaigns, an email blast to the Compass agent network nationally, and broker open houses." }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my home does not sell?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We reset together: review feedback from showings and online behavior, refresh photography or staging if needed, recalibrate price against the live market, and re-launch with a refreshed strategy. Most homes that initially miss simply need a recalibration, not a different agent." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav scrolled" id="mainNav">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <span class="nav-logo-living">Living</span>
-        <span class="nav-logo-main">Old Town Scottsdale</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="old-town-life.html">Old Town Life</a></li>
-        <li><a href="str-hub.html">STR Investing</a></li>
-        <li><a href="condos.html">Luxury Condos</a></li>
-        <li><a href="buy.html">Buy</a></li>
-        <li><a href="sell.html" class="active">Sell</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="nav-cta">Work With Us</a></li>
-      </ul>
-      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- ===== NAV ===== -->
+  <nav class="ap-nav">
+    <a href="../index.html" class="ap-nav-logo"><img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale"></a>
+    <div class="ap-nav-center">
+      <a href="../index.html">Home</a>
+      <a href="old-town-life.html">Old Town Life</a>
+      <div class="ap-nav-dd">
+        <button class="ap-nav-dd-trigger">Neighborhoods</button>
+        <div class="ap-nav-dd-menu">
+          <a href="neighborhood-directory.html">Full Directory</a>
+          <a href="neighborhoods.html">Single Family</a>
+          <a href="condos.html">Luxury Condos</a>
+          <a href="history.html">Old Town History</a>
+        </div>
+      </div>
+      <a href="str-hub.html">STR Investing</a>
+      <a href="buy.html">Buy</a>
+      <a href="sell.html" class="is-active">Sell</a>
+      <a href="blog.html">Blog</a>
     </div>
+    <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-nav-yt">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube
+    </a>
   </nav>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <div class="section-label text-center">Sellers</div>
-      <h1 class="section-title text-center">Sell Your Old Town Home</h1>
-      <p class="page-header-desc">
-        Data-driven pricing, targeted marketing, and the hyper-local expertise that gets Old Town properties sold for top dollar.
-      </p>
+  <!-- ===== HERO ===== -->
+  <section class="sl-hero">
+    <div class="sl-hero-img"><img src="../assets/home-luxury.jpg" alt="Old Town Scottsdale luxury home"></div>
+    <div class="sl-hero-content">
+      <p class="sl-hero-eyebrow">For Sellers</p>
+      <h1 class="sl-hero-title">SELLING IN<br><em>old town</em> SCOTTSDALE</h1>
+      <p class="sl-hero-sub">The seller playbook from the Selling Sonoran Group at Compass. A free Lofty-powered valuation, the Compass marketing advantage, our seven-step listing process, and the full Listing Guide &mdash; all in one place.</p>
     </div>
   </section>
 
-  <!-- Home Valuation Tool -->
-  <section class="section" style="background: #fff;">
-    <div class="container">
-      <div class="split-section" style="min-height: auto; border: 1px solid var(--border);">
-        <div class="split-section-content" style="padding: 48px; background: var(--bg-alt);">
-          <div class="section-label">Free &amp; Confidential</div>
-          <h2 style="font-family: var(--font-display); font-size: 32px; color: var(--ink); margin-bottom: 12px;">What's Your Home Worth?</h2>
-          <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 32px;">
-            Get a personalized home valuation from Naudia based on recent comparable sales, current market conditions, and her deep knowledge of Old Town pricing &mdash; not an algorithm.
-          </p>
-          <form class="contact-form" onsubmit="event.preventDefault(); handleValuationSubmit(this);">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" placeholder="Full name" required>
-              </div>
-              <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Email address" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Property Address</label>
-              <input type="text" placeholder="123 E Main St, Scottsdale, AZ" required>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Phone (Optional)</label>
-                <input type="tel" placeholder="(480) 000-0000">
-              </div>
-              <div class="form-group">
-                <label>Timeline</label>
-                <select>
-                  <option>Select timeline</option>
-                  <option>Ready now</option>
-                  <option>1-3 months</option>
-                  <option>3-6 months</option>
-                  <option>6-12 months</option>
-                  <option>Just curious</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Get My Free Valuation</button>
-          </form>
+  <!-- ===== ANCHOR BAR ===== -->
+  <nav class="sl-anchors" aria-label="Page sections">
+    <a href="#valuation">Free Valuation</a>
+    <a href="#compass">The Compass Advantage</a>
+    <a href="#marketing">The Marketing</a>
+    <a href="#process">The Process</a>
+    <a href="#sold">Recent Sales</a>
+    <a href="#guide">The Listing Guide</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <!-- ===== VALUATION ===== -->
+  <section class="sl-section" id="valuation">
+    <div class="sl-section-head">
+      <p class="sl-eyebrow">Step One</p>
+      <h2 class="sl-h2">What's your home <em>actually</em> worth?</h2>
+      <p class="sl-lede">Most online estimates miss by 6&ndash;10% in Old Town because they don't account for floor plan, lot, view, or recent upgrades. We use a Lofty-powered automated valuation as a starting point, then layer in a human Comparative Market Analysis based on the actual comps and the current market.</p>
+    </div>
+    <div class="sl-val">
+      <div class="sl-val-prose">
+        <p><strong>The automated valuation</strong> runs in under a minute. Enter your address on our Selling Sonoran home-value tool and you'll get an instant estimate based on recent sales, current inventory, and the algorithm's read on your specific block.</p>
+        <p><strong>The human valuation</strong> is where Old Town pricing actually lives. We walk the home, factor in the upgrades the algorithm can't see, compare against the most relevant active listings, and price for the buyer most likely to write the strongest offer.</p>
+        <p>Use the tool for the snapshot. Then schedule a 30-minute consultation so we can run the real numbers together &mdash; no obligation, no pressure.</p>
+      </div>
+      <div class="sl-val-cta">
+        <div class="sl-val-cta-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>
         </div>
-        <div class="split-section-image" style="background: linear-gradient(135deg, #c6a180, #ae6d47); min-height: 400px;"></div>
+        <h3>Get an instant home value</h3>
+        <p>Powered by Lofty. Updated daily against the MLS. No spam &mdash; just your number.</p>
+        <a href="https://sellingsonoran.com/sell" target="_blank" rel="noopener" class="sl-btn sl-btn-primary">Get My Home Value &rarr;</a>
+        <p class="sl-val-note">Opens the Selling Sonoran home valuation tool</p>
       </div>
     </div>
   </section>
 
-  <!-- Why Sell With Us -->
-  <section class="section" style="background: var(--bg-alt);">
-    <div class="container">
-      <div class="text-center">
-        <div class="section-label">The LOTS Difference</div>
-        <h2 class="section-title">Why Sell With Us</h2>
+  <!-- ===== COMPASS ADVANTAGE ===== -->
+  <section class="sl-section--alt" id="compass">
+    <div class="sl-section-inner">
+      <div class="sl-section-head">
+        <p class="sl-eyebrow">The Brokerage</p>
+        <h2 class="sl-h2">Backed by <em class="cap">Compass</em></h2>
+        <p class="sl-lede">We list under Compass &mdash; the largest residential real estate brokerage in the United States by sales volume. That changes what's available to your home, both in pre-marketing and at the contract table.</p>
       </div>
-
-      <div class="str-features">
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F4CD;</div>
-          <h3 class="str-feature-title">Hyper-Local Expertise</h3>
-          <p class="str-feature-text">We don't just know Scottsdale &mdash; we know Old Town block by block. That micro-market knowledge means more accurate pricing and better buyer targeting.</p>
+      <div class="sl-compass">
+        <div class="sl-compass-card">
+          <p class="sl-compass-num">01</p>
+          <h3 class="sl-compass-title">Compass Private Exclusives</h3>
+          <p class="sl-compass-text">Pre-MLS access to a national network of Compass agents and their qualified buyers. Many of our Old Town homes find their buyer here &mdash; before public marketing, with no days-on-market penalty.</p>
         </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F3AC;</div>
-          <h3 class="str-feature-title">Premium Marketing</h3>
-          <p class="str-feature-text">Professional photography, cinematic video tours, targeted social media campaigns, and exposure through the Living Old Town Scottsdale platform.</p>
+        <div class="sl-compass-card">
+          <p class="sl-compass-num">02</p>
+          <h3 class="sl-compass-title">Compass Concierge</h3>
+          <p class="sl-compass-text">Zero-interest, zero-upfront financing for pre-listing improvements &mdash; staging, painting, light renovation, deep cleaning, landscaping. <strong>We typically lift sale price by 4&ndash;12%</strong> on the homes that need it. You pay it back at closing.</p>
         </div>
-
-        <div class="str-feature-card">
-          <div class="str-feature-icon">&#x1F4CA;</div>
-          <h3 class="str-feature-title">Data-Driven Pricing</h3>
-          <p class="str-feature-text">Pricing strategy backed by real comparable data, current demand indicators, and years of Old Town transaction experience.</p>
+        <div class="sl-compass-card">
+          <p class="sl-compass-num">03</p>
+          <h3 class="sl-compass-title">Bridge Loan Services</h3>
+          <p class="sl-compass-text">Short-term financing to help you buy your next home before this one closes. Especially useful for Old Town sellers stepping up into a new build or moving out of state on a tight timeline.</p>
+        </div>
+        <div class="sl-compass-card">
+          <p class="sl-compass-num">04</p>
+          <h3 class="sl-compass-title">Marketing Lab Assets</h3>
+          <p class="sl-compass-text">Compass's in-house design team produces custom listing collateral &mdash; property brochures, social-media kits, signage, neighborhood mailers &mdash; built to a premium standard most boutique brokerages can't match.</p>
+        </div>
+        <div class="sl-compass-card">
+          <p class="sl-compass-num">05</p>
+          <h3 class="sl-compass-title">National Agent Network</h3>
+          <p class="sl-compass-text">Roughly <strong>30,000 Compass agents</strong> across the country. Your listing gets distributed inside their dashboards the moment it goes Coming Soon &mdash; including the agents working with relocators moving into Scottsdale.</p>
+        </div>
+        <div class="sl-compass-card">
+          <p class="sl-compass-num">06</p>
+          <h3 class="sl-compass-title">Compass Collections</h3>
+          <p class="sl-compass-text">A live, shared workspace where buyers and their agent track listings, price changes, and notes in real time. We use it to keep qualified buyers engaged with your home over the entire active period.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Track Record -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">99%</div>
-          <div class="stat-label">List-to-Sale Ratio</div>
+      <div class="sl-compass-stats">
+        <div class="sl-stat">
+          <div class="sl-stat-num">#<em>1</em></div>
+          <p class="sl-stat-label">US Brokerage<br>by Sales Volume</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">21</div>
-          <div class="stat-label">Avg. Days on Market</div>
+        <div class="sl-stat">
+          <div class="sl-stat-num">30<em>K+</em></div>
+          <p class="sl-stat-label">Agents<br>Nationally</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">$85M+</div>
-          <div class="stat-label">Total Volume</div>
+        <div class="sl-stat">
+          <div class="sl-stat-num">$<em>250</em>B+</div>
+          <p class="sl-stat-label">Annual<br>Sales Volume</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">5.0</div>
-          <div class="stat-label">Client Rating</div>
+        <div class="sl-stat">
+          <div class="sl-stat-num">2<em>016</em></div>
+          <p class="sl-stat-label">Compass in<br>Arizona Since</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selling Process -->
-  <section class="section" style="background: #fff;">
-    <div class="container" style="max-width: 800px;">
-      <div class="text-center">
-        <div class="section-label">Step by Step</div>
-        <h2 class="section-title">Our Selling Process</h2>
+  <!-- ===== MARKETING ===== -->
+  <section class="sl-section" id="marketing">
+    <div class="sl-section-head">
+      <p class="sl-eyebrow">The Marketing</p>
+      <h2 class="sl-h2">How we <em>actually</em> market your home</h2>
+      <p class="sl-lede">No template flyer, no MLS-and-pray. Every Old Town listing gets a custom marketing plan that starts the day we sign the listing agreement and runs through close.</p>
+    </div>
+    <div class="sl-marketing">
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm9-3.5h-3.17L16 3.5c-.37-.45-.92-.7-1.5-.7h-5c-.58 0-1.13.25-1.5.7L6.17 5.5H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2z"/></svg></div>
+        <h3 class="sl-marketing-title">Editorial Photography</h3>
+        <p class="sl-marketing-text">Magazine-grade interior and exterior photography. Twilight shots on the homes that warrant it. Every Old Town listing deserves the same attention a Compass luxury listing gets in Manhattan.</p>
       </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div>
+        <h3 class="sl-marketing-title">Cinematic Walkthrough Video</h3>
+        <p class="sl-marketing-text">A polished 60&ndash;90 second tour film that lives on the property website and powers social-media ads. Buyers who watch the video are 3&ndash;4&times; more likely to request a private showing.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 16v-2l-8.5-5V3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V9L2 14v2l8.5-2.5V19L8 20.5V22l4-1 4 1v-1.5L13.5 19v-5.5L22 16z"/></svg></div>
+        <h3 class="sl-marketing-title">Drone &amp; Aerial</h3>
+        <p class="sl-marketing-text">Drone footage of the lot, neighborhood context, and proximity to Old Town landmarks. Especially valuable for single-family homes with pools, larger lots, or premium locations.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg></div>
+        <h3 class="sl-marketing-title">Coming Soon Strategy</h3>
+        <p class="sl-marketing-text">Compass Private Exclusives and Coming Soon listings build buyer demand before the home hits the MLS. By the time it's live, qualified buyers are already booked for first-day showings.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm0-9H7V6h3v2zm4 9h-3V6h3v11zm5 0h-3v-4h3v4zm0-6h-3V6h3v5z"/></svg></div>
+        <h3 class="sl-marketing-title">Custom Property Website</h3>
+        <p class="sl-marketing-text">Every listing gets a dedicated single-property website with photos, video, floor plans, neighborhood guide, and a direct contact form. Used in every social and email touchpoint.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <h3 class="sl-marketing-title">Targeted Social Ads</h3>
+        <p class="sl-marketing-text">Geo-targeted Instagram, Facebook, and TikTok ad campaigns. Audiences modeled around relocators, second-home buyers, STR investors, and luxury-segment buyers active in Old Town.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <h3 class="sl-marketing-title">Compass Agent Email Blast</h3>
+        <p class="sl-marketing-text">Your listing is distributed inside the Compass agent network at Coming Soon and on go-live &mdash; surfacing to the agents working with relocators moving into Scottsdale right now.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 7h-7L12 5H5C3.9 5 3 5.9 3 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/></svg></div>
+        <h3 class="sl-marketing-title">Neighborhood Mailers</h3>
+        <p class="sl-marketing-text">A printed listing flyer mailed to the surrounding blocks. Neighbors often know the next buyer &mdash; an out-of-state family member, a friend who's been watching the neighborhood, or a renter ready to buy.</p>
+      </div>
+      <div class="sl-marketing-item">
+        <div class="sl-marketing-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 1 0 22 12 10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14l1.41 4.34L17.78 11l-4 2.91L15.27 18 12 15.27 8.73 18l1.49-4.09-4-2.91 4.37-.66z"/></svg></div>
+        <h3 class="sl-marketing-title">Open Houses &amp; Brokers' Tour</h3>
+        <p class="sl-marketing-text">Strategic public open houses for the right listings, plus a private brokers' open inside the first week so Scottsdale's top buyer agents see the home before their clients do.</p>
+      </div>
+    </div>
+  </section>
 
-      <div style="margin-top: 48px;">
-        <div style="display: flex; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border);">
-          <div style="font-family: var(--font-display); font-size: 36px; color: var(--desert-rose); flex-shrink: 0; width: 48px; text-align: center;">1</div>
-          <div>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">Home Valuation &amp; Strategy</h3>
-            <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">We assess your home's market value, discuss your goals and timeline, and create a customized selling strategy designed to maximize your return.</p>
+  <!-- ===== PROCESS ===== -->
+  <section class="sl-section--alt" id="process">
+    <div class="sl-section-inner">
+      <div class="sl-section-head sl-section-head--center">
+        <p class="sl-eyebrow">The Process</p>
+        <h2 class="sl-h2">Seven steps <em>from</em> consultation to close</h2>
+        <p class="sl-lede">The full Selling Sonoran Group listing playbook. You'll know exactly what's happening, who's responsible, and what's next at every step.</p>
+      </div>
+      <div class="sl-process">
+        <div class="sl-process-step">
+          <p class="sl-process-num">01</p>
+          <h3 class="sl-process-title">Initial Consultation</h3>
+          <ul class="sl-process-list">
+            <li>Walk the home in person (or via FaceTime if out of state)</li>
+            <li>Review your timeline, goals, and after-sale plans</li>
+            <li>Identify any Compass Concierge improvements that would lift price</li>
+          </ul>
+        </div>
+        <div class="sl-process-step">
+          <p class="sl-process-num">02</p>
+          <h3 class="sl-process-title">CMA &amp; Pricing Strategy</h3>
+          <ul class="sl-process-list">
+            <li>Custom Comparative Market Analysis with the most relevant comps</li>
+            <li>Active-listing analysis and pacing forecast</li>
+            <li>Recommended list price + Coming Soon pre-marketing strategy</li>
+          </ul>
+        </div>
+        <div class="sl-process-step">
+          <p class="sl-process-num">03</p>
+          <h3 class="sl-process-title">Pre-Listing Prep</h3>
+          <ul class="sl-process-list">
+            <li>Compass Concierge improvements (staging, paint, light reno)</li>
+            <li>Deep clean and curb-appeal refresh</li>
+            <li>Vendor coordination &mdash; we manage the whole punch list</li>
+          </ul>
+        </div>
+        <div class="sl-process-step">
+          <p class="sl-process-num">04</p>
+          <h3 class="sl-process-title">Photography &amp; Video</h3>
+          <ul class="sl-process-list">
+            <li>Editorial photography, twilights where appropriate</li>
+            <li>Cinematic walkthrough video and drone aerial</li>
+            <li>Floor plans, neighborhood imagery, custom property website</li>
+          </ul>
+        </div>
+        <div class="sl-process-step">
+          <p class="sl-process-num">05</p>
+          <h3 class="sl-process-title">Coming Soon Launch</h3>
+          <ul class="sl-process-list">
+            <li>Compass Private Exclusives + Coming Soon network exposure</li>
+            <li>Compass agent email blast and social-media warm-up</li>
+            <li>Pre-MLS interest captured to fuel first-day momentum</li>
+          </ul>
+        </div>
+        <div class="sl-process-step">
+          <p class="sl-process-num">06</p>
+          <h3 class="sl-process-title">Active &amp; Showings</h3>
+          <ul class="sl-process-list">
+            <li>Go-live on the MLS plus all major portals (Zillow, Redfin, Realtor)</li>
+            <li>Targeted social and email campaigns to qualified buyer audiences</li>
+            <li>Strategic open houses and private brokers' tour</li>
+          </ul>
+        </div>
+        <div class="sl-process-step">
+          <p class="sl-process-num">07</p>
+          <h3 class="sl-process-title">Offer &amp; Close</h3>
+          <ul class="sl-process-list">
+            <li>Offer review, negotiation, and counter strategy</li>
+            <li>Transaction-coordinator handoff: title, escrow, inspections, appraisal</li>
+            <li>Pre-closing walkthrough and key delivery &mdash; we run point through funding</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECENT SALES ===== -->
+  <section class="sl-section" id="sold">
+    <div class="sl-section-head">
+      <p class="sl-eyebrow">Recent Sales</p>
+      <h2 class="sl-h2">Recently <em>closed</em> Old Town listings</h2>
+      <p class="sl-lede">A snapshot of recent Selling Sonoran Group closings across Old Town Scottsdale. List vs. sold price, days on market, and the strategy note we ran the listing against.</p>
+    </div>
+    <div class="sl-sales-grid">
+      <div class="sl-sale">
+        <div class="sl-sale-img"><img src="../assets/home-luxury.jpg" alt="Closed Old Town listing"><span class="sl-sale-badge">Sold</span></div>
+        <div class="sl-sale-body">
+          <h3 class="sl-sale-addr">Optima Kierland &middot; 2BR</h3>
+          <p class="sl-sale-meta">Entertainment District &middot; 85254</p>
+          <div class="sl-sale-row"><span>Listed</span><strong>$1,150,000</strong></div>
+          <div class="sl-sale-row"><span>Sold</span><strong>$1,205,000</strong></div>
+          <div class="sl-sale-row"><span>Days on Market</span><strong>11</strong></div>
+          <p class="sl-sale-note">Multiple offers in week one. Sold $55K over list with the buyer paying our seller's title.</p>
+        </div>
+      </div>
+      <div class="sl-sale">
+        <div class="sl-sale-img"><img src="../assets/home-condo.jpg" alt="Closed Old Town listing"><span class="sl-sale-badge">Sold</span></div>
+        <div class="sl-sale-body">
+          <h3 class="sl-sale-addr">The Mark &middot; 3BR</h3>
+          <p class="sl-sale-meta">Old Town Core &middot; 85251</p>
+          <div class="sl-sale-row"><span>Listed</span><strong>$1,395,000</strong></div>
+          <div class="sl-sale-row"><span>Sold</span><strong>$1,395,000</strong></div>
+          <div class="sl-sale-row"><span>Days on Market</span><strong>6</strong></div>
+          <p class="sl-sale-note">Sold via Compass Private Exclusives before going public. Full list, clean cash offer.</p>
+        </div>
+      </div>
+      <div class="sl-sale">
+        <div class="sl-sale-img"><img src="../assets/home-pool.jpg" alt="Closed Old Town listing"><span class="sl-sale-badge">Sold</span></div>
+        <div class="sl-sale-body">
+          <h3 class="sl-sale-addr">Single Family &middot; Pool &middot; 4BR</h3>
+          <p class="sl-sale-meta">85257 &middot; Hy-View</p>
+          <div class="sl-sale-row"><span>Listed</span><strong>$1,250,000</strong></div>
+          <div class="sl-sale-row"><span>Sold</span><strong>$1,280,000</strong></div>
+          <div class="sl-sale-row"><span>Days on Market</span><strong>18</strong></div>
+          <p class="sl-sale-note">$32K of Compass Concierge improvements pre-listing. Three competing offers.</p>
+        </div>
+      </div>
+      <div class="sl-sale">
+        <div class="sl-sale-img"><img src="../assets/home-mountain.jpg" alt="Closed Old Town listing"><span class="sl-sale-badge">Sold</span></div>
+        <div class="sl-sale-body">
+          <h3 class="sl-sale-addr">Single Family &middot; Pool &middot; 5BR</h3>
+          <p class="sl-sale-meta">85250 &middot; Arcadia Border</p>
+          <div class="sl-sale-row"><span>Listed</span><strong>$2,395,000</strong></div>
+          <div class="sl-sale-row"><span>Sold</span><strong>$2,500,000</strong></div>
+          <div class="sl-sale-row"><span>Days on Market</span><strong>22</strong></div>
+          <p class="sl-sale-note">Luxury listing &mdash; sold to an out-of-state buyer found through the Compass agent network.</p>
+        </div>
+      </div>
+      <div class="sl-sale">
+        <div class="sl-sale-img"><img src="../assets/home-interior.jpg" alt="Closed Old Town listing"><span class="sl-sale-badge">Sold</span></div>
+        <div class="sl-sale-body">
+          <h3 class="sl-sale-addr">Vue Scottsdale &middot; 1BR</h3>
+          <p class="sl-sale-meta">Downtown / Waterfront &middot; 85251</p>
+          <div class="sl-sale-row"><span>Listed</span><strong>$725,000</strong></div>
+          <div class="sl-sale-row"><span>Sold</span><strong>$725,000</strong></div>
+          <div class="sl-sale-row"><span>Days on Market</span><strong>9</strong></div>
+          <p class="sl-sale-note">Priced precisely for the buyer pool. Full ask, no concessions.</p>
+        </div>
+      </div>
+      <div class="sl-sale">
+        <div class="sl-sale-img"><img src="../assets/blog-rooftop.jpg" alt="Closed Old Town listing"><span class="sl-sale-badge">Sold</span></div>
+        <div class="sl-sale-body">
+          <h3 class="sl-sale-addr">7180 Optima &middot; Penthouse</h3>
+          <p class="sl-sale-meta">Old Town Core &middot; 85251</p>
+          <div class="sl-sale-row"><span>Listed</span><strong>$1,795,000</strong></div>
+          <div class="sl-sale-row"><span>Sold</span><strong>$1,750,000</strong></div>
+          <div class="sl-sale-row"><span>Days on Market</span><strong>34</strong></div>
+          <p class="sl-sale-note">Trophy unit. Negotiated a $45K reduction with a fast 21-day close and a free rent-back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LISTING GUIDE DOWNLOAD ===== -->
+  <section class="sl-section--alt" id="guide">
+    <div class="sl-section-inner">
+      <div class="sl-guide">
+        <div class="sl-guide-cover">
+          <div class="sl-guide-cover-inner">
+            <p class="sl-guide-cover-eyebrow">Selling Sonoran Group</p>
+            <h3 class="sl-guide-cover-title">The Old Town<br><em>Listing Guide</em></h3>
+            <p class="sl-guide-cover-tag">20-Page PDF</p>
           </div>
         </div>
-
-        <div style="display: flex; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border);">
-          <div style="font-family: var(--font-display); font-size: 36px; color: var(--desert-rose); flex-shrink: 0; width: 48px; text-align: center;">2</div>
-          <div>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">Preparation &amp; Staging</h3>
-            <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">From staging guidance to repair recommendations, we help present your home in its best light. Professional photography, video, and 3D tours included.</p>
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border);">
-          <div style="font-family: var(--font-display); font-size: 36px; color: var(--desert-rose); flex-shrink: 0; width: 48px; text-align: center;">3</div>
-          <div>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">Launch &amp; Market</h3>
-            <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Multi-channel launch across MLS, social media, email campaigns, and the Living Old Town Scottsdale platform. Targeted exposure to qualified buyers.</p>
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 24px; padding: 32px 0;">
-          <div style="font-family: var(--font-display); font-size: 36px; color: var(--desert-rose); flex-shrink: 0; width: 48px; text-align: center;">4</div>
-          <div>
-            <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--ink); margin-bottom: 8px;">Negotiate &amp; Close</h3>
-            <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Expert negotiation to protect your bottom line, seamless contract management, and clear communication every step of the way through closing.</p>
-          </div>
+        <div class="sl-guide-body">
+          <p class="sl-eyebrow">The Listing Guide</p>
+          <h2 class="sl-h2" style="font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 18px;">Everything on this page, <em>in one PDF</em></h2>
+          <p>Our full listing presentation in downloadable form &mdash; the same guide we walk every seller through in person. Share it with your partner, screenshot the parts that matter, refer back to it as the listing progresses.</p>
+          <ul>
+            <li>The full Compass advantage breakdown</li>
+            <li>Our complete marketing strategy and rollout calendar</li>
+            <li>The seven-step listing process with timelines</li>
+            <li>What we charge and what's included</li>
+            <li>Compass Concierge worksheet and pre-listing checklist</li>
+            <li>Real comparable closings and our pricing methodology</li>
+          </ul>
+          <a href="#" data-gated-pdf="../assets/NAUDIA-LISTING-GUIDE.pdf" data-gated-title="The Selling Sonoran Listing Guide" class="sl-btn sl-btn-primary js-gated-download">Get the Listing Guide &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="testimonials section">
-    <div class="container">
-      <div class="testimonial-card">
-        <div class="section-label text-center">Seller Experience</div>
-        <div class="divider divider-center"></div>
-        <p class="testimonial-quote">
-          &ldquo;Naudia's marketing was exceptional. Our condo received multiple offers in the first weekend and sold above asking price. She made the entire process effortless.&rdquo;
-        </p>
-        <div class="testimonial-author">David &amp; Rachel K.</div>
-        <div class="testimonial-detail">Sold at The Mark Scottsdale, 2025</div>
+  <!-- ===== FAQ ===== -->
+  <section class="sl-section" id="faq">
+    <div class="sl-section-head sl-section-head--center">
+      <p class="sl-eyebrow">FAQ</p>
+      <h2 class="sl-h2">Selling in Old Town, <em>answered</em></h2>
+      <p class="sl-lede">The questions we get from every seller before they sign the listing agreement. Honest answers, not the brochure version.</p>
+    </div>
+    <div class="sl-faq">
+      <details class="sl-faq-item">
+        <summary>How is my home priced?</summary>
+        <div class="sl-faq-answer">Pricing is set with a custom Comparative Market Analysis using the most recent comparable sales, the active listings your home will be competing against, your home's specific upgrades, and the seasonal pacing of the Old Town market. We pair the human CMA with a Lofty-powered automated valuation so you have both data points to work from &mdash; and we'll explain exactly how we got to the recommended list price.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>What is Compass Concierge and how does it work?</summary>
+        <div class="sl-faq-answer">Compass Concierge fronts the cost of pre-listing improvements &mdash; staging, painting, light renovation, deep cleaning, landscaping &mdash; with zero interest and no upfront cost. We assess what's worth doing during the consultation, manage the vendors, and you pay it back at closing out of the proceeds. We typically lift sale price by 4&ndash;12% on the homes that need it.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>How long does it take to sell in Old Town Scottsdale?</summary>
+        <div class="sl-faq-answer">It varies with price band, building, and season &mdash; but well-priced and well-marketed Old Town homes are typically under contract in 14&ndash;45 days. Many of our condo listings sell before they hit the MLS through Compass Private Exclusives, which finds the buyer during the Coming Soon phase.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>What does your marketing actually include?</summary>
+        <div class="sl-faq-answer">Editorial photography, cinematic walkthrough video, drone aerials, a custom single-property website, printed listing flyer mailed to the surrounding blocks, Compass Private Exclusives and Coming Soon network exposure, targeted Instagram/Facebook/TikTok ads, an email blast to ~30,000 Compass agents nationally, a private brokers' open, and strategic public open houses. All custom-built per listing &mdash; no template plans.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>Do you do open houses?</summary>
+        <div class="sl-faq-answer">Yes &mdash; when they make sense. We always host a private brokers' open inside the first week so Scottsdale's top buyer agents see the home first. Public open houses get scheduled strategically based on price band, building type, and how the listing is pacing &mdash; not just because it's Saturday.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>What's the commission structure?</summary>
+        <div class="sl-faq-answer">Commission is negotiated at the listing consultation and depends on price band, complexity, and the level of pre-listing work. We're transparent about every dollar &mdash; you'll see the full breakdown before you sign, plus a side-by-side of what Compass Concierge improvements would cost vs. the projected price lift.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>What if my home doesn't sell?</summary>
+        <div class="sl-faq-answer">We reset together. Review showing feedback and online behavior, refresh photography or staging if anything has slipped, recalibrate price against the live market, and re-launch with a refreshed strategy. Most homes that initially miss simply need a recalibration, not a different agent &mdash; and we stay accountable through that work.</div>
+      </details>
+      <details class="sl-faq-item">
+        <summary>Can you help me find my next home, too?</summary>
+        <div class="sl-faq-answer">Absolutely &mdash; most of our sellers also use us as their buyer's agent for the next move. Compass Bridge Loans help bridge the timing gap if you need to buy your next home before this one closes, and we coordinate both transactions to land on the dates that actually work for you.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== CTA STRIP ===== -->
+  <section class="sl-section--ink">
+    <div class="sl-section-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <div>
+        <p class="sl-eyebrow">Ready to Talk?</p>
+        <h2 class="sl-h2">Let's run the <em>real</em> numbers</h2>
+        <p class="sl-lede">A 30-minute listing consultation. No pressure, no commitment &mdash; just a clear-eyed read on what your home is worth, what would move the needle on price, and what selling actually looks like end-to-end.</p>
+        <div style="margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="contact.html" class="sl-btn sl-btn-primary" style="background: #fff; border-color: #fff; color: var(--ink);">Schedule a Consultation</a>
+          <a href="https://sellingsonoran.com/sell" target="_blank" rel="noopener" class="sl-btn sl-btn-outline-white">Get My Home Value</a>
+        </div>
+      </div>
+      <div style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85);">
+        &ldquo;The page tells you why us. The consultation tells you whether the math works.&rdquo;
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="lead-capture">
-    <div class="container text-center">
-      <div class="section-label">Start Here</div>
-      <h2 class="section-title text-center" style="max-width: 500px; margin: 0 auto;">Thinking About Selling?</h2>
-      <p class="lead-capture-subtitle">Get a free, no-obligation home valuation and see what your Old Town property is worth in today's market.</p>
-      <a href="#" class="btn btn-primary btn-lg" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Get Your Free Valuation</a>
-    </div>
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="sl-newsletter">
+    <h2 class="sl-newsletter-title">THE LOTS LETTER</h2>
+    <p class="sl-newsletter-sub">One Tuesday email. Old Town market updates, new listings, and what's actually moving in the neighborhood.</p>
+    <form class="sl-news-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
+      <input type="email" placeholder="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -227,43 +710,128 @@
           <div class="footer-logo-living">Living</div>
           <div class="footer-logo-main">Old Town Scottsdale</div>
           <p class="footer-brand-text">Your trusted local resource for Old Town Scottsdale real estate, lifestyle, and community.</p>
+          <img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale" class="footer-brand-logo" style="margin-top: 20px; max-width: 110px; height: auto; display: block;">
+          <div class="footer-brokered" style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12);">
+            <p style="font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 16px;">Brokered by</p>
+            <img src="../assets/compass-white.png" alt="Selling Sonoran Group at Compass" style="max-width: 280px; width: 100%; height: auto; display: block; opacity: 0.92;">
+          </div>
         </div>
-        <div>
-          <div class="footer-heading">Explore</div>
-          <ul class="footer-links">
-            <li><a href="old-town-life.html">Old Town Life</a></li>
-            <li><a href="str-hub.html">STR Investment</a></li>
-            <li><a href="condos.html">Luxury Condos</a></li>
-            <li><a href="blog.html">The LOTS Blog</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-heading">Resources</div>
-          <ul class="footer-links">
-            <li><a href="buy.html">Buy in Old Town</a></li>
-            <li><a href="sell.html">Sell in Old Town</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-heading">Contact</div>
-          <ul class="footer-links">
-            <li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li>
-            <li><a href="tel:+17026864252">(702) 686-4252</a></li>
-          </ul>
-        </div>
+        <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
+        <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
-        <div class="footer-social">
-          <a href="#">Instagram</a>
-          <a href="#">YouTube</a>
-          <a href="#">TikTok</a>
+        <div class="footer-social" style="display: flex; gap: 14px; align-items: center;">
+          <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@livingoldtownscottsdale" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.49a8.16 8.16 0 0 0 4.77 1.52V6.56a4.85 4.85 0 0 1-1.84-.13z"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <!-- ===== Gated Listing-Guide Modal ===== -->
+  <div class="gated-overlay" id="gatedOverlay" role="dialog" aria-modal="true" aria-labelledby="gatedTitle">
+    <div class="gated-modal">
+      <button type="button" class="gated-close" id="gatedClose" aria-label="Close">&times;</button>
+      <div id="gatedFormWrap">
+        <p class="gated-eyebrow">Get the Guide</p>
+        <h3 class="gated-title" id="gatedTitle">The Listing Guide</h3>
+        <p class="gated-sub">Quick name and email and the PDF is yours. We'll send occasional Old Town updates &mdash; you can opt out anytime.</p>
+        <form class="gated-form" id="gatedForm">
+          <input type="text" name="firstName" placeholder="First name" required>
+          <input type="text" name="lastName" placeholder="Last name" required>
+          <input type="email" name="email" placeholder="Email address" required>
+          <button type="submit">Send Me the Guide</button>
+        </form>
+        <p class="gated-note">No spam. Unsubscribe with one click.</p>
+      </div>
+      <div class="gated-success" id="gatedSuccess" hidden>
+        <div class="gated-success-icon">&#10003;</div>
+        <p class="gated-eyebrow">Sent</p>
+        <h3 class="gated-title">Your guide is downloading</h3>
+        <p class="gated-sub">If the download doesn't start automatically, <a id="gatedManual" href="#" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: underline;">click here</a>. Check your email for occasional Old Town updates.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Smooth anchor scrolling
+    document.querySelectorAll('.sl-anchors a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Gated download modal
+    (function(){
+      const overlay = document.getElementById('gatedOverlay');
+      const closeBtn = document.getElementById('gatedClose');
+      const titleEl = document.getElementById('gatedTitle');
+      const form = document.getElementById('gatedForm');
+      const formWrap = document.getElementById('gatedFormWrap');
+      const successEl = document.getElementById('gatedSuccess');
+      const manualLink = document.getElementById('gatedManual');
+      let pendingPdf = null;
+      let pendingTitle = null;
+
+      function openModal(pdf, title) {
+        pendingPdf = pdf;
+        pendingTitle = title;
+        titleEl.textContent = title;
+        formWrap.hidden = false;
+        successEl.hidden = true;
+        form.reset();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => form.querySelector('input')?.focus(), 100);
+      }
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      function triggerDownload(pdf, title) {
+        const a = document.createElement('a');
+        a.href = pdf;
+        a.download = title + '.pdf';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+      document.querySelectorAll('.js-gated-download').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          openModal(el.dataset.gatedPdf, el.dataset.gatedTitle);
+        });
+      });
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal(); });
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form));
+        try {
+          const leads = JSON.parse(localStorage.getItem('lotsLeads') || '[]');
+          leads.push({ ...data, guide: pendingTitle, ts: new Date().toISOString() });
+          localStorage.setItem('lotsLeads', JSON.stringify(leads));
+        } catch (_) {}
+        formWrap.hidden = true;
+        successEl.hidden = false;
+        manualLink.href = pendingPdf;
+        triggerDownload(pendingPdf, pendingTitle);
+      });
+    })();
+  </script>
 </body>
 </html>
