@@ -50,7 +50,14 @@
       min-width: 200px; margin-top: 12px; z-index: 200;
       box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
-    .ap-nav-dd:hover .ap-nav-dd-menu { display: block; }
+    /* Invisible bridge across the 12px gap so the menu doesn't close when the
+       cursor travels from the trigger down to the menu. */
+    .ap-nav-dd::after {
+      content: ''; position: absolute; top: 100%; left: 0;
+      width: 200px; height: 16px;
+    }
+    .ap-nav-dd:hover .ap-nav-dd-menu,
+    .ap-nav-dd.open .ap-nav-dd-menu { display: block; }
     .ap-nav-dd-menu a {
       display: block; padding: 10px 24px;
       font-family: var(--font-body); font-size: 11px; font-weight: 400;
@@ -420,6 +427,7 @@
     }
     .ap-blog-card {
       display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #eee; cursor: pointer;
+      text-decoration: none; color: inherit;
     }
     .ap-blog-card:nth-child(odd) { border-right: 1px solid #eee; }
     .ap-blog-card:hover img { transform: scale(1.03); }
@@ -575,7 +583,8 @@
   <!-- ===== STATEMENT ===== -->
   <div class="ap-statement">
     <h2 class="ap-statement-headline">WHERE OLD TOWN<br><em>ACTUALLY</em> LIVES</h2>
-    <p class="ap-statement-body">Honest insight, real perspective, and local expertise from the locals who walks these streets every day. Welcome to the neighborhood, before you even move in.</p>
+    <p class="ap-statement-body">Here we give you the honest insights, real market perspectives, and local expertise from the people who walk these streets every day. Welcome to the neighborhood, before you even move in.</p>
+    <p class="ap-statement-body" style="margin-top: 20px; font-style: italic; color: var(--ink);">We hope you find home here.</p>
     <p class="ap-statement-label">Old Town Scottsdale Real Estate &amp; Lifestyle</p>
     <img src="assets/lots-logo.png" alt="Living Old Town Scottsdale" class="ap-statement-logo">
   </div>
@@ -617,7 +626,7 @@
       <div class="ap-yt-strip-head-left">
         <div class="ap-yt-strip-label">From the Channel</div>
         <h2 class="ap-yt-strip-title">Old Town, <em>on camera.</em></h2>
-        <p class="ap-yt-strip-sub">Walk the neighborhoods, tour the buildings, and get the honest local take &mdash; new video every week on YouTube.</p>
+        <p class="ap-yt-strip-sub">The unfiltered truth about these streets. Walk the neighborhoods, tour the buildings, and get our honest local take &mdash; new video every month on YouTube.</p>
       </div>
       <div style="display: flex; gap: 16px; align-items: center;">
         <div class="ap-yt-scroll-arrows">
@@ -938,48 +947,50 @@
     <a href="pages/blog.html" class="btn btn-outline-dark btn-sm">View All Posts</a>
   </div>
   <div class="ap-blog-grid">
-    <div class="ap-blog-card">
+    <a class="ap-blog-card" href="blog/can-you-airbnb-in-old-town-scottsdale.html">
       <div class="ap-blog-img"><img src="assets/blog-house.jpg" alt="Desert home"></div>
       <div class="ap-blog-body">
         <div class="ap-blog-tag">STR Investing</div>
         <h3 class="ap-blog-card-title">Can You Airbnb in Old Town Scottsdale?</h3>
         <p class="ap-blog-excerpt">Zoning rules, permit requirements, and the buildings where STRs thrive.</p>
       </div>
-    </div>
-    <div class="ap-blog-card">
+    </a>
+    <a class="ap-blog-card" href="blog/best-rooftop-condos-old-town-scottsdale.html">
       <div class="ap-blog-img"><img src="assets/blog-rooftop.jpg" alt="Rooftop"></div>
       <div class="ap-blog-body">
         <div class="ap-blog-tag">Neighborhood Guide</div>
         <h3 class="ap-blog-card-title">Best Rooftop Condos in Old Town</h3>
         <p class="ap-blog-excerpt">From private terraces to shared sky decks &mdash; elevated living.</p>
       </div>
-    </div>
-    <div class="ap-blog-card">
+    </a>
+    <a class="ap-blog-card" href="blog/spring-2026-market-report.html">
       <div class="ap-blog-img"><img src="assets/home-pool.jpg" alt="Market"></div>
       <div class="ap-blog-body">
         <div class="ap-blog-tag">Market Update</div>
         <h3 class="ap-blog-card-title">Spring 2026 Market Report</h3>
         <p class="ap-blog-excerpt">Pricing trends, inventory shifts, and what to expect.</p>
       </div>
-    </div>
-    <div class="ap-blog-card">
+    </a>
+    <a class="ap-blog-card" href="blog/10-restaurants-locals-actually-go-to.html">
       <div class="ap-blog-img"><img src="assets/home-luxury.jpg" alt="Dining"></div>
       <div class="ap-blog-body">
         <div class="ap-blog-tag">Local Favorites</div>
         <h3 class="ap-blog-card-title">10 Restaurants Locals Actually Go To</h3>
         <p class="ap-blog-excerpt">Skip the tourist traps. Here's where the regulars eat.</p>
       </div>
-    </div>
+    </a>
   </div>
 
   <!-- ===== NEWSLETTER ===== -->
   <section class="ap-newsletter" id="newsletter">
     <div class="container-narrow">
       <h2 class="ap-newsletter-title">STAY CONNECTED</h2>
-      <p>Weekly insights on Old Town life, new listings, and local recommendations.</p>
-      <form class="lead-form" onsubmit="event.preventDefault(); handleLeadSubmit(this);" style="max-width: 460px; margin: 0 auto;">
-        <input type="text" placeholder="First Name" required>
-        <input type="email" placeholder="Email Address" required>
+      <p>The LOTS Letter &mdash; one monthly email. New openings, incredible homes, local activities, and so much more.</p>
+      <form class="lead-form js-lots-letter" onsubmit="event.preventDefault(); handleLeadSubmit(this);" style="max-width: 460px; margin: 0 auto;">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
         <button type="submit">Subscribe</button>
       </form>
       <p class="lead-form-note" style="color: rgba(255,255,255,0.3);">Join 2,000+ Old Town insiders.</p>
@@ -1006,6 +1017,18 @@
         @livingoldtownscottsdale
       </a>
     </div>
+    <!-- ============================================================
+         LIVE INSTAGRAM FEED (auto-updates daily) — SETUP
+         The "Old Town, daily." tiles below are placeholders that link to the
+         Instagram profile. To make this a real feed that refreshes daily:
+           1. Create a free widget at https://behold.so (recommended) or
+              https://lightwidget.com, connected to @livingoldtownscottsdale.
+           2. Paste the widget's <script> tag just before </body>.
+           3. Replace the <div class="ap-ig-scroll">...</div> block below with
+              the widget container Behold gives you, e.g.:
+                <div data-behold-id="YOUR_FEED_ID"></div>
+         Once connected the feed updates automatically — no daily maintenance.
+         ============================================================ -->
     <div class="ap-ig-scroll">
       <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-insider.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
       <a href="https://instagram.com/livingoldtownscottsdale" target="_blank" rel="noopener" class="ap-ig-tile"><img src="assets/home-pool.jpg" alt="Old Town moment"><div class="ap-ig-tile-overlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.85 5.85 0 0 0-2.13 1.38A5.85 5.85 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.85 5.85 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 0 0 2.13-1.38 5.85 5.85 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 0 0-1.38-2.13A5.85 5.85 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></div></a>
@@ -1034,7 +1057,7 @@
         </div>
         <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="pages/old-town-life.html">Old Town Life</a></li><li><a href="pages/str-hub.html">STR Investment</a></li><li><a href="pages/condos.html">Luxury Condos</a></li><li><a href="pages/blog.html">The LOTS Blog</a></li><li><a href="pages/about.html">About Us</a></li></ul></div>
         <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="pages/buy.html">Buy in Old Town</a></li><li><a href="pages/sell.html">Sell in Old Town</a></li><li><a href="#newsletter">Market Reports</a></li><li><a href="pages/contact.html">Contact Us</a></li></ul></div>
-        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="https://sellingsonoran.com/" target="_blank" rel="noopener">Selling Sonoran Group</a></li><li><a href="https://www.compass.com/agents/naudia-andrescavage/" target="_blank" rel="noopener">Compass Real Estate</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>

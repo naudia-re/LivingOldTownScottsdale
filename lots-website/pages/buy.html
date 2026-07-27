@@ -29,13 +29,14 @@
     .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
     .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
     .ap-nav-dd { position: relative; }
+    .ap-nav-dd::after { content: ""; position: absolute; top: 100%; left: 0; width: 200px; height: 16px; }
     .ap-nav-dd-menu {
       position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
       background: #fff; border: 1px solid #eee; padding: 12px 0;
       min-width: 200px; opacity: 0; visibility: hidden;
       transition: opacity 0.2s; margin-top: 8px;
     }
-    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd:hover .ap-nav-dd-menu, .ap-nav-dd.open .ap-nav-dd-menu { opacity: 1; visibility: visible; }
     .ap-nav-dd-menu a {
       display: block; padding: 10px 20px;
       font-family: var(--font-body); font-size: 11px; font-weight: 400;
@@ -727,7 +728,7 @@
         </div>
         <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
         <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="https://sellingsonoran.com/" target="_blank" rel="noopener">Selling Sonoran Group</a></li><li><a href="https://www.compass.com/agents/naudia-andrescavage/" target="_blank" rel="noopener">Compass Real Estate</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
@@ -847,5 +848,6 @@
       });
     })();
   </script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

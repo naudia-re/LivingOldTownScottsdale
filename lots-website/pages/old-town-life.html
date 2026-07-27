@@ -29,13 +29,14 @@
     .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
     .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
     .ap-nav-dd { position: relative; }
+    .ap-nav-dd::after { content: ""; position: absolute; top: 100%; left: 0; width: 200px; height: 16px; }
     .ap-nav-dd-menu {
       position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
       background: #fff; border: 1px solid #eee; padding: 12px 0;
       min-width: 200px; opacity: 0; visibility: hidden;
       transition: opacity 0.2s; margin-top: 8px;
     }
-    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd:hover .ap-nav-dd-menu, .ap-nav-dd.open .ap-nav-dd-menu { opacity: 1; visibility: visible; }
     .ap-nav-dd-menu a {
       display: block; padding: 10px 20px;
       font-family: var(--font-body); font-size: 11px; font-weight: 400;
@@ -265,6 +266,11 @@
     }
     .otl-dir-img img { width: 100%; height: 100%; object-fit: cover; }
     .otl-dir-body { padding: 24px; }
+    .otl-dir-groups { display: flex; flex-direction: column; gap: 44px; }
+    .otl-dir-group-title { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--ink); margin: 0 0 18px; padding-bottom: 12px; border-bottom: 1px solid #e8e0cc; }
+    .otl-dir-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .otl-dir-chip { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: #3a3a3a; background: #fff; border: 1px solid #e8e0cc; padding: 10px 16px; transition: border-color 0.25s, color 0.25s; }
+    .otl-dir-chip:hover { border-color: var(--ink); color: var(--ink); }
     .otl-dir-meta {
       display: flex; gap: 8px; margin-bottom: 12px; align-items: center;
     }
@@ -588,35 +594,35 @@
         <p class="otl-lede">Most of Old Town's character traces back to a handful of builders and architects. Knowing who built what is half the work of buying smart in this neighborhood.</p>
       </div>
       <div class="otl-builders">
-        <a href="blog.html" class="otl-builder">
+        <a href="../blog/hallcraft-homes.html" class="otl-builder">
           <div class="otl-builder-img"><img src="../assets/hallcraft-builder.jpg" alt="Hallcraft Homes"></div>
           <p class="otl-builder-tag">Postwar &middot; 1950s—60s</p>
           <h3 class="otl-builder-name">Hallcraft Homes</h3>
           <p class="otl-builder-desc">The volume builder that shaped most of Old Town's original single-family stock. Compact, well-sited, full of period details worth preserving.</p>
           <span class="otl-builder-link">Read the full story &rarr;</span>
         </a>
-        <a href="blog.html" class="otl-builder">
+        <a href="../blog/ralph-haver.html" class="otl-builder">
           <div class="otl-builder-img"><img src="../assets/ralph-haver.jpg" alt="Ralph Haver"></div>
           <p class="otl-builder-tag">Architect &middot; Mid-century</p>
           <h3 class="otl-builder-name">Ralph Haver</h3>
           <p class="otl-builder-desc">Phoenix's defining mid-century architect. Haver homes in Old Town are cult objects today — clean lines, low pitches, courtyard-forward floor plans.</p>
           <span class="otl-builder-link">Read the full story &rarr;</span>
         </a>
-        <a href="blog.html" class="otl-builder">
+        <a href="../blog/fred-woodworth.html" class="otl-builder">
           <div class="otl-builder-img"><img src="../assets/fred-woodworth.jpg" alt="Fred Woodworth"></div>
           <p class="otl-builder-tag">Builder &middot; Mid-century</p>
           <h3 class="otl-builder-name">Fred Woodworth</h3>
           <p class="otl-builder-desc">Quiet but consequential. Woodworth's neighborhoods are some of the most intact pockets of original Old Town today — patient buyers wait years for one to come up.</p>
           <span class="otl-builder-link">Read the full story &rarr;</span>
         </a>
-        <a href="blog.html" class="otl-builder">
+        <a href="../blog/tw-lewis.html" class="otl-builder">
           <div class="otl-builder-img"><img src="../assets/tw-lewis.png" alt="T.W. Lewis"></div>
           <p class="otl-builder-tag">Builder &middot; Late 20th c.</p>
           <h3 class="otl-builder-name">T.W. Lewis</h3>
           <p class="otl-builder-desc">The late-era builder behind some of Old Town's larger custom homes. Solid construction, generous lots, and floor plans that have aged well.</p>
           <span class="otl-builder-link">Read the full story &rarr;</span>
         </a>
-        <a href="blog.html" class="otl-builder">
+        <a href="../blog/optima.html" class="otl-builder">
           <div class="otl-builder-img"><img src="../assets/optima-camelview.jpg" alt="Optima Camelview"></div>
           <p class="otl-builder-tag">Modern &middot; 2010s—now</p>
           <h3 class="otl-builder-name">Optima</h3>
@@ -643,31 +649,27 @@
     </div>
     <div class="otl-hoods">
       <a href="neighborhoods.html" class="otl-hood">
-        <img src="../assets/home-luxury.jpg" alt="Arcadia">
+        <img src="../assets/home-luxury.jpg" alt="Hy View neighborhood in Old Town Scottsdale">
         <div class="otl-hood-content">
-          <h3 class="otl-hood-name">Arcadia</h3>
-          <p class="otl-hood-vibe">Citrus groves, ranch homes, the cult restaurant row</p>
+          <h3 class="otl-hood-name">Hy View</h3>
         </div>
       </a>
       <a href="neighborhoods.html" class="otl-hood">
-        <img src="../assets/home-interior.jpg" alt="Old Town Core">
+        <img src="../assets/home-interior.jpg" alt="Papago Parkway neighborhood in Old Town Scottsdale">
         <div class="otl-hood-content">
-          <h3 class="otl-hood-name">Old Town Core</h3>
-          <p class="otl-hood-vibe">Walkable, gallery-dense, the historic spine</p>
+          <h3 class="otl-hood-name">Papago Parkway</h3>
         </div>
       </a>
       <a href="neighborhoods.html" class="otl-hood">
-        <img src="../assets/home-pool.jpg" alt="Downtown">
+        <img src="../assets/home-pool.jpg" alt="Park Scottsdale neighborhood in Old Town Scottsdale">
         <div class="otl-hood-content">
-          <h3 class="otl-hood-name">Downtown</h3>
-          <p class="otl-hood-vibe">High-rises, nightlife, full-service condo living</p>
+          <h3 class="otl-hood-name">Park Scottsdale</h3>
         </div>
       </a>
-      <a href="condos.html" class="otl-hood">
-        <img src="../assets/home-condo.jpg" alt="Optima">
+      <a href="neighborhoods.html" class="otl-hood">
+        <img src="../assets/home-condo.jpg" alt="Villa Monterey neighborhood in Old Town Scottsdale">
         <div class="otl-hood-content">
-          <h3 class="otl-hood-name">Optima</h3>
-          <p class="otl-hood-vibe">Vertical gardens, full amenities, the new flagship</p>
+          <h3 class="otl-hood-name">Villa Monterey</h3>
         </div>
       </a>
     </div>
@@ -682,7 +684,7 @@
       <div class="otl-section-head otl-section-head--center">
         <p class="otl-eyebrow">The Directory</p>
         <h2 class="otl-h2">The spots <em>worth</em> your Saturday</h2>
-        <p class="otl-lede">No copy-paste from anyone's website. Every entry written like a friend texting recommendations. Honest, specific, and updated quarterly.</p>
+        <p class="otl-lede">The local favorites that are NOT found anywhere else. No restaurant chains. Just local finds.</p>
       </div>
       <div class="otl-dir-filters" id="dirFilters">
         <button class="otl-dir-filter is-active" data-cat="all">All</button>
@@ -695,115 +697,38 @@
         <button class="otl-dir-filter" data-cat="night">Nightlife</button>
         <button class="otl-dir-filter" data-cat="outdoor">Outdoor</button>
       </div>
-      <div class="otl-dir-grid" id="dirGrid">
-        <!-- Eat & Drink -->
-        <div class="otl-dir-card" data-cat="eat">
-          <div class="otl-dir-img"><img src="../assets/blog-rooftop.jpg" alt="Citizen Public House"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Eat &amp; Drink</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
-            <h3 class="otl-dir-name">Citizen Public House</h3>
-            <p class="otl-dir-desc">The original chopped salad pilgrimage spot. Loud on weekends, perfect for a date night on a Tuesday.</p>
-            <span class="otl-dir-tag">Locally Owned</span>
-          </div>
+      <div class="otl-dir-groups" id="dirGrid">
+        <div class="otl-dir-group" data-cat="eat">
+          <h3 class="otl-dir-group-title">Eat &amp; Drink</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">The Mission</span><span class="otl-dir-chip">Citizen Public House</span><span class="otl-dir-chip">Sel Restaurant</span><span class="otl-dir-chip">The Eleanor</span><span class="otl-dir-chip">Oliver's Modern American</span><span class="otl-dir-chip">The Ends</span><span class="otl-dir-chip">Olive &amp; Ivy</span><span class="otl-dir-chip">Beginner's Luck</span><span class="otl-dir-chip">Craft 64</span><span class="otl-dir-chip">Pinyon</span><span class="otl-dir-chip">Hula's Modern Tiki</span><span class="otl-dir-chip">The Montauk</span><span class="otl-dir-chip">Cafe Monarch</span><span class="otl-dir-chip">Los Olivos</span><span class="otl-dir-chip">Goldwater Brewing Co</span><span class="otl-dir-chip">Diego Pops</span><span class="otl-dir-chip">Defalco's Italian Eatery</span><span class="otl-dir-chip">Night Owl Pizza &amp; Drink</span><span class="otl-dir-chip">Trevor's Liquor</span><span class="otl-dir-chip">Dodobird Kitchen and Cocktails</span><span class="otl-dir-chip">RTO Sullivans</span><span class="otl-dir-chip">Duke's Sports Bar &amp; Grill</span><span class="otl-dir-chip">Bad Jimmy's</span><span class="otl-dir-chip">Tacos Jalisco</span><span class="otl-dir-chip">Fate Brewery</span><span class="otl-dir-chip">Uchi</span><span class="otl-dir-chip">Fellow Osteria</span><span class="otl-dir-chip">Sugar Bowl</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="eat">
-          <div class="otl-dir-img"><img src="../assets/home-interior.jpg" alt="The Mission"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Eat &amp; Drink</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
-            <h3 class="otl-dir-name">The Mission</h3>
-            <p class="otl-dir-desc">Modern Latin, table-side guacamole, the patio when the weather is doing its thing. Go before 7 or after 9.</p>
-            <span class="otl-dir-tag">Date Night</span>
-          </div>
+        <div class="otl-dir-group" data-cat="coffee">
+          <h3 class="otl-dir-group-title">Coffee &amp; Cafes</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">Arcadia Farms Cafe</span><span class="otl-dir-chip">Echo Coffee</span><span class="otl-dir-chip">Inner Circle Cafe</span><span class="otl-dir-chip">Grounds on 2nd</span><span class="otl-dir-chip">Fourtillfour</span><span class="otl-dir-chip">Yellow Spruce Roasters</span><span class="otl-dir-chip">Berdena's</span><span class="otl-dir-chip">Schmooze</span><span class="otl-dir-chip">Sip Coffee &amp; Brewhouse</span><span class="otl-dir-chip">Three Beans Cafe</span><span class="otl-dir-chip">Cartel</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="night">
-          <div class="otl-dir-img"><img src="../assets/home-luxury.jpg" alt="Hidden Track Bottle Shop"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Nightlife</span><span class="otl-dir-hood">&middot; SouthBridge</span></div>
-            <h3 class="otl-dir-name">Hidden Track Bottle Shop</h3>
-            <p class="otl-dir-desc">Wine forward, knowledgeable staff, the kind of place where you ask for "something interesting under fifty" and leave thrilled.</p>
-            <span class="otl-dir-tag">Hidden Gem</span>
-          </div>
+        <div class="otl-dir-group" data-cat="night">
+          <h3 class="otl-dir-group-title">Late Night / Nightlife</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">The Rusty Spur Saloon</span><span class="otl-dir-chip">The Beverly</span><span class="otl-dir-chip">AZ88</span><span class="otl-dir-chip">Fox Cigar Bar</span><span class="otl-dir-chip">Kill Club</span><span class="otl-dir-chip">Maya Day Club</span><span class="otl-dir-chip">Boondocks</span><span class="otl-dir-chip">Hot Chick</span><span class="otl-dir-chip">The Grapevine</span><span class="otl-dir-chip">Pattie's</span><span class="otl-dir-chip">Porters Western Saloon</span><span class="otl-dir-chip">Rack</span><span class="otl-dir-chip">Coach House</span><span class="otl-dir-chip">Bar Bambino</span><span class="otl-dir-chip">Not My First Rodeo</span><span class="otl-dir-chip">Barstool</span><span class="otl-dir-chip">Social Tap</span><span class="otl-dir-chip">Wasted Grain</span><span class="otl-dir-chip">Hifi</span><span class="otl-dir-chip">Riot House</span><span class="otl-dir-chip">The W</span><span class="otl-dir-chip">The Remi Rooftop</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="coffee">
-          <div class="otl-dir-img"><img src="../assets/home-pool.jpg" alt="Coffee placeholder"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Coffee</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
-            <h3 class="otl-dir-name">Cartel Coffee Lab</h3>
-            <p class="otl-dir-desc">Local roaster, serious about beans, communal tables that fill up by 9 a.m. on Saturdays. Bring laptop, expect to share.</p>
-            <span class="otl-dir-tag">Work-Friendly</span>
-          </div>
+        <div class="otl-dir-group" data-cat="art">
+          <h3 class="otl-dir-group-title">Galleries &amp; Art</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">The Marshall Gallery</span><span class="otl-dir-chip">Bella Fine Art</span><span class="otl-dir-chip">American Fine Art</span><span class="otl-dir-chip">Legacy Gallery</span><span class="otl-dir-chip">On the Edge Gallery</span><span class="otl-dir-chip">The Signature Gallery</span><span class="otl-dir-chip">Bonner David Galleries</span><span class="otl-dir-chip">Xanadu Gallery</span><span class="otl-dir-chip">Altamira Fine Art</span><span class="otl-dir-chip">Scottsdale Art Walk</span><span class="otl-dir-chip">Anticus</span><span class="otl-dir-chip">T.H. Brennan Fine Art</span><span class="otl-dir-chip">RC Gorman Navajo Gallery</span><span class="otl-dir-chip">Scottsdale Museum of Contemporary Art</span><span class="otl-dir-chip">Wonderspaces Arizona</span><span class="otl-dir-chip">Gilbert Ortego Native American Galleries</span><span class="otl-dir-chip">Western Spirit Museum</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="shop">
-          <div class="otl-dir-img"><img src="../assets/home-condo.jpg" alt="Boutique"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Shops</span><span class="otl-dir-hood">&middot; Fifth Ave</span></div>
-            <h3 class="otl-dir-name">5th &amp; Wine District</h3>
-            <p class="otl-dir-desc">The walk you take when you're not actually shopping but absolutely will buy something. Boutiques you won't find online.</p>
-            <span class="otl-dir-tag">Browse-Worthy</span>
-          </div>
+        <div class="otl-dir-group" data-cat="shop">
+          <h3 class="otl-dir-group-title">Shops</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">Lucky Rose Boutique</span><span class="otl-dir-chip">The Merchantile</span><span class="otl-dir-chip">5th Avenue Shops</span><span class="otl-dir-chip">Old Town Candy &amp; Towns</span><span class="otl-dir-chip">Southwest Reflections</span><span class="otl-dir-chip">Kaktus Jock</span><span class="otl-dir-chip">Mexican Imports</span><span class="otl-dir-chip">Alixandra Blue</span><span class="otl-dir-chip">Truly Blessed Jewels</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="art">
-          <div class="otl-dir-img"><img src="../assets/home-mountain.jpg" alt="Gallery"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Galleries</span><span class="otl-dir-hood">&middot; Marshall Way</span></div>
-            <h3 class="otl-dir-name">Marshall Way Arts District</h3>
-            <p class="otl-dir-desc">Thursday Art Walk is the actual move. Twenty-plus galleries, free wine, and a chance to actually meet the artists. Old Town at its best.</p>
-            <span class="otl-dir-tag">Thursday Pick</span>
-          </div>
+        <div class="otl-dir-group" data-cat="wellness">
+          <h3 class="otl-dir-group-title">Wellness</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">Lifetime</span><span class="otl-dir-chip">Mountainside Fitness</span><span class="otl-dir-chip">Pvolve</span><span class="otl-dir-chip">Hot Yoga University</span><span class="otl-dir-chip">Bodi</span><span class="otl-dir-chip">Platinum Pilates</span><span class="otl-dir-chip">Anarchy Fitness</span><span class="otl-dir-chip">Independence Gym</span><span class="otl-dir-chip">5 Star Fitness</span><span class="otl-dir-chip">Atana Head Spa</span><span class="otl-dir-chip">The Dale Modern Day Spa</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="wellness">
-          <div class="otl-dir-img"><img src="../assets/home-insider.jpg" alt="Wellness"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Wellness</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
-            <h3 class="otl-dir-name">The Joint Chiropractic</h3>
-            <p class="otl-dir-desc">Drop-in, no appointment, pay-as-you-go. Old Town's most efficient hour of self-care for a busy week.</p>
-            <span class="otl-dir-tag">Drop-In</span>
-          </div>
+        <div class="otl-dir-group" data-cat="stay">
+          <h3 class="otl-dir-group-title">Hotels &amp; Stays</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">Canopy by Hilton Scottsdale</span><span class="otl-dir-chip">Hotel Valley Ho</span><span class="otl-dir-chip">AC Hotel Scottsdale Old Town</span><span class="otl-dir-chip">Senna House Hotel Scottsdale</span><span class="otl-dir-chip">The Scott Resort and Spa</span><span class="otl-dir-chip">W Scottsdale</span><span class="otl-dir-chip">Caesars Republic Scottsdale</span><span class="otl-dir-chip">Hotel Adeline</span><span class="otl-dir-chip">The Phoenician</span><span class="otl-dir-chip">Andaz Scottsdale Resort and Bungalows</span><span class="otl-dir-chip">Scottsdale Camelback Resort</span></div>
         </div>
-        <div class="otl-dir-card" data-cat="stay">
-          <div class="otl-dir-img"><img src="../assets/home-str.jpg" alt="W Scottsdale"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Stays</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
-            <h3 class="otl-dir-name">W Scottsdale</h3>
-            <p class="otl-dir-desc">The pool scene that put Old Town on the bachelorette map. Worth a daycation pass if you have out-of-town guests in summer.</p>
-            <span class="otl-dir-tag">Best for Groups</span>
-          </div>
-        </div>
-        <div class="otl-dir-card" data-cat="outdoor">
-          <div class="otl-dir-img"><img src="../assets/hero-desert.jpg" alt="Camelback"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Outdoor</span><span class="otl-dir-hood">&middot; Camelback</span></div>
-            <h3 class="otl-dir-name">Camelback Mountain (Echo Canyon)</h3>
-            <p class="otl-dir-desc">Hard, popular, and worth the parking war. Go at sunrise on a weekday and it's the best cardio in the valley.</p>
-            <span class="otl-dir-tag">Sunrise Pick</span>
-          </div>
-        </div>
-        <div class="otl-dir-card" data-cat="eat">
-          <div class="otl-dir-img"><img src="../assets/blog-house.jpg" alt="FnB"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Eat &amp; Drink</span><span class="otl-dir-hood">&middot; Craftsman Court</span></div>
-            <h3 class="otl-dir-name">FnB</h3>
-            <p class="otl-dir-desc">Farm-to-table before farm-to-table was a phrase. Tiny, intentional, and consistently the best meal in Old Town when the menu shifts.</p>
-            <span class="otl-dir-tag">Special Occasion</span>
-          </div>
-        </div>
-        <div class="otl-dir-card" data-cat="coffee">
-          <div class="otl-dir-img"><img src="../assets/home-pool.jpg" alt="Press Coffee"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Coffee</span><span class="otl-dir-hood">&middot; Waterfront</span></div>
-            <h3 class="otl-dir-name">Press Coffee &mdash; Waterfront</h3>
-            <p class="otl-dir-desc">Bigger, brighter, more "post a story while you sip" than Cartel. The canal-side patio is the move when the weather lets you.</p>
-            <span class="otl-dir-tag">Patio Season</span>
-          </div>
-        </div>
-        <div class="otl-dir-card" data-cat="shop">
-          <div class="otl-dir-img"><img src="../assets/home-luxury.jpg" alt="Bashas"></div>
-          <div class="otl-dir-body">
-            <div class="otl-dir-meta"><span class="otl-dir-cat">Shops</span><span class="otl-dir-hood">&middot; Old Town Core</span></div>
-            <h3 class="otl-dir-name">Maya Boutique</h3>
-            <p class="otl-dir-desc">The wedding-guest-dress emergency solver. Stylist on the floor, owner usually there, and pieces you won't see on three other people at the wedding.</p>
-            <span class="otl-dir-tag">Locally Owned</span>
-          </div>
+        <div class="otl-dir-group" data-cat="outdoor">
+          <h3 class="otl-dir-group-title">Outdoor</h3>
+          <div class="otl-dir-chips"><span class="otl-dir-chip">Camelback Mountain</span><span class="otl-dir-chip">Scottsdale Green Belt</span><span class="otl-dir-chip">Chaparral Park</span><span class="otl-dir-chip">Continental Golf Course</span><span class="otl-dir-chip">El Dorado Park</span><span class="otl-dir-chip">McCormick Ranch-Stillman Park</span><span class="otl-dir-chip">Scottsdale Waterfront</span><span class="otl-dir-chip">Arizona Canal</span></div>
         </div>
       </div>
       <div class="otl-dir-cta">
@@ -812,33 +737,27 @@
     </div>
   </section>
 
-  <!-- ===== 5. THIS MONTH ===== -->
+  <!-- ===== 5. IN THE NEWS ===== -->
   <section class="otl-section" id="this-month">
     <div class="otl-section-head">
-      <p class="otl-eyebrow">This Month in Old Town</p>
-      <h2 class="otl-h2">What's <em>actually</em> happening</h2>
+      <p class="otl-eyebrow">In the News</p>
+      <h2 class="otl-h2">Old Town in the <em>news</em></h2>
+      <p class="otl-lede">Recent stories about Old Town Scottsdale, straight from the local outlets covering it.</p>
     </div>
-    <div class="otl-month">
-      <div class="otl-month-item">
-        <p class="otl-month-label">Opening</p>
-        <p class="otl-month-text">A new natural-wine concept lands on Marshall Way.</p>
-        <p class="otl-month-meta">Soft open mid-month</p>
-      </div>
-      <div class="otl-month-item">
-        <p class="otl-month-label">Closing</p>
-        <p class="otl-month-text">A long-running coffee shop wraps after eleven years.</p>
-        <p class="otl-month-meta">Last day end of month</p>
-      </div>
-      <div class="otl-month-item">
-        <p class="otl-month-label">Worth Knowing</p>
-        <p class="otl-month-text">Civic Center renovation reopens its public plaza.</p>
-        <p class="otl-month-meta">Ribbon cutting next Friday</p>
-      </div>
-      <div class="otl-month-item">
-        <p class="otl-month-label">On the Calendar</p>
-        <p class="otl-month-text">Spring training brings the visiting-friend rush back.</p>
-        <p class="otl-month-meta">Through end of March</p>
-      </div>
+    <!-- TO UPDATE: paste each article's URL into the href, the headline into
+         .otl-month-text, and the outlet + date into .otl-month-meta. Linking
+         out to the local news story directly is fine and adds credibility. -->
+    <div class="otl-month" style="grid-template-columns: repeat(2, 1fr);">
+      <a class="otl-month-item" href="#" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
+        <p class="otl-month-label">In the News</p>
+        <p class="otl-month-text">[ Paste the news headline here ]</p>
+        <p class="otl-month-meta">Outlet name &middot; date &mdash; replace this link</p>
+      </a>
+      <a class="otl-month-item" href="#" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
+        <p class="otl-month-label">In the News</p>
+        <p class="otl-month-text">[ Paste a second news headline here ]</p>
+        <p class="otl-month-meta">Outlet name &middot; date &mdash; replace this link</p>
+      </a>
     </div>
   </section>
 
@@ -848,28 +767,28 @@
       <div class="otl-section-head">
         <p class="otl-eyebrow">By Season</p>
         <h2 class="otl-h2">Old Town, <em>year-round</em></h2>
-        <p class="otl-lede">Yes, even summer. Each season runs by a different rhythm here &mdash; and locals plan around all four.</p>
+        <p class="otl-lede">Yes, even summer. Each season lives differently, from yearly events to local happenings.</p>
       </div>
       <div class="otl-seasons">
-        <a href="blog.html" class="otl-season otl-season-spring">
+        <a href="blog.html#seasons" class="otl-season otl-season-spring">
           <div class="otl-season-content">
             <h3 class="otl-season-name"><em>Spring</em> in Old Town</h3>
             <p class="otl-season-text">Spring training, patio season, art walk. The six weeks everyone visits.</p>
           </div>
         </a>
-        <a href="blog.html" class="otl-season otl-season-summer">
+        <a href="blog.html#seasons" class="otl-season otl-season-summer">
           <div class="otl-season-content">
             <h3 class="otl-season-name"><em>Summer</em> in Old Town</h3>
             <p class="otl-season-text">Yes, really. Daycations, dawn hikes, and how locals actually live in 110-degree heat.</p>
           </div>
         </a>
-        <a href="blog.html" class="otl-season otl-season-fall">
+        <a href="blog.html#seasons" class="otl-season otl-season-fall">
           <div class="otl-season-content">
             <h3 class="otl-season-name"><em>Fall</em> in Old Town</h3>
             <p class="otl-season-text">The best six weeks of the year. Patio weather, restaurant openings, the city wakes up.</p>
           </div>
         </a>
-        <a href="blog.html" class="otl-season otl-season-winter">
+        <a href="blog.html#seasons" class="otl-season otl-season-winter">
           <div class="otl-season-content">
             <h3 class="otl-season-name"><em>Winter</em> in Old Town</h3>
             <p class="otl-season-text">Snowbird season, holiday markets, and why everyone wants to be here in January.</p>
@@ -887,32 +806,32 @@
       <p class="otl-lede">The shareable, bookmarkable, "wait let me text this to you" content. Updated as Old Town changes.</p>
     </div>
     <div class="otl-lists">
-      <a href="blog.html" class="otl-list">
+      <a href="blog.html#lists" class="otl-list">
         <p class="otl-list-num">List 01</p>
         <h3 class="otl-list-title">10 Spots Locals Take Out-of-Town Guests</h3>
         <p class="otl-list-meta">Updated quarterly</p>
       </a>
-      <a href="blog.html" class="otl-list">
+      <a href="blog.html#lists" class="otl-list">
         <p class="otl-list-num">List 02</p>
         <h3 class="otl-list-title">Where to Take a First Date in Old Town</h3>
         <p class="otl-list-meta">7 picks &middot; by vibe</p>
       </a>
-      <a href="blog.html" class="otl-list">
+      <a href="blog.html#lists" class="otl-list">
         <p class="otl-list-num">List 03</p>
         <h3 class="otl-list-title">Best Patios for the Weather Window</h3>
         <p class="otl-list-meta">12 patios, ranked</p>
       </a>
-      <a href="blog.html" class="otl-list">
+      <a href="blog.html#lists" class="otl-list">
         <p class="otl-list-num">List 04</p>
         <h3 class="otl-list-title">Coffee Shops to Actually Get Work Done</h3>
         <p class="otl-list-meta">Wifi, outlets, vibe</p>
       </a>
-      <a href="blog.html" class="otl-list">
+      <a href="blog.html#lists" class="otl-list">
         <p class="otl-list-num">List 05</p>
         <h3 class="otl-list-title">The Old Town Bucket List (50 Things)</h3>
         <p class="otl-list-meta">The reference list</p>
       </a>
-      <a href="blog.html" class="otl-list">
+      <a href="blog.html#lists" class="otl-list">
         <p class="otl-list-num">List 06</p>
         <h3 class="otl-list-title">Restaurants to Book Before Visitors Arrive</h3>
         <p class="otl-list-meta">By how far in advance</p>
@@ -928,19 +847,19 @@
         <h2 class="otl-h2">Latest <em>Old Town Life</em> stories</h2>
       </div>
       <div class="otl-journal">
-        <a href="blog.html" class="otl-journal-card">
+        <a href="blog.html#journal" class="otl-journal-card">
           <div class="otl-journal-img"><img src="../assets/blog-house.jpg" alt="Hallcraft homes"></div>
           <p class="otl-journal-tag">Architecture &middot; 8 min read</p>
           <h3 class="otl-journal-title">Why Hallcraft Homes Are Old Town's Quiet Cult Object</h3>
           <p class="otl-journal-excerpt">A field guide to spotting one, what they cost, and what to look for when you renovate.</p>
         </a>
-        <a href="blog.html" class="otl-journal-card">
+        <a href="blog.html#journal" class="otl-journal-card">
           <div class="otl-journal-img"><img src="../assets/blog-rooftop.jpg" alt="Restaurant openings"></div>
           <p class="otl-journal-tag">Eat &amp; Drink &middot; 5 min read</p>
           <h3 class="otl-journal-title">Every Restaurant Opening in Old Town This Spring</h3>
           <p class="otl-journal-excerpt">Tracked, ranked by anticipation, and the ones we're already booking on opening night.</p>
         </a>
-        <a href="blog.html" class="otl-journal-card">
+        <a href="blog.html#journal" class="otl-journal-card">
           <div class="otl-journal-img"><img src="../assets/home-mountain.jpg" alt="Civic Center"></div>
           <p class="otl-journal-tag">Old Town Now &middot; 6 min read</p>
           <h3 class="otl-journal-title">What the New Civic Center Means for Old Town</h3>
@@ -970,9 +889,12 @@
   <!-- ===== 10. NEWSLETTER ===== -->
   <section class="otl-news">
     <h2 class="otl-news-title">THE LOTS LETTER</h2>
-    <p class="otl-news-sub">One Tuesday email. Openings, listings, and what locals are actually doing this week.</p>
-    <form class="otl-news-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
-      <input type="email" placeholder="Email address" required>
+    <p class="otl-news-sub">One monthly email. New openings, incredible homes, local activities, and so much more.</p>
+    <form class="otl-news-form js-lots-letter" onsubmit="event.preventDefault(); handleLeadSubmit(this);">
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="text" name="last_name" placeholder="Last name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="email" name="email" placeholder="Email address" required>
       <button type="submit">Subscribe</button>
     </form>
     <p class="otl-news-note">Join 2,000+ Old Town insiders.</p>
@@ -994,7 +916,7 @@
         </div>
         <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
         <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="https://sellingsonoran.com/" target="_blank" rel="noopener">Selling Sonoran Group</a></li><li><a href="https://www.compass.com/agents/naudia-andrescavage/" target="_blank" rel="noopener">Compass Real Estate</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
@@ -1017,7 +939,7 @@
     // Directory filter
     (function(){
       const filters = document.querySelectorAll('.otl-dir-filter');
-      const cards = document.querySelectorAll('#dirGrid .otl-dir-card');
+      const cards = document.querySelectorAll('#dirGrid .otl-dir-group');
       filters.forEach(b => b.addEventListener('click', () => {
         filters.forEach(x => x.classList.remove('is-active'));
         b.classList.add('is-active');
@@ -1036,5 +958,6 @@
       });
     });
   </script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

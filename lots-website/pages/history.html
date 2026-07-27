@@ -7,8 +7,25 @@
   <meta name="description" content="From Winfield Scott's 640-acre homestead to Arizona's premier luxury destination. The complete history and timeline of Old Town Scottsdale.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <style id="ap-nav-css">
+    .ap-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:#fff;position:sticky;top:0;z-index:1000;border-bottom:1px solid #f0f0f0;}
+    .ap-nav-logo img{height:64px;width:auto;margin:-8px 0;display:block;}
+    .ap-nav-center{display:flex;gap:32px;align-items:center;}
+    .ap-nav-center>a,.ap-nav-dd-trigger{font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#444;background:none;border:none;cursor:pointer;padding:0;text-decoration:none;}
+    .ap-nav-center>a:hover,.ap-nav-dd-trigger:hover{opacity:.5;}
+    .ap-nav-dd{position:relative;}
+    .ap-nav-dd::after{content:"";position:absolute;top:100%;left:0;width:200px;height:16px;}
+    .ap-nav-dd-trigger::after{content:' \25BE';font-size:8px;opacity:.5;}
+    .ap-nav-dd-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #eee;padding:12px 0;min-width:200px;margin-top:12px;z-index:1001;box-shadow:0 8px 32px rgba(0,0,0,.06);}
+    .ap-nav-dd:hover .ap-nav-dd-menu,.ap-nav-dd.open .ap-nav-dd-menu{display:block;}
+    .ap-nav-dd-menu a{display:block;padding:10px 24px;font-family:var(--font-body);font-size:11px;color:#555;text-decoration:none;letter-spacing:.1em;}
+    .ap-nav-dd-menu a:hover{background:#fafafa;color:var(--ink);}
+    .ap-nav-yt{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#c4392d;color:#fff;font-family:var(--font-body);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;}
+    .ap-nav-yt svg{width:16px;height:16px;fill:#fff;}
+    @media(max-width:768px){.ap-nav-center{display:none;}.ap-nav{padding:14px 24px;}}
+  </style>
   <style>
     .timeline { position: relative; max-width: 800px; margin: 0 auto; }
     .timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 1px; background: var(--taupe); }
@@ -46,30 +63,33 @@
     }
     .era-summary p { font-size: 14px; color: var(--text-soft); line-height: 1.7; font-style: italic; }
   </style>
+  <link rel="stylesheet" href="../css/editorial-pages.css">
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav scrolled" id="mainNav">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <span class="nav-logo-living">Living</span>
-        <span class="nav-logo-main">Old Town Scottsdale</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="old-town-life.html">Old Town Life</a></li>
-        <li><a href="str-hub.html">STR Investing</a></li>
-        <li><a href="condos.html">Luxury Condos</a></li>
-        <li><a href="buy.html">Buy</a></li>
-        <li><a href="sell.html">Sell</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="nav-cta">Work With Us</a></li>
-      </ul>
-      <button class="nav-mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+  <nav class="ap-nav">
+    <a href="../index.html" class="ap-nav-logo"><img src="../assets/lots-logo.png" alt="Living Old Town Scottsdale"></a>
+    <div class="ap-nav-center">
+      <a href="../index.html">Home</a>
+      <a href="old-town-life.html">Old Town Life</a>
+      <div class="ap-nav-dd">
+        <button class="ap-nav-dd-trigger">Neighborhoods</button>
+        <div class="ap-nav-dd-menu">
+          <a href="neighborhood-directory.html">Full Directory</a>
+          <a href="neighborhoods.html">Single Family</a>
+          <a href="condos.html">Luxury Condos</a>
+          <a href="history.html">Old Town History</a>
+        </div>
+      </div>
+      <a href="str-hub.html">STR Investing</a>
+      <a href="buy.html">Buy</a>
+      <a href="sell.html">Sell</a>
+      <a href="blog.html">Blog</a>
     </div>
+    <a href="https://www.youtube.com/@LivingOldTownScottsdale" target="_blank" rel="noopener" class="ap-nav-yt">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube</a>
   </nav>
 
   <!-- Page Header -->

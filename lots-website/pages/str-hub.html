@@ -44,9 +44,8 @@
           "Short-term rental real estate",
           "Airbnb investment",
           "Scottsdale STR regulations",
-          "Old Town Scottsdale condos",
-          "Vacation rental underwriting",
-          "Real estate pro forma analysis"
+          "Old Town Scottsdale real estate",
+          "Scottsdale single-family investment homes"
         ],
         "memberOf": { "@type": "Organization", "name": "Compass Real Estate" },
         "award": [
@@ -61,7 +60,7 @@
         "provider": { "@id": "https://naudia-re.github.io/LivingOldTownScottsdale/#agent" },
         "serviceType": "Short-term rental real estate brokerage",
         "areaServed": { "@type": "City", "name": "Scottsdale, Arizona" },
-        "description": "Buyer representation, pro forma underwriting, STR-approved property sourcing, and out-of-state investor representation for Old Town Scottsdale and surrounding Scottsdale ZIP codes."
+        "description": "Buyer representation, STR rules and permitting guidance, STR-friendly property sourcing, and out-of-state investor representation for Old Town Scottsdale and surrounding Scottsdale ZIP codes."
       },
       {
         "@type": "FAQPage",
@@ -78,8 +77,8 @@
           },
           {
             "@type": "Question",
-            "name": "What is a realistic ROI on an Old Town Scottsdale short-term rental?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Underwritten correctly, well-positioned STR-approved units in Old Town typically cash-flow with 7-10% ROI on cash invested, with top performers clearing 11-13%. Same-building units can swing 4 ROI points based on floor, view, layout, furnishing, and pricing strategy, so unit-level pro forma underwriting is required." }
+            "name": "How do short-term rentals perform in Old Town Scottsdale?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No one can promise how any specific property will perform &mdash; results depend on the home, the operator, pricing, seasonality, and factors outside anyone's control. As a licensed agent, the Selling Sonoran Group does not project returns. What we can do is explain the local rules, point you to the STR-friendly locations, give honest context, and steer you away from properties that don't make sense. Most Old Town short-term rentals are single-family homes rather than condos." }
           },
           {
             "@type": "Question",
@@ -94,12 +93,12 @@
           {
             "@type": "Question",
             "name": "Can a generic real estate agent help with a Scottsdale STR investment?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Most agents can help purchase a Scottsdale property, but STR investment requires specialty expertise &mdash; pro forma underwriting, HOA risk assessment, lender connections for STR-zoned properties, STR insurance carriers, and post-close vendor networks. Using a generic agent typically costs investors 1-3 ROI points over the first three years of ownership." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Most agents can help purchase a Scottsdale property, but short-term rentals are a specialty &mdash; local STR rules and permitting, HOA and CC&R risk, lender connections for STR-friendly properties, STR insurance carriers, and post-close vendor networks. Working with a specialist helps you avoid the properties that look good on paper but don't actually make sense." }
           },
           {
             "@type": "Question",
             "name": "Should I buy an Old Town condo or a single-family home for short-term rental?",
-            "acceptedAnswer": { "@type": "Answer", "text": "STR-approved Old Town condos are simpler operationally (amenities included, walkable to entertainment) but cap guest count and ADR ceiling. Single-family homes outside an HOA in Scottsdale ZIP codes 85250, 85251, or 85257 with a pool and 3+ bedrooms can clear higher ADRs ($500-$800+) and accommodate group bookings, but require more active management." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Out here, most short-term rentals are single-family homes rather than condos &mdash; the majority of Old Town condo buildings do not allow rentals under 30 days. Single-family homes outside an HOA in Scottsdale ZIP codes 85250, 85251, or 85257 with a pool and 3+ bedrooms are the most common STR profile and can accommodate group bookings, though they require more active management. We help you confirm what any specific property is actually allowed to do before you offer." }
           }
         ]
       }
@@ -117,8 +116,9 @@
     .ap-nav-center a:hover, .ap-nav-dd-trigger:hover { opacity: 1; }
     .ap-nav-center a.is-active { opacity: 1; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
     .ap-nav-dd { position: relative; }
+    .ap-nav-dd::after { content: ""; position: absolute; top: 100%; left: 0; width: 200px; height: 16px; }
     .ap-nav-dd-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #eee; padding: 12px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: opacity 0.2s; margin-top: 8px; }
-    .ap-nav-dd:hover .ap-nav-dd-menu { opacity: 1; visibility: visible; }
+    .ap-nav-dd:hover .ap-nav-dd-menu, .ap-nav-dd.open .ap-nav-dd-menu { opacity: 1; visibility: visible; }
     .ap-nav-dd-menu a { display: block; padding: 10px 20px; font-family: var(--font-body); font-size: 11px; font-weight: 400; letter-spacing: 0.15em; }
     .ap-nav-dd-menu a:hover { background: #fafafa; opacity: 1; color: var(--ink); }
     .ap-nav-yt { display: inline-flex; align-items: center; gap: 8px; background: #c4302b; color: #fff; padding: 12px 18px; font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; }
@@ -226,7 +226,7 @@
     .str-listing-spec strong { color: var(--ink); font-weight: 600; display: block; font-size: 14px; }
 
     /* --- Lock state --- */
-    .str-listings.is-locked .str-listings-grid { filter: blur(8px); pointer-events: none; user-select: none; min-height: 360px; }
+    .str-listings.is-locked .str-listings-grid { filter: blur(6px); pointer-events: none; user-select: none; min-height: 200px; max-height: 320px; overflow: hidden; }
     .str-unlock-cta { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px; background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.92) 35%); }
     .str-unlock-cta h3 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); font-weight: 300; color: var(--ink); text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 14px; max-width: 600px; }
     .str-unlock-cta h3 em { font-style: italic; text-transform: lowercase; font-weight: 400; }
@@ -369,7 +369,7 @@
     <div class="str-hero-content">
       <p class="str-hero-eyebrow">STR Investing</p>
       <h1 class="str-hero-title">SHORT-TERM<br><em>rentals</em> IN OLD TOWN</h1>
-      <p class="str-hero-sub">Old Town Scottsdale is one of the highest-performing short-term rental markets in the country. A market overview, the local rules in plain English, an ROI calculator, and the actual STR-approved buildings — all in one place.</p>
+      <p class="str-hero-sub">Old Town Scottsdale is one of the most sought-after short-term rental markets in the country. A market overview, the local rules in plain English, an interactive calculator, and the STR-friendly homes that actually make sense — all in one place. No one can tell you how a property will perform. We can tell you the truth about the ones worth your time.</p>
     </div>
   </section>
 
@@ -399,14 +399,14 @@
         <p class="str-why-text">Spring training, summer pool culture, fall patios, snowbird winters. Old Town runs four distinct booking peaks instead of one season &mdash; smoothing occupancy across the calendar.</p>
       </div>
       <div class="str-why-card">
-        <div class="str-why-num"><em>$</em>340</div>
-        <h3 class="str-why-title">Strong ADR Floor</h3>
-        <p class="str-why-text">Average daily rates in well-positioned STR-approved units sit comfortably above the Phoenix metro average. Boutique properties consistently clear $400+ in peak season.</p>
+        <div class="str-why-num"><em>#</em>1</div>
+        <h3 class="str-why-title">A Name Guests Search</h3>
+        <p class="str-why-text">Scottsdale is a destination brand travelers already know &mdash; spring training, bachelorette weekends, golf, and pool season. That built-in name recognition is part of why Old Town stays on the short list of top U.S. leisure markets.</p>
       </div>
       <div class="str-why-card">
-        <div class="str-why-num">72<em>%</em></div>
-        <h3 class="str-why-title">Mature Occupancy</h3>
-        <p class="str-why-text">Top-performing units track 70&ndash;80% annual occupancy. That blended consistency, more than a single hot month, is what makes the underwriting work.</p>
+        <div class="str-why-num">20<em>+</em></div>
+        <h3 class="str-why-title">An Established Market</h3>
+        <p class="str-why-text">Old Town has a long track record as a vacation-rental destination with a real regulatory framework around it &mdash; a mature market with a deep guest pipeline, not a speculative one.</p>
       </div>
     </div>
   </section>
@@ -452,7 +452,7 @@
     <div class="str-section-head str-section-head--center">
       <p class="str-eyebrow">Interactive Tool</p>
       <h2 class="str-h2">Run <em>your</em> numbers</h2>
-      <p class="str-lede">Move the sliders to see how purchase price, nightly rate, and occupancy interact. Useful for sanity-checking a listing before you ask for a private tour.</p>
+      <p class="str-lede">A self-directed tool: move the sliders with your own assumptions to see how purchase price, nightly rate, and occupancy interact. It's a math sandbox, not a forecast &mdash; no one can predict how any property will actually perform.</p>
     </div>
     <div class="str-calc-wrap">
       <div class="str-calc-field">
@@ -477,13 +477,13 @@
           <div id="netIncome" class="str-calc-result-value str-calc-result-value--med">$41,519</div>
         </div>
         <div>
-          <p class="str-calc-result-label">Projected ROI</p>
+          <p class="str-calc-result-label">Illustrative ROI</p>
           <div id="roiResult" class="str-calc-result-value str-calc-result-value--big">8.3%</div>
         </div>
       </div>
-      <p class="str-calc-fine">*Estimates use a ~35% operating-expense ratio (cleaning, taxes, fees, management, maintenance). Actual results vary.</p>
+      <p class="str-calc-fine">*A self-directed illustration based only on the figures you enter, using a ~35% operating-expense ratio (cleaning, taxes, fees, management, maintenance). This is not a forecast, an appraisal, or investment advice, and no one can indicate how a specific property will actually perform. Your results will differ.</p>
       <div style="text-align: center; margin-top: 12px;">
-        <a href="contact.html" class="str-btn str-btn-outline">Get a personalized analysis</a>
+        <a href="contact.html" class="str-btn str-btn-outline">Talk through the numbers with us</a>
       </div>
     </div>
   </section>
@@ -492,8 +492,8 @@
   <section class="str-section" id="listings">
     <div class="str-section-head str-section-head--center">
       <p class="str-eyebrow">STR Properties</p>
-      <h2 class="str-h2">The <em>actual</em> STR-eligible market</h2>
-      <p class="str-lede">The top-performing buildings ranked by revenue, plus every STR-eligible Old Town condo and qualifying Scottsdale single-family home &mdash; live from the MLS. Create a free account to see the full picture.</p>
+      <h2 class="str-h2">The <em>real</em> STR-friendly market</h2>
+      <p class="str-lede">Qualifying Scottsdale single-family homes &mdash; and the handful of Old Town condo communities whose CC&amp;Rs actually allow short-term rentals. Sign up for our exclusive list of the best STR properties available today.</p>
     </div>
 
     <div id="strSignedInBar" class="str-signedin" hidden>
@@ -502,120 +502,19 @@
     </div>
 
     <div id="strListings" class="str-listings str-listings-wrap is-locked">
-      <!-- Top performing buildings -->
-      <div class="str-listings-subhead">
-        <p class="str-subhead-eyebrow">Ranked Quarterly</p>
-        <h3 class="str-subhead-title">Top performing buildings</h3>
-        <p class="str-subhead-text">The Old Town condo communities consistently delivering the strongest STR returns. Performance shifts as new inventory comes online &mdash; refreshed each quarter.</p>
-      </div>
-      <div class="str-builds">
-        <div class="str-build">
-          <div class="str-build-img"><img src="../assets/optima-camelview.jpg" alt="Optima Kierland"></div>
-          <div class="str-build-body">
-            <h3 class="str-build-name">Optima Kierland</h3>
-            <p class="str-build-meta">Entertainment District</p>
-            <div class="str-build-stat"><span>Avg/night</span><strong>$310</strong></div>
-            <div class="str-build-stat"><span>Occupancy</span><strong>78%</strong></div>
-            <div class="str-build-stat"><span>Revenue</span><strong>$88K</strong></div>
-          </div>
-        </div>
-        <div class="str-build">
-          <div class="str-build-img"><img src="../assets/home-condo.jpg" alt="The Mark"></div>
-          <div class="str-build-body">
-            <h3 class="str-build-name">The Mark</h3>
-            <p class="str-build-meta">Old Town Core</p>
-            <div class="str-build-stat"><span>Avg/night</span><strong>$285</strong></div>
-            <div class="str-build-stat"><span>Occupancy</span><strong>74%</strong></div>
-            <div class="str-build-stat"><span>Revenue</span><strong>$77K</strong></div>
-          </div>
-        </div>
-        <div class="str-build">
-          <div class="str-build-img"><img src="../assets/home-luxury.jpg" alt="Vue Scottsdale"></div>
-          <div class="str-build-body">
-            <h3 class="str-build-name">Vue Scottsdale</h3>
-            <p class="str-build-meta">Downtown / Waterfront</p>
-            <div class="str-build-stat"><span>Avg/night</span><strong>$265</strong></div>
-            <div class="str-build-stat"><span>Occupancy</span><strong>71%</strong></div>
-            <div class="str-build-stat"><span>Revenue</span><strong>$68K</strong></div>
-          </div>
-        </div>
-        <div class="str-build">
-          <div class="str-build-img"><img src="../assets/home-interior.jpg" alt="7180 Optima"></div>
-          <div class="str-build-body">
-            <h3 class="str-build-name">7180 Optima</h3>
-            <p class="str-build-meta">Old Town Core</p>
-            <div class="str-build-stat"><span>Avg/night</span><strong>$340</strong></div>
-            <div class="str-build-stat"><span>Occupancy</span><strong>76%</strong></div>
-            <div class="str-build-stat"><span>Revenue</span><strong>$94K</strong></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Listings tabs -->
+      <!-- Listings -->
       <div class="str-listings-subhead str-listings-subhead--listings">
-        <p class="str-subhead-eyebrow">Live from the MLS</p>
-        <h3 class="str-subhead-title">STR-approved listings</h3>
-        <p class="str-subhead-text">Two filtered feeds: Old Town condo communities with STR-friendly CC&amp;Rs, and Scottsdale single-family homes outside an HOA with a pool and at least 3 bedrooms.</p>
+        <p class="str-subhead-eyebrow">The Exclusive List</p>
+        <h3 class="str-subhead-title">STR-friendly properties</h3>
+        <p class="str-subhead-text">Out here, the strongest short-term rentals are mostly single-family homes &mdash; outside an HOA, with a pool and room to sleep a group. We also track the few Old Town condo communities whose CC&amp;Rs still allow rentals under 30 days.</p>
       </div>
       <div class="str-listings-tabs">
-        <button class="str-listings-tab is-active" data-tab="condo">Condo Communities</button>
-        <button class="str-listings-tab" data-tab="sfh">Single Family &middot; Pool &middot; 3BR+</button>
+        <button class="str-listings-tab is-active" data-tab="sfh">Single Family &middot; Pool &middot; 3BR+</button>
+        <button class="str-listings-tab" data-tab="condo">STR-Friendly Condos</button>
       </div>
 
-      <!-- Condo tab -->
-      <div class="str-listings-grid" data-tab-content="condo">
-        <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/optima-camelview.jpg" alt="Optima Kierland residence"><span class="str-listing-badge">STR Approved</span></div>
-          <div class="str-listing-body">
-            <h4 class="str-listing-price">$1,150,000</h4>
-            <p class="str-listing-addr">Optima Kierland &middot; 7180 E Kierland</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2.5</strong> Baths</div><div class="str-listing-spec"><strong>1,485</strong> Sqft</div></div>
-          </div>
-        </div>
-        <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/home-condo.jpg" alt="The Mark residence"><span class="str-listing-badge">STR Approved</span></div>
-          <div class="str-listing-body">
-            <h4 class="str-listing-price">$875,000</h4>
-            <p class="str-listing-addr">The Mark &middot; 7180 E Earll Dr</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>1</strong> Bed</div><div class="str-listing-spec"><strong>1.5</strong> Baths</div><div class="str-listing-spec"><strong>1,120</strong> Sqft</div></div>
-          </div>
-        </div>
-        <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/home-luxury.jpg" alt="Vue Scottsdale residence"><span class="str-listing-badge">STR Approved</span></div>
-          <div class="str-listing-body">
-            <h4 class="str-listing-price">$1,395,000</h4>
-            <p class="str-listing-addr">Vue Scottsdale &middot; 7180 E Camelback Rd</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>3</strong> Beds</div><div class="str-listing-spec"><strong>3</strong> Baths</div><div class="str-listing-spec"><strong>1,820</strong> Sqft</div></div>
-          </div>
-        </div>
-        <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/home-interior.jpg" alt="Envy residence"><span class="str-listing-badge">STR Approved</span></div>
-          <div class="str-listing-body">
-            <h4 class="str-listing-price">$725,000</h4>
-            <p class="str-listing-addr">Envy &middot; 4422 N 75th St</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2</strong> Baths</div><div class="str-listing-spec"><strong>1,310</strong> Sqft</div></div>
-          </div>
-        </div>
-        <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/blog-rooftop.jpg" alt="7180 Optima residence"><span class="str-listing-badge">STR Approved</span></div>
-          <div class="str-listing-body">
-            <h4 class="str-listing-price">$1,650,000</h4>
-            <p class="str-listing-addr">7180 Optima &middot; Penthouse Floor</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>3</strong> Beds</div><div class="str-listing-spec"><strong>3.5</strong> Baths</div><div class="str-listing-spec"><strong>2,040</strong> Sqft</div></div>
-          </div>
-        </div>
-        <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/home-insider.jpg" alt="Inspiration Pointe residence"><span class="str-listing-badge">STR Approved</span></div>
-          <div class="str-listing-body">
-            <h4 class="str-listing-price">$595,000</h4>
-            <p class="str-listing-addr">Inspiration Pointe &middot; 4501 N 75th St</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2</strong> Baths</div><div class="str-listing-spec"><strong>1,055</strong> Sqft</div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single family tab (hidden by default) -->
-      <div class="str-listings-grid" data-tab-content="sfh" hidden>
+      <!-- Single family tab (default) -->
+      <div class="str-listings-grid" data-tab-content="sfh">
         <div class="str-listing">
           <div class="str-listing-img"><img src="../assets/home-pool.jpg" alt="Single family pool home"><span class="str-listing-badge">No HOA &middot; Pool</span></div>
           <div class="str-listing-body">
@@ -640,24 +539,43 @@
             <div class="str-listing-specs"><div class="str-listing-spec"><strong>4</strong> Beds</div><div class="str-listing-spec"><strong>3</strong> Baths</div><div class="str-listing-spec"><strong>2,720</strong> Sqft</div></div>
           </div>
         </div>
+      </div>
+
+      <!-- STR-friendly condo tab (hidden by default) -->
+      <div class="str-listings-grid" data-tab-content="condo" hidden>
         <div class="str-listing">
-          <div class="str-listing-img"><img src="../assets/home-mountain.jpg" alt="Single family pool home"><span class="str-listing-badge">No HOA &middot; Pool</span></div>
+          <div class="str-listing-img"><img src="../assets/optima-camelview.jpg" alt="Optima Kierland residence"><span class="str-listing-badge">STR-Friendly CC&amp;Rs</span></div>
           <div class="str-listing-body">
-            <h4 class="str-listing-price">$2,250,000</h4>
-            <p class="str-listing-addr">85250 &middot; Arcadia border</p>
-            <div class="str-listing-specs"><div class="str-listing-spec"><strong>5</strong> Beds</div><div class="str-listing-spec"><strong>4</strong> Baths</div><div class="str-listing-spec"><strong>3,180</strong> Sqft</div></div>
+            <h4 class="str-listing-price">$1,150,000</h4>
+            <p class="str-listing-addr">Optima Kierland &middot; 7180 E Kierland</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>2</strong> Beds</div><div class="str-listing-spec"><strong>2.5</strong> Baths</div><div class="str-listing-spec"><strong>1,485</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-condo.jpg" alt="The Mark residence"><span class="str-listing-badge">STR-Friendly CC&amp;Rs</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$875,000</h4>
+            <p class="str-listing-addr">The Mark &middot; 7180 E Earll Dr</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>1</strong> Bed</div><div class="str-listing-spec"><strong>1.5</strong> Baths</div><div class="str-listing-spec"><strong>1,120</strong> Sqft</div></div>
+          </div>
+        </div>
+        <div class="str-listing">
+          <div class="str-listing-img"><img src="../assets/home-luxury.jpg" alt="Vue Scottsdale residence"><span class="str-listing-badge">STR-Friendly CC&amp;Rs</span></div>
+          <div class="str-listing-body">
+            <h4 class="str-listing-price">$1,395,000</h4>
+            <p class="str-listing-addr">Vue Scottsdale &middot; 7180 E Camelback Rd</p>
+            <div class="str-listing-specs"><div class="str-listing-spec"><strong>3</strong> Beds</div><div class="str-listing-spec"><strong>3</strong> Baths</div><div class="str-listing-spec"><strong>1,820</strong> Sqft</div></div>
           </div>
         </div>
       </div>
 
       <!-- Unlock CTA overlay -->
       <div class="str-unlock-cta" id="strUnlockCta">
-        <p class="str-eyebrow">Members Only</p>
-        <h3>The <em>full</em> STR-approved list</h3>
-        <p>Create a free account to unlock every STR-eligible Old Town condo and qualifying Scottsdale single-family home. We refresh the feed live from the MLS and only show properties that actually qualify.</p>
+        <p class="str-eyebrow">The Exclusive List</p>
+        <h3>The best STR properties, <em>before</em> anyone else</h3>
+        <p>Sign up for our exclusive list of the best short-term rental properties available today. We only send the ones that actually make sense &mdash; and we leave out the &ldquo;DUDD&rdquo; properties that look good on paper but don't sell because they don't profit.</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-          <button type="button" class="str-btn str-btn-primary js-str-unlock">Create Free Account</button>
-          <button type="button" class="str-btn str-btn-outline js-str-unlock">Sign In</button>
+          <button type="button" class="str-btn str-btn-primary js-str-unlock">Sign Up for the List</button>
         </div>
       </div>
     </div>
@@ -671,22 +589,22 @@
       <div class="str-section-head">
         <p class="str-eyebrow">The Agent</p>
         <h2 class="str-h2">Why the <em>right</em> Scottsdale STR agent matters more than the building</h2>
-        <p class="str-lede">Short-term rental real estate is its own discipline inside Scottsdale real estate. Pro formas, comparable Airbnb data, lender quirks, insurance carriers, HOA risk &mdash; the agent you pick decides whether the math actually pencils.</p>
+        <p class="str-lede">Short-term rentals are their own discipline inside Scottsdale real estate. The local rules, permitting, HOA and CC&amp;R risk, insurance, and an honest read on which properties are actually worth it &mdash; the agent you pick makes all the difference.</p>
       </div>
       <div class="str-agent-grid">
         <div class="str-agent-prose">
-          <p>Most agents in Phoenix can show you an Old Town Scottsdale condo. Very few can <strong>underwrite one as a short-term rental investment</strong>. The difference between the two is everything.</p>
-          <p>An experienced Scottsdale STR agent doesn't quote you a generic ROI. They pull <strong>actual comparable Airbnb data</strong> for the specific building, model nightly rates by season, plug in real cleaning and management fees, layer in Scottsdale's permit cost and STR tax registration, and hand you a pro forma you can underwrite from. That work is the difference between a property that clears 70% occupancy and one that drags at 45%.</p>
-          <p>They also know the things that aren't on the MLS. <strong>Which HOAs are quietly drafting CC&amp;R amendments that will kill STR use within the next 24 months.</strong> Which lenders actually write loans on STR-zoned properties (most won't). Which insurance carriers carry a real Scottsdale STR endorsement. Which property managers, cleaners, photographers, and supply vendors are worth bringing in &mdash; and which to avoid.</p>
-          <p>The Selling Sonoran Group has closed STR-eligible properties in nearly every Old Town building that allows them. We've underwritten hundreds of pro formas, walked clients through the Scottsdale permit process, and built a vendor network that hands new investors a turnkey operation on day one. <strong>That's the work.</strong> The listing is the easy part.</p>
+          <p>Most agents in Phoenix can show you an Old Town Scottsdale home. Very few actually specialize in short-term rentals out here. The difference between the two is everything.</p>
+          <p><strong>No one can promise you how a property will perform &mdash; not us, not anyone.</strong> What an experienced local STR agent can do is tell you the truth: which locations and homes make sense, what the City permit and tax steps really involve, and which properties are &ldquo;DUDD&rdquo; &mdash; the ones that look good on paper but don't sell because they never actually profit. We won't waste your time on those.</p>
+          <p>A good local agent also knows the things that aren't on the MLS. <strong>Which HOAs are quietly drafting CC&amp;R amendments that will kill STR use within the next 24 months.</strong> Which lenders actually write loans on STR-friendly properties (most won't). Which insurance carriers carry a real Scottsdale STR endorsement. Which property managers, cleaners, photographers, and supply vendors are worth bringing in &mdash; and which to avoid.</p>
+          <p>The Selling Sonoran Group has closed short-term-rental properties across Old Town and the surrounding Scottsdale ZIP codes. We've walked clients through the permit process and built a vendor network that hands new investors a turnkey operation on day one. <strong>That's the work.</strong> The listing is the easy part.</p>
         </div>
         <aside class="str-agent-check">
           <h3>Six questions to ask any Scottsdale STR agent before you sign</h3>
           <ul>
-            <li>How many STR-eligible properties have you closed in the last 12 months in Scottsdale?</li>
-            <li>Can you show me a pro forma you built for another client, with the actual numbers you used?</li>
-            <li>Which Old Town condo buildings do you consider STR-safe long-term, and which are on the watch list?</li>
-            <li>Do you have a lender who writes STR-zoned property loans without hammering my rate?</li>
+            <li>How many short-term-rental properties have you closed in the last 12 months in Scottsdale?</li>
+            <li>How do you decide whether a specific property is worth it &mdash; and how do you spot a &ldquo;DUDD&rdquo; one?</li>
+            <li>Which Old Town condo buildings actually allow rentals under 30 days, and which are on the watch list?</li>
+            <li>Do you have a lender who writes STR-friendly property loans without hammering my rate?</li>
             <li>Who is your go-to STR insurance carrier and property manager &mdash; and are they available right now?</li>
             <li>Have you helped an out-of-state buyer close on a Scottsdale STR remotely?</li>
           </ul>
@@ -700,77 +618,43 @@
     <div class="str-section-head">
       <p class="str-eyebrow">Recent Sales</p>
       <h2 class="str-h2">Recently <em>closed</em> STRs by Selling Sonoran Group</h2>
-      <p class="str-lede">A snapshot of recent short-term rental closings across Old Town Scottsdale and the surrounding Scottsdale ZIP codes. Building, neighborhood, sold price, and the underwriting note we ran the deal against.</p>
+      <p class="str-lede">A snapshot of recent short-term-rental closings across Old Town Scottsdale and the surrounding Scottsdale ZIP codes.</p>
     </div>
     <div class="str-sales-grid">
       <div class="str-sale">
-        <div class="str-sale-img"><img src="../assets/optima-camelview.jpg" alt="Optima Kierland STR sale"><span class="str-sale-badge">Closed</span></div>
+        <div class="str-sale-img"><img src="../assets/home-pool.jpg" alt="Recently closed short-term rental home in Scottsdale"><span class="str-sale-badge">Closed</span></div>
         <div class="str-sale-body">
-          <h3 class="str-sale-addr">Optima Kierland &middot; 1BR</h3>
-          <p class="str-sale-meta">Entertainment District &middot; 85254</p>
-          <div class="str-sale-row"><span>Sold Price</span><strong>$725,000</strong></div>
-          <div class="str-sale-row"><span>Underwritten ADR</span><strong>$285</strong></div>
-          <div class="str-sale-row"><span>Year-1 Occupancy</span><strong>76%</strong></div>
-          <p class="str-sale-note">First-STR buyer, out-of-state. Closed 18 days from offer.</p>
+          <h3 class="str-sale-addr">8242 E Mulberry Ln</h3>
+          <p class="str-sale-meta">Single Family &middot; Scottsdale, AZ 85251</p>
+          <p class="str-sale-note">Closed by the Selling Sonoran Group.</p>
         </div>
       </div>
       <div class="str-sale">
-        <div class="str-sale-img"><img src="../assets/home-condo.jpg" alt="The Mark STR sale"><span class="str-sale-badge">Closed</span></div>
+        <div class="str-sale-img"><img src="../assets/home-luxury.jpg" alt="Recently closed short-term rental home in Scottsdale"><span class="str-sale-badge">Closed</span></div>
         <div class="str-sale-body">
-          <h3 class="str-sale-addr">The Mark &middot; 2BR</h3>
-          <p class="str-sale-meta">Old Town Core &middot; 85251</p>
-          <div class="str-sale-row"><span>Sold Price</span><strong>$895,000</strong></div>
-          <div class="str-sale-row"><span>Underwritten ADR</span><strong>$310</strong></div>
-          <div class="str-sale-row"><span>Year-1 Occupancy</span><strong>74%</strong></div>
-          <p class="str-sale-note">1031 exchange from California rental. Off-market deal.</p>
+          <h3 class="str-sale-addr">8449 E Sage Dr</h3>
+          <p class="str-sale-meta">Single Family &middot; Scottsdale, AZ 85250</p>
+          <p class="str-sale-note">Closed by the Selling Sonoran Group.</p>
         </div>
       </div>
       <div class="str-sale">
-        <div class="str-sale-img"><img src="../assets/blog-rooftop.jpg" alt="7180 Optima penthouse sale"><span class="str-sale-badge">Closed</span></div>
+        <div class="str-sale-img"><img src="../assets/home-mountain.jpg" alt="Recently closed short-term rental home in Scottsdale"><span class="str-sale-badge">Closed</span></div>
         <div class="str-sale-body">
-          <h3 class="str-sale-addr">7180 Optima &middot; Penthouse</h3>
-          <p class="str-sale-meta">Old Town Core &middot; 85251</p>
-          <div class="str-sale-row"><span>Sold Price</span><strong>$1,650,000</strong></div>
-          <div class="str-sale-row"><span>Underwritten ADR</span><strong>$485</strong></div>
-          <div class="str-sale-row"><span>Year-1 Occupancy</span><strong>78%</strong></div>
-          <p class="str-sale-note">Portfolio investor, second Scottsdale STR. Closed with a 14-day inspection.</p>
+          <h3 class="str-sale-addr">4233 N 86th St</h3>
+          <p class="str-sale-meta">Single Family &middot; Scottsdale, AZ 85251</p>
+          <p class="str-sale-note">Closed by the Selling Sonoran Group.</p>
         </div>
       </div>
       <div class="str-sale">
-        <div class="str-sale-img"><img src="../assets/home-luxury.jpg" alt="Vue Scottsdale 3BR sale"><span class="str-sale-badge">Closed</span></div>
+        <div class="str-sale-img"><img src="../assets/home-condo.jpg" alt="Recently closed short-term rental residence in Scottsdale"><span class="str-sale-badge">Closed</span></div>
         <div class="str-sale-body">
-          <h3 class="str-sale-addr">Vue Scottsdale &middot; 3BR</h3>
-          <p class="str-sale-meta">Downtown / Waterfront &middot; 85251</p>
-          <div class="str-sale-row"><span>Sold Price</span><strong>$1,420,000</strong></div>
-          <div class="str-sale-row"><span>Underwritten ADR</span><strong>$395</strong></div>
-          <div class="str-sale-row"><span>Year-1 Occupancy</span><strong>72%</strong></div>
-          <p class="str-sale-note">Negotiated $40K off list with an as-is, fast-close offer.</p>
-        </div>
-      </div>
-      <div class="str-sale">
-        <div class="str-sale-img"><img src="../assets/home-pool.jpg" alt="Single family pool home STR sale"><span class="str-sale-badge">Closed</span></div>
-        <div class="str-sale-body">
-          <h3 class="str-sale-addr">Single Family &middot; Pool &middot; 4BR</h3>
-          <p class="str-sale-meta">No HOA &middot; 85257 &middot; Hy-View</p>
-          <div class="str-sale-row"><span>Sold Price</span><strong>$1,150,000</strong></div>
-          <div class="str-sale-row"><span>Underwritten ADR</span><strong>$525</strong></div>
-          <div class="str-sale-row"><span>Year-1 Occupancy</span><strong>68%</strong></div>
-          <p class="str-sale-note">Out-of-state buyer relocating from Seattle. STR + future primary residence.</p>
-        </div>
-      </div>
-      <div class="str-sale">
-        <div class="str-sale-img"><img src="../assets/home-mountain.jpg" alt="Arcadia border SFH sale"><span class="str-sale-badge">Closed</span></div>
-        <div class="str-sale-body">
-          <h3 class="str-sale-addr">Single Family &middot; Pool &middot; 5BR</h3>
-          <p class="str-sale-meta">No HOA &middot; 85250 &middot; Arcadia Border</p>
-          <div class="str-sale-row"><span>Sold Price</span><strong>$2,250,000</strong></div>
-          <div class="str-sale-row"><span>Underwritten ADR</span><strong>$745</strong></div>
-          <div class="str-sale-row"><span>Year-1 Occupancy</span><strong>70%</strong></div>
-          <p class="str-sale-note">Luxury STR + corporate retreat positioning. Closed with seller-paid concessions for capital improvements.</p>
+          <h3 class="str-sale-addr">6937 E 6th St #1005</h3>
+          <p class="str-sale-meta">Scottsdale, AZ 85251</p>
+          <p class="str-sale-note">Closed by the Selling Sonoran Group.</p>
         </div>
       </div>
     </div>
-    <p class="str-idx-note">Identifying details adjusted for client privacy. Real numbers on real closings &mdash; <a href="contact.html" style="color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none;">ask for the full transaction list</a>.</p>
+    <p class="str-idx-note">A sample of recent short-term-rental closings &mdash; <a href="contact.html" style="color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none;">ask for the full transaction list</a>.</p>
   </section>
 
   <!-- ===== FAQ ===== -->
@@ -785,7 +669,7 @@
         <details class="str-faq-item">
           <summary>Can you legally Airbnb a property in Old Town Scottsdale?</summary>
           <div class="str-faq-answer">
-            <p>Yes &mdash; with the right setup. Short-term rentals are legal in Scottsdale, but every operator must register with the City, carry an active permit, list the permit number on every listing, and hold STR-specific liability insurance. Beyond the City layer, your HOA's CC&amp;Rs control whether your specific building allows rentals under 30 days. Most Old Town condos do <em>not</em> allow it &mdash; only a specific subset (Optima Kierland, The Mark, Vue Scottsdale, 7180 Optima, Envy, and a few others) have STR-friendly CC&amp;Rs. We confirm CC&amp;Rs and pull HOA meeting minutes for any unit we underwrite.</p>
+            <p>Yes &mdash; with the right setup. Short-term rentals are legal in Scottsdale, but every operator must register with the City, carry an active permit, list the permit number on every listing, and hold STR-specific liability insurance. Beyond the City layer, your HOA's CC&amp;Rs control whether your specific building allows rentals under 30 days. Most Old Town condos do <em>not</em> allow it &mdash; only a specific subset (Optima Kierland, The Mark, Vue Scottsdale, 7180 Optima, Envy, and a few others) have STR-friendly CC&amp;Rs. Out here, most short-term rentals are single-family homes for exactly this reason. We confirm CC&amp;Rs and pull HOA meeting minutes for any property we help you evaluate.</p>
           </div>
         </details>
         <details class="str-faq-item">
@@ -795,9 +679,9 @@
           </div>
         </details>
         <details class="str-faq-item">
-          <summary>What's a realistic ROI on an Old Town Scottsdale short-term rental?</summary>
+          <summary>How do short-term rentals perform in Old Town Scottsdale?</summary>
           <div class="str-faq-answer">
-            <p>Underwritten correctly, well-positioned STR-approved units in Old Town generally cash-flow with 7&ndash;10% ROI on cash invested, with top performers clearing 11&ndash;13%. The variance is huge though &mdash; same building, two units, ROI can swing 4 points based on floor, view, layout, furnishing quality, and pricing strategy. Anyone quoting you a flat "Old Town STRs return X%" without seeing the unit isn't doing the work. We run a unit-specific pro forma on every property before we recommend you offer.</p>
+            <p>Here's the honest answer: no one can promise how any specific property will perform, and as a licensed agent we don't project returns or build income forecasts. Performance depends on the home, the operator, pricing, seasonality, and plenty of factors outside anyone's control. Be skeptical of anyone quoting you a flat "Old Town STRs return X%." What we <em>can</em> do is give you the local rules, point you to the locations and homes that make sense, and steer you away from the &ldquo;DUDD&rdquo; properties &mdash; the ones that look good on paper but don't sell because they don't profit. We simply won't show you those.</p>
           </div>
         </details>
         <details class="str-faq-item">
@@ -815,13 +699,13 @@
         <details class="str-faq-item">
           <summary>Can my existing real estate agent help me with an STR, or do I need a specialist?</summary>
           <div class="str-faq-answer">
-            <p>Honest answer: most agents can help you <em>buy</em> a Scottsdale property, but only an STR specialist can help you buy one that <em>operates</em>. The pro forma, the HOA risk read, the lender connections, the insurance carriers, the post-close vendor network &mdash; that's a specialty discipline. Buying an STR with a generic agent isn't dangerous in the transaction, but it routinely costs investors 1&ndash;3 ROI points over the first three years of ownership. That's tens of thousands of dollars on a $1M unit.</p>
+            <p>Honest answer: most agents can help you <em>buy</em> a Scottsdale property, but only an STR specialist can help you buy one that <em>operates</em>. The HOA and CC&amp;R risk read, the permit and tax steps, the lender connections, the insurance carriers, the post-close vendor network, and an honest take on which properties are worth it &mdash; that's a specialty discipline. Buying an STR with a generic agent isn't dangerous in the transaction, but it's easy to end up with a property that never should have been an STR in the first place.</p>
           </div>
         </details>
         <details class="str-faq-item">
           <summary>What's the difference between investing in an Old Town condo vs. a single-family home for STR?</summary>
           <div class="str-faq-answer">
-            <p>Condos in STR-approved Old Town buildings are simpler operationally (amenities included, HOA handles exterior, walkable to the entertainment district) but capped on guest count and lower on ADR ceiling. Single-family homes outside an HOA &mdash; especially in 85250, 85251, or 85257 with a pool and 3+ bedrooms &mdash; can clear materially higher ADRs ($500&ndash;$800+) and accommodate group bookings, but require more active management and carry higher operating expenses (pool service, landscaping, larger turnovers). The right answer depends on your goals, capital, and management appetite.</p>
+            <p>Out here, most short-term rentals are single-family homes rather than condos &mdash; because the majority of Old Town condo buildings don't allow rentals under 30 days. The homes that tend to make the most sense sit outside an HOA in 85250, 85251, or 85257 with a pool and 3+ bedrooms, and can accommodate group bookings, though they require more active management and carry higher operating costs (pool service, landscaping, larger turnovers). The few STR-friendly condo communities are simpler operationally but more limited on guest count. The right answer depends on your goals, capital, and how hands-on you want to be &mdash; and we'll walk you through the trade-offs honestly.</p>
           </div>
         </details>
       </div>
@@ -834,7 +718,7 @@
       <div>
         <p class="str-eyebrow">The Guide</p>
         <h2 class="str-h2">The <em>full</em> STR Investor Guide</h2>
-        <p class="str-lede">Permit timelines, tax registrations, lender quirks for STR-zoned properties, what makes a building &ldquo;STR-friendly&rdquo; in practice, the actual numbers we underwrite to, and the off-market deals nobody sees. 30+ pages of how we actually do this.</p>
+        <p class="str-lede">Permit timelines, tax registrations, lender quirks for STR-friendly properties, what makes a home &ldquo;STR-friendly&rdquo; in practice, how we spot the &ldquo;DUDD&rdquo; properties to avoid, and the off-market deals nobody sees. 30+ pages of how we actually do this.</p>
         <div style="margin-top: 28px;">
           <a href="contact.html" class="str-btn str-btn-primary" style="border-color: #fff; background: #fff; color: var(--ink);">Request the Guide</a>
         </div>
@@ -848,9 +732,12 @@
   <!-- ===== NEWSLETTER ===== -->
   <section class="str-newsletter">
     <h2 class="str-newsletter-title">THE LOTS LETTER</h2>
-    <p class="str-newsletter-sub">One Tuesday email. New STR-approved listings, market shifts, and what locals are actually doing this week.</p>
-    <form class="str-news-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
-      <input type="email" placeholder="Email address" required>
+    <p class="str-newsletter-sub">One monthly email. New openings, incredible homes, local activities, and so much more.</p>
+    <form class="str-news-form js-lots-letter" onsubmit="event.preventDefault(); handleLeadSubmit(this);">
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="text" name="last_name" placeholder="Last name" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="email" name="email" placeholder="Email address" required>
       <button type="submit">Subscribe</button>
     </form>
   </section>
@@ -871,7 +758,7 @@
         </div>
         <div><div class="footer-heading">Explore</div><ul class="footer-links"><li><a href="old-town-life.html">Old Town Life</a></li><li><a href="str-hub.html">STR Investment</a></li><li><a href="condos.html">Luxury Condos</a></li><li><a href="blog.html">The LOTS Blog</a></li><li><a href="about.html">About Us</a></li></ul></div>
         <div><div class="footer-heading">Resources</div><ul class="footer-links"><li><a href="buy.html">Buy in Old Town</a></li><li><a href="sell.html">Sell in Old Town</a></li><li><a href="#">Market Reports</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="#">Selling Sonoran Group</a></li><li><a href="#">Compass Real Estate</a></li></ul></div>
+        <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:naudia@sellingsonoran.com">naudia@sellingsonoran.com</a></li><li><a href="tel:+17026864252">(702) 686-4252</a></li><li style="margin-top: 16px;"><a href="https://sellingsonoran.com/" target="_blank" rel="noopener">Selling Sonoran Group</a></li><li><a href="https://www.compass.com/agents/naudia-andrescavage/" target="_blank" rel="noopener">Compass Real Estate</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">&copy; 2026 Living Old Town Scottsdale &bull; Selling Sonoran Group</div>
@@ -894,32 +781,33 @@
   <div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authTitle">
     <div class="auth-modal" id="authModal">
       <button type="button" class="auth-close" id="authClose" aria-label="Close">&times;</button>
-      <p class="auth-eyebrow">STR Investor Access</p>
-      <h3 class="auth-title" id="authTitle">Unlock every STR-approved listing</h3>
+      <p class="auth-eyebrow">The Exclusive List</p>
+      <h3 class="auth-title" id="authTitle">Sign up for the best STR properties available today</h3>
       <div class="auth-tabs" role="tablist">
-        <button type="button" class="auth-tab is-active" data-tab="panel-signin">Sign In</button>
-        <button type="button" class="auth-tab" data-tab="panel-signup">Sign Up</button>
+        <button type="button" class="auth-tab is-active" data-tab="panel-signup">Sign Up</button>
+        <button type="button" class="auth-tab" data-tab="panel-signin">Sign In</button>
         <button type="button" class="auth-tab" data-tab="panel-magic">Magic Link</button>
       </div>
 
-      <div class="auth-panel is-active" id="panel-signin">
-        <form class="auth-form" id="authSignInForm">
-          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
-          <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
-          <button type="submit">Sign In</button>
-          <p class="auth-status"></p>
-        </form>
-      </div>
-
-      <div class="auth-panel" id="panel-signup">
+      <div class="auth-panel is-active" id="panel-signup">
         <form class="auth-form" id="authSignUpForm">
           <div class="auth-row">
             <input type="text" name="firstName" placeholder="First name" required autocomplete="given-name">
             <input type="text" name="lastName" placeholder="Last name" required autocomplete="family-name">
           </div>
+          <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel">
           <input type="email" name="email" placeholder="Email address" required autocomplete="email">
           <input type="password" name="password" placeholder="Choose a password (8+ chars)" minlength="8" required autocomplete="new-password">
-          <button type="submit">Create Account</button>
+          <button type="submit">Get the List</button>
+          <p class="auth-status"></p>
+        </form>
+      </div>
+
+      <div class="auth-panel" id="panel-signin">
+        <form class="auth-form" id="authSignInForm">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+          <button type="submit">Sign In</button>
           <p class="auth-status"></p>
         </form>
       </div>

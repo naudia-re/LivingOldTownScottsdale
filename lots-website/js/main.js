@@ -72,18 +72,109 @@ function toggleMobileNav() {
   toggle.classList.toggle('active');
 }
 
-// --- Lead Form Submit ---
-function handleLeadSubmit(form) {
-  const inputs = form.querySelectorAll('input');
+// --- Nav Dropdown (click to open, and stays open) ---
+function initNavDropdowns() {
+  const dropdowns = document.querySelectorAll('.ap-nav-dd');
+  dropdowns.forEach(dd => {
+    const trigger = dd.querySelector('.ap-nav-dd-trigger');
+    if (!trigger) return;
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dd.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      // Close any other open dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dd) {
+          other.classList.remove('open');
+          const t = other.querySelector('.ap-nav-dd-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+  // Click outside closes all
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.ap-nav-dd')) {
+      dropdowns.forEach(dd => {
+        dd.classList.remove('open');
+        const t = dd.querySelector('.ap-nav-dd-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  // Escape closes all
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(dd => {
+        dd.classList.remove('open');
+        const t = dd.querySelector('.ap-nav-dd-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+}
+
+/* ============================================
+   FORM HANDLING
+   Lead-capture forms       -> Formspree (emails team@sellingsonoran.com)
+   LOTS Letter / newsletter -> Flodesk
+
+   SETUP — replace the two placeholder endpoints below:
+   1. FORMSPREE: create a form at https://formspree.io set to email
+      team@sellingsonoran.com, then paste its endpoint (e.g.
+      https://formspree.io/f/abcdwxyz) into FORMSPREE_ENDPOINT.
+   2. FLODESK: create a Flodesk signup form, publish it, and paste its
+      form-action URL into FLODESK_ENDPOINT.
+   Until real endpoints are set, forms show a friendly confirmation so the
+   site is fully usable in demos.
+   ============================================ */
+const LOTS_FORM_CONFIG = {
+  FORMSPREE_ENDPOINT: 'https://formspree.io/f/REPLACE_WITH_FORM_ID',
+  FLODESK_ENDPOINT: 'https://form.flodesk.com/forms/REPLACE_WITH_FLODESK_ID/submit'
+};
+
+function lotsEndpointReady(url) {
+  return url && url.indexOf('REPLACE_WITH') === -1;
+}
+
+function lotsSubmit(form, endpoint, successMessage) {
+  const inputs = form.querySelectorAll('input, select, textarea');
   let valid = true;
-  inputs.forEach(input => {
-    if (!input.value) valid = false;
+  inputs.forEach(input => { if (input.required && !input.value) valid = false; });
+  if (!valid) return;
+
+  const reset = () => inputs.forEach(input => {
+    if (input.tagName === 'SELECT') input.selectedIndex = 0; else input.value = '';
   });
 
-  if (valid) {
-    alert('Welcome to The LOTS Letter! Check your inbox for a confirmation.');
-    inputs.forEach(input => input.value = '');
+  if (!lotsEndpointReady(endpoint)) {
+    // No backend configured yet — confirm locally so the demo works.
+    alert(successMessage);
+    reset();
+    return;
   }
+
+  fetch(endpoint, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) { alert(successMessage); reset(); }
+    else { alert('Something went wrong — please email team@sellingsonoran.com and we\'ll take care of you.'); }
+  }).catch(() => alert('Something went wrong — please email team@sellingsonoran.com and we\'ll take care of you.'));
+}
+
+// --- LOTS Letter / newsletter signup -> Flodesk ---
+function handleLeadSubmit(form) {
+  lotsSubmit(form, LOTS_FORM_CONFIG.FLODESK_ENDPOINT, 'Welcome to The LOTS Letter! Check your inbox for a confirmation.');
+}
+
+// --- "Notify me of homes" / STR exclusive list -> team inbox via Formspree ---
+function handleHomesSignup(form) {
+  lotsSubmit(form, LOTS_FORM_CONFIG.FORMSPREE_ENDPOINT, 'You\'re on the list! We\'ll be in touch as matching homes come to market.');
 }
 
 // --- Scroll Animation Observer ---
@@ -161,42 +252,19 @@ function initCalculator() {
   updateCalculator();
 }
 
-// --- Contact Form Handler ---
+// --- Contact Form Handler -> team inbox via Formspree ---
 function handleContactSubmit(form) {
-  const inputs = form.querySelectorAll('input, select, textarea');
-  let valid = true;
-  inputs.forEach(input => {
-    if (input.required && !input.value) valid = false;
-  });
-
-  if (valid) {
-    alert('Thank you for reaching out! We\'ll be in touch within 24 hours.');
-    inputs.forEach(input => {
-      if (input.tagName === 'SELECT') {
-        input.selectedIndex = 0;
-      } else {
-        input.value = '';
-      }
-    });
-  }
+  lotsSubmit(form, LOTS_FORM_CONFIG.FORMSPREE_ENDPOINT, 'Thank you for reaching out! We\'ll be in touch within 24 hours.');
 }
 
-// --- Home Valuation Handler ---
+// --- Home Valuation Handler -> team inbox via Formspree ---
 function handleValuationSubmit(form) {
-  const inputs = form.querySelectorAll('input');
-  let valid = true;
-  inputs.forEach(input => {
-    if (input.required && !input.value) valid = false;
-  });
-
-  if (valid) {
-    alert('Your home valuation request has been received! Naudia will send your personalized report within 24 hours.');
-    inputs.forEach(input => input.value = '');
-  }
+  lotsSubmit(form, LOTS_FORM_CONFIG.FORMSPREE_ENDPOINT, 'Your home valuation request has been received! Naudia will send your personalized report within 24 hours.');
 }
 
 // --- Initialize on DOM Ready ---
 document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
+  initNavDropdowns();
   handleScroll(); // Check initial state
 });
