@@ -258,11 +258,11 @@
   <script>
     (function(){
       const filters=document.querySelectorAll('.blog-filter');
-      const cards=document.querySelectorAll('#blogGrid [data-tag]');
       function apply(tag){
         filters.forEach(f=>f.classList.toggle('is-active', f.dataset.filter===tag));
-        cards.forEach(c=>{ c.style.display=(tag==='all'||c.dataset.tag===tag)?'':'none'; });
+        document.querySelectorAll('#blogGrid [data-tag]').forEach(c=>{ c.style.display=(tag==='all'||c.dataset.tag===tag)?'':'none'; });
       }
+      window.__applyBlogFilter=apply;
       filters.forEach(f=>f.addEventListener('click',()=>apply(f.dataset.filter)));
       // Hash deep-links from other pages (e.g. #seasons, #lists, #journal, #builders)
       const h=(location.hash||'').replace('#','');
@@ -270,6 +270,8 @@
       if(valid.includes(h)) apply(h);
     })();
   </script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/blog-loader.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
