@@ -88,6 +88,15 @@
   .seo-preview .u{color:#006621;font-size:12px}
   .seo-preview .d{color:#4d5156;font-size:12.5px}
   .section-label-lg{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:600;border-bottom:1px solid var(--border);padding-bottom:8px;margin:34px 0 18px}
+  /* Site Content tab + editor */
+  .admin-tabs{display:flex;gap:0;margin-bottom:28px;border-bottom:1px solid var(--border)}
+  .admin-tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);padding:12px 4px;margin-right:24px;font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer}
+  .admin-tab.is-active{color:var(--ink);border-bottom-color:var(--accent)}
+  .sc-group{margin-bottom:34px}
+  .sc-group-title{font-family:var(--font-d);font-size:21px;font-weight:400;color:var(--ink);margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+  .sc-img-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .sc-img-prev{width:130px;height:86px;object-fit:cover;border:1px solid var(--border);background:#faf7f1}
+  .sc-img-row input[type=file]{width:auto;border:none;padding:0;font-size:13px}
 </style>
 </head>
 <body>
@@ -122,6 +131,11 @@
     </div>
   </header>
   <main class="wrap">
+
+    <nav class="admin-tabs">
+      <button class="admin-tab is-active" id="tabPosts">Blog Posts</button>
+      <button class="admin-tab" id="tabSite">Site Content</button>
+    </nav>
 
     <!-- LIST VIEW -->
     <section id="listView">
@@ -215,6 +229,18 @@
         </div>
       </div>
       <div class="msg" id="edMsg"></div>
+    </section>
+
+    <!-- SITE CONTENT VIEW -->
+    <section id="siteView" class="hidden">
+      <div class="list-head">
+        <div><span class="eyebrow">Site Editor</span><h2>Homepage Content</h2></div>
+        <button class="btn-accent" id="saveSiteBtn">Save Changes</button>
+      </div>
+      <p class="hint" style="margin:-8px 0 24px">Edit the text and swap the images on your homepage. Changes go live on the next page load.</p>
+      <div id="siteForm"><div class="empty">Loading…</div></div>
+      <div class="msg" id="siteMsg"></div>
+      <div style="margin-top:28px;display:flex;justify-content:flex-end"><button class="btn-accent" id="saveSiteBtn2">Save Changes</button></div>
     </section>
 
   </main>

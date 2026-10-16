@@ -288,6 +288,116 @@
     await loadPosts(); closeEditor();
   });
 
+  // ---- Site Content editor -----------------------------------------
+  const SITE_FIELDS = [
+    { group: "Homepage — Intro", fields: [
+      { key: "home.statement.body",  label: "Intro paragraph", type: "textarea" },
+      { key: "home.statement.body2", label: "Closing line",    type: "text" },
+    ]},
+    { group: "Homepage — Tile 1 (Condos)", fields: [
+      { key: "home.tile1.tag",   label: "Label",       type: "text" },
+      { key: "home.tile1.title", label: "Title",       type: "text" },
+      { key: "home.tile1.desc",  label: "Description", type: "textarea" },
+      { key: "home.tile1.image", label: "Image",       type: "image" },
+      { key: "home.tile1.link",  label: "Link (page)", type: "text" },
+    ]},
+    { group: "Homepage — Tile 2 (STR Hub)", fields: [
+      { key: "home.tile2.tag",   label: "Label",       type: "text" },
+      { key: "home.tile2.title", label: "Title",       type: "text" },
+      { key: "home.tile2.desc",  label: "Description", type: "textarea" },
+      { key: "home.tile2.image", label: "Image",       type: "image" },
+      { key: "home.tile2.link",  label: "Link (page)", type: "text" },
+    ]},
+    { group: "Homepage — Tile 3 (Old Town Life)", fields: [
+      { key: "home.tile3.tag",   label: "Label",       type: "text" },
+      { key: "home.tile3.title", label: "Title",       type: "text" },
+      { key: "home.tile3.desc",  label: "Description", type: "textarea" },
+      { key: "home.tile3.image", label: "Image",       type: "image" },
+      { key: "home.tile3.link",  label: "Link (page)", type: "text" },
+    ]},
+  ];
+  let siteValues = {};
+
+  function resolveImg(val) {
+    if (!val) return "";
+    if (/^https?:|^data:/.test(val)) return val;
+    return "../" + val.replace(/^\//, ""); // admin lives in /admin/, site paths are root-relative
+  }
+
+  async function loadSiteContent() {
+    const form = $("siteForm");
+    if (!sb) { form.innerHTML = '<div class="empty">Connect Supabase to edit site content.</div>'; return; }
+    form.innerHTML = '<div class="empty">Loading…</div>';
+    const { data, error } = await sb.from("site_content").select("key,value");
+    if (error) {
+      form.innerHTML = '<div class="empty">Couldn’t load — have you run <code>db/site_content.sql</code>? (' + esc(error.message) + ')</div>';
+      return;
+    }
+    siteValues = {}; (data || []).forEach(r => { siteValues[r.key] = r.value; });
+    renderSiteForm();
+  }
+
+  function renderSiteForm() {
+    $("siteForm").innerHTML = SITE_FIELDS.map(g => {
+      const fields = g.fields.map(f => {
+        const val = siteValues[f.key] != null ? siteValues[f.key] : "";
+        if (f.type === "image") {
+          return `<div class="field"><label>${esc(f.label)}</label>
+            <div class="sc-img-row">
+              <img class="sc-img-prev" id="scimg-${esc(f.key)}" src="${esc(resolveImg(val))}" alt="">
+              <input type="file" accept="image/*" data-imgkey="${esc(f.key)}">
+            </div>
+            <div class="hint">Upload to swap this image (~1600px wide looks best).</div></div>`;
+        }
+        const input = f.type === "textarea"
+          ? `<textarea rows="3" data-sckey="${esc(f.key)}">${esc(val)}</textarea>`
+          : `<input type="text" data-sckey="${esc(f.key)}" value="${esc(val)}">`;
+        return `<div class="field"><label>${esc(f.label)}</label>${input}</div>`;
+      }).join("");
+      return `<div class="sc-group"><h3 class="sc-group-title">${esc(g.group)}</h3>${fields}</div>`;
+    }).join("");
+    $("siteForm").querySelectorAll('input[type=file][data-imgkey]').forEach(inp =>
+      inp.addEventListener("change", e => handleSiteImage(e, inp.dataset.imgkey))
+    );
+  }
+
+  async function handleSiteImage(e, key) {
+    const file = e.target.files[0]; if (!file || !sb) return;
+    $("scimg-" + key).src = URL.createObjectURL(file);
+    msg($("siteMsg"), "Uploading image…");
+    const path = `site/${key.replace(/[^a-z0-9]+/gi, "-")}-${Date.now()}.${file.name.split(".").pop()}`;
+    const { error } = await sb.storage.from(BUCKET).upload(path, file, { upsert: true, contentType: file.type });
+    if (error) { msg($("siteMsg"), "Upload failed: " + error.message, "err"); return; }
+    const { data } = sb.storage.from(BUCKET).getPublicUrl(path);
+    siteValues[key] = data.publicUrl;
+    $("scimg-" + key).src = data.publicUrl;
+    msg($("siteMsg"), "Image uploaded ✓ — click Save Changes to keep it.", "ok");
+  }
+
+  async function saveSiteContent() {
+    if (!sb) { msg($("siteMsg"), "Connect Supabase first.", "err"); return; }
+    $("siteForm").querySelectorAll("[data-sckey]").forEach(el => { siteValues[el.dataset.sckey] = el.value; });
+    const rows = Object.keys(siteValues).map(k => ({ key: k, value: siteValues[k] }));
+    if (!rows.length) { msg($("siteMsg"), "Nothing to save yet.", ""); return; }
+    msg($("siteMsg"), "Saving…");
+    const { error } = await sb.from("site_content").upsert(rows, { onConflict: "key" });
+    if (error) { msg($("siteMsg"), error.message, "err"); return; }
+    msg($("siteMsg"), "Saved ✓ — live on the homepage now (reload to see it).", "ok");
+  }
+
+  function showPosts() {
+    $("tabPosts").classList.add("is-active"); $("tabSite").classList.remove("is-active");
+    show($("listView")); hide($("siteView")); hide($("editorView"));
+  }
+  function showSite() {
+    $("tabSite").classList.add("is-active"); $("tabPosts").classList.remove("is-active");
+    hide($("listView")); hide($("editorView")); show($("siteView")); loadSiteContent();
+  }
+  $("tabPosts").addEventListener("click", showPosts);
+  $("tabSite").addEventListener("click", showSite);
+  $("saveSiteBtn").addEventListener("click", saveSiteContent);
+  $("saveSiteBtn2").addEventListener("click", saveSiteContent);
+
   // ---- Go ----------------------------------------------------------
   refreshSession();
 })();

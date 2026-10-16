@@ -596,8 +596,8 @@
   <!-- ===== STATEMENT ===== -->
   <div class="ap-statement">
     <h2 class="ap-statement-headline">WHERE OLD TOWN<br><em>ACTUALLY</em> LIVES</h2>
-    <p class="ap-statement-body">Here we give you the honest insights, real market perspectives, and local expertise from the people who walk these streets every day. Welcome to the neighborhood, before you even move in.</p>
-    <p class="ap-statement-body" style="margin-top: 20px; font-style: italic; color: var(--ink);">We hope you find home here.</p>
+    <p class="ap-statement-body" data-cc="home.statement.body">Here we give you the honest insights, real market perspectives, and local expertise from the people who walk these streets every day. Welcome to the neighborhood, before you even move in.</p>
+    <p class="ap-statement-body" style="margin-top: 20px; font-style: italic; color: var(--ink);" data-cc="home.statement.body2">We hope you find home here.</p>
     <p class="ap-statement-label">Old Town Scottsdale Real Estate &amp; Lifestyle</p>
     <img src="assets/lots-logo.png" alt="Living Old Town Scottsdale" class="ap-statement-logo">
   </div>
@@ -605,30 +605,30 @@
   <!-- ===== 3-UP FEATURES ===== -->
   <div class="ap-features">
     <div class="ap-feature">
-      <div class="ap-feature-img"><img src="assets/home-condo.jpg?v=2" alt="Old Town Scottsdale condo building with bougainvillea-lined balconies"></div>
+      <div class="ap-feature-img"><img data-cc="home.tile1.image" data-cc-attr="src" src="assets/home-condo.jpg?v=2" alt="Old Town Scottsdale condo building with bougainvillea-lined balconies"></div>
       <div class="ap-feature-body">
-        <div class="ap-feature-tag">Luxury Living</div>
-        <h3 class="ap-feature-title">Luxury Condo Communities</h3>
-        <p class="ap-feature-desc">Optima, Vue, 7180, and more. Amenities, pricing, and walkability by building.</p>
-        <a href="pages/condos.html" class="ap-feature-link">Explore &rarr;</a>
+        <div class="ap-feature-tag" data-cc="home.tile1.tag">Luxury Living</div>
+        <h3 class="ap-feature-title" data-cc="home.tile1.title">Luxury Condo Communities</h3>
+        <p class="ap-feature-desc" data-cc="home.tile1.desc">Optima, Vue, 7180, and more. Amenities, pricing, and walkability by building.</p>
+        <a href="pages/condos.html" data-cc="home.tile1.link" data-cc-attr="href" class="ap-feature-link">Explore &rarr;</a>
       </div>
     </div>
     <div class="ap-feature">
-      <div class="ap-feature-img"><img src="assets/home-str.jpg?v=3" alt="Airbnb listings in the desert — Old Town Scottsdale short-term rental market"></div>
+      <div class="ap-feature-img"><img data-cc="home.tile2.image" data-cc-attr="src" src="assets/home-str.jpg?v=3" alt="Airbnb listings in the desert — Old Town Scottsdale short-term rental market"></div>
       <div class="ap-feature-body">
-        <div class="ap-feature-tag">Investment</div>
-        <h3 class="ap-feature-title">Short-Term Rental Hub</h3>
-        <p class="ap-feature-desc">ROI calculators, zoning maps, and everything you need to invest in Old Town STRs.</p>
-        <a href="pages/str-hub.html" class="ap-feature-link">Explore &rarr;</a>
+        <div class="ap-feature-tag" data-cc="home.tile2.tag">Investment</div>
+        <h3 class="ap-feature-title" data-cc="home.tile2.title">Short-Term Rental Hub</h3>
+        <p class="ap-feature-desc" data-cc="home.tile2.desc">ROI calculators, zoning maps, and everything you need to invest in Old Town STRs.</p>
+        <a href="pages/str-hub.html" data-cc="home.tile2.link" data-cc-attr="href" class="ap-feature-link">Explore &rarr;</a>
       </div>
     </div>
     <div class="ap-feature">
-      <div class="ap-feature-img"><img src="assets/home-insider.jpg?v=4" alt="Aerial view of an Old Town Scottsdale neighborhood at golden hour"></div>
+      <div class="ap-feature-img"><img data-cc="home.tile3.image" data-cc-attr="src" src="assets/home-insider.jpg?v=4" alt="Aerial view of an Old Town Scottsdale neighborhood at golden hour"></div>
       <div class="ap-feature-body">
-        <div class="ap-feature-tag">Lifestyle</div>
-        <h3 class="ap-feature-title">Old Town Life</h3>
-        <p class="ap-feature-desc">Restaurants, events, hidden gems, and the real rhythm of Old Town living.</p>
-        <a href="pages/old-town-life.html" class="ap-feature-link">Explore &rarr;</a>
+        <div class="ap-feature-tag" data-cc="home.tile3.tag">Lifestyle</div>
+        <h3 class="ap-feature-title" data-cc="home.tile3.title">Old Town Life</h3>
+        <p class="ap-feature-desc" data-cc="home.tile3.desc">Restaurants, events, hidden gems, and the real rhythm of Old Town living.</p>
+        <a href="pages/old-town-life.html" data-cc="home.tile3.link" data-cc-attr="href" class="ap-feature-link">Explore &rarr;</a>
       </div>
     </div>
   </div>
@@ -1049,6 +1049,8 @@
     </div>
   </footer>
 
+  <script src="js/supabase-config.js"></script>
+  <script src="js/site-content.js"></script>
   <script src="js/main.js"></script>
   <!-- Behold Instagram widget loader -->
   <script>
