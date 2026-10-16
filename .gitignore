@@ -7,3 +7,6 @@
 
 # Large media — keep on disk, host externally for production
 assets/hero-video.mov
+
+# Large gated guide PDFs — host externally (too big for GitHub Pages repo)
+assets/*.pdf
