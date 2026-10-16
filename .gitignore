@@ -6,4 +6,4 @@
 .claude/
 
 # Large media — keep on disk, host externally for production
-lots-website/assets/hero-video.mov
+assets/hero-video.mov
