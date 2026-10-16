@@ -257,6 +257,13 @@
     let error;
     if (editingId) ({ error } = await sb.from("posts").update(record).eq("id", editingId));
     else ({ error } = await sb.from("posts").insert(record));
+    // Safety net: if the "featured" column hasn't been added yet (PGRST204),
+    // retry the write without it so saving still works.
+    if (error && error.code === "PGRST204" && "featured" in record) {
+      const rest = Object.assign({}, record); delete rest.featured;
+      if (editingId) ({ error } = await sb.from("posts").update(rest).eq("id", editingId));
+      else ({ error } = await sb.from("posts").insert(rest));
+    }
     if (error) {
       msg($("edMsg"), (error.code === "23505" ? "That URL slug is already used — change it." : error.message), "err");
       return;
