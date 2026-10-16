@@ -44,6 +44,12 @@
       });
       // newest posts first, ahead of the hardcoded cards
       grid.insertBefore(frag, grid.firstChild);
+      // de-dupe: a post now in the database replaces its old hardcoded card.
+      // Static cards link to ../blog/<slug>.html; dynamic cards link to
+      // ../blog/post.html?slug=<slug>, so they never collide.
+      posts.forEach(p => {
+        grid.querySelectorAll('a.blog-card[href$="/' + p.slug + '.html"]').forEach(card => card.remove());
+      });
       // respect whatever filter is currently active
       const active = document.querySelector(".blog-filter.is-active");
       if (active && typeof window.__applyBlogFilter === "function") {
