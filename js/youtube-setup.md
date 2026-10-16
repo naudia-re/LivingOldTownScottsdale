@@ -32,7 +32,7 @@ The video strip on the homepage can refresh automatically every time you publish
 
 ## Step 4 — Add the key to the site
 
-1. Open `lots-website/index.html`
+1. Open `index.html`
 2. Search for `LOTS_YT_CONFIG` (it's in the YouTube strip section)
 3. Paste your key between the quotes:
    ```js
