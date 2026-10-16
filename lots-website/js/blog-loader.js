@@ -18,11 +18,15 @@
 
   function esc(s){ return (s||"").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
 
-  const url = `${cfg.SUPABASE_URL}/rest/v1/posts` +
-    `?status=eq.published&select=title,slug,category,excerpt,cover_image,cover_alt&order=published_at.desc`;
+  const H = { apikey: cfg.SUPABASE_ANON_KEY, Authorization: "Bearer " + cfg.SUPABASE_ANON_KEY };
+  const base = `${cfg.SUPABASE_URL}/rest/v1/posts?status=eq.published` +
+    `&select=title,slug,category,excerpt,cover_image,cover_alt`;
+  // Try with featured (pin) support; fall back if the column isn't added yet.
+  const withF = base + `,featured&order=featured.desc,published_at.desc`;
+  const noF = base + `&order=published_at.desc`;
 
-  fetch(url, { headers: { apikey: cfg.SUPABASE_ANON_KEY, Authorization: "Bearer " + cfg.SUPABASE_ANON_KEY } })
-    .then(r => r.ok ? r.json() : [])
+  fetch(withF, { headers: H })
+    .then(r => r.ok ? r.json() : fetch(noF, { headers: H }).then(r2 => r2.ok ? r2.json() : []))
     .then(posts => {
       if (!Array.isArray(posts) || !posts.length) return;
       const frag = document.createDocumentFragment();
@@ -33,8 +37,11 @@
         a.setAttribute("data-tag", p.category || "journal");
         const img = p.cover_image || FALLBACK_IMG;
         const alt = esc(p.cover_alt || p.title || "");
+        const badge = p.featured
+          ? `<span style="position:absolute;top:10px;left:10px;z-index:2;background:#ae6d47;color:#fff;font:600 9px/1 'DM Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase;padding:5px 9px;">★ Featured</span>`
+          : "";
         a.innerHTML =
-          `<div class="blog-card-img"><img src="${esc(img)}" alt="${alt}" loading="lazy"></div>` +
+          `<div class="blog-card-img" style="position:relative">${badge}<img src="${esc(img)}" alt="${alt}" loading="lazy"></div>` +
           `<div class="blog-card-body">` +
             `<span class="blog-card-tag">${esc(CAT[p.category] || p.category || "")}</span>` +
             `<h3 class="blog-card-title">${esc(p.title || "")}</h3>` +

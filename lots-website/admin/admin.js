@@ -168,6 +168,7 @@
     $("fSeoDesc").value = post ? post.seo_description || "" : "";
     $("fCoverAlt").value = post ? post.cover_alt || "" : "";
     $("fCategory").value = post ? post.category || categories[0].slug : categories[0].slug;
+    $("fFeatured").checked = post ? !!post.featured : false;
     quill.root.innerHTML = post ? post.body || "" : "";
     const cp = $("coverPreview");
     if (post && post.cover_image) { cp.src = post.cover_image; cp.style.display = "block"; cp.dataset.url = post.cover_image; }
@@ -232,6 +233,7 @@
       record: {
         title, slug,
         category: $("fCategory").value,
+        featured: $("fFeatured").checked,
         excerpt: $("fExcerpt").value.trim(),
         body,
         cover_image: $("coverPreview").dataset.url || null,
