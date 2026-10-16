@@ -97,6 +97,16 @@
   .sc-img-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
   .sc-img-prev{width:130px;height:86px;object-fit:cover;border:1px solid var(--border);background:#faf7f1}
   .sc-img-row input[type=file]{width:auto;border:none;padding:0;font-size:13px}
+  /* Visual editor */
+  .se-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+  .se-bar-left{display:flex;align-items:center;gap:16px}
+  #sePage{width:auto;min-width:220px;padding:10px 14px}
+  .se-bar-right{display:flex;align-items:center;gap:12px}
+  .se-help{font-size:12.5px;color:var(--muted);background:#faf7f1;border:1px solid var(--border);padding:12px 16px;margin:0 0 16px;border-radius:0}
+  .se-help b{color:var(--ink)}
+  .se-stage{position:relative;border:1px solid var(--border);background:#fff;min-height:70vh}
+  .se-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;z-index:1}
+  #siteFrame{width:100%;height:76vh;border:none;display:block;position:relative;z-index:2;background:#fff}
 </style>
 </head>
 <body>
@@ -231,16 +241,22 @@
       <div class="msg" id="edMsg"></div>
     </section>
 
-    <!-- SITE CONTENT VIEW -->
+    <!-- VISUAL SITE EDITOR -->
     <section id="siteView" class="hidden">
-      <div class="list-head">
-        <div><span class="eyebrow">Site Editor</span><h2>Homepage Content</h2></div>
-        <button class="btn-accent" id="saveSiteBtn">Save Changes</button>
+      <div class="se-bar">
+        <div class="se-bar-left">
+          <span class="eyebrow" style="margin:0">Visual Editor</span>
+          <select id="sePage" title="Choose a page to edit"></select>
+        </div>
+        <div class="se-bar-right">
+          <span class="msg" id="siteMsg"></span>
+          <button class="btn-ghost" id="seReset">↻ Reset</button>
+          <button class="btn-accent" id="saveSiteBtn">Save Changes</button>
+        </div>
       </div>
-      <p class="hint" style="margin:-8px 0 24px">Edit the text and swap the images on your homepage. Changes go live on the next page load.</p>
-      <div id="siteForm"><div class="empty">Loading…</div></div>
-      <div class="msg" id="siteMsg"></div>
-      <div style="margin-top:28px;display:flex;justify-content:flex-end"><button class="btn-accent" id="saveSiteBtn2">Save Changes</button></div>
+      <p class="se-help">✏️ Click any highlighted <b>text</b> to edit it in place. Click an <b>image</b> to replace it. Then hit <b>Save Changes</b>.</p>
+      <div class="se-stage"><div class="se-loading" id="seLoading">Loading your page…</div><iframe id="siteFrame" title="Page preview"></iframe></div>
+      <input type="file" id="seImgInput" accept="image/*" hidden>
     </section>
 
   </main>
