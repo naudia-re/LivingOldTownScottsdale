@@ -291,7 +291,16 @@
   // ---- Visual Site Editor -----------------------------------------
   const SE_PAGES = [
     { label: "Homepage", url: "../index.html" },
+    { label: "Old Town Life", url: "../pages/old-town-life.html" },
+    { label: "Neighborhoods (Single Family)", url: "../pages/neighborhoods.html" },
+    { label: "Luxury Condos", url: "../pages/condos.html" },
+    { label: "Neighborhood Directory", url: "../pages/neighborhood-directory.html" },
+    { label: "History", url: "../pages/history.html" },
+    { label: "STR Investing", url: "../pages/str-hub.html" },
+    { label: "Buy", url: "../pages/buy.html" },
+    { label: "Sell", url: "../pages/sell.html" },
     { label: "About / The Team", url: "../pages/about.html" },
+    { label: "Contact", url: "../pages/contact.html" },
   ];
   let seDirty = {};            // key -> new value (text or uploaded image URL)
   let seFrame = null, seDoc = null, seActiveImgKey = null;
