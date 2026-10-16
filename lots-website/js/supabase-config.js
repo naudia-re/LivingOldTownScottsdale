@@ -20,9 +20,10 @@
 // This is great for the presentation. Swap to real auth when ready.
 // =====================================================================
 
+// The anon public key is safe to expose in the browser — it only grants the
+// access defined by your Row Level Security policies (public reads published
+// posts; writes require a logged-in admin).
 window.LOTS_SUPABASE = {
-  // TODO: paste your project URL here, e.g. 'https://xxxxx.supabase.co'
-  SUPABASE_URL: '',
-  // TODO: paste your anon public key here
-  SUPABASE_ANON_KEY: '',
+  SUPABASE_URL: 'https://dggylvaagepozqsvbkhc.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnZ3lsdmFhZ2Vwb3pxc3Zia2hjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxMTE0NjMsImV4cCI6MjEwNzY4NzQ2M30.ds46ckCWXbc-irmcgo8Jnb6pWSBQ_GUA9IS1ZvaSXGs',
 };

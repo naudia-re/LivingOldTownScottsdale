@@ -9,6 +9,7 @@ let leadBarVisible = false;
 let leadBarClosed = false;
 
 function handleScroll() {
+  if (!nav) return; // pages without the main nav (e.g. admin) skip this
   const scrollY = window.scrollY;
 
   // Nav background on scroll
@@ -19,14 +20,16 @@ function handleScroll() {
   }
 
   // Lead bar appears after scrolling past hero
-  if (scrollY > window.innerHeight * 0.6 && !leadBarClosed) {
-    leadBar.classList.add('visible');
-    nav.classList.add('has-lead-bar');
-    leadBarVisible = true;
-  } else if (scrollY <= window.innerHeight * 0.3) {
-    leadBar.classList.remove('visible');
-    nav.classList.remove('has-lead-bar');
-    leadBarVisible = false;
+  if (leadBar) {
+    if (scrollY > window.innerHeight * 0.6 && !leadBarClosed) {
+      leadBar.classList.add('visible');
+      nav.classList.add('has-lead-bar');
+      leadBarVisible = true;
+    } else if (scrollY <= window.innerHeight * 0.3) {
+      leadBar.classList.remove('visible');
+      nav.classList.remove('has-lead-bar');
+      leadBarVisible = false;
+    }
   }
 
   // Slide-up form appears after scrolling 60% of page
